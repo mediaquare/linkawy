@@ -311,14 +311,14 @@ function linkawy_customize_register($wp_customize) {
     
     // CTA Button URL
     $wp_customize->add_setting('linkawy_header_cta_url', array(
-        'default'           => '/contact',
+        'default'           => '/contact/',
         'sanitize_callback' => 'esc_url_raw',
         'transport'         => 'refresh',
     ));
     
     $wp_customize->add_control('linkawy_header_cta_url', array(
         'label'       => __('رابط الزر', 'linkawy'),
-        'description' => __('الرابط الذي يفتح عند الضغط على الزر (مثال: /contact أو https://example.com)', 'linkawy'),
+        'description' => __('الرابط الذي يفتح عند الضغط على الزر (مثال: /contact/ أو https://example.com)', 'linkawy'),
         'section'     => 'linkawy_header_section',
         'type'        => 'url',
     ));
@@ -577,7 +577,7 @@ function linkawy_get_header_cta() {
     return array(
         'show' => get_theme_mod('linkawy_header_cta_show', true),
         'text' => get_theme_mod('linkawy_header_cta_text', __('تواصل معنا', 'linkawy')),
-        'url'  => get_theme_mod('linkawy_header_cta_url', '/contact'),
+        'url'  => get_theme_mod('linkawy_header_cta_url', '/contact/'),
     );
 }
 

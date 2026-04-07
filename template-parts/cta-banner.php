@@ -29,7 +29,7 @@
             </div>
             <div class="pre-footer-cta-left">
                 <p><?php _e('فريقنا من خبراء السيو جاهز لمساعدتك في تحقيق أهدافك وتحسين ظهورك في كل مكان.', 'linkawy'); ?></p>
-                <a href="#" class="pre-footer-cta-btn"><?php _e('ابدأ استشارتك المجانية', 'linkawy'); ?></a>
+                <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="pre-footer-cta-btn"><?php _e('ابدأ استشارتك المجانية', 'linkawy'); ?></a>
             </div>
         </div>
     </div>
