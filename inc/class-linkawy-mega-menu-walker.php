@@ -194,7 +194,7 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         $output = "{$indent}<div class=\"mega-menu-cta\">\n";
         
         if (!empty($cta_title)) {
-            $output .= "{$indent}\t<h3>" . esc_html($cta_title) . "</h3>\n";
+            $output .= "{$indent}\t<div class=\"mega-menu-cta-title\">" . esc_html($cta_title) . "</div>\n";
         }
         
         if (!empty($cta_description)) {

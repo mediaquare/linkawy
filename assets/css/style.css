@@ -900,10 +900,10 @@ nav.main-nav a:hover {
     pointer-events: none;
 }
 
-.mega-menu-cta h3 {
+.mega-menu-cta .mega-menu-cta-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
     line-height: 1.5;
     position: relative;
 }
