@@ -108,6 +108,37 @@ function linkawy_register_glossary_cpt() {
 add_action('init', 'linkawy_register_glossary_cpt', 0);
 
 /**
+ * Glossary archive: load all terms in the main query (matches archive-glossary.php).
+ * Avoids phantom pagination so plugins (e.g. Rank Math) do not output rel="next" to /glossary/page/2/.
+ *
+ * @param WP_Query $query WordPress query object.
+ */
+function linkawy_glossary_archive_pre_get_posts($query) {
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    if (!$query->is_post_type_archive('glossary')) {
+        return;
+    }
+    $query->set('posts_per_page', -1);
+}
+add_action('pre_get_posts', 'linkawy_glossary_archive_pre_get_posts');
+
+/**
+ * Rank Math: disable rel prev/next on glossary archive (single-page index).
+ *
+ * @param bool $disable Whether adjacent rel links are disabled.
+ * @return bool
+ */
+function linkawy_rank_math_disable_glossary_adjacent_rel($disable) {
+    if (is_post_type_archive('glossary')) {
+        return true;
+    }
+    return $disable;
+}
+add_filter('rank_math/frontend/disable_adjacent_rel_links', 'linkawy_rank_math_disable_glossary_adjacent_rel', 10, 1);
+
+/**
  * Register Resources Custom Post Type
  */
 function linkawy_register_resources_cpt() {

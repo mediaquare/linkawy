@@ -140,7 +140,7 @@ get_header();
                 <p><?php _e('تواصل مع فريقنا من الخبراء واحصل على خطة عمل مخصصة لرفع ترتيب موقعك وزيادة مبيعاتك.', 'linkawy'); ?></p>
             </div>
             <div class="help-cta-btn">
-                <a href="<?php echo esc_url(home_url('/contact')); ?>" class="btn-orange"><?php _e('تواصل معنا للاستشارة', 'linkawy'); ?> <i class="fas fa-arrow-left"></i></a>
+                <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn-orange"><?php _e('تواصل معنا للاستشارة', 'linkawy'); ?> <i class="fas fa-arrow-left"></i></a>
             </div>
         </div>
     </section>
