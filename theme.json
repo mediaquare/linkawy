@@ -1,0 +1,467 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"useRootPaddingAwareAlignments": true,
+		"custom": {
+			"linkawy": {
+				"designSystem": "linkawy-1"
+			}
+		},
+		"background": {
+			"backgroundImage": true,
+			"backgroundSize": true
+		},
+		"border": {
+			"color": true,
+			"radius": true,
+			"style": true,
+			"width": true,
+			"radiusSizes": [
+				{
+					"name": "صغير",
+					"slug": "small",
+					"size": "4px"
+				},
+				{
+					"name": "متوسط",
+					"slug": "medium",
+					"size": "8px"
+				},
+				{
+					"name": "كبير",
+					"slug": "large",
+					"size": "16px"
+				},
+				{
+					"name": "كبير جداً",
+					"slug": "xlarge",
+					"size": "24px"
+				},
+				{
+					"name": "دائري كامل",
+					"slug": "full",
+					"size": "9999px"
+				}
+			]
+		},
+		"color": {
+			"background": true,
+			"text": true,
+			"link": true,
+			"heading": true,
+			"button": true,
+			"caption": true,
+			"custom": true,
+			"customGradient": true,
+			"customDuotone": true,
+			"defaultPalette": true,
+			"defaultGradients": true,
+			"defaultDuotone": true,
+			"palette": [
+				{
+					"name": "أساسي",
+					"slug": "primary",
+					"color": "#ff6b00"
+				},
+				{
+					"name": "أساسي داكن",
+					"slug": "primary-dark",
+					"color": "#e05a00"
+				},
+				{
+					"name": "أساسي فاتح",
+					"slug": "primary-light",
+					"color": "#ff8533"
+				},
+				{
+					"name": "أساسي أفتح",
+					"slug": "primary-lighter",
+					"color": "#ffad66"
+				},
+				{
+					"name": "خلفية أساسية",
+					"slug": "primary-bg",
+					"color": "#fff5f0"
+				},
+				{
+					"name": "ثانوي",
+					"slug": "secondary",
+					"color": "#1a1a2e"
+				},
+				{
+					"name": "تمييز",
+					"slug": "accent",
+					"color": "#ff8533"
+				},
+				{
+					"name": "نص رئيسي",
+					"slug": "text-main",
+					"color": "#333333"
+				},
+				{
+					"name": "نص ثانوي",
+					"slug": "text-secondary",
+					"color": "#666666"
+				},
+				{
+					"name": "نص خافت",
+					"slug": "text-light",
+					"color": "#999999"
+				},
+				{
+					"name": "نص داكن",
+					"slug": "text-dark",
+					"color": "#111111"
+				},
+				{
+					"name": "أبيض",
+					"slug": "white",
+					"color": "#ffffff"
+				},
+				{
+					"name": "خلفية",
+					"slug": "bg",
+					"color": "#ffffff"
+				},
+				{
+					"name": "خلفية فاتحة",
+					"slug": "bg-light",
+					"color": "#f4f4f4"
+				},
+				{
+					"name": "خلفية أفتح",
+					"slug": "bg-lighter",
+					"color": "#f9f9f9"
+				},
+				{
+					"name": "خلفية داكنة",
+					"slug": "bg-dark",
+					"color": "#1a1a1a"
+				},
+				{
+					"name": "حد فاتح",
+					"slug": "border-light",
+					"color": "#eeeeee"
+				},
+				{
+					"name": "حد متوسط",
+					"slug": "border-medium",
+					"color": "#dddddd"
+				},
+				{
+					"name": "حد داكن",
+					"slug": "border-dark",
+					"color": "#333333"
+				}
+			],
+			"gradients": [
+				{
+					"name": "برتقالي Linkawy",
+					"slug": "linkawy-orange",
+					"gradient": "linear-gradient(135deg, #ff6b00 0%, #e05a00 100%)"
+				},
+				{
+					"name": "داكن إلى برتقالي",
+					"slug": "linkawy-dark-orange",
+					"gradient": "linear-gradient(135deg, #1a1a2e 0%, #ff6b00 100%)"
+				},
+				{
+					"name": "خلفية دافئة",
+					"slug": "linkawy-warm-bg",
+					"gradient": "linear-gradient(180deg, #fff5f0 0%, #ffffff 100%)"
+				}
+			],
+			"duotone": [
+				{
+					"name": "Linkawy داكن",
+					"slug": "linkawy-dark",
+					"colors": [ "#1a1a2e", "#ff6b00" ]
+				},
+				{
+					"name": "Linkawy فاتح",
+					"slug": "linkawy-light",
+					"colors": [ "#333333", "#ff8533" ]
+				}
+			]
+		},
+		"dimensions": {
+			"minHeight": true,
+			"aspectRatio": true,
+			"defaultAspectRatios": true
+		},
+		"layout": {
+			"contentSize": "800px",
+			"wideSize": "1200px",
+			"allowEditing": true,
+			"allowCustomContentAndWideSize": true
+		},
+		"lightbox": {
+			"enabled": true,
+			"allowEditing": true
+		},
+		"position": {
+			"sticky": true,
+			"fixed": true
+		},
+		"shadow": {
+			"defaultPresets": true,
+			"presets": [
+				{
+					"name": "بطاقة خفيفة",
+					"slug": "linkawy-card-soft",
+					"shadow": "0 2px 10px rgba(0, 0, 0, 0.05)"
+				},
+				{
+					"name": "بطاقة برتقالية",
+					"slug": "linkawy-card-brand",
+					"shadow": "0 4px 20px rgba(255, 107, 0, 0.12)"
+				},
+				{
+					"name": "زر مرتفع",
+					"slug": "linkawy-button-lift",
+					"shadow": "0 4px 15px rgba(255, 107, 0, 0.35)"
+				}
+			]
+		},
+		"spacing": {
+			"blockGap": true,
+			"margin": true,
+			"padding": true,
+			"units": [ "px", "em", "rem", "vh", "vw", "%" ],
+			"customSpacingSize": true,
+			"defaultSpacingSizes": true,
+			"spacingSizes": [
+				{
+					"name": "ضيق",
+					"slug": "tight",
+					"size": "1rem"
+				},
+				{
+					"name": "عنصر",
+					"slug": "element",
+					"size": "1.5rem"
+				},
+				{
+					"name": "كتلة",
+					"slug": "block",
+					"size": "2.5rem"
+				},
+				{
+					"name": "قسم صغير",
+					"slug": "section-sm",
+					"size": "5rem"
+				},
+				{
+					"name": "قسم",
+					"slug": "section",
+					"size": "7rem"
+				}
+			],
+			"spacingScale": {
+				"operator": "*",
+				"increment": 1.5,
+				"steps": 7,
+				"mediumStep": 1.5,
+				"unit": "rem"
+			}
+		},
+		"typography": {
+			"fluid": true,
+			"customFontSize": true,
+			"defaultFontSizes": true,
+			"dropCap": true,
+			"fontStyle": true,
+			"fontWeight": true,
+			"letterSpacing": true,
+			"lineHeight": true,
+			"textAlign": true,
+			"textColumns": true,
+			"textDecoration": true,
+			"textTransform": true,
+			"writingMode": true,
+			"fontFamilies": [
+				{
+					"fontFamily": "Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+					"name": "Inter",
+					"slug": "inter"
+				},
+				{
+					"fontFamily": "Georgia, \"Times New Roman\", serif",
+					"name": "Serif",
+					"slug": "serif"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "صغير",
+					"slug": "small",
+					"size": "0.875rem",
+					"fluid": {
+						"min": "0.8125rem",
+						"max": "0.9375rem"
+					}
+				},
+				{
+					"name": "عادي",
+					"slug": "medium",
+					"size": "1rem",
+					"fluid": {
+						"min": "0.9375rem",
+						"max": "1.0625rem"
+					}
+				},
+				{
+					"name": "كبير",
+					"slug": "large",
+					"size": "1.25rem",
+					"fluid": {
+						"min": "1.125rem",
+						"max": "1.375rem"
+					}
+				},
+				{
+					"name": "عنوان فرعي",
+					"slug": "x-large",
+					"size": "1.75rem",
+					"fluid": {
+						"min": "1.5rem",
+						"max": "2rem"
+					}
+				},
+				{
+					"name": "عنوان",
+					"slug": "xx-large",
+					"size": "2.5rem",
+					"fluid": {
+						"min": "2rem",
+						"max": "3rem"
+					}
+				}
+			]
+		},
+		"blocks": {
+			"core/group": {
+				"color": {
+					"background": true,
+					"text": true,
+					"link": true
+				},
+				"typography": {
+					"customFontSize": true,
+					"lineHeight": true,
+					"letterSpacing": true,
+					"fontStyle": true,
+					"fontWeight": true,
+					"textDecoration": true,
+					"textTransform": true
+				},
+				"spacing": {
+					"padding": true,
+					"margin": true,
+					"blockGap": true
+				},
+				"border": {
+					"color": true,
+					"radius": true,
+					"style": true,
+					"width": true
+				},
+				"layout": {
+					"allowEditing": true
+				}
+			},
+			"core/columns": {
+				"spacing": {
+					"blockGap": true,
+					"margin": true,
+					"padding": true
+				},
+				"border": {
+					"color": true,
+					"radius": true,
+					"style": true,
+					"width": true
+				},
+				"layout": {
+					"allowEditing": true
+				}
+			},
+			"core/column": {
+				"spacing": {
+					"padding": true,
+					"margin": true
+				},
+				"border": {
+					"color": true,
+					"radius": true,
+					"style": true,
+					"width": true
+				}
+			},
+			"core/paragraph": {
+				"color": {
+					"text": true,
+					"background": true
+				},
+				"typography": {
+					"customFontSize": true,
+					"lineHeight": true,
+					"letterSpacing": true,
+					"fontWeight": true,
+					"fontStyle": true,
+					"textDecoration": true,
+					"textTransform": true,
+					"dropCap": true
+				},
+				"spacing": {
+					"margin": true,
+					"padding": true
+				}
+			},
+			"core/image": {
+				"lightbox": {
+					"allowEditing": true
+				},
+				"border": {
+					"radius": true,
+					"color": true,
+					"width": true,
+					"style": true
+				},
+				"dimensions": {
+					"aspectRatio": true,
+					"minHeight": true
+				}
+			},
+			"core/cover": {
+				"color": {
+					"text": true,
+					"background": true
+				},
+				"spacing": {
+					"padding": true,
+					"margin": true,
+					"blockGap": true
+				},
+				"border": {
+					"radius": true
+				},
+				"dimensions": {
+					"minHeight": true
+				}
+			}
+		}
+	},
+	"styles": {
+		"spacing": {
+			"padding": {
+				"top": "0px",
+				"right": "0px",
+				"bottom": "0px",
+				"left": "0px"
+			}
+		}
+	}
+}

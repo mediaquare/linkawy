@@ -1,0 +1,54 @@
+/**
+ * Landing page template — scoped to body.linkawy-landing-page only.
+ * Full-width Gutenberg: no theme .container around content.
+ */
+
+/* Prevent horizontal scroll from full-width blocks (align with page.css pattern) */
+body.linkawy-landing-page {
+    overflow-x: clip;
+    margin: 0;
+    padding: 0;
+}
+
+/* No theme header offset — main is the only column */
+body.linkawy-landing-page #main-content {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root block wrapper: no max-width cage */
+body.linkawy-landing-page .entry-content,
+body.linkawy-landing-page .wp-block-post-content {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Theme content class when present on inner wrapper */
+body.linkawy-landing-page .linkawy-content {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+}
+
+/* Full-width blocks: edge-to-edge without a parent .container */
+body.linkawy-landing-page .alignfull {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
+}
+
+/* Wide alignment respects theme.json wide size but stays uncapped by .container */
+body.linkawy-landing-page .alignwide {
+    max-width: var(--wp--style--wide-size, 1200px);
+    margin-left: auto;
+    margin-right: auto;
+}

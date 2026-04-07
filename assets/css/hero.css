@@ -1,0 +1,854 @@
+/**
+ * Hero Section - Dark Cinematic Mode
+ * 
+ * Scoped styles for the homepage hero section.
+ * Font-family inherits from the theme (Somar Sans).
+ * 
+ * @package Linkawy
+ */
+
+/* ============================================
+   IMPORTANT: Override Tailwind's container styles
+   to preserve theme's max-width for non-hero sections
+   ============================================ */
+
+/* Force theme's container width for all sections EXCEPT hero */
+body.home .container,
+body.front-page .container,
+.benefits-section .container,
+.strategy-section .section-container,
+.about-section .container,
+.problems-section .container,
+.solutions-section .container,
+.how-it-works-section .container,
+.programs-section .container,
+.programs-section .programs-container,
+.process-section .process-container,
+.platforms-section .platforms-container,
+.testimonials-section .container,
+.faq-section .container,
+.faq-section .faq-container,
+.cta-banner .container {
+    max-width: 1200px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* ===================================================================
+   HERO DARK WRAPPER – Shared canvas for Hero + Platforms
+   =================================================================== */
+.hero-dark-wrapper {
+    position: relative;
+    background: #0a0a0a;
+    overflow: hidden;
+    /* Pull wrapper up behind the fixed header so they share one canvas */
+    margin-top: -90px;
+}
+
+/* Cinematic edge-glow — shared across hero + platforms */
+.hero-dark-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -35%;
+    pointer-events: none;
+    z-index: 0;
+
+    background:
+        /* Top-right – narrow, tall, side-based, fades before content */
+        radial-gradient(
+            9% 85% at 79% 10%,
+            rgba(242, 104, 51, 0.55) 0%,
+            rgba(242, 104, 51, 0.28) 30%,
+            rgba(242, 104, 51, 0.12) 50%,
+            rgba(0, 0, 0, 0) 75%
+        ),
+        /* Bottom – stronger, wider, creates depth and weight */
+        radial-gradient(
+            70% 70% at 0% 100%,
+            rgba(242, 104, 51, 0.85) 0%,
+            rgba(242, 104, 51, 0.45) 35%,
+            rgba(242, 104, 51, 0.18) 55%,
+            rgba(0, 0, 0, 0) 78%
+        );
+
+    filter: blur(100px);
+    opacity: 1;
+    
+    /* LCP Optimization: Isolate blur layer from main content rendering
+       will-change hints GPU to pre-composite this layer independently
+       contain: strict tells browser this layer is self-contained */
+    will-change: filter, opacity;
+    contain: strict;
+}
+
+/* Keep all direct children above the glow layer */
+.hero-dark-wrapper > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* LCP Optimization: Force text content to render in independent layer
+   This prevents the blur filter from blocking text rendering */
+.hero-dark-section .lg\:w-\[40\%\] {
+    transform: translateZ(0); /* Creates new stacking context */
+    contain: layout style; /* Isolate layout calculations */
+}
+
+/* LCP Optimization: Isolate visual wall area from text rendering
+   The 60% width side contains heavy animations that shouldn't block LCP */
+.hero-dark-section .lg\:w-\[60\%\] {
+    contain: strict;
+    isolation: isolate;
+}
+
+/* ===================================================================
+   HERO DARK SECTION – Now inside wrapper, no own glow
+   =================================================================== */
+.hero-dark-section {
+    background: transparent;
+    color: #ffffff;
+    overflow: visible;
+    position: relative;
+    margin-top: 0;
+}
+
+/* Glow is now on wrapper – disable hero's own ::before */
+.hero-dark-section::before {
+    display: none;
+}
+
+/* Keep all content above the glow layer */
+.hero-dark-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* -------------------------------------------------------
+   Vertical rhythm: generous padding for breathing room
+   Header height = 90px  →  content starts well below it
+   ------------------------------------------------------- */
+.hero-dark-section section.hero-header {
+    /* Mobile-first: 90px header + 60px breathing */
+    padding-top:  150px !important;
+    /* Extra bottom padding to make the hero taller */
+    padding-bottom: 80px !important;
+}
+
+@media (min-width: 768px) {
+    .hero-dark-section section.hero-header {
+        padding-top:  180px !important; /* more air on tablets */
+        padding-bottom: 100px !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-dark-section section.hero-header {
+        /* Desktop: 90px header + 110px generous space before title */
+        padding-top:  200px !important;
+        padding-bottom: 120px !important;
+    }
+}
+
+@media (min-width: 1280px) {
+    .hero-dark-section section.hero-header {
+        padding-top:  220px !important;
+        padding-bottom: 140px !important;
+    }
+}
+
+/* -------------------------------------------------------
+   Title typography polish (no size or content change)
+   ------------------------------------------------------- */
+.hero-dark-section section.hero-header h1 {
+    line-height: 1.35 !important;
+    letter-spacing: -0.02em;
+    word-spacing: 0.04em;
+    /* Extra room below the title so it "breathes" */
+    margin-bottom: 1.75rem !important;
+}
+
+@media (min-width: 1024px) {
+    .hero-dark-section section.hero-header h1 {
+        line-height: 1.30 !important;
+        letter-spacing: -0.025em;
+        margin-bottom: 2rem !important;
+    }
+}
+
+/* Subtext (paragraph) gets a bit more spacing above */
+.hero-dark-section section.hero-header h1 + p,
+.hero-dark-section section.hero-header .lg\:w-\[40\%\] > p {
+    margin-top: 0.5rem;
+}
+
+/* CTA buttons row – extra air above */
+.hero-dark-section section.hero-header .lg\:w-\[40\%\] > .flex.flex-col {
+    margin-top: 0.75rem;
+}
+
+/* Clients strip – more top margin for separation */
+.hero-dark-section .hero-clients {
+    margin-top: 3rem !important;
+}
+
+/* Accent Colors */
+.hero-dark-section .accent-primary { color: #f26833; }
+.hero-dark-section .bg-accent { background-color: #f26833; }
+.hero-dark-section .border-accent { border-color: #f26833; }
+.hero-dark-section .hover-accent:hover { background-color: #d95320; }
+
+/* --- Stream Container --- */
+.hero-dark-section .wall-container {
+    height: 650px;
+    overflow: hidden;
+    position: relative;
+    /* Fade Mask for Dark Mode */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    /* LCP Optimization: Isolate mask compositing from text layer */
+    contain: strict;
+    isolation: isolate;
+}
+
+.hero-dark-section .wall-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 580px;
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.hero-dark-section .wall-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Group Wrapper for seamless looping */
+.hero-dark-section .marquee-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 16px;
+    flex-shrink: 0;
+}
+
+/* --- Seamless Marquee Animations --- */
+@keyframes scroll-up-seamless {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-33.333333%); }
+}
+
+@keyframes scroll-down-seamless {
+    0% { transform: translateY(-33.333333%); }
+    100% { transform: translateY(0); }
+}
+
+.hero-dark-section .col-up-slow { animation: scroll-up-seamless 45s linear infinite; }
+.hero-dark-section .col-down-med { animation: scroll-down-seamless 40s linear infinite; }
+.hero-dark-section .col-up-fast { animation: scroll-up-seamless 35s linear infinite; }
+
+.hero-dark-section .wall-container:hover .wall-column {
+    animation-play-state: paused;
+}
+
+/* --- ENHANCED Micro Animations --- */
+
+/* 1. Intelligent Scanning Shimmer */
+@keyframes scan-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+.hero-dark-section .anim-scan {
+    background: linear-gradient(90deg, 
+        rgba(242,104,51,1) 0%, 
+        rgba(255,255,255,0.4) 50%, 
+        rgba(242,104,51,1) 100%);
+    background-size: 200% 100%;
+    animation: scan-shimmer 3s linear infinite;
+}
+
+/* 2. Sequential Typing Simulation */
+.hero-dark-section .anim-seq-1,
+.hero-dark-section .anim-seq-2,
+.hero-dark-section .anim-seq-3,
+.hero-dark-section .anim-seq-2-content {
+    width: 0;
+    animation-duration: 6s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+}
+
+/* Slower duration for Content card */
+.hero-dark-section .anim-slow-duration {
+    animation-duration: 10s;
+}
+
+.hero-dark-section .anim-seq-1 { animation-name: seq-line-1; }
+.hero-dark-section .anim-seq-2 { animation-name: seq-line-2; }
+.hero-dark-section .anim-seq-3 { animation-name: seq-line-3; }
+.hero-dark-section .anim-seq-2-content { animation-name: seq-line-2-content; }
+
+/* Line 1: Starts immediately, types fast */
+@keyframes seq-line-1 {
+    0% { width: 0; }
+    10% { width: 100%; } 
+    90% { width: 100%; opacity: 1; }
+    100% { width: 0; opacity: 0; }
+}
+
+/* Line 2 (Gemini): Waits for Line 1 + pause, types slightly slower, 100% width */
+@keyframes seq-line-2 {
+    0%, 15% { width: 0; } 
+    30% { width: 100%; }
+    90% { width: 100%; opacity: 1; }
+    100% { width: 0; opacity: 0; }
+}
+
+/* Line 2 (Content): Specific width 85% */
+@keyframes seq-line-2-content {
+    0%, 15% { width: 0; }
+    30% { width: 85%; }
+    90% { width: 85%; opacity: 1; }
+    100% { width: 0; opacity: 0; }
+}
+
+/* Line 3 (Gemini): Waits for Line 2 + pause, types moderate speed, 80% width */
+@keyframes seq-line-3 {
+    0%, 35% { width: 0; } 
+    45% { width: 80%; }
+    90% { width: 80%; opacity: 1; }
+    100% { width: 0; opacity: 0; }
+}
+
+/* 3. Live Data Flux (Equalizer Effect) */
+@keyframes data-flux-1 { 0%, 100% { height: 30%; } 50% { height: 60%; } }
+@keyframes data-flux-2 { 0%, 100% { height: 50%; } 50% { height: 85%; } }
+@keyframes data-flux-3 { 0%, 100% { height: 70%; } 50% { height: 40%; } }
+@keyframes data-flux-4 { 0%, 100% { height: 90%; } 50% { height: 75%; } }
+
+.hero-dark-section .flux-bar-1 { animation: data-flux-1 2s ease-in-out infinite; }
+.hero-dark-section .flux-bar-2 { animation: data-flux-2 2.5s ease-in-out infinite; }
+.hero-dark-section .flux-bar-3 { animation: data-flux-3 3s ease-in-out infinite; }
+.hero-dark-section .flux-bar-4 { animation: data-flux-4 2.2s ease-in-out infinite; }
+
+/* 4. Active Analysis Pulse */
+@keyframes border-pulse {
+    0%, 100% { border-color: #222; }
+    50% { border-color: rgba(242, 104, 51, 0.4); }
+}
+.hero-dark-section .anim-border-pulse {
+    animation: border-pulse 4s ease-in-out infinite;
+}
+
+/* 5. Coverage Expansion Animation */
+@keyframes area-flash {
+    0% { opacity: 0.2; background-color: #333; transform: scale(0.8); }
+    50% { opacity: 1; background-color: #f26833; transform: scale(1.2); box-shadow: 0 0 8px rgba(242, 104, 51, 0.6); }
+    100% { opacity: 0.2; background-color: #333; transform: scale(0.8); }
+}
+.hero-dark-section .anim-area-dot {
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* 6. Score Increase Animation (Counter) */
+.hero-dark-section .anim-score {
+    transition: color 0.3s ease;
+}
+.hero-dark-section .score-active {
+    color: #f26833;
+}
+
+@keyframes float-plus {
+    0% { transform: translateY(0) scale(0.8); opacity: 0; }
+    20% { opacity: 1; transform: translateY(-5px) scale(1); }
+    80% { opacity: 1; transform: translateY(-15px) scale(1); }
+    100% { transform: translateY(-20px) scale(0.8); opacity: 0; }
+}
+.hero-dark-section .anim-float-plus {
+    animation: float-plus 3s ease-out infinite;
+}
+
+/* 7. Typewriter Text - Modified for Wrapping & Real Cursor */
+.hero-dark-section .anim-typewriter-text {
+    white-space: normal;
+    display: inline;
+}
+
+/* Realistic Cursor Animation */
+@keyframes cursor-typing-simulation {
+    0%, 45% { opacity: 1; }   
+    46%, 50% { opacity: 0; }  
+    51%, 85% { opacity: 1; }  
+    86%, 90% { opacity: 0; }  
+    91%, 95% { opacity: 1; }
+    96%, 100% { opacity: 0; } 
+}
+
+.hero-dark-section .anim-cursor-real {
+    animation: cursor-typing-simulation 2.5s steps(1) infinite;
+}
+
+/* --- Dark Card Styles --- */
+.hero-dark-section .wall-card {
+    background: #0a0a0a;
+    border-radius: 12px;
+    padding: 14px;
+    border: 1px solid #222;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.3s ease;
+    height: 140px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.hero-dark-section .wall-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(242, 104, 51, 0.15);
+    border-color: #f26833;
+    background: #111;
+}
+
+/* Unified Icon Boxes */
+.hero-dark-section .icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.2s;
+    background: #1a1a1a;
+    color: #ccc;
+    border: 1px solid #333;
+}
+.hero-dark-section .wall-card:hover .icon-box { 
+    transform: scale(1.05); 
+    color: #f26833;
+    border-color: #f26833;
+}
+
+/* Visual Elements */
+.hero-dark-section .mini-badge {
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    background: #1a1a1a;
+    color: #888;
+    border: 1px solid #333;
+}
+.hero-dark-section .wall-card:hover .mini-badge {
+    border-color: #444;
+    color: #ccc;
+}
+
+.hero-dark-section .bg-mesh {
+    background-color: #0a0a0a;
+    background-image: none; 
+}
+
+.hero-dark-section .skeleton-bar {
+    height: 5px;
+    background: #222;
+    border-radius: 3px;
+    width: 100%;
+}
+.hero-dark-section .skeleton-bar-active {
+    background: #333;
+}
+
+/* Glow Effect */
+.hero-dark-section .cinematic-glow {
+    background: radial-gradient(circle, rgba(242,104,51,0.15) 0%, rgba(18,18,18,0) 70%);
+    /* LCP Optimization: Isolate glow layer from text rendering */
+    will-change: opacity;
+    contain: strict;
+}
+
+/* Text Gradients */
+.hero-dark-section .text-gradient {
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- MOBILE LAYOUT REORDERING (CSS Only) --- */
+@media (max-width: 1023px) {
+    .hero-dark-section .wall-container {
+        height: 360px;
+        /* Disable mask – we use colored overlays instead */
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+    /* Smooth colored fade overlays on parent – extends 2px beyond the grid */
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:last-child::before,
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:last-child::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        z-index: 12;
+        pointer-events: none;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:last-child::before {
+        top: 0;
+        height: 100px;
+        background: linear-gradient(to bottom, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.45) 55%, rgba(10, 10, 10, 0) 100%);
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:last-child::after {
+        bottom: 0;
+        height: 100px;
+        background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.45) 55%, rgba(10, 10, 10, 0) 100%);
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex { gap: 0; }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child { display: contents; }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > div.inline-flex {
+        order: 0; margin-bottom: 1.25rem; align-self: flex-start;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > h1 {
+        order: 1; margin-bottom: 2rem; text-align: center; width: 100%;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:last-child {
+        order: 2; margin-bottom: 2.5rem; z-index: 10; height: auto; min-height: 360px; width: 100%;
+        overflow: hidden;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > p {
+        order: 3; margin-bottom: 2rem; width: 100%;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > div.flex:not(.inline-flex) {
+        order: 4; width: 100%; margin-bottom: 0.5rem;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > div.hero-clients {
+        order: 5; margin-top: 2.5rem; width: 100%;
+    }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 767px) {
+    .hero-dark-wrapper {
+        /* Smaller header on mobile = 70px */
+        margin-top: -70px;
+    }
+    /* Hide cinematic edge-glow on mobile, keep grid glow (.cinematic-glow) */
+    .hero-dark-wrapper::before {
+        display: none;
+    }
+    
+    .hero-dark-section section.hero-header {
+        /* 70px header + 80px breathing room */
+        padding-top:  150px !important;
+        padding-bottom: 72px !important;
+    }
+    
+    .hero-dark-section section.hero-header h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.45 !important;
+        letter-spacing: -0.015em;
+        margin-bottom: 2rem !important;
+    }
+
+    /* More vertical breathing between the wall grid and description */
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:last-child {
+        margin-bottom: 2.5rem;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > p {
+        font-size: 1rem;
+        line-height: 1.85;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > div.hero-clients {
+        margin-top: 2.5rem;
+        padding-top: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-dark-section section.hero-header {
+        padding-top:  160px !important;
+        padding-bottom: 56px !important;
+    }
+    .hero-dark-section section.hero-header h1 {
+        font-size: 1.55rem !important;
+        line-height: 1.50 !important;
+        margin-bottom: 3.5rem !important;
+    }
+    .hero-dark-section .hero-header .max-w-7xl > .flex > div:first-child > p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+}
+
+/* Selection color */
+.hero-dark-section ::selection {
+    background-color: #f26833;
+    color: white;
+}
+
+/* ============================================
+   TAILWIND UTILITIES - Compiled Static CSS
+   Replaces runtime cdn.tailwindcss.com
+   ============================================ */
+
+/* --- Layout & Display --- */
+.hero-dark-section .min-h-screen { min-height: 100vh; }
+.hero-dark-section .overflow-x-hidden { overflow-x: hidden; }
+.hero-dark-section .overflow-hidden { overflow: hidden; }
+.hero-dark-section .relative { position: relative; }
+.hero-dark-section .absolute { position: absolute; }
+.hero-dark-section .flex { display: flex; }
+.hero-dark-section .flex-col { flex-direction: column; }
+.hero-dark-section .flex-wrap { flex-wrap: wrap; }
+.hero-dark-section .flex-1 { flex: 1 1 0%; }
+.hero-dark-section .items-center { align-items: center; }
+.hero-dark-section .items-start { align-items: flex-start; }
+.hero-dark-section .items-end { align-items: flex-end; }
+.hero-dark-section .items-baseline { align-items: baseline; }
+.hero-dark-section .justify-center { justify-content: center; }
+.hero-dark-section .justify-between { justify-content: space-between; }
+.hero-dark-section .inline-flex { display: inline-flex; }
+.hero-dark-section .inline-block { display: inline-block; }
+.hero-dark-section .gap-1 { gap: 0.25rem; }
+.hero-dark-section .gap-2 { gap: 0.5rem; }
+.hero-dark-section .gap-4 { gap: 1rem; }
+.hero-dark-section .gap-6 { gap: 1.5rem; }
+.hero-dark-section .gap-8 { gap: 2rem; }
+.hero-dark-section .gap-20 { gap: 5rem; }
+.hero-dark-section .space-y-1 > * + * { margin-top: 0.25rem; }
+.hero-dark-section .space-y-1\.5 > * + * { margin-top: 0.375rem; }
+
+/* --- Sizing --- */
+.hero-dark-section .w-full { width: 100%; }
+.hero-dark-section .w-auto { width: auto; }
+.hero-dark-section .w-0\.5 { width: 0.125rem; }
+.hero-dark-section .w-1 { width: 0.25rem; }
+.hero-dark-section .w-1\.5 { width: 0.375rem; }
+.hero-dark-section .w-7 { width: 1.75rem; }
+.hero-dark-section .w-8 { width: 2rem; }
+.hero-dark-section .w-16 { width: 4rem; }
+.hero-dark-section .w-1\/4 { width: 25%; }
+.hero-dark-section .w-2\/3 { width: 66.666667%; }
+.hero-dark-section .w-3\/4 { width: 75%; }
+.hero-dark-section .w-\[600px\] { width: 600px; }
+.hero-dark-section .h-2\.5 { height: 0.625rem; }
+.hero-dark-section .h-5 { height: 1.25rem; }
+.hero-dark-section .h-6 { height: 1.5rem; }
+.hero-dark-section .h-7 { height: 1.75rem; }
+.hero-dark-section .h-8 { height: 2rem; }
+.hero-dark-section .h-10 { height: 2.5rem; }
+.hero-dark-section .h-\[5px\] { height: 5px; }
+.hero-dark-section .h-\[650px\] { height: 650px; }
+.hero-dark-section .h-\[600px\] { height: 600px; }
+.hero-dark-section .max-w-7xl { max-width: 80rem; }
+
+/* --- Spacing --- */
+.hero-dark-section .p-2 { padding: 0.5rem; }
+.hero-dark-section .px-4 { padding-left: 1rem; padding-right: 1rem; }
+.hero-dark-section .px-8 { padding-left: 2rem; padding-right: 2rem; }
+.hero-dark-section .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.hero-dark-section .py-3\.5 { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+.hero-dark-section .pt-8 { padding-top: 2rem; }
+.hero-dark-section .pt-32 { padding-top: 8rem; }
+.hero-dark-section .pb-16 { padding-bottom: 4rem; }
+.hero-dark-section .mt-1 { margin-top: 0.25rem; }
+.hero-dark-section .mt-12 { margin-top: 3rem; }
+.hero-dark-section .mb-1 { margin-bottom: 0.25rem; }
+.hero-dark-section .mb-2 { margin-bottom: 0.5rem; }
+.hero-dark-section .mb-6 { margin-bottom: 1.5rem; }
+.hero-dark-section .mb-8 { margin-bottom: 2rem; }
+.hero-dark-section .mx-auto { margin-left: auto; margin-right: auto; }
+.hero-dark-section .top-0 { top: 0; }
+.hero-dark-section .top-1 { top: 0.25rem; }
+.hero-dark-section .top-2 { top: 0.5rem; }
+.hero-dark-section .top-1\/2 { top: 50%; }
+.hero-dark-section .bottom-1 { bottom: 0.25rem; }
+.hero-dark-section .bottom-2 { bottom: 0.5rem; }
+.hero-dark-section .left-2 { left: 0.5rem; }
+.hero-dark-section .left-4 { left: 1rem; }
+.hero-dark-section .left-1\/2 { left: 50%; }
+.hero-dark-section .right-2 { right: 0.5rem; }
+.hero-dark-section .right-4 { right: 1rem; }
+.hero-dark-section .right-10 { right: 2.5rem; }
+.hero-dark-section .right-1\/2 { right: 50%; }
+
+/* --- Typography --- */
+.hero-dark-section .text-white { color: #fff; }
+.hero-dark-section .text-gray-300 { color: rgb(209 213 219); }
+.hero-dark-section .text-gray-400 { color: rgb(156 163 175); }
+.hero-dark-section .text-gray-500 { color: rgb(107 114 128); }
+.hero-dark-section .text-\[9px\] { font-size: 9px; }
+.hero-dark-section .text-\[10px\] { font-size: 10px; }
+.hero-dark-section .text-xs { font-size: 0.75rem; line-height: 1rem; }
+.hero-dark-section .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.hero-dark-section .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.hero-dark-section .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.hero-dark-section .text-center { text-align: center; }
+.hero-dark-section .text-right { text-align: right; }
+.hero-dark-section .font-bold { font-weight: 700; }
+.hero-dark-section .font-extrabold { font-weight: 800; }
+.hero-dark-section .font-medium { font-weight: 500; }
+.hero-dark-section .leading-relaxed { line-height: 1.625; }
+.hero-dark-section .leading-\[1\.3\] { line-height: 1.3; }
+.hero-dark-section .tracking-wide { letter-spacing: 0.025em; }
+.hero-dark-section .tracking-widest { letter-spacing: 0.1em; }
+.hero-dark-section .uppercase { text-transform: uppercase; }
+.hero-dark-section .whitespace-nowrap { white-space: nowrap; }
+.hero-dark-section .align-middle { vertical-align: middle; }
+
+/* --- Colors & Backgrounds --- */
+.hero-dark-section .bg-transparent { background-color: transparent; }
+.hero-dark-section .bg-\[\#111\] { background-color: #111; }
+.hero-dark-section .bg-\[\#1a1a1a\] { background-color: #1a1a1a; }
+.hero-dark-section .bg-\[\#222\] { background-color: #222; }
+.hero-dark-section .bg-\[\#333\] { background-color: #333; }
+.hero-dark-section .bg-\[\#ea6431\] { background-color: #ea6431; }
+.hero-dark-section .bg-\[\#f26833\] { background-color: #f26833; }
+.hero-dark-section .text-\[\#f26833\] { color: #f26833; }
+.hero-dark-section .border-\[\#222\] { border-color: #222; }
+.hero-dark-section .border-\[\#333\] { border-color: #333; }
+
+/* --- Border & Rounded --- */
+.hero-dark-section .border { border-width: 1px; border-style: solid; }
+.hero-dark-section .border-t { border-top-width: 1px; border-top-style: solid; }
+.hero-dark-section .rounded { border-radius: 0.25rem; }
+.hero-dark-section .rounded-t { border-top-left-radius: 0.25rem; border-top-right-radius: 0.25rem; }
+.hero-dark-section .rounded-sm { border-radius: 0.125rem; }
+.hero-dark-section .rounded-md { border-radius: 0.375rem; }
+.hero-dark-section .rounded-full { border-radius: 9999px; }
+
+/* --- Effects --- */
+.hero-dark-section .blur-3xl { filter: blur(64px); }
+.hero-dark-section .shadow-\[0_0_10px_rgba\(242\,104\,51\,0\.5\)\] { box-shadow: 0 0 10px rgba(242,104,51,0.5); }
+.hero-dark-section .shadow-\[0_0_20px_rgba\(242\,104\,51\,0\.3\)\] { box-shadow: 0 0 20px rgba(242,104,51,0.3); }
+.hero-dark-section .opacity-40 { opacity: 0.4; }
+.hero-dark-section .opacity-60 { opacity: 0.6; }
+.hero-dark-section .opacity-90 { opacity: 0.9; }
+.hero-dark-section .grayscale { filter: grayscale(100%); }
+
+/* --- Z-index --- */
+.hero-dark-section .z-10 { z-index: 10; }
+.hero-dark-section .z-20 { z-index: 20; }
+.hero-dark-section .-z-10 { z-index: -10; }
+
+/* --- Transforms --- */
+.hero-dark-section .-translate-x-1\/2 { transform: translateX(-50%); }
+.hero-dark-section .-translate-y-1\/2 { transform: translateY(-50%); }
+.hero-dark-section .translate-x-1\/2 { transform: translateX(50%); }
+/* Combined transform for centered glow element */
+.hero-dark-section .translate-x-1\/2.-translate-y-1\/2 { transform: translateX(50%) translateY(-50%); }
+
+/* --- Transitions --- */
+.hero-dark-section .transition-all { 
+    transition-property: all; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-duration: 150ms; 
+}
+.hero-dark-section .transition-colors { 
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; 
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); 
+    transition-duration: 150ms; 
+}
+.hero-dark-section .duration-300 { transition-duration: 300ms; }
+
+/* --- Hover States --- */
+.hero-dark-section .hover\:grayscale-0:hover { filter: grayscale(0%); }
+.hero-dark-section .hover\:opacity-100:hover { opacity: 1; }
+.hero-dark-section .hover\:bg-\[\#111\]:hover { background-color: #111; }
+.hero-dark-section .hover\:bg-\[\#222\]:hover { background-color: #222; }
+.hero-dark-section .hover\:-translate-y-0\.5:hover { transform: translateY(-0.125rem); }
+.hero-dark-section .hover\:text-white:hover { color: #fff; }
+.hero-dark-section .hover\:border-gray-500:hover { border-color: rgb(107 114 128); }
+.hero-dark-section .hover\:shadow-\[0_0_30px_rgba\(242\,104\,51\,0\.5\)\]:hover { box-shadow: 0 0 30px rgba(242,104,51,0.5); }
+
+/* --- Responsive: sm (min-width: 640px) --- */
+@media (min-width: 640px) {
+    .hero-dark-section .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .hero-dark-section .sm\:flex-row { flex-direction: row; }
+    .hero-dark-section .sm\:w-auto { width: auto; }
+}
+
+/* --- Responsive: lg (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+    .hero-dark-section .lg\:pt-40 { padding-top: 10rem; }
+    .hero-dark-section .lg\:pb-10 { padding-bottom: 2.5rem; }
+    .hero-dark-section .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+    .hero-dark-section .lg\:flex-row { flex-direction: row; }
+    .hero-dark-section .lg\:w-\[40\%\] { width: 40%; }
+    .hero-dark-section .lg\:w-\[60\%\] { width: 60%; }
+    .hero-dark-section .lg\:text-5xl { font-size: 3rem; line-height: 1; }
+    .hero-dark-section .lg\:justify-end { justify-content: flex-end; }
+    .hero-dark-section .lg\:gap-8 { gap: 2rem; }
+}
+
+/* --- Animation: pulse for Link highlight --- */
+.hero-dark-section .animate-\[pulse_3s_infinite\] {
+    animation: tw-pulse 3s infinite;
+}
+@keyframes tw-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* ============================================
+   LCP OPTIMIZATION: Defer non-critical animations
+   
+   Problem: 12+ CSS animations starting on page load create
+   compositing layers, delaying first meaningful paint and LCP.
+   
+   Solution: Pause animations initially, unpause after LCP.
+   The .animations-ready class is added by a small inline script
+   after the first paint completes.
+   ============================================ */
+
+/* Initially pause all hero animations for faster LCP */
+.hero-dark-section .wall-column,
+.hero-dark-section .anim-scan,
+.hero-dark-section .anim-seq-1,
+.hero-dark-section .anim-seq-2,
+.hero-dark-section .anim-seq-3,
+.hero-dark-section .anim-seq-2-content,
+.hero-dark-section .flux-bar-1,
+.hero-dark-section .flux-bar-2,
+.hero-dark-section .flux-bar-3,
+.hero-dark-section .flux-bar-4,
+.hero-dark-section .anim-border-pulse,
+.hero-dark-section .anim-area-dot,
+.hero-dark-section .anim-float-plus,
+.hero-dark-section .anim-cursor-real,
+.hero-dark-section .animate-\[pulse_3s_infinite\] {
+    animation-play-state: paused;
+}
+
+/* Unpause animations after LCP (class added by JS) */
+.hero-dark-section.animations-ready .wall-column,
+.hero-dark-section.animations-ready .anim-scan,
+.hero-dark-section.animations-ready .anim-seq-1,
+.hero-dark-section.animations-ready .anim-seq-2,
+.hero-dark-section.animations-ready .anim-seq-3,
+.hero-dark-section.animations-ready .anim-seq-2-content,
+.hero-dark-section.animations-ready .flux-bar-1,
+.hero-dark-section.animations-ready .flux-bar-2,
+.hero-dark-section.animations-ready .flux-bar-3,
+.hero-dark-section.animations-ready .flux-bar-4,
+.hero-dark-section.animations-ready .anim-border-pulse,
+.hero-dark-section.animations-ready .anim-area-dot,
+.hero-dark-section.animations-ready .anim-float-plus,
+.hero-dark-section.animations-ready .anim-cursor-real,
+.hero-dark-section.animations-ready .animate-\[pulse_3s_infinite\] {
+    animation-play-state: running;
+}
+
+/* Add will-change to marquee columns for smoother GPU compositing */
+.hero-dark-section .wall-column {
+    will-change: transform;
+}

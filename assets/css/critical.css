@@ -1,0 +1,240 @@
+:root {
+    --primary-color: #ff6b00;
+    --text-color: #333;
+    --text-main: #333;
+    --text-gray: #666;
+    --bg-color: #fff;
+    --dark-bg: #000;
+    --light-bg: #f4f4f4;
+    --font-family: 'Inter', sans-serif
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    overflow-x: visible
+}
+
+body {
+    font-family: 'Somar Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100vw
+}
+
+/* Critical Font Face for LCP */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color .3s ease
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 100001;
+    transition: top .3s ease;
+    text-decoration: none;
+    font-weight: 600
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 2px solid #fff;
+    outline-offset: 2px
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    word-wrap: normal !important
+}
+
+header {
+    /* Glass effect moved to ::before to allow mega menu glassmorphism */
+    background: transparent;
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    pointer-events: none
+}
+
+header .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative
+}
+
+.logo img {
+    height: 52px;
+    width: auto
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: .8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    transition: transform .2s, background-color .3s;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    min-height: 44px
+}
+
+nav.main-nav {
+    display: flex
+}
+
+nav.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    list-style: none
+}
+
+nav.main-nav a {
+    font-weight: 500;
+    transition: color .3s ease
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    padding: 12px;
+    z-index: 1001
+}
+
+.mobile-menu-toggle span {
+    width: 28px;
+    height: 3.5px;
+    background: var(--text-color);
+    border-radius: 3px;
+    transition: all .3s ease
+}
+
+@media(max-width:768px) {
+    header {
+        min-height: 70px
+    }
+
+    header .container {
+        padding: 0 14px
+    }
+
+    .logo img {
+        height: 45px
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+        order: 2
+    }
+
+    .header-actions {
+        display: none !important
+    }
+
+    nav.main-nav {
+        position: fixed;
+        top: 0;
+        left: auto;
+        right: -100%;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff6b00 0%, #ff8533 50%, #ffad66 100%);
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform .4s ease;
+        z-index: 1000;
+        padding-top: 100px
+    }
+
+    nav.main-nav.active {
+        transform: translateX(0);
+        right: 0
+    }
+
+    nav.main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        align-items: flex-end;
+        text-align: right;
+        width: 100%;
+        padding-right: 2.5rem
+    }
+
+    nav.main-nav ul li a {
+        display: block;
+        padding: .8rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #fff
+    }
+}

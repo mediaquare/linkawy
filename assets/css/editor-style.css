@@ -1,0 +1,68 @@
+/**
+ * Block editor canvas — align with frontend design tokens (Linkawy)
+ *
+ * Loaded via add_editor_style() in inc/theme-setup.php
+ */
+
+:root {
+	/* Primary Colors */
+	--primary-color: #ff6b00;
+	--primary-color-dark: #e05a00;
+	--primary-color-light: #ff8533;
+	--primary-color-lighter: #ffad66;
+	--primary-color-bg: #fff5f0;
+	--primary-color-rgb: 240, 104, 0;
+
+	/* Secondary & Accent */
+	--secondary-color: #1a1a2e;
+	--accent-color: #ff8533;
+
+	/* Text */
+	--text-color: #333;
+	--text-main: #333;
+	--text-primary: #333;
+	--text-secondary: #666;
+	--text-gray: #666;
+	--text-light: #999;
+	--text-dark: #111;
+	--text-white: #fff;
+
+	/* Background */
+	--bg-color: #fff;
+	--bg-white: #fff;
+	--bg-light: #f4f4f4;
+	--bg-lighter: #f9f9f9;
+	--bg-dark: #1a1a1a;
+	--bg-black: #000;
+	--dark-bg: #000;
+	--light-bg: #f4f4f4;
+
+	/* Border */
+	--border-light: #eee;
+	--border-medium: #ddd;
+	--border-dark: #333;
+
+	/* Buttons & links */
+	--button-bg: var(--primary-color);
+	--button-hover-bg: var(--primary-color-dark);
+	--button-text: #fff;
+	--link-color: var(--primary-color);
+	--link-hover-color: var(--primary-color-dark);
+
+	/* Typography */
+	--font-family: 'Inter', sans-serif;
+
+	/* Vertical rhythm */
+	--space-section: 7rem;
+	--space-section-sm: 5rem;
+	--space-block: 2.5rem;
+	--space-element: 1.5rem;
+	--space-tight: 1rem;
+}
+
+.editor-styles-wrapper,
+.block-editor-block-list__layout {
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--bg-color);
+}

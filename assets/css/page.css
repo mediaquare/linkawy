@@ -1,0 +1,1089 @@
+/* Page Template Styles - WordPress Pages (page.php) */
+
+/* منع التمرير الأفقي: clip لا يكسر position:sticky للهيدر (مثل article.css) */
+html.linkawy-page-template {
+    overflow-x: clip;
+}
+body.page {
+    overflow-x: clip;
+}
+
+/* ===== Page Hero Section ===== */
+.page-hero {
+    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(253, 248, 245) 50%, rgb(255, 245, 240) 100%);
+    color: var(--text-color);
+    padding: 2.5rem 0 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.page-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.page-hero .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    z-index: 1;
+    row-gap: 1.35rem;
+    padding: 1.25rem 0 2.5rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.page-hero .breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.page-hero .breadcrumbs a {
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.page-hero .breadcrumbs a:hover {
+    color: #ff6b00;
+}
+
+.page-hero .breadcrumb-separator {
+    color: #ccc;
+    font-size: 0.65rem;
+}
+
+.page-hero .breadcrumb-current {
+    color: #ff6b00;
+    font-weight: 500;
+}
+
+.page-hero .page-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+    max-width: 640px;
+    text-align: center;
+    display: block;
+    position: relative;
+}
+
+.page-hero .page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    border-radius: 2px;
+}
+
+.page-hero .page-hero-description {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: #555;
+    margin: 0;
+    max-width: 720px;
+    text-align: center;
+}
+
+/* عند وجود وصف: مسافة أوضح بين العنوان والخط التزييني، ثم بين الهيرو والوصف */
+.page-hero .container:has(.page-hero-description) .page-title {
+    padding-bottom: 0.875rem;
+}
+
+.page-hero .container:has(.page-hero-description) {
+    row-gap: 1.5rem;
+}
+
+.page-hero .container:has(.page-hero-description) .page-hero-description {
+    margin-top: 0.75rem;
+}
+
+/* ===== Page Content Section ===== */
+.page-content-section {
+    position: relative;
+    padding: 0.5rem 0 4rem;
+    background: #fff;
+    overflow: visible;
+}
+
+/* Curved wave divider between hero and content */
+.page-content-section::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 80' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M0,0 C300,45 900,45 1200,0 L1200,80 L0,80 Z'/%3E%3C/svg%3E") no-repeat center bottom;
+    background-size: 100% 100%;
+    pointer-events: none;
+}
+
+/* رفع قيود العرض عن الحاويات حتى تستطيع كتل alignfull الخروج بعرض الشاشة */
+.page-content-section .container {
+    max-width: none;
+    padding-inline: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
+
+/* ===== Page Content Wrapper ===== */
+.page-content {
+    --content-padding: 2rem;
+    --content-max: 1200px;
+    max-width: calc(var(--content-max) + var(--content-padding) * 2);
+    padding: var(--content-padding);
+    margin-inline: auto;
+    box-sizing: border-box;
+}
+
+/* ===== Full-width alignment (fallback for .page-content without .linkawy-content) ===== */
+.page-content .alignfull {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: max(calc((100vw - var(--content-max, 1200px)) / 2), var(--content-padding, 2rem)) !important;
+    padding-right: max(calc((100vw - var(--content-max, 1200px)) / 2), var(--content-padding, 2rem)) !important;
+    box-sizing: border-box;
+    clear: both;
+}
+
+.page-content .alignwide {
+    width: calc(100% + var(--content-padding, 2rem) * 2);
+    max-width: var(--content-max, 1200px);
+    margin-left: calc(var(--content-padding, 2rem) * -1);
+    margin-right: calc(var(--content-padding, 2rem) * -1);
+    box-sizing: border-box;
+    clear: both;
+}
+
+/* ===== Page Content Typography ===== */
+.page-content p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+.page-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 100px;
+}
+
+.page-content h2:first-child {
+    margin-top: 0;
+}
+
+.page-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.page-content h1.wp-block-heading,
+.page-content h2.wp-block-heading {
+    line-height: 1.3;
+    margin-block-end: 1.5rem;
+}
+
+.page-content h3.wp-block-heading {
+    line-height: 1.35;
+    margin-block-end: 1rem;
+}
+
+.page-content h4.wp-block-heading,
+.page-content h5.wp-block-heading,
+.page-content h6.wp-block-heading {
+    line-height: 1.4;
+    margin-block-end: 0.75rem;
+}
+
+.page-content .is-layout-flex > .wp-block-heading,
+.page-content .is-layout-grid > .wp-block-heading {
+    margin-block-start: 0;
+}
+
+.page-content .wp-block-paragraph {
+    line-height: 1.9;
+}
+
+.page-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.page-content a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+    text-underline-offset: 3px;
+}
+
+.page-content strong {
+    color: #1a1a2e;
+    font-weight: 600;
+}
+
+.page-content em {
+    font-style: italic;
+    color: #555;
+}
+
+/* محاذاة النص من المحرر (القالب يلغي wp-block-library فنجب إعادة الأنماط) */
+.page-content .has-text-align-left {
+    text-align: left;
+}
+
+.page-content .has-text-align-center {
+    text-align: center;
+}
+
+.page-content .has-text-align-right {
+    text-align: right;
+}
+
+/* Lists */
+.page-content ul,
+.page-content ol {
+    margin: 1.5rem 0;
+    padding-right: 1.25rem;
+    padding-left: 0;
+}
+
+.page-content ul {
+    list-style: disc outside;
+}
+
+.page-content ol {
+    list-style: decimal outside;
+    padding-right: 1.5rem;
+}
+
+.page-content ul li,
+.page-content ol li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.page-content ul li::marker,
+.page-content ol li::marker {
+    color: inherit;
+}
+
+.page-content ol li::marker {
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.page-content ul ul { list-style-type: circle; }
+.page-content ul ul ul { list-style-type: square; }
+
+.page-content ul ul,
+.page-content ol ol,
+.page-content ul ol,
+.page-content ol ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    padding-right: 1.5rem;
+}
+
+/* Blockquote */
+.page-content blockquote {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    border-right: 4px solid var(--primary-color);
+    border-left: none;
+    background: rgba(255, 107, 0, 0.06);
+    border-radius: 0 8px 8px 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.page-content blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Images */
+.page-content img[src$=".svg"]:not(.ai-prompt-icon) {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.page-content figure.wp-block-image img[src$=".svg"] {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+}
+
+.page-content img:not(.ai-prompt-icon) {
+    max-width: 100%;
+    height: auto;
+}
+
+.page-content figure.wp-block-image {
+    margin: 2rem 0;
+}
+
+.page-content figure.wp-block-image figcaption {
+    font-size: 0.875rem;
+    color: #888;
+    text-align: center;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+/* محاذاة الصور أفقيًا (القالب يلغي wp-block-library فنجب إعادة الأنماط) */
+.page-content figure.aligncenter,
+.page-content .wp-block-image figure.aligncenter {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-content figure.alignleft,
+.page-content .wp-block-image figure.alignleft {
+    float: left;
+    margin: 0.5em 1em 1em 0;
+}
+
+.page-content figure.alignright,
+.page-content .wp-block-image figure.alignright {
+    float: right;
+    margin: 0.5em 0 1em 1em;
+}
+
+html[dir="rtl"] .page-content figure.alignleft,
+html[dir="rtl"] .page-content .wp-block-image figure.alignleft {
+    float: right;
+    margin: 0.5em 0 1em 1em;
+}
+
+html[dir="rtl"] .page-content figure.alignright,
+html[dir="rtl"] .page-content .wp-block-image figure.alignright {
+    float: left;
+    margin: 0.5em 1em 1em 0;
+}
+
+/* Tables */
+.page-content .wp-block-table,
+.page-content figure.wp-block-table {
+    margin: 2rem 0;
+    overflow: visible;
+}
+
+.page-content .wp-block-table table,
+.page-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: right;
+}
+
+.page-content .wp-block-table thead,
+.page-content table thead {
+    background: #1a1a2e;
+}
+
+.page-content .wp-block-table thead th,
+.page-content table thead th {
+    padding: 0.9rem 1.15rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #fff;
+    text-align: right;
+    white-space: nowrap;
+    border-bottom: 2px solid #ff6b00;
+    letter-spacing: 0.01em;
+}
+
+.page-content .wp-block-table thead th:not(:last-child),
+.page-content table thead th:not(:last-child) {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-content .wp-block-table tbody td,
+.page-content table tbody td {
+    padding: 0.85rem 1.15rem;
+    color: #444;
+    font-size: 0.98rem;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    transition: background-color 0.15s ease;
+}
+
+.page-content .wp-block-table tbody td:not(:last-child),
+.page-content table tbody td:not(:last-child) {
+    border-left: 1px solid #f0f0f0;
+}
+
+.page-content .wp-block-table tbody tr:nth-child(even),
+.page-content table tbody tr:nth-child(even) {
+    background-color: #fafbfc;
+}
+
+.page-content .wp-block-table tbody tr:nth-child(odd),
+.page-content table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.page-content .wp-block-table tbody tr:hover,
+.page-content table tbody tr:hover {
+    background-color: rgba(255, 107, 0, 0.04);
+}
+
+.page-content .wp-block-table tbody tr:last-child td,
+.page-content table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.page-content .wp-block-table tbody td:first-child,
+.page-content table tbody td:first-child {
+    font-weight: 500;
+    color: #1a1a2e;
+}
+
+.page-content .wp-block-table a,
+.page-content table a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.page-content .wp-block-table a:hover,
+.page-content table a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.page-content .wp-block-table figcaption,
+.page-content table caption,
+.page-content figure.wp-block-table figcaption {
+    caption-side: bottom;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #888;
+    padding: 0.75rem 0.5rem 0;
+    line-height: 1.6;
+}
+
+.page-content .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+    background-color: #fafbfc;
+}
+
+.page-content .wp-block-table.is-style-stripes tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.page-content .wp-block-table table.has-fixed-layout {
+    table-layout: fixed;
+}
+
+.page-content .wp-block-table table.has-fixed-layout td,
+.page-content .wp-block-table table.has-fixed-layout th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Video/Embed */
+.page-content .wp-block-embed {
+    margin: 2rem 0;
+}
+
+.page-content .wp-block-embed__wrapper iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+}
+
+/* Code blocks - scoped to page content */
+.page-content .wp-block-code {
+    position: relative;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 50px 20px 20px;
+    margin: 2rem 0;
+    direction: ltr;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    overflow-x: auto;
+    border: 1px solid #333;
+}
+
+.page-content .wp-block-code::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 12px;
+    height: 12px;
+    background: #ff5f56;
+    border-radius: 50%;
+    box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f;
+}
+
+.page-content .wp-block-code code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: inherit;
+    direction: ltr;
+    text-align: left;
+    display: block;
+    white-space: pre-wrap;
+    word-break: break-word;
+    min-height: 80px;
+}
+
+/* ===== Gutenberg Buttons block – مطابق لتنسيق أزرار القالب (pill، لون أساسي، outline) ===== */
+.page-content .wp-block-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.page-content .wp-block-button .wp-block-button__link,
+.page-content .wp-block-button .wp-element-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.page-content .wp-block-button:not(.is-style-outline) .wp-block-button__link,
+.page-content .wp-block-button:not(.is-style-outline) .wp-element-button {
+    background: var(--primary-color, #ff6b00);
+    color: #fff;
+}
+
+.page-content .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.page-content .wp-block-button:not(.is-style-outline) .wp-element-button:hover {
+    background: var(--primary-color-dark, #e05a00);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.page-content .wp-block-button.is-style-outline .wp-block-button__link,
+.page-content .wp-block-button.is-style-outline .wp-element-button {
+    background: transparent;
+    color: var(--primary-color, #ff6b00);
+    border-color: var(--primary-color, #ff6b00);
+}
+
+.page-content .wp-block-button.is-style-outline .wp-block-button__link:hover,
+.page-content .wp-block-button.is-style-outline .wp-element-button:hover {
+    background: rgba(255, 107, 0, 0.08);
+    color: var(--primary-color, #ff6b00);
+    border-color: var(--primary-color, #ff6b00);
+    transform: translateY(-1px);
+}
+
+/* ===== Gutenberg layout blocks (theme removes wp-block-library; restore layout for Media & Text + Columns) ===== */
+.page-content .wp-block-media-text {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    margin: 2rem 0;
+    align-items: stretch;
+    direction: ltr;
+}
+
+/* في الصفحات RTL النص داخل منطقة المحتوى يبقى من اليمين لليسار */
+html[dir="rtl"] .page-content .wp-block-media-text .wp-block-media-text__content {
+    direction: rtl;
+    text-align: right;
+}
+
+.page-content .wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+    direction: rtl;
+    text-align: right;
+}
+
+/* منطقة الوسائط: margin/min-height فقط — لا نُفرض خلفية شفافة بـ !important (كانت تلغي خلفيات المحرر). */
+.page-content .wp-block-media-text__media,
+.page-content .wp-block-media-text figure.wp-block-media-text__media {
+    margin: 0;
+    min-height: 0;
+}
+
+.page-content .wp-block-media-text__media img,
+.page-content .wp-block-media-text__media video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.page-content .wp-block-media-text__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75em;
+}
+
+.page-content .wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__content {
+    justify-content: flex-start;
+}
+
+.page-content .wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__content {
+    justify-content: flex-end;
+}
+
+/* محاذاة الوسائط رأسيًا في الواجهة الأمامية (مثل المحرر) */
+.page-content .wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__media,
+.page-content .wp-block-media-text.is-vertically-aligned-top figure.wp-block-media-text__media {
+    align-self: start;
+}
+
+.page-content .wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__media,
+.page-content .wp-block-media-text.is-vertically-aligned-center figure.wp-block-media-text__media {
+    align-self: center;
+}
+
+.page-content .wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__media,
+.page-content .wp-block-media-text.is-vertically-aligned-bottom figure.wp-block-media-text__media {
+    align-self: end;
+}
+
+/* صف مجموعات Row: هامش خارجي معتدل مع gap المحرر */
+.page-content .wp-block-group.is-layout-flex {
+    margin-block: 1.35rem;
+}
+
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container > .wp-block-group {
+    margin-block: 0.875rem;
+}
+
+/* Group block بتخطيط صف (Row) — احترام .is-nowrap من المحرر */
+.page-content .wp-block-group.is-layout-flex,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.page-content .wp-block-group.is-layout-flex.is-nowrap,
+.page-content .wp-block-group.is-layout-flex.is-nowrap .wp-block-group__inner-container,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container.is-nowrap {
+    flex-wrap: nowrap;
+}
+
+.page-content .wp-block-group.is-layout-flex > *,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container > * {
+    flex: 1 1 280px;
+    min-width: 0;
+}
+
+/* داخل الصف فقط: محاذاة الأيقونة مع أعلى النص (سطح المكتب) */
+.page-content .wp-block-group.is-layout-flex .wp-block-media-text,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text {
+    align-items: start;
+}
+
+/* داخل الصف فقط: إلغاء margin-top للعنوان الأول حتى لا يرفع النص عن الأيقونة */
+.page-content .wp-block-group.is-layout-flex .wp-block-media-text .wp-block-media-text__content .wp-block-heading:first-child,
+.page-content .wp-block-group.is-layout-flex .wp-block-media-text .wp-block-media-text__content h2:first-child,
+.page-content .wp-block-group.is-layout-flex .wp-block-media-text .wp-block-media-text__content h3:first-child,
+.page-content .wp-block-group.is-layout-flex .wp-block-media-text .wp-block-media-text__content h4:first-child,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text .wp-block-media-text__content .wp-block-heading:first-child,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text .wp-block-media-text__content h2:first-child,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text .wp-block-media-text__content h3:first-child,
+.page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text .wp-block-media-text__content h4:first-child {
+    margin-top: 0;
+}
+
+.page-content .wp-block-columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin-block: 1.25rem;
+}
+
+.page-content .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+    flex-basis: 100%;
+}
+
+.page-content .wp-block-column {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+@media (min-width: 600px) {
+    .page-content .wp-block-media-text.is-stacked-on-mobile {
+        grid-template-columns: 50% 1fr;
+    }
+
+    .page-content .wp-block-media-text.has-media-on-the-right.is-stacked-on-mobile {
+        grid-template-columns: 1fr 50%;
+    }
+
+    .page-content .wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+        flex-basis: 0;
+    }
+}
+
+/* على الجوال والتابلت (حتى 781px): تكديس بلوك «نص ووسائط» — الصورة أعلى ثم العنوان ثم النص */
+/* !important يلغي النمط المضمن من المحرر (مثل grid-template-columns: auto 30%) */
+@media (max-width: 781px) {
+    .page-content .wp-block-media-text {
+        grid-template-columns: 1fr !important;
+        direction: ltr;
+    }
+
+    .page-content .wp-block-media-text .wp-block-media-text__media {
+        order: 1;
+    }
+
+    .page-content .wp-block-media-text .wp-block-media-text__content {
+        order: 2;
+        direction: rtl;
+        text-align: right;
+    }
+
+    .page-content .wp-block-media-text.has-media-on-the-right > * {
+        direction: ltr;
+    }
+}
+
+/* شاشات متوسطة: صف المجموعة يبقى في صف واحد؛ شاشات صغيرة: تكديس + تحسين تنفس وتجاوب */
+@media (max-width: 781px) {
+    .page-content .wp-block-group.is-layout-flex,
+    .page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container {
+        flex-direction: column;
+    }
+
+    .page-content .wp-block-group.is-layout-flex > *,
+    .page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container > * {
+        flex: 1 1 100%;
+    }
+
+    .page-content .wp-block-group.is-layout-flex {
+        margin-block: 1.15rem;
+    }
+
+    /* داخل الصف على الجوال: تحديد حجم الصورة/الأيقونة */
+    .page-content .wp-block-group.is-layout-flex .wp-block-media-text .wp-block-media-text__media,
+    .page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text .wp-block-media-text__media {
+        max-width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-content .wp-block-group.is-layout-flex .wp-block-media-text .wp-block-media-text__media img,
+    .page-content .wp-block-group.is-layout-flex .wp-block-media-text .wp-block-media-text__media video,
+    .page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text .wp-block-media-text__media img,
+    .page-content .wp-block-group.is-layout-flex .wp-block-group__inner-container .wp-block-media-text .wp-block-media-text__media video {
+        max-width: 120px !important;
+        width: auto !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .page-hero {
+        padding: 2.25rem 0 2.25rem;
+    }
+
+    .page-hero .container {
+        padding: 1rem 0 2.25rem;
+        row-gap: 1.25rem;
+    }
+
+    .page-hero .container:has(.page-hero-description) {
+        row-gap: 1.35rem;
+    }
+
+    .page-hero .breadcrumbs {
+        justify-content: center;
+    }
+
+    .page-hero .page-title {
+        font-size: 2.2rem;
+    }
+
+    .page-hero .page-hero-description {
+        font-size: 1.05rem;
+    }
+
+    .page-hero .container:has(.page-hero-description) .page-hero-description {
+        margin-top: 0.65rem;
+    }
+
+    .page-content .wp-block-buttons {
+        justify-content: center;
+    }
+
+    .page-content-section {
+        padding: 3rem 0;
+    }
+
+    .page-content {
+        --content-padding: 2rem;
+    }
+
+    .page-content h2 {
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .page-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        padding: 1.75rem 0 2rem;
+    }
+
+    .page-hero .container {
+        padding: 0.75rem 0 2rem;
+        row-gap: 1.15rem;
+    }
+
+    .page-hero .container:has(.page-hero-description) {
+        row-gap: 1.25rem;
+    }
+
+    .page-hero .breadcrumbs {
+        font-size: 0.8rem;
+    }
+
+    .page-hero .page-title {
+        font-size: 1.75rem;
+    }
+
+    .page-hero .container:has(.page-hero-description) .page-title {
+        padding-bottom: 0.65rem;
+    }
+
+    .page-hero .page-hero-description {
+        font-size: 1rem;
+    }
+
+    .page-hero .container:has(.page-hero-description) .page-hero-description {
+        margin-top: 0.5rem;
+    }
+
+    .page-hero .page-title::after {
+        width: 60px;
+        height: 3px;
+        bottom: -8px;
+    }
+
+    .page-content-section {
+        padding: 2rem 0;
+    }
+
+    .page-content-section::before {
+        height: 50px;
+        top: -50px;
+    }
+
+    .page-content {
+        --content-padding: 1.5rem;
+        padding: var(--content-padding);
+        box-sizing: border-box;
+    }
+
+    .page-content .wp-block-group.is-layout-flex {
+        margin-block: 0.9rem;
+    }
+
+    .page-content p {
+        font-size: 1rem;
+    }
+
+    .page-content h2 {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .page-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .page-content ul,
+    .page-content ol {
+        padding-right: 1.25rem;
+    }
+
+    .page-content ul li,
+    .page-content ol li {
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    /* Tables - horizontal scroll + sticky first column */
+    .page-content-section .container {
+        overflow-x: clip;
+    }
+
+    .page-content .wp-block-table,
+    .page-content figure.wp-block-table {
+        margin: 1.5rem 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 107, 0, 0.3) transparent;
+        padding: 0;
+        position: relative;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .page-content .wp-block-table::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .page-content .wp-block-table::-webkit-scrollbar-track {
+        background: #f0f0f0;
+        border-radius: 3px;
+    }
+
+    .page-content .wp-block-table::-webkit-scrollbar-thumb {
+        background: rgba(255, 107, 0, 0.3);
+        border-radius: 3px;
+    }
+
+    .page-content .wp-block-table table,
+    .page-content table {
+        font-size: 0.9rem;
+        min-width: 650px;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    .page-content .wp-block-table thead th,
+    .page-content table thead th {
+        padding: 0.7rem 0.85rem;
+        font-size: 0.85rem;
+    }
+
+    .page-content .wp-block-table tbody td,
+    .page-content table tbody td {
+        padding: 0.7rem 0.85rem;
+        font-size: 0.88rem;
+    }
+
+    .page-content .wp-block-table th:first-child,
+    .page-content .wp-block-table td:first-child,
+    .page-content table th:first-child,
+    .page-content table td:first-child {
+        position: sticky;
+        right: 0;
+        z-index: 2;
+    }
+
+    .page-content .wp-block-table thead th:first-child,
+    .page-content table thead th:first-child {
+        z-index: 3;
+        background: #1a1a2e;
+    }
+
+    .page-content .wp-block-table tbody tr:nth-child(odd) td:first-child,
+    .page-content table tbody tr:nth-child(odd) td:first-child {
+        background: #fff;
+    }
+
+    .page-content .wp-block-table tbody tr:nth-child(even) td:first-child,
+    .page-content table tbody tr:nth-child(even) td:first-child {
+        background: #fafbfc;
+    }
+
+    .page-content .wp-block-table tbody tr:hover td:first-child,
+    .page-content table tbody tr:hover td:first-child {
+        background: #fef4ec;
+    }
+
+    .page-content .wp-block-table td:first-child,
+    .page-content table td:first-child {
+        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .page-content .wp-block-table figcaption,
+    .page-content figure.wp-block-table figcaption {
+        font-size: 0.8rem;
+        padding: 0.5rem 0 0;
+        min-width: auto;
+    }
+}

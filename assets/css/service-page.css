@@ -1,0 +1,818 @@
+/* Service Page Template - Hero (two columns) + content */
+
+/* ===== Service Hero Section ===== */
+.service-hero {
+    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(253, 248, 245) 50%, rgb(255, 245, 240) 100%);
+    color: var(--text-color);
+    padding: 3.5rem 0 3.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.service-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.service-hero .container.service-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 20px 3rem;
+}
+
+.service-hero-content {
+    text-align: right;
+}
+
+.service-hero .breadcrumbs {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+/* RTL: flex-end = يسار، فنستخدم flex-start لظهور الـ breadcrumbs على اليمين */
+html[dir="rtl"] .service-hero .breadcrumbs {
+    justify-content: flex-start;
+}
+
+.service-hero .breadcrumbs a {
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.service-hero .breadcrumbs a:hover {
+    color: #ff6b00;
+}
+
+.service-hero .breadcrumb-separator {
+    color: #ccc;
+    font-size: 0.65rem;
+}
+
+.service-hero .breadcrumb-current {
+    color: #ff6b00;
+    font-weight: 500;
+}
+
+.service-hero-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 1rem;
+    color: var(--text-color, #1a1a2e);
+    letter-spacing: -0.5px;
+}
+
+.service-hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0 0 1.5rem;
+}
+
+.service-hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+/* RTL: flex-end = يسار، فنستخدم flex-start لظهور الأزرار على اليمين */
+html[dir="rtl"] .service-hero-buttons {
+    justify-content: flex-start;
+}
+
+.service-hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.service-hero-btn-primary {
+    min-height: 52px;
+    padding: 0.75rem 1.5rem;
+    color: var(--primary-color, #ff6b00);
+    background: transparent;
+    border: 2px dashed var(--primary-color, #ff6b00);
+    border-radius: 50em;
+    cursor: pointer;
+    font-weight: 300;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.service-hero-btn-primary:hover {
+    background: rgba(255, 107, 0, 0.08);
+    color: var(--primary-color, #ff6b00);
+    border-color: var(--primary-color, #ff6b00);
+    transform: translateY(-1px);
+}
+
+.service-hero-btn-primary .service-hero-btn-icon,
+.service-hero-btn-primary .fa-brands,
+.service-hero-btn-primary .fa-solid,
+.service-hero-btn-primary .service-hero-btn-arrow {
+    color: currentColor;
+}
+
+.service-hero-btn-secondary {
+    background: transparent;
+    color: var(--primary-color, #ff6b00);
+    border: 2px solid var(--primary-color, #ff6b00);
+}
+
+.service-hero-btn-secondary:hover {
+    background: rgba(255, 107, 0, 0.08);
+    color: var(--primary-color, #ff6b00);
+    border-color: var(--primary-color, #ff6b00);
+    transform: translateY(-1px);
+}
+
+.service-hero-btn-arrow,
+.service-hero-btn .fa-brands,
+.service-hero-btn .fa-solid {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.service-hero-btn .fa-brands,
+.service-hero-btn .fa-solid {
+    font-size: 1.1em;
+}
+
+.service-hero-btn-secondary:hover .service-hero-btn-arrow {
+    transform: translateX(-3px);
+}
+
+.service-hero-media {
+    position: relative;
+}
+
+.service-hero-media .service-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+    display: block;
+}
+
+/* Hero form card (simplified form in hero when no featured image) - calm style */
+.service-hero-form-card {
+    position: relative;
+    border-radius: 24px;
+    padding: 2.5rem;
+    border: none;
+    background: #fff;
+    box-shadow: 0 4px 40px rgba(255, 107, 0, 0.08), 0 12px 48px rgba(0, 0, 0, 0.06);
+}
+
+.service-hero-form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.service-hero-form-card .form-field {
+    margin-bottom: 0;
+}
+
+/* Step indicator */
+.sh-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.sh-step {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: #999;
+    font-weight: 500;
+}
+
+.sh-step.active {
+    color: var(--primary-color, #ff6b00);
+}
+
+.sh-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: #e8e8e8;
+    color: #666;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.sh-step.active .sh-step-num {
+    background: var(--primary-color, #ff6b00);
+    color: #fff;
+}
+
+.sh-step-line {
+    width: 24px;
+    height: 2px;
+    background: #e0e0e0;
+    border-radius: 1px;
+}
+
+/* Field row: Email + Name side by side */
+.sh-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Floating label + icon input wrapper */
+.service-hero-form-card .sh-field .sh-input-wrapper,
+.service-hero-form-card .sh-phone-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    direction: rtl;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.service-hero-form-card .sh-field .sh-input-wrapper:focus-within,
+.service-hero-form-card .sh-phone-wrapper:focus-within .sh-phone-input-wrap {
+    border-color: var(--primary-color, #ff6b00);
+    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12);
+    background: #fff;
+}
+
+.service-hero-form-card .sh-field .sh-input-wrapper.sh-valid,
+.service-hero-form-card .sh-phone-wrapper.sh-valid .sh-phone-input-wrap {
+    border-color: #2ecc71;
+}
+
+.service-hero-form-card .sh-field .sh-input-wrapper.sh-typing,
+.service-hero-form-card .sh-phone-wrapper.sh-typing {
+    animation: shBorderPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes shBorderPulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12); }
+    50% { box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.22); }
+}
+
+.service-hero-form-card .sh-field .sh-input-wrapper.sh-error,
+.service-hero-form-card .sh-phone-wrapper.sh-error .sh-phone-input-wrap {
+    border-color: #e53935;
+}
+
+.service-hero-form-card .sh-input-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    flex-shrink: 0;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+.service-hero-form-card .sh-field .sh-input-wrapper:focus-within .sh-input-icon,
+.service-hero-form-card .sh-phone-wrapper:focus-within .sh-phone-icon {
+    color: var(--primary-color, #ff6b00);
+}
+
+/* Static label above input */
+.service-hero-form-card .sh-label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.service-hero-form-card .service-hero-form-input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.85rem 0.75rem 0.85rem 1rem;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: #222;
+    direction: rtl;
+    text-align: right;
+    outline: none;
+    border-radius: 12px;
+}
+
+.service-hero-form-card .service-hero-form-input::placeholder {
+    color: #aaa;
+}
+
+/* مطابق لـ .form-field .just-validate-error-label في الفورم الرئيسي */
+.service-hero-form-card .sh-field-error {
+    display: block;
+    font-size: 0.72rem;
+    color: #e53935;
+    margin-top: 5px;
+    font-weight: 500;
+    text-align: left;
+    min-height: 1em;
+}
+
+/* Phone field: icon + country + input */
+.service-hero-form-card .sh-phone-wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    direction: ltr;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: #fafafa;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.service-hero-form-card .sh-phone-wrapper:focus-within {
+    border-color: var(--primary-color, #ff6b00);
+    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12);
+    background: #fff;
+}
+
+.service-hero-form-card .sh-phone-icon {
+    width: 48px;
+    flex-shrink: 0;
+}
+
+.service-hero-form-card .sh-phone-wrapper .phone-country-select {
+    flex-shrink: 0;
+}
+
+.service-hero-form-card .sh-phone-wrapper .phone-country-btn {
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    border-left: 1px solid #e8e8e8;
+}
+
+.service-hero-form-card .sh-phone-input-wrap {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+.service-hero-form-card .sh-phone-input-wrap .service-hero-form-input {
+    direction: ltr;
+    text-align: left;
+    padding-left: 1rem;
+}
+
+/* حقل رقم الهاتف في نموذج الهيرو */
+.service-hero-form-card .sh-phone-wrapper input[type="tel"] {
+    direction: ltr;
+    text-align: left;
+}
+
+/* رسالة الخطأ العامة (مطابقة الفورم الرئيسي) */
+.service-hero-form-card .form-global-error {
+    display: none;
+    text-align: left;
+    color: #e53935;
+    font-size: 0.72rem;
+    font-weight: 500;
+    margin-top: 12px;
+}
+.service-hero-form-card .form-global-error.visible {
+    display: block;
+}
+
+/* Filled primary CTA button */
+.sh-submit-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 56px;
+    padding: 0 1.5rem;
+    background: var(--primary-color, #ff6b00);
+    color: #fff;
+    border: none;
+    border-radius: 50em;
+    font-size: 1.05rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: 0.25rem;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.sh-submit-btn:hover:not(:disabled) {
+    background: var(--primary-color-dark, #e05a00);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.35);
+}
+
+.sh-submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.sh-submit-btn .sh-btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.sh-submit-btn:hover:not(:disabled) .sh-btn-arrow {
+    transform: translateX(-4px);
+}
+
+html[dir="rtl"] .sh-submit-btn {
+    flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .sh-submit-btn:hover:not(:disabled) .sh-btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Trust bar */
+.sh-trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.sh-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.sh-trust-item svg {
+    flex-shrink: 0;
+    color: var(--primary-color, #ff6b00);
+}
+
+/* Loading state */
+.service-hero-form-card.sh-loading .service-hero-form-fields {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.service-hero-form-card.sh-loading {
+    animation: shCardPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes shCardPulse {
+    0%, 100% { box-shadow: 0 4px 40px rgba(255, 107, 0, 0.08), 0 12px 48px rgba(0, 0, 0, 0.06); }
+    50% { box-shadow: 0 6px 48px rgba(255, 107, 0, 0.12), 0 14px 52px rgba(0, 0, 0, 0.07); }
+}
+
+.service-hero-form-card .form-success-overlay {
+    border-radius: inherit;
+}
+
+/* ===== Responsive ===== */
+/* RTL قواعد التوسيط تفوق قواعد html[dir="rtl"] (نفس الخصوصية، والوسائط لاحقة) */
+@media (max-width: 1024px) {
+    .service-hero .breadcrumbs,
+    html[dir="rtl"] .service-hero .breadcrumbs {
+        justify-content: center;
+    }
+
+    .service-hero-buttons,
+    html[dir="rtl"] .service-hero-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .service-hero .container.service-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2rem 20px 3rem;
+    }
+
+    .sh-steps {
+        display: none;
+    }
+
+    .service-hero-content {
+        text-align: center;
+    }
+
+    .service-hero .breadcrumbs,
+    html[dir="rtl"] .service-hero .breadcrumbs {
+        justify-content: center;
+    }
+
+    .service-hero-buttons,
+    html[dir="rtl"] .service-hero-buttons {
+        justify-content: center;
+    }
+
+    .service-hero-title {
+        font-size: 2rem;
+    }
+
+    .service-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    /* ترتيب طبيعي: المحتوى (breadcrumb + عنوان + CTA) أعلى، الفورم/الصورة البارزة أسفل */
+}
+
+@media (max-width: 480px) {
+    .service-hero {
+        padding: 2.5rem 0 3rem;
+    }
+
+    .service-hero .container.service-hero-inner {
+        padding: 1.5rem 16px 2rem;
+    }
+
+    .service-hero-title {
+        font-size: 1.65rem;
+    }
+
+    .service-hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .service-hero-btn {
+        justify-content: center;
+    }
+
+    .service-hero-form-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .sh-field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .sh-steps {
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .sh-trust-bar {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* ===== قوائم محتوى الصفحة: أيقونة صح بدل النقط الدائرية ===== */
+.page-content ul {
+    list-style: none;
+    padding-right: 1.75rem;
+    padding-left: 0;
+}
+
+.page-content ul li {
+    position: relative;
+    padding-right: 0.5rem;
+}
+
+.page-content ul li::before {
+    content: '';
+    position: absolute;
+    right: -1.25rem;
+    top: 0.4em;
+    width: 1em;
+    height: 1em;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ff6b00' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+}
+
+/* RTL: الأيقونة تبقى على اليمين (بداية السطر) ولا نعكس الموضع */
+html[dir="rtl"] .page-content ul li::before {
+    right: -1.25rem;
+    left: auto;
+}
+
+/* القوائم المتداخلة تحتفظ بمظهرها إن وُجدت */
+.page-content ul ul {
+    list-style: none;
+    padding-right: 1.5rem;
+}
+
+html[dir="rtl"] .page-content ul ul {
+    padding-right: 1.5rem;
+    padding-left: 0;
+}
+
+.page-content ul ul li::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c4a574' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* ===== مكوّن Gutenberg FAQ — شبكة وأكورديون كالصفحة الرئيسية، خطوط كـ .page-content (h2 / h3 / فقرات) ===== */
+body.linkawy-service-page .page-content .faq-block {
+    margin: 2.5rem 0 3rem;
+    padding: 0;
+    background: transparent;
+    direction: rtl;
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-title {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 3rem 0 1.5rem;
+    padding: 0;
+    border: none;
+    line-height: 1.3;
+    scroll-margin-top: 100px;
+}
+
+body.linkawy-service-page .page-content > .faq-block:first-child .faq-title {
+    margin-top: 0;
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 3.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #e8e8e8;
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-item {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0;
+    margin: 0;
+}
+
+body.linkawy-service-page .page-content .faq-block h2.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 2.2rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    line-height: 1.35;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    -webkit-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body.linkawy-service-page .page-content .faq-block h2.faq-question:hover {
+    color: var(--primary-color, #ff6b00);
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-item.is-open h2.faq-question {
+    color: var(--primary-color, #ff6b00);
+}
+
+body.linkawy-service-page .page-content .faq-block h2.faq-question::after {
+    content: '+';
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: #999;
+    line-height: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+body.linkawy-service-page .page-content .faq-block h2.faq-question:hover::after {
+    color: var(--primary-color, #ff6b00);
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-item.is-open h2.faq-question::after {
+    color: var(--primary-color, #ff6b00);
+    transform: rotate(45deg);
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-answer {
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1), padding 0.3s ease;
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-answer-content {
+    padding: 0.2rem 0 1.85rem;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.9;
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-answer-content p:last-child {
+    margin-bottom: 0;
+}
+
+body.linkawy-service-page .page-content .faq-block .faq-answer-content a {
+    color: var(--primary-color, #ff6b00);
+}
+
+@media (max-width: 768px) {
+    body.linkawy-service-page .page-content .faq-block {
+        margin: 2rem 0 2.5rem;
+    }
+
+    body.linkawy-service-page .page-content .faq-block .faq-title {
+        font-size: 1.5rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    body.linkawy-service-page .page-content .faq-block .faq-container {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    body.linkawy-service-page .page-content .faq-block h2.faq-question {
+        padding: 1.85rem 0;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body.linkawy-service-page .page-content .faq-block .faq-title {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    body.linkawy-service-page .page-content .faq-block h2.faq-question {
+        padding: 1.25rem 0;
+        font-size: 1.1rem;
+    }
+
+    body.linkawy-service-page .page-content .faq-block .faq-answer-content {
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+    }
+}

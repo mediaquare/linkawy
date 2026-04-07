@@ -1,0 +1,63 @@
+/* AI Prompt Block - Editor Styles */
+.ai-prompt-box-editor {
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #333;
+    margin: 1rem 0;
+}
+
+.ai-prompt-header-editor {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid #333;
+}
+
+.ai-prompt-label-editor {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: #e1e1e1;
+}
+
+.ai-prompt-content-editor {
+    padding: 20px;
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #e0e0e0;
+    min-height: 60px;
+}
+
+/* Direction classes */
+.ai-prompt-content-editor.dir-ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+.ai-prompt-content-editor.dir-rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+.ai-prompt-content-editor:focus {
+    outline: none;
+}
+
+.ai-prompt-content-editor p {
+    margin: 0 0 1rem 0;
+    color: #e0e0e0;
+}
+
+.ai-prompt-content-editor p:last-child {
+    margin-bottom: 0;
+}
+
+/* Placeholder */
+.ai-prompt-content-editor[data-empty="true"]::before {
+    color: #666;
+}
