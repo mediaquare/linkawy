@@ -25,7 +25,9 @@ get_header();
                 <div class="blog-grid">
                     <?php
                     while (have_posts()) : the_post();
-                        get_template_part('template-parts/content', 'post');
+                        get_template_part('template-parts/content', 'post', array(
+                            'title_heading_tag' => 'h2',
+                        ));
                     endwhile;
                     ?>
                 </div>

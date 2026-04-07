@@ -44,7 +44,9 @@ get_header();
                         if (get_post_type() === 'glossary') :
                             get_template_part('template-parts/content', 'glossary');
                         else :
-                            get_template_part('template-parts/content', 'post');
+                            get_template_part('template-parts/content', 'post', array(
+                                'title_heading_tag' => 'h2',
+                            ));
                         endif;
                     endwhile;
                     ?>
