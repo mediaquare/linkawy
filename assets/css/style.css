@@ -945,6 +945,16 @@ nav.main-nav a:hover {
     transform: translateX(-3px);
 }
 
+/* reCAPTCHA v2 Invisible anchor (widget target; badge still shows per Google) */
+.linkawy-recaptcha-v2-anchor {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    pointer-events: none;
+}
+
 /* Hide mobile nav contact on desktop */
 .mobile-nav-contact {
     display: none;

@@ -292,12 +292,6 @@ if ($linkawy_cf_sfx !== '') {
 })();
 </script>
 
-<?php
-$recaptcha_site_key = get_theme_mod('linkawy_recaptcha_site_key', '');
-if (!empty($recaptcha_site_key)) :
-?>
-<script src="https://www.google.com/recaptcha/api.js?render=<?php echo esc_attr($recaptcha_site_key); ?>"></script>
-<?php endif; ?>
 <script src="https://unpkg.com/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
 <script>
 (function() {
@@ -306,7 +300,6 @@ if (!empty($recaptcha_site_key)) :
     var globalError = document.getElementById(<?php echo wp_json_encode($cf['formGlobalError']); ?>);
     var ajaxUrl = <?php echo wp_json_encode(admin_url('admin-ajax.php')); ?>;
     var emailNonce = <?php echo wp_json_encode(wp_create_nonce('linkawy_email_check')); ?>;
-    var recaptchaSiteKey = <?php echo wp_json_encode((string) get_theme_mod('linkawy_recaptcha_site_key', '')); ?>;
     var contactNonce = <?php echo wp_json_encode(wp_create_nonce('linkawy_contact_form')); ?>;
     var submitBtn = document.querySelector(formSel + ' button[type="submit"]');
     var submitBtnText = submitBtn ? submitBtn.innerHTML : '';
@@ -432,18 +425,12 @@ if (!empty($recaptcha_site_key)) :
                     });
             }
 
-            if (recaptchaSiteKey && typeof grecaptcha !== 'undefined') {
-                grecaptcha.ready(function() {
-                    grecaptcha.execute(recaptchaSiteKey, { action: 'contact_form' })
-                        .then(function(token) {
-                            submitForm(token);
-                        })
-                        .catch(function() {
-                            submitForm(null);
-                        });
+            if (typeof linkawyWithRecaptcha === 'function') {
+                linkawyWithRecaptcha(function(token) {
+                    submitForm(token || '');
                 });
             } else {
-                submitForm(null);
+                submitForm('');
             }
         });
 })();

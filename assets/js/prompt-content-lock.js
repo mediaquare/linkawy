@@ -100,17 +100,6 @@
             return;
         }
 
-        var formData = new FormData(form);
-        formData.append('action', 'linkawy_submit_newsletter');
-        formData.set('source', 'single-prompt');
-        formData.set('source_kind', cfg.sourceKind || 'prompt');
-        if (postId) {
-            formData.set('source_post_id', String(postId));
-            formData.set('unlock_prompt_id', String(postId));
-        }
-        formData.append('source_url', cfg.sourceUrl || window.location.href);
-        formData.append('source_title', cfg.sourceTitle || '');
-
         if (submitBtn) {
             submitBtn.disabled = true;
             submitBtn.innerHTML =
@@ -120,40 +109,64 @@
                 '</span>';
         }
 
-        fetch(ajaxUrl, {
-            method: 'POST',
-            body: formData,
-            credentials: 'same-origin'
-        })
-            .then(function (r) {
-                return r.json();
+        function sendPromptNewsletter(recaptchaToken) {
+            var formData = new FormData(form);
+            formData.append('action', 'linkawy_submit_newsletter');
+            formData.set('source', 'single-prompt');
+            formData.set('source_kind', cfg.sourceKind || 'prompt');
+            if (postId) {
+                formData.set('source_post_id', String(postId));
+                formData.set('unlock_prompt_id', String(postId));
+            }
+            formData.append('source_url', cfg.sourceUrl || window.location.href);
+            formData.append('source_title', cfg.sourceTitle || '');
+            if (recaptchaToken) {
+                formData.append('recaptcha_token', recaptchaToken);
+            }
+
+            fetch(ajaxUrl, {
+                method: 'POST',
+                body: formData,
+                credentials: 'same-origin'
             })
-            .then(function (data) {
-                if (data && data.success) {
-                    var d = data.data || {};
-                    renderFeedback(feedback, d.heading || 'تم التأكيد', d.subtitle || '');
-                    window.setTimeout(function () {
-                        unlockPromptBox();
-                        if (emailInput && emailInput.isConnected) {
-                            emailInput.value = '';
-                        }
-                    }, 700);
-                } else {
-                    var msg =
-                        data && data.data && data.data.message
-                            ? data.data.message
-                            : 'تعذّر إتمام الطلب. حاول مرة أخرى.';
-                    renderError(feedback, msg);
-                }
-            })
-            .catch(function () {
-                renderError(feedback, 'حدث خطأ في الاتصال. حاول مرة أخرى.');
-            })
-            .finally(function () {
-                if (submitBtn && submitBtn.isConnected) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = defaultBtnHtml;
-                }
+                .then(function (r) {
+                    return r.json();
+                })
+                .then(function (data) {
+                    if (data && data.success) {
+                        var d = data.data || {};
+                        renderFeedback(feedback, d.heading || 'تم التأكيد', d.subtitle || '');
+                        window.setTimeout(function () {
+                            unlockPromptBox();
+                            if (emailInput && emailInput.isConnected) {
+                                emailInput.value = '';
+                            }
+                        }, 700);
+                    } else {
+                        var msg =
+                            data && data.data && data.data.message
+                                ? data.data.message
+                                : 'تعذّر إتمام الطلب. حاول مرة أخرى.';
+                        renderError(feedback, msg);
+                    }
+                })
+                .catch(function () {
+                    renderError(feedback, 'حدث خطأ في الاتصال. حاول مرة أخرى.');
+                })
+                .finally(function () {
+                    if (submitBtn && submitBtn.isConnected) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = defaultBtnHtml;
+                    }
+                });
+        }
+
+        if (typeof window.linkawyWithRecaptcha === 'function') {
+            window.linkawyWithRecaptcha(function (token) {
+                sendPromptNewsletter(token || '');
             });
+        } else {
+            sendPromptNewsletter('');
+        }
     });
 })();

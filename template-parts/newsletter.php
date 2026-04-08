@@ -154,65 +154,78 @@ $linkawy_nl_post_id = absint($linkawy_nl['source_post_id']);
                 return;
             }
 
-            var formData = new FormData(form);
-            formData.append('action', 'linkawy_submit_newsletter');
-            formData.append('source_url', window.location.href);
-            formData.append('source_title', '<?php echo esc_js((string) $linkawy_nl['source_title_for_ajax']); ?>');
-
             if (submitBtn) {
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<span class="spinner-loading"></span> جاري الاشتراك...';
             }
 
-            fetch('<?php echo esc_js(admin_url('admin-ajax.php')); ?>', {
-                method: 'POST',
-                body: formData
-            })
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (!feedback) return;
-                if (data && data.success) {
-                    linkawyRenderNewsletterSuccess(feedback, data.data || {});
-                    feedback.style.color = '';
-                    feedback.style.removeProperty('display');
-                    linkawyClearNewsletterInputError(emailInput);
-                    if (box) {
-                        box.classList.add('linkawy-newsletter-success');
+            function sendNewsletter(recaptchaToken) {
+                var formData = new FormData(form);
+                formData.append('action', 'linkawy_submit_newsletter');
+                formData.append('source_url', window.location.href);
+                formData.append('source_title', '<?php echo esc_js((string) $linkawy_nl['source_title_for_ajax']); ?>');
+                if (recaptchaToken) {
+                    formData.append('recaptcha_token', recaptchaToken);
+                }
+
+                fetch('<?php echo esc_js(admin_url('admin-ajax.php')); ?>', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (!feedback) return;
+                    if (data && data.success) {
+                        linkawyRenderNewsletterSuccess(feedback, data.data || {});
+                        feedback.style.color = '';
+                        feedback.style.removeProperty('display');
+                        linkawyClearNewsletterInputError(emailInput);
+                        if (box) {
+                            box.classList.add('linkawy-newsletter-success');
+                        }
+                        if (emailInput) {
+                            emailInput.value = '';
+                        }
+                    } else {
+                        if (box) {
+                            box.classList.remove('linkawy-newsletter-success');
+                        }
+                        feedback.innerHTML = '';
+                        feedback.textContent = (data && data.data && data.data.message) ? data.data.message : 'تعذر الاشتراك حاليًا.';
+                        feedback.classList.add('newsletter-feedback--error');
+                        feedback.style.removeProperty('color');
+                        feedback.style.display = 'block';
+                        linkawySetNewsletterInputError(emailInput);
                     }
-                    if (emailInput) {
-                        emailInput.value = '';
-                    }
-                } else {
+                })
+                .catch(function() {
                     if (box) {
                         box.classList.remove('linkawy-newsletter-success');
                     }
-                    feedback.innerHTML = '';
-                    feedback.textContent = (data && data.data && data.data.message) ? data.data.message : 'تعذر الاشتراك حاليًا.';
-                    feedback.classList.add('newsletter-feedback--error');
-                    feedback.style.removeProperty('color');
-                    feedback.style.display = 'block';
-                    linkawySetNewsletterInputError(emailInput);
-                }
-            })
-            .catch(function() {
-                if (box) {
-                    box.classList.remove('linkawy-newsletter-success');
-                }
-                if (feedback) {
-                    feedback.innerHTML = '';
-                    feedback.textContent = 'حدث خطأ في الاتصال. حاول مرة أخرى.';
-                    feedback.classList.add('newsletter-feedback--error');
-                    feedback.style.removeProperty('color');
-                    feedback.style.display = 'block';
-                    linkawySetNewsletterInputError(emailInput);
-                }
-            })
-            .finally(function() {
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = defaultBtnHtml;
-                }
-            });
+                    if (feedback) {
+                        feedback.innerHTML = '';
+                        feedback.textContent = 'حدث خطأ في الاتصال. حاول مرة أخرى.';
+                        feedback.classList.add('newsletter-feedback--error');
+                        feedback.style.removeProperty('color');
+                        feedback.style.display = 'block';
+                        linkawySetNewsletterInputError(emailInput);
+                    }
+                })
+                .finally(function() {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = defaultBtnHtml;
+                    }
+                });
+            }
+
+            if (typeof linkawyWithRecaptcha === 'function') {
+                linkawyWithRecaptcha(function(token) {
+                    sendNewsletter(token || '');
+                });
+            } else {
+                sendNewsletter('');
+            }
         });
     });
 })();

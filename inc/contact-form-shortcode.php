@@ -26,7 +26,7 @@ function linkawy_content_includes_contact_form_shortcode() {
 /**
  * Shortcode: [linkawy_contact_form] or [linkawy_contact_form title="..." description="..."]
  *
- * Renders the full contact form (AJAX, validation, reCAPTCHA if configured).
+ * Renders the full contact form (AJAX, validation, reCAPTCHA v2 Invisible if configured).
  *
  * @param array|string $atts Shortcode attributes.
  * @return string

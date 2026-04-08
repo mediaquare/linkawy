@@ -288,11 +288,27 @@ function linkawy_scripts() {
     // Removed from frontend to reduce render-blocking requests
     // WordPress still recognizes the theme via style.css header
 
+    // reCAPTCHA v2 Invisible (shared helper: window.linkawyWithRecaptcha). Loads api.js when site key is set.
+    wp_enqueue_script(
+        'linkawy-recaptcha-v2',
+        linkawy_get_asset_path('/assets/js/recaptcha-v2-invisible', 'js'),
+        array(),
+        LINKAWY_VERSION,
+        true
+    );
+    wp_localize_script(
+        'linkawy-recaptcha-v2',
+        'linkawyRecaptchaV2Cfg',
+        array(
+            'siteKey' => trim((string) get_theme_mod('linkawy_recaptcha_site_key', '')),
+        )
+    );
+
     // Main JavaScript (no jQuery dependency - vanilla JS only)
     wp_enqueue_script(
         'linkawy-main',
         linkawy_get_asset_path('/assets/js/main-ar', 'js'),
-        array(),
+        array('linkawy-recaptcha-v2'),
         LINKAWY_VERSION,
         true
     );
@@ -336,7 +352,7 @@ function linkawy_scripts() {
             wp_enqueue_script(
                 'linkawy-prompt-content-lock',
                 linkawy_get_asset_path('/assets/js/prompt-content-lock', 'js'),
-                array('linkawy-prompt-copy'),
+                array('linkawy-prompt-copy', 'linkawy-recaptcha-v2'),
                 LINKAWY_VERSION,
                 true
             );

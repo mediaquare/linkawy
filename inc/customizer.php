@@ -468,7 +468,7 @@ function linkawy_customize_register($wp_customize) {
     
     $wp_customize->add_control('linkawy_recaptcha_site_key', array(
         'label'       => __('reCAPTCHA Site Key', 'linkawy'),
-        'description' => __('مفتاح الموقع من Google reCAPTCHA v3. احصل عليه من: google.com/recaptcha/admin', 'linkawy'),
+        'description' => __('مفتاح الموقع من Google reCAPTCHA v2 (Invisible badge). أنشئ مفتاحًا من النوع «Invisible» في google.com/recaptcha/admin', 'linkawy'),
         'section'     => 'linkawy_integrations_section',
         'type'        => 'text',
     ));
@@ -482,7 +482,7 @@ function linkawy_customize_register($wp_customize) {
     
     $wp_customize->add_control('linkawy_recaptcha_secret_key', array(
         'label'       => __('reCAPTCHA Secret Key', 'linkawy'),
-        'description' => __('المفتاح السري من Google reCAPTCHA v3. اتركه فارغاً لتعطيل reCAPTCHA.', 'linkawy'),
+        'description' => __('المفتاح السري لنفس الموقع (v2 Invisible). اتركه فارغاً لتعطيل reCAPTCHA.', 'linkawy'),
         'section'     => 'linkawy_integrations_section',
         'type'        => 'password',
     ));

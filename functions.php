@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define theme constants
-define('LINKAWY_VERSION', '1.0.4');
+define('LINKAWY_VERSION', '1.0.5');
 define('LINKAWY_DIR', get_template_directory());
 define('LINKAWY_URI', get_template_directory_uri());
 
@@ -55,6 +55,11 @@ require_once LINKAWY_DIR . '/inc/resource-meta.php';
  * Load prompt meta (prompts CPT)
  */
 require_once LINKAWY_DIR . '/inc/prompt-meta.php';
+
+/**
+ * reCAPTCHA helpers (contact + newsletter AJAX)
+ */
+require_once LINKAWY_DIR . '/inc/recaptcha-helpers.php';
 
 /**
  * Contact form shortcode (before enqueue: used to load assets when shortcode is in content)
@@ -427,40 +432,9 @@ function linkawy_submit_contact_form() {
         wp_send_json_error(['message' => 'طلب غير صالح. يرجى تحديث الصفحة والمحاولة مرة أخرى.']);
     }
 
-    // Verify reCAPTCHA if configured
-    $recaptcha_secret = get_theme_mod('linkawy_recaptcha_secret_key', '');
-    if (!empty($recaptcha_secret)) {
-        $recaptcha_token = isset($_POST['recaptcha_token']) ? sanitize_text_field($_POST['recaptcha_token']) : '';
-        
-        if (empty($recaptcha_token)) {
-            wp_send_json_error(['message' => 'فشل التحقق الأمني. يرجى المحاولة مرة أخرى.']);
-        }
-        
-        $recaptcha_response = wp_remote_post('https://www.google.com/recaptcha/api/siteverify', array(
-            'timeout' => 10,
-            'body'    => array(
-                'secret'   => $recaptcha_secret,
-                'response' => $recaptcha_token,
-                'remoteip' => $_SERVER['REMOTE_ADDR'],
-            ),
-        ));
-        
-        if (is_wp_error($recaptcha_response)) {
-            // If reCAPTCHA verification fails due to network, allow submission (fail open)
-            error_log('Linkawy: reCAPTCHA verification failed - ' . $recaptcha_response->get_error_message());
-        } else {
-            $recaptcha_data = json_decode(wp_remote_retrieve_body($recaptcha_response), true);
-            
-            // Check if verification passed and score is acceptable (0.5 or higher)
-            if (!isset($recaptcha_data['success']) || $recaptcha_data['success'] !== true) {
-                wp_send_json_error(['message' => 'فشل التحقق الأمني. يرجى المحاولة مرة أخرى.']);
-            }
-            
-            // Check score (reCAPTCHA v3 returns a score between 0.0 and 1.0)
-            if (isset($recaptcha_data['score']) && $recaptcha_data['score'] < 0.3) {
-                wp_send_json_error(['message' => 'تم اكتشاف نشاط مشبوه. يرجى المحاولة مرة أخرى لاحقاً.']);
-            }
-        }
+    $recaptcha_check = linkawy_verify_recaptcha_from_request();
+    if (is_wp_error($recaptcha_check)) {
+        wp_send_json_error(array('message' => $recaptcha_check->get_error_message()));
     }
 
     // Sanitize and collect form data
@@ -978,6 +952,11 @@ function linkawy_submit_newsletter_form() {
     $honeypot = isset($_POST['hp_field']) ? trim((string) wp_unslash($_POST['hp_field'])) : '';
     if ($honeypot !== '') {
         wp_send_json_error(array('message' => __('تعذر إتمام الطلب.', 'linkawy')));
+    }
+
+    $recaptcha_check = linkawy_verify_recaptcha_from_request();
+    if (is_wp_error($recaptcha_check)) {
+        wp_send_json_error(array('message' => $recaptcha_check->get_error_message()));
     }
 
     $email = isset($_POST['email']) ? sanitize_email(wp_unslash($_POST['email'])) : '';

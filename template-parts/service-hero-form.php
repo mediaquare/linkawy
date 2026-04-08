@@ -309,28 +309,40 @@ if (!defined('ABSPATH')) {
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="spinner-loading"></span> جاري التحليل...';
         }
-        var formData = new FormData(form);
-        formData.append('action', 'linkawy_submit_contact');
-        formData.append('nonce', '<?php echo esc_js(wp_create_nonce("linkawy_contact_form")); ?>');
-        formData.append('source_url', window.location.href);
-        formData.append('source_title', '<?php echo esc_js(get_the_title()); ?>');
-        fetch('<?php echo esc_js(admin_url("admin-ajax.php")); ?>', { method: 'POST', body: formData })
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (data.success && successEl) {
-                    successEl.classList.add('visible');
-                    form.reset();
-                } else {
-                    if (errEl) { errEl.textContent = (data.data && data.data.message) ? data.data.message : 'حدث خطأ. يرجى المحاولة مرة أخرى.'; errEl.classList.add('visible'); }
-                }
-            })
-            .catch(function() {
-                if (errEl) { errEl.textContent = 'حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.'; errEl.classList.add('visible'); }
-            })
-            .finally(function() {
-                if (card) card.classList.remove('sh-loading');
-                if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = defaultBtnHtml; }
+        function sendServiceHeroContact(recaptchaToken) {
+            var formData = new FormData(form);
+            formData.append('action', 'linkawy_submit_contact');
+            formData.append('nonce', '<?php echo esc_js(wp_create_nonce("linkawy_contact_form")); ?>');
+            formData.append('source_url', window.location.href);
+            formData.append('source_title', '<?php echo esc_js(get_the_title()); ?>');
+            if (recaptchaToken) {
+                formData.append('recaptcha_token', recaptchaToken);
+            }
+            fetch('<?php echo esc_js(admin_url("admin-ajax.php")); ?>', { method: 'POST', body: formData })
+                .then(function(r) { return r.json(); })
+                .then(function(data) {
+                    if (data.success && successEl) {
+                        successEl.classList.add('visible');
+                        form.reset();
+                    } else {
+                        if (errEl) { errEl.textContent = (data.data && data.data.message) ? data.data.message : 'حدث خطأ. يرجى المحاولة مرة أخرى.'; errEl.classList.add('visible'); }
+                    }
+                })
+                .catch(function() {
+                    if (errEl) { errEl.textContent = 'حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.'; errEl.classList.add('visible'); }
+                })
+                .finally(function() {
+                    if (card) card.classList.remove('sh-loading');
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = defaultBtnHtml; }
+                });
+        }
+        if (typeof linkawyWithRecaptcha === 'function') {
+            linkawyWithRecaptcha(function(token) {
+                sendServiceHeroContact(token || '');
             });
+        } else {
+            sendServiceHeroContact('');
+        }
     });
 })();
 </script>
