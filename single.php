@@ -85,7 +85,7 @@ $show_toc = $toc_data['has_toc'] && !$disable_toc;
                                     <div class="omniseo-description">
                                         <p><?php _e('وداعاً لتحسين محركات البحث التقليدي، ومرحباً بتحسين ظهورك في كل مكان.', 'linkawy'); ?></p>
                                     </div>
-                                    <a href="#" class="omniseo-btn"><?php _e('احصل على استشارة مجانية', 'linkawy'); ?></a>
+                                    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="omniseo-btn"><?php _e('احصل على استشارة مجانية', 'linkawy'); ?></a>
                                 </div>
                             </div>
                         </div>

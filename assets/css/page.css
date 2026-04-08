@@ -594,6 +594,7 @@ html[dir="rtl"] .page-content .wp-block-image figure.alignright {
     background: transparent;
     color: inherit;
     padding: 0;
+    margin: 0;
     font-family: 'IBM Plex Mono', 'Courier New', monospace;
     font-size: inherit;
     direction: ltr;
@@ -601,7 +602,6 @@ html[dir="rtl"] .page-content .wp-block-image figure.alignright {
     display: block;
     white-space: pre-wrap;
     word-break: break-word;
-    min-height: 80px;
 }
 
 /* ===== Gutenberg Buttons block – مطابق لتنسيق أزرار القالب (pill، لون أساسي، outline) ===== */

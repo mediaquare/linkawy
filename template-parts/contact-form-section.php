@@ -71,7 +71,7 @@ if ($linkawy_cf_sfx !== '') {
     <div class="contact-form-outer">
         <div class="contact-form-card">
             <div class="contact-form-header">
-                <h2><?php echo esc_html($header_h2); ?></h2>
+                <div class="contact-form-header-title"><?php echo esc_html($header_h2); ?></div>
                 <p><?php echo esc_html($header_p); ?></p>
             </div>
 
@@ -147,7 +147,7 @@ if ($linkawy_cf_sfx !== '') {
                             <path d="M20 33L28 41L44 23" stroke="#2ecc71" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                         </svg>
                     </div>
-                    <h3 class="form-success-title">تم إرسال طلبك بنجاح!</h3>
+                    <div class="form-success-title">تم إرسال طلبك بنجاح!</div>
                     <p class="form-success-desc">شكراً لتواصلك معنا. سنراجع طلبك ونتواصل معك خلال 24 ساعة بخطة عمل مخصصة.</p>
                 </div>
             </div>

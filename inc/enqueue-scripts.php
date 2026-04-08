@@ -842,7 +842,7 @@ function linkawy_fix_content_image_sizes($sizes, $size, $image_src, $image_meta,
     }
     
     // Article content max width is approximately 585px on desktop
-    // On mobile it's 100vw minus padding (~calc(100vw - 3rem))
+    // On mobile it's 100vw minus padding (~container 2rem + card 1rem = 3rem)
     // Breakpoint at 900px (when layout goes single column)
     $article_sizes = '(max-width: 900px) calc(100vw - 3rem), 585px';
     

@@ -2413,7 +2413,7 @@ h2.faq-question::after {
     }
     
     .article-content-wrapper {
-        --content-padding: 1.5rem;
+        --content-padding: 0.5rem;
         padding: var(--content-padding);
         box-sizing: border-box;
         max-width: 100%;
@@ -2428,8 +2428,8 @@ h2.faq-question::after {
     }
     
     .article-cta-box {
-        margin: 2.5rem -1.5rem;
-        padding: 2.5rem 1.5rem;
+        margin: 2.5rem -0.5rem;
+        padding: 2.5rem 0.5rem;
     }
     
     .article-cta-title {
@@ -2711,7 +2711,7 @@ h2.faq-question::after {
     }
     
     .article-cta-box {
-        margin: 2rem -1.5rem;
+        margin: 2rem -0.5rem;
         padding: 2rem 1.2rem;
     }
     

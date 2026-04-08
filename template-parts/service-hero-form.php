@@ -109,7 +109,7 @@ if (!defined('ABSPATH')) {
             <div class="form-success-icon">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/rocket.svg' ); ?>" alt="" width="64" height="64" class="form-success-rocket">
             </div>
-            <h3 class="form-success-title">تحليل موقعك قيد التنفيذ</h3>
+            <div class="form-success-title">تحليل موقعك قيد التنفيذ</div>
             <p class="form-success-desc">نعمل الآن على تحليل موقعك واكتشاف فرص النمو والتطوير، وسيصلك تقرير شامل خلال الساعات القادمة عبر بريدك الإلكتروني.</p>
         </div>
     </div>

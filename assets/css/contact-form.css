@@ -69,7 +69,7 @@
     margin-bottom: 2.75rem;
 }
 
-.contact-form-header h2 {
+.contact-form-header .contact-form-header-title {
     font-size: 2rem;
     font-weight: 800;
     color: #111;
@@ -450,7 +450,7 @@
         border-radius: 20px;
     }
 
-    .contact-form-header h2 {
+    .contact-form-header .contact-form-header-title {
         font-size: 1.6rem;
     }
 
@@ -483,7 +483,7 @@
         margin-bottom: 2rem;
     }
 
-    .contact-form-header h2 {
+    .contact-form-header .contact-form-header-title {
         font-size: 1.4rem;
     }
 

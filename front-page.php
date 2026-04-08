@@ -445,7 +445,7 @@ get_header();
             <div class="strategy-grid">
                 <div class="strategy-intro">
                     <p class="strategy-label">
-                        <img src="https://www.linkawy.io/wp-content/uploads/soft-star.svg" alt="Star Icon"
+                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/soft-star.svg' ); ?>" alt="Star Icon"
                             class="soft-star-icon" width="22" height="22" loading="lazy">
                         كيف نحقق نتائج تنعكس على المبيعات؟
                     </p>

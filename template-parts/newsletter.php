@@ -43,7 +43,7 @@ $linkawy_nl_post_id = absint($linkawy_nl['source_post_id']);
             <div class="sub-icon">
                 <i class="fas fa-envelope-open-text"></i>
             </div>
-            <h3><?php _e('اشترك لتعلم المزيد عن المحتوى والسيو', 'linkawy'); ?></h3>
+            <div class="sub-content-title"><?php _e('اشترك لتعلم المزيد عن المحتوى والسيو', 'linkawy'); ?></div>
             <p><?php _e('انضم لأكثر من 5,000 مشترك واستقبل أحدث الاستراتيجيات والنصائح مباشرة في بريدك الإلكتروني.', 'linkawy'); ?></p>
             <div class="sub-stats">
                 <i class="fas fa-check-circle"></i>
