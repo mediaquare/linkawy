@@ -545,12 +545,16 @@ function linkawy_submit_contact_form() {
     </body>
     </html>';
 
+    $mail_domain = preg_replace('/^www\./i', '', parse_url(home_url(), PHP_URL_HOST));
     $headers = array(
         'Content-Type: text/html; charset=UTF-8',
-        'From: Linkawy <noreply@' . parse_url(home_url(), PHP_URL_HOST) . '>',
+        'From: Linkawy <noreply@' . $mail_domain . '>',
     );
 
-    wp_mail($admin_email, $subject, $message, $headers);
+    $mail_sent = wp_mail($admin_email, $subject, $message, $headers);
+    if (!$mail_sent) {
+        error_log("Linkawy: wp_mail failed for contact_request #$post_id to $admin_email");
+    }
 
     // Send to Google Sheets (if configured)
     $sheets_url = get_theme_mod('linkawy_google_sheets_url', '');
