@@ -1355,6 +1355,20 @@ function linkawy_clear_unread_count_on_new_request($post_id, $post, $update) {
 add_action('wp_insert_post', 'linkawy_clear_unread_count_on_new_request', 10, 3);
 
 /**
+ * Clear contact unread-count cache when request status changes or is deleted.
+ *
+ * @param int $post_id Post ID.
+ */
+function linkawy_invalidate_contact_unread_count_on_status_change($post_id) {
+    if (get_post_type($post_id) === 'contact_request') {
+        delete_transient('linkawy_unread_contacts_count');
+    }
+}
+add_action('trash_post', 'linkawy_invalidate_contact_unread_count_on_status_change');
+add_action('untrash_post', 'linkawy_invalidate_contact_unread_count_on_status_change');
+add_action('deleted_post', 'linkawy_invalidate_contact_unread_count_on_status_change');
+
+/**
  * Add "read" status column to contact requests list
  */
 function linkawy_add_read_status_column($columns) {
@@ -1641,6 +1655,20 @@ function linkawy_clear_unread_newsletter_count_on_new_subscriber($post_id, $post
     }
 }
 add_action('wp_insert_post', 'linkawy_clear_unread_newsletter_count_on_new_subscriber', 10, 3);
+
+/**
+ * Clear newsletter unread-count cache when subscriber status changes or is deleted.
+ *
+ * @param int $post_id Post ID.
+ */
+function linkawy_invalidate_newsletter_unread_count_on_status_change($post_id) {
+    if (get_post_type($post_id) === 'linkawy_newsletter') {
+        delete_transient('linkawy_unread_newsletter_count');
+    }
+}
+add_action('trash_post', 'linkawy_invalidate_newsletter_unread_count_on_status_change');
+add_action('untrash_post', 'linkawy_invalidate_newsletter_unread_count_on_status_change');
+add_action('deleted_post', 'linkawy_invalidate_newsletter_unread_count_on_status_change');
 
 /**
  * Add read-status column (marker) before title column.

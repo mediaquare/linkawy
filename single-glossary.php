@@ -57,7 +57,7 @@ $adjacent = linkawy_get_adjacent_glossary();
                 <!-- Navigation Arrow - Previous -->
                 <?php if ($adjacent['prev']) : ?>
                     <a href="<?php echo get_permalink($adjacent['prev']->ID); ?>" class="glossary-nav-arrow glossary-nav-prev">
-                        <span class="nav-arrow-icon"><i class="fas fa-arrow-right"></i></span>
+                        <span class="nav-arrow-icon"><i class="fas fa-arrow-left"></i></span>
                         <span class="nav-arrow-text"><?php echo esc_html($adjacent['prev']->post_title); ?></span>
                     </a>
                 <?php else : ?>
@@ -79,7 +79,7 @@ $adjacent = linkawy_get_adjacent_glossary();
                 <!-- Navigation Arrow - Next -->
                 <?php if ($adjacent['next']) : ?>
                     <a href="<?php echo get_permalink($adjacent['next']->ID); ?>" class="glossary-nav-arrow glossary-nav-next">
-                        <span class="nav-arrow-icon"><i class="fas fa-arrow-left"></i></span>
+                        <span class="nav-arrow-icon"><i class="fas fa-arrow-right"></i></span>
                         <span class="nav-arrow-text"><?php echo esc_html($adjacent['next']->post_title); ?></span>
                     </a>
                 <?php else : ?>

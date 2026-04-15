@@ -1147,6 +1147,7 @@
 
     .glossary-section {
         padding: 2rem 0;
+        background: #fff;
     }
 
     /* Mobile Layout - Content first, then nav buttons side by side */
@@ -1161,18 +1162,27 @@
     }
 
     .glossary-content-box {
-        --glossary-padding: 1.5rem;
+        --glossary-padding: 0;
         grid-area: content;
         padding: var(--glossary-padding);
-        border-radius: 16px;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        width: calc(100vw - 3rem);
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
     }
 
     .glossary-nav-prev {
         grid-area: prev;
+        grid-column: 2;
     }
 
     .glossary-nav-next {
         grid-area: next;
+        grid-column: 1;
     }
 
     /* Mobile Navigation Buttons */
@@ -1180,12 +1190,14 @@
         position: relative;
         top: auto;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
+        width: 100%;
         padding: 1rem 1.25rem;
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
         border: 1px solid #e5e7eb;
+        gap: 0.75rem;
     }
 
     .glossary-nav-arrow:hover {
@@ -1205,6 +1217,11 @@
         font-size: 0.9rem;
         max-width: none;
         text-align: right;
+        flex: 1;
+    }
+
+    .glossary-nav-prev {
+        flex-direction: row-reverse;
     }
 
 
@@ -1344,17 +1361,25 @@
         padding: 1.25rem;
     }
 
-    /* Pre-Footer CTA Mobile */
+    /* Pre-Footer CTA Mobile — symmetric vertical rhythm */
     .pre-footer-cta {
-        padding: 4rem 0 3rem;
+        padding: 3rem 0;
         margin-top: 0;
+    }
+
+    .pre-footer-cta .container {
+        width: calc(100vw - 3rem);
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        box-sizing: border-box;
     }
 
     .pre-footer-cta-icons {
         position: relative;
         bottom: auto;
         right: auto;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
         justify-content: center;
         gap: 0.4rem;
     }
@@ -1371,7 +1396,7 @@
 
     .pre-footer-cta-content {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 0.5rem;
         text-align: center;
     }
 
@@ -1381,6 +1406,8 @@
 
     .pre-footer-cta-title {
         font-size: 2rem;
+        line-height: 1.4;
+        margin: 0;
     }
 
     .pre-footer-cta-left {
@@ -1389,7 +1416,7 @@
 
     .pre-footer-cta-left p {
         font-size: 1rem;
-        margin-bottom: 1.5rem;
+        margin: 0 0 1.25rem;
     }
 
     .pre-footer-cta-btn {
@@ -1417,8 +1444,12 @@
     }
 
     .glossary-content-box {
-        --glossary-padding: 1.25rem;
+        --glossary-padding: 0;
         padding: var(--glossary-padding);
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        width: calc(100vw - 3rem);
     }
 
     .glossary-synonyms-hero {
@@ -1461,7 +1492,15 @@
     }
 
     .pre-footer-cta {
-        padding: 3.5rem 0 2.5rem;
+        padding: 2.5rem 0;
+    }
+
+    .pre-footer-cta .container {
+        width: calc(100vw - 3rem);
+    }
+
+    .pre-footer-cta-icons {
+        margin-bottom: 1rem;
     }
 
     .cta-icon-circle {
@@ -1474,6 +1513,10 @@
         height: 25px;
     }
 
+    .pre-footer-cta-content {
+        gap: 0.35rem;
+    }
+
     .pre-footer-cta-title {
         font-size: 1.4rem;
         line-height: 1.5;
@@ -1481,6 +1524,7 @@
 
     .pre-footer-cta-left p {
         font-size: 0.9rem;
+        margin: 0 0 1rem;
     }
 
     .pre-footer-cta-btn {
