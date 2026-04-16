@@ -7,15 +7,22 @@
 
 get_header();
 
+$single_post_id = linkawy_get_current_single_post_id();
+
 // Process content and generate TOC (Server-side for SEO)
 $toc_data = linkawy_get_toc_data();
-$disable_toc = get_post_meta(get_the_ID(), '_disable_toc', true);
+$disable_toc = get_post_meta($single_post_id, '_disable_toc', true);
 $show_toc = $toc_data['has_toc'] && !$disable_toc;
+$article_hero_bg = linkawy_get_article_hero_bg_color($single_post_id);
+$article_hero_style = $article_hero_bg !== '' ? ' style="' . esc_attr('background-color:' . $article_hero_bg . ';') . '"' : '';
+$article_hero_classes = array('article-hero');
+if (linkawy_article_hero_effective_pattern_enabled($single_post_id)) {
+    $article_hero_classes[] = 'article-hero--pattern';
+}
 ?>
 
     <!-- Article Hero Section -->
-    <section class="article-hero">
-        <div class="hero-glow hero-glow-top"></div>
+    <section class="<?php echo esc_attr(implode(' ', $article_hero_classes)); ?>"<?php echo $article_hero_style; ?>>
         <div class="container">
             <?php linkawy_breadcrumbs(); ?>
             
@@ -25,6 +32,30 @@ $show_toc = $toc_data['has_toc'] && !$disable_toc;
                 <?php linkawy_post_meta(); ?>
             </div>
         </div>
+        <?php if (linkawy_single_hero_should_show_post_thumbnail($single_post_id)) : ?>
+            <?php
+            echo get_the_post_thumbnail(
+                $single_post_id,
+                'linkawy-card',
+                array(
+                    'class'    => 'article-hero-character',
+                    'loading'  => 'eager',
+                    'decoding' => 'async',
+                    'alt'      => esc_attr(get_the_title($single_post_id)),
+                )
+            );
+            ?>
+        <?php else : ?>
+        <img
+            src="<?php echo esc_url(LINKAWY_URI . '/assets/images/linko-character.png'); ?>"
+            alt=""
+            class="article-hero-character"
+            width="220"
+            height="220"
+            loading="eager"
+            decoding="async"
+        />
+        <?php endif; ?>
     </section>
 
     <!-- Article Content Section -->

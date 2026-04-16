@@ -34,6 +34,16 @@ get_header();
             </h1>
             <?php if (is_category() && category_description()) : ?>
                 <p class="blog-hero-description"><?php echo category_description(); ?></p>
+            <?php elseif (is_tag() && tag_description()) : ?>
+                <p class="blog-hero-description"><?php echo tag_description(); ?></p>
+            <?php elseif (is_author()) : ?>
+                <?php
+                $author_id = get_queried_object_id();
+                $author_bio = $author_id ? trim(get_the_author_meta('description', $author_id)) : '';
+                ?>
+                <p class="blog-hero-description"><?php echo $author_bio !== '' ? esc_html(wp_strip_all_tags($author_bio)) : esc_html(__('مقالات ومشاركات هذا الكاتب.', 'linkawy')); ?></p>
+            <?php elseif (is_date()) : ?>
+                <p class="blog-hero-description"><?php _e('تصفح المقالات حسب التاريخ.', 'linkawy'); ?></p>
             <?php endif; ?>
             
             <div class="blog-categories">

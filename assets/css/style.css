@@ -2090,18 +2090,6 @@ nav.main-nav a:hover {
     object-fit: cover;
 }
 
-.story-category-tag {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(91, 77, 211, 0.9);
-    color: #fff;
-    padding: 0.35rem 0.9rem;
-    border-radius: 6px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
 .story-card-content {
     padding: 1.75rem;
 }

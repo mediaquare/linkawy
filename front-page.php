@@ -585,8 +585,6 @@ get_header();
                 $colors = array('#F5C451', '#5B4DD3', '#E8F4FF');
                 $color_index = 0;
                 while ($success_stories->have_posts()) : $success_stories->the_post();
-                    $categories = get_the_category();
-                    $category_name = !empty($categories) ? $categories[0]->name : __('الإعلانات', 'linkawy');
                     $bg_color = $colors[$color_index % 3];
                     $color_index++;
                 ?>
@@ -602,14 +600,13 @@ get_header();
                             )); 
                             ?>
                         <?php endif; ?>
-                        <span class="story-category-tag"><?php echo esc_html($category_name); ?></span>
                     </div>
                     <div class="story-card-content">
                         <h3 class="story-card-title">
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h3>
                         <p class="story-card-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-                        <span class="story-card-meta">دراسات نمو المتاجر الإلكترونية</span>
+                        <span class="story-card-meta"><?php echo esc_html(linkawy_reading_time()); ?></span>
                     </div>
                 </article>
                 <?php endwhile; wp_reset_postdata(); ?>

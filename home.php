@@ -37,35 +37,41 @@ get_header();
             <?php if (have_posts()) : ?>
                 
                 <?php
-                // Featured Post (first post)
                 $post_count = 0;
                 while (have_posts()) : the_post();
                     $post_count++;
-                    
+
                     if ($post_count === 1) :
                 ?>
                     <!-- Featured Post -->
                     <article class="featured-post">
-                        <div class="featured-image" style="background: linear-gradient(135deg, #D4F58D 0%, #a8e063 100%);">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('linkawy-featured'); ?>
-                            <?php endif; ?>
-                        </div>
                         <div class="featured-content">
-                            <span class="featured-badge"><i class="fas fa-star"></i> <?php _e('مقال مميز', 'linkawy'); ?></span>
                             <h2 class="featured-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                            <p class="featured-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 35); ?></p>
+                            <p class="featured-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 40); ?></p>
                             <div class="featured-meta">
-                                <span><i class="far fa-clock"></i> <?php echo linkawy_reading_time(); ?></span>
-                                <span><i class="far fa-user"></i> <?php the_author(); ?></span>
-                                <span><i class="far fa-calendar"></i> <?php echo get_the_date('j F Y'); ?></span>
+                                <?php
+                                $feat_cats = get_the_category();
+                                if ($feat_cats && !empty($feat_cats[0]->name)) :
+                                ?>
+                                    <a href="<?php echo esc_url(get_category_link($feat_cats[0]->term_id)); ?>" class="featured-category"><?php echo esc_html($feat_cats[0]->name); ?></a>
+                                    <span class="featured-meta-sep" aria-hidden="true">·</span>
+                                <?php endif; ?>
+                                <span class="featured-read-time"><?php echo esc_html(linkawy_reading_time()); ?></span>
+                                <span class="featured-meta-sep" aria-hidden="true">·</span>
+                                <time class="featured-date" datetime="<?php echo esc_attr(get_the_date('c')); ?>"><?php echo esc_html(get_the_date('j F Y')); ?></time>
                             </div>
                         </div>
                     </article>
 
-                    <div class="blog-grid">
+                    <!-- 2-column row -->
+                    <div class="blog-grid blog-grid--2col">
                 <?php
                     else :
+                        if ($post_count === 4) : ?>
+                            </div>
+                            <!-- 3-column row -->
+                            <div class="blog-grid">
+                        <?php endif;
                         get_template_part('template-parts/content', 'post');
                     endif;
                 endwhile;
@@ -80,8 +86,18 @@ get_header();
         </div>
     </section>
 
-    <!-- Subscription Box -->
-    <?php get_template_part('template-parts/newsletter'); ?>
+    <!-- Help CTA Banner -->
+    <section class="container">
+        <div class="help-cta">
+            <div class="help-cta-content">
+                <h3><?php _e('دورة <span class="cta-highlight">Next-Gen SEO</span> المتقدمة', 'linkawy'); ?></h3>
+                <p><?php _e('تعلّم استراتيجيات SEO المتقدمة التي يستخدمها المحترفون لتصدر نتائج البحث وبناء حركة مرور مستدامة لموقعك.', 'linkawy'); ?></p>
+            </div>
+            <div class="help-cta-btn">
+                <a href="https://wa.me/201063676963?text=<?php echo rawurlencode('مرحبًا، أريد الانضمام إلى دورة Next-Gen SEO'); ?>" target="_blank" rel="noopener" class="btn-orange"><?php _e('الانضمام إلى الدورة', 'linkawy'); ?> <i class="fas fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </section>
 
     <!-- Editors' Choice -->
     <?php
@@ -112,15 +128,16 @@ get_header();
             <div class="editors-grid">
                 <?php while ($editors_picks->have_posts()) : $editors_picks->the_post(); ?>
                 <div class="editor-card">
-                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                    <p><?php echo wp_trim_words(get_the_excerpt(), 18); ?></p>
-                    <div class="editor-card-meta">
-                        <?php 
+                    <h4 class="editor-card-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                    <p class="editor-card-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 18); ?></p>
+                    <div class="editor-card-top-meta">
+                        <?php
                         $categories = get_the_category();
-                        if ($categories) : ?>
-                        <span><i class="fas fa-tag"></i> <?php echo esc_html($categories[0]->name); ?></span>
+                        if ($categories && !empty($categories[0]->name)) :
+                        ?>
+                            <a href="<?php echo esc_url(get_category_link($categories[0]->term_id)); ?>" class="blog-card-category"><?php echo esc_html($categories[0]->name); ?></a>
                         <?php endif; ?>
-                        <span><i class="far fa-clock"></i> <?php echo linkawy_reading_time(); ?></span>
+                        <span class="blog-card-read-time"><?php echo esc_html(linkawy_reading_time()); ?></span>
                     </div>
                 </div>
                 <?php endwhile; wp_reset_postdata(); ?>
@@ -129,21 +146,8 @@ get_header();
     </section>
     <?php endif; ?>
 
-    <!-- Help CTA Banner -->
-    <section class="container">
-        <div class="help-cta">
-            <div class="help-cta-icon">
-                <i class="fas fa-rocket"></i>
-            </div>
-            <div class="help-cta-content">
-                <h3><?php _e('تحتاج مساعدة في تحسين موقعك؟', 'linkawy'); ?></h3>
-                <p><?php _e('تواصل مع فريقنا من الخبراء واحصل على خطة عمل مخصصة لرفع ترتيب موقعك وزيادة مبيعاتك.', 'linkawy'); ?></p>
-            </div>
-            <div class="help-cta-btn">
-                <a href="<?php echo esc_url(home_url('/contact/')); ?>" class="btn-orange"><?php _e('تواصل معنا للاستشارة', 'linkawy'); ?> <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </section>
+    <!-- Subscription Box -->
+    <?php get_template_part('template-parts/newsletter'); ?>
 
     <?php
     // Get all categories with posts
@@ -158,14 +162,14 @@ get_header();
     foreach ($blog_categories as $blog_cat) :
         $cat_posts = new WP_Query(array(
             'post_type'      => 'post',
-            'posts_per_page' => 3,
+            'posts_per_page' => 6,
             'cat'            => $blog_cat->term_id,
         ));
         
         if ($cat_posts->have_posts()) :
     ?>
     <!-- Category Section: <?php echo esc_html($blog_cat->name); ?> -->
-    <section class="blog-grid-section category-section" style="background: #fff;<?php echo !$is_first ? ' padding-top: 0;' : ''; ?>">
+    <section class="blog-grid-section category-section<?php echo !$is_first ? ' category-section--follow' : ''; ?>">
         <div class="container">
             <div class="section-header-row">
                 <h2 class="section-title-sm"><?php echo esc_html($blog_cat->name); ?></h2>

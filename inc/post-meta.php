@@ -12,6 +12,125 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Sanitize optional HEX color for article hero background (empty = theme default).
+ *
+ * @param string $color Raw input (with or without #).
+ * @return string Sanitized #RRGGBB or empty string if invalid / empty.
+ */
+function linkawy_sanitize_article_hero_hex($color) {
+    $color = is_string($color) ? trim($color) : '';
+    if ($color === '') {
+        return '';
+    }
+    if ($color[0] !== '#') {
+        $color = '#' . $color;
+    }
+    $sanitized = sanitize_hex_color($color);
+
+    return $sanitized ? $sanitized : '';
+}
+
+/**
+ * Get validated article hero background color for a post.
+ *
+ * @param int|null $post_id Post ID; defaults to current post in the loop.
+ * @return string Empty string to use theme CSS default, or #RRGGBB.
+ */
+function linkawy_get_article_hero_bg_color($post_id = null) {
+    if ($post_id === null) {
+        $post_id = linkawy_get_current_single_post_id();
+    }
+    if (!$post_id) {
+        return '';
+    }
+    $stored = get_post_meta($post_id, '_article_hero_bg_color', true);
+
+    return linkawy_sanitize_article_hero_hex($stored);
+}
+
+/**
+ * Post ID for single templates when the global post loop may not be set yet.
+ *
+ * @return int 0 if unavailable.
+ */
+function linkawy_get_current_single_post_id() {
+    $id = get_the_ID();
+    if ($id) {
+        return (int) $id;
+    }
+    if (is_singular()) {
+        $qid = get_queried_object_id();
+
+        return $qid ? (int) $qid : 0;
+    }
+
+    return 0;
+}
+
+/**
+ * Whether the article hero uses optional grid + mask pattern (post meta).
+ *
+ * @param int|null $post_id Post ID; defaults to current single view.
+ * @return bool
+ */
+function linkawy_article_hero_pattern_enabled($post_id = null) {
+    if ($post_id === null) {
+        $post_id = linkawy_get_current_single_post_id();
+    }
+    if (!$post_id) {
+        return false;
+    }
+
+    return get_post_meta($post_id, '_article_hero_pattern', true) === '1';
+}
+
+/**
+ * Whether the hero should use the grid pattern (meta and/or automatic when Linko is shown).
+ *
+ * Pattern is on when saved in meta, or automatically when there is no featured image in the hero
+ * or «إخفاء الصورة البارزة من الهيرو» is checked (Linko / empty hero image slot).
+ *
+ * @param int|null $post_id Post ID; defaults to current single view.
+ * @return bool
+ */
+function linkawy_article_hero_effective_pattern_enabled($post_id = null) {
+    if ($post_id === null) {
+        $post_id = linkawy_get_current_single_post_id();
+    }
+    if (!$post_id) {
+        return false;
+    }
+    if (linkawy_article_hero_pattern_enabled($post_id)) {
+        return true;
+    }
+    if (!linkawy_single_hero_should_show_post_thumbnail($post_id)) {
+        return true;
+    }
+
+    return false;
+}
+
+/**
+ * Whether the single post hero should output the featured image (vs. Linko default).
+ *
+ * @param int|null $post_id Post ID; defaults to current post.
+ * @return bool True when featured image should be shown in the hero.
+ */
+function linkawy_single_hero_should_show_post_thumbnail($post_id = null) {
+    if ($post_id === null) {
+        $post_id = linkawy_get_current_single_post_id();
+    }
+    if (!$post_id) {
+        return false;
+    }
+    if (get_post_meta($post_id, '_hero_hide_featured_image', true) === '1') {
+        return false;
+    }
+
+    return has_post_thumbnail($post_id);
+}
+
+/**
  * Available card gradient colors
  */
 function linkawy_get_card_gradients() {
@@ -87,6 +206,16 @@ function linkawy_register_post_meta_boxes() {
         'side',
         'default'
     );
+
+    // Article hero background (single post)
+    add_meta_box(
+        'linkawy_article_hero_bg',
+        __('خلفية هيرو المقال', 'linkawy'),
+        'linkawy_article_hero_bg_meta_box_html',
+        'post',
+        'side',
+        'default'
+    );
 }
 add_action('add_meta_boxes', 'linkawy_register_post_meta_boxes');
 
@@ -143,6 +272,68 @@ function linkawy_card_color_meta_box_html($post) {
         
         <p class="description" style="color: #666; font-size: 12px; margin-top: 10px;">
             <?php _e('اختر لون خلفية الكارت في صفحة المدونة.', 'linkawy'); ?>
+        </p>
+    </div>
+    <?php
+}
+
+/**
+ * Article hero background color (HEX) — single template
+ */
+function linkawy_article_hero_bg_meta_box_html($post) {
+    wp_nonce_field('linkawy_article_hero_bg_nonce', 'linkawy_article_hero_bg_nonce');
+    $hex = get_post_meta($post->ID, '_article_hero_bg_color', true);
+    $hex = linkawy_sanitize_article_hero_hex($hex);
+    ?>
+    <div class="linkawy-article-hero-bg-box">
+        <label for="linkawy_article_hero_bg_color" style="display:block; font-weight:600; margin-bottom:6px;">
+            <?php _e('لون الخلفية (HEX)', 'linkawy'); ?>
+        </label>
+        <input
+            type="text"
+            name="linkawy_article_hero_bg_color"
+            id="linkawy_article_hero_bg_color"
+            value="<?php echo esc_attr($hex); ?>"
+            placeholder="#000000"
+            maxlength="7"
+            pattern="#?[0-9A-Fa-f]{3,6}"
+            style="width:100%; font-family:monospace; padding:8px 10px;"
+            autocomplete="off"
+        />
+        <p class="description" style="color:#666; font-size:12px; margin-top:8px;">
+            <?php _e('اتركه فارغاً للون الافتراضي (‎#000). يعمل مع الخلفية الصلبة أو مع نمط الشبكة.', 'linkawy'); ?>
+        </p>
+        <hr style="margin:14px 0; border:none; border-top:1px solid #dcdcde;">
+        <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; padding:4px 0;">
+            <input
+                type="checkbox"
+                name="linkawy_article_hero_pattern"
+                value="1"
+                <?php checked(get_post_meta($post->ID, '_article_hero_pattern', true), '1'); ?>
+                style="width:18px; height:18px; margin-top:2px; flex-shrink:0;"
+            >
+            <span style="font-size:13px; line-height:1.45;">
+                <?php _e('تفعيل نمط الشبكة والتلاشي (النمط السابق)', 'linkawy'); ?>
+            </span>
+        </label>
+        <p class="description" style="color:#666; font-size:12px; margin-top:8px;">
+            <?php _e('يُفعَّل النمط تلقائياً عند عدم وجود صورة بارزة أو عند تفعيل «إخفاء الصورة البارزة من الهيرو». مع صورة بارزة في الهيرو: خلفية صلبة ما لم تُفعّل الخانة يدوياً. عند التفعيل اليدوي أو التلقائي: شبكة خفيفة مع تلاشٍ شعاعي.', 'linkawy'); ?>
+        </p>
+        <hr style="margin:14px 0; border:none; border-top:1px solid #dcdcde;">
+        <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; padding:4px 0;">
+            <input
+                type="checkbox"
+                name="linkawy_hero_hide_featured_image"
+                value="1"
+                <?php checked(get_post_meta($post->ID, '_hero_hide_featured_image', true), '1'); ?>
+                style="width:18px; height:18px; margin-top:2px; flex-shrink:0;"
+            >
+            <span style="font-size:13px; line-height:1.45;">
+                <?php _e('إخفاء الصورة البارزة من الهيرو', 'linkawy'); ?>
+            </span>
+        </label>
+        <p class="description" style="color:#666; font-size:12px; margin-top:8px;">
+            <?php _e('عند التفعيل يُتجاهل المظهر البارز في أعلى المقال ويُعرض لينكو كما لو لم تُحدَّد صورة بارزة.', 'linkawy'); ?>
         </p>
     </div>
     <?php
@@ -215,6 +406,95 @@ function linkawy_save_card_color_meta($post_id) {
     }
 }
 add_action('save_post', 'linkawy_save_card_color_meta');
+
+/**
+ * Save article hero background HEX
+ */
+function linkawy_save_article_hero_bg_meta($post_id) {
+    if (!isset($_POST['linkawy_article_hero_bg_nonce'])) {
+        return;
+    }
+    if (!wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['linkawy_article_hero_bg_nonce'])), 'linkawy_article_hero_bg_nonce')) {
+        return;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return;
+    }
+    if (!current_user_can('edit_post', $post_id)) {
+        return;
+    }
+
+    $raw = isset($_POST['linkawy_article_hero_bg_color']) ? wp_unslash($_POST['linkawy_article_hero_bg_color']) : '';
+    $san = linkawy_sanitize_article_hero_hex($raw);
+    if ($san === '') {
+        delete_post_meta($post_id, '_article_hero_bg_color');
+    } else {
+        update_post_meta($post_id, '_article_hero_bg_color', $san);
+    }
+
+    if (isset($_POST['linkawy_article_hero_pattern']) && $_POST['linkawy_article_hero_pattern'] === '1') {
+        update_post_meta($post_id, '_article_hero_pattern', '1');
+    } else {
+        delete_post_meta($post_id, '_article_hero_pattern');
+    }
+
+    if (isset($_POST['linkawy_hero_hide_featured_image']) && $_POST['linkawy_hero_hide_featured_image'] === '1') {
+        update_post_meta($post_id, '_hero_hide_featured_image', '1');
+    } else {
+        delete_post_meta($post_id, '_hero_hide_featured_image');
+    }
+}
+add_action('save_post', 'linkawy_save_article_hero_bg_meta');
+
+/**
+ * Expose meta for the block editor / REST (optional tooling).
+ */
+function linkawy_register_article_hero_bg_post_meta() {
+    register_post_meta(
+        'post',
+        '_article_hero_bg_color',
+        array(
+            'type'              => 'string',
+            'single'            => true,
+            'show_in_rest'      => true,
+            'sanitize_callback' => 'linkawy_sanitize_article_hero_hex',
+            'auth_callback'     => function () {
+                return current_user_can('edit_posts');
+            },
+        )
+    );
+    register_post_meta(
+        'post',
+        '_hero_hide_featured_image',
+        array(
+            'type'              => 'string',
+            'single'            => true,
+            'show_in_rest'      => true,
+            'sanitize_callback' => function ($value) {
+                return ($value === '1' || $value === true || $value === 1) ? '1' : '';
+            },
+            'auth_callback'     => function () {
+                return current_user_can('edit_posts');
+            },
+        )
+    );
+    register_post_meta(
+        'post',
+        '_article_hero_pattern',
+        array(
+            'type'              => 'string',
+            'single'            => true,
+            'show_in_rest'      => true,
+            'sanitize_callback' => function ($value) {
+                return ($value === '1' || $value === true || $value === 1) ? '1' : '';
+            },
+            'auth_callback'     => function () {
+                return current_user_can('edit_posts');
+            },
+        )
+    );
+}
+add_action('init', 'linkawy_register_article_hero_bg_post_meta');
 
 /**
  * Add custom columns to posts list
