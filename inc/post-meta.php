@@ -131,7 +131,8 @@ function linkawy_single_hero_should_show_post_thumbnail($post_id = null) {
 }
 
 /**
- * Available card gradient colors
+ * Available card gradient colors — used by the front page for Success Stories
+ * and «أحدث المقالات من المدونة» cards (cycled programmatically).
  */
 function linkawy_get_card_gradients() {
     return array(
@@ -197,16 +198,6 @@ function linkawy_register_post_meta_boxes() {
         'high'
     );
     
-    // Card Color Meta Box
-    add_meta_box(
-        'linkawy_card_color',
-        __('لون خلفية الكارت', 'linkawy'),
-        'linkawy_card_color_meta_box_html',
-        'post',
-        'side',
-        'default'
-    );
-
     // Article hero background (single post)
     add_meta_box(
         'linkawy_article_hero_bg',
@@ -242,36 +233,6 @@ function linkawy_editors_pick_meta_box_html($post) {
         </label>
         <p class="description" style="color: #666; font-size: 12px; margin-top: 8px;">
             <?php _e('المقالات المحددة ستظهر في قسم "اختيارات المحرر" في صفحة المدونة.', 'linkawy'); ?>
-        </p>
-    </div>
-    <?php
-}
-
-/**
- * Display Card Color Meta Box HTML
- */
-function linkawy_card_color_meta_box_html($post) {
-    // Add nonce for security
-    wp_nonce_field('linkawy_card_color_nonce', 'linkawy_card_color_nonce');
-    
-    // Get current value (default to orange)
-    $card_color = get_post_meta($post->ID, '_card_color', true);
-    if (empty($card_color)) {
-        $card_color = 'orange';
-    }
-    $gradients = linkawy_get_card_gradients();
-    ?>
-    <div class="linkawy-card-color-box">
-        <select name="linkawy_card_color" id="linkawy_card_color" style="width: 100%; padding: 10px; font-size: 15px;">
-            <?php foreach ($gradients as $key => $gradient) : ?>
-                <option value="<?php echo esc_attr($key); ?>" <?php selected($card_color, $key); ?>>
-                    <?php echo esc_html($gradient['label']); ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        
-        <p class="description" style="color: #666; font-size: 12px; margin-top: 10px;">
-            <?php _e('اختر لون خلفية الكارت في صفحة المدونة.', 'linkawy'); ?>
         </p>
     </div>
     <?php
@@ -373,41 +334,6 @@ function linkawy_save_editors_pick_meta($post_id) {
 add_action('save_post', 'linkawy_save_editors_pick_meta');
 
 /**
- * Save Card Color Meta Data
- */
-function linkawy_save_card_color_meta($post_id) {
-    // Check if nonce is set
-    if (!isset($_POST['linkawy_card_color_nonce'])) {
-        return;
-    }
-    
-    // Verify nonce
-    if (!wp_verify_nonce($_POST['linkawy_card_color_nonce'], 'linkawy_card_color_nonce')) {
-        return;
-    }
-    
-    // Check for autosave
-    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-        return;
-    }
-    
-    // Check user permissions
-    if (!current_user_can('edit_post', $post_id)) {
-        return;
-    }
-    
-    // Save the card color (default: orange)
-    if (isset($_POST['linkawy_card_color'])) {
-        $color = sanitize_text_field($_POST['linkawy_card_color']);
-        if (empty($color)) {
-            $color = 'orange';
-        }
-        update_post_meta($post_id, '_card_color', $color);
-    }
-}
-add_action('save_post', 'linkawy_save_card_color_meta');
-
-/**
  * Save article hero background HEX
  */
 function linkawy_save_article_hero_bg_meta($post_id) {
@@ -505,7 +431,6 @@ function linkawy_add_custom_columns($columns) {
         $new_columns[$key] = $value;
         if ($key === 'title') {
             $new_columns['editors_pick'] = __('اختيار المحرر', 'linkawy');
-            $new_columns['card_color'] = __('لون الكارت', 'linkawy');
         }
     }
     return $new_columns;
@@ -522,23 +447,6 @@ function linkawy_display_custom_columns($column, $post_id) {
             echo '<span style="color: #ff6b00; font-size: 18px;" title="' . esc_attr__('اختيار المحرر', 'linkawy') . '">★</span>';
         } else {
             echo '<span style="color: #ddd; font-size: 18px;">☆</span>';
-        }
-    }
-    
-    if ($column === 'card_color') {
-        $card_color = get_post_meta($post_id, '_card_color', true);
-        if (empty($card_color)) {
-            $card_color = 'orange';
-        }
-        $gradients = linkawy_get_card_gradients();
-        
-        if (isset($gradients[$card_color])) {
-            $color = isset($gradients[$card_color]['color']) ? $gradients[$card_color]['color'] : '#FF8552';
-            $label = $gradients[$card_color]['label'];
-            echo '<span style="display: inline-flex; align-items: center; gap: 6px;">';
-            echo '<span style="width: 20px; height: 20px; border-radius: 4px; background: ' . esc_attr($color) . '; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></span>';
-            echo '<span style="font-size: 12px;">' . esc_html($label) . '</span>';
-            echo '</span>';
         }
     }
 }

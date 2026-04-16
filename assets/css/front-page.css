@@ -549,24 +549,69 @@
     position: relative;
     aspect-ratio: 4/3;
     overflow: hidden;
-    background: var(--card-gradient, #f0f0f0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Softener wash on top of the color gradient to tone down saturation */
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+        var(--card-gradient, #f0f0f0);
 }
 
-.blog-post-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+/* OmniSEO-style grid pattern with radial mask — subtle center glow */
+.blog-post-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+        repeating-linear-gradient(
+            to right,
+            transparent 0,
+            transparent calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) 28px
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) 28px
+        );
+    -webkit-mask-image: radial-gradient(
+        ellipse 85% 75% at 50% 50%,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.25) 60%,
+        transparent 100%
+    );
+    mask-image: radial-gradient(
+        ellipse 85% 75% at 50% 50%,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.25) 60%,
+        transparent 100%
+    );
+}
+
+.blog-post-card .blog-post-image img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
     transition: transform 0.4s ease;
+    position: relative;
+    z-index: 2;
 }
 
 .blog-post-card:hover .blog-post-image img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .blog-post-category-badge {
     position: absolute;
     top: 1rem;
     right: 1rem;
+    z-index: 3;
     background: #fff;
     color: #1a1a1a;
     padding: 0.4rem 0.9rem;
@@ -600,6 +645,7 @@
     flex: 1;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -848,7 +894,55 @@
 }
 
 .story-card-image {
-    background-color: var(--card-bg, transparent);
+    /* Softener wash on top of the color gradient to tone down saturation */
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+        var(--card-bg, transparent);
+}
+
+/* OmniSEO-style grid pattern with radial mask — subtle center glow */
+.story-card-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background-image:
+        repeating-linear-gradient(
+            to right,
+            transparent 0,
+            transparent calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) 28px
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) calc(28px - 1px),
+            rgba(255, 255, 255, 0.14) 28px
+        );
+    -webkit-mask-image: radial-gradient(
+        ellipse 85% 75% at 50% 50%,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.25) 60%,
+        transparent 100%
+    );
+    mask-image: radial-gradient(
+        ellipse 85% 75% at 50% 50%,
+        rgba(255, 255, 255, 0.85) 0%,
+        rgba(255, 255, 255, 0.25) 60%,
+        transparent 100%
+    );
+}
+
+/* Icon/vector-friendly sizing (overrides the 100% width/height in style.css) */
+.success-story-card .story-card-image img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
 }
 
 .fp-process-desc {

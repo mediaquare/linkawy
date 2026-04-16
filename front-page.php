@@ -581,15 +581,18 @@ get_header();
             </div>
             
             <div class="success-stories-grid">
-                <?php 
-                $colors = array('#F5C451', '#5B4DD3', '#E8F4FF');
-                $color_index = 0;
+                <?php
+                // Cycle: Purple Blue → Teal Green → Green Lime (reusing theme card gradients)
+                $story_gradients      = linkawy_get_card_gradients();
+                $story_palette        = array('purple', 'emerald', 'green');
+                $story_color_index    = 0;
                 while ($success_stories->have_posts()) : $success_stories->the_post();
-                    $bg_color = $colors[$color_index % 3];
-                    $color_index++;
+                    $story_key        = $story_palette[$story_color_index % 3];
+                    $story_bg         = isset($story_gradients[$story_key]['value']) ? $story_gradients[$story_key]['value'] : $story_gradients['purple']['value'];
+                    $story_color_index++;
                 ?>
                 <article class="success-story-card">
-                    <div class="story-card-image" style="--card-bg: <?php echo esc_attr($bg_color); ?>;">
+                    <div class="story-card-image" style="--card-bg: <?php echo esc_attr($story_bg); ?>;">
                         <?php if (has_post_thumbnail()) : ?>
                             <?php 
                             // Use linkawy-card size (400px) with proper sizes attribute
@@ -887,18 +890,18 @@ get_header();
                 ));
 
                 $all_gradients = linkawy_get_card_gradients();
-                
+                // Cycle: Yellow Green → Pink Rose → Orange Coral (reusing theme card gradients)
+                $blog_palette      = array('lime', 'pink', 'orange');
+                $blog_color_index  = 0;
+
                 if ($blog_query->have_posts()) :
                     while ($blog_query->have_posts()) : $blog_query->the_post();
-                        $categories = get_the_category();
+                        $categories    = get_the_category();
                         $category_name = !empty($categories) ? $categories[0]->name : '';
-                        
-                        // Get card color from post meta
-                        $card_color_key = get_post_meta(get_the_ID(), '_card_color', true);
-                        if (empty($card_color_key)) {
-                            $card_color_key = 'orange';
-                        }
-                        $card_gradient = isset($all_gradients[$card_color_key]) ? $all_gradients[$card_color_key]['value'] : $all_gradients['orange']['value'];
+
+                        $card_color_key = $blog_palette[$blog_color_index % 3];
+                        $card_gradient  = isset($all_gradients[$card_color_key]['value']) ? $all_gradients[$card_color_key]['value'] : $all_gradients['orange']['value'];
+                        $blog_color_index++;
                 ?>
                 <a href="<?php the_permalink(); ?>" class="blog-post-card">
                     <div class="blog-post-image" style="--card-gradient: <?php echo esc_attr($card_gradient); ?>;">
