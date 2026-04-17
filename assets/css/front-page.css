@@ -598,6 +598,7 @@
 .blog-post-card .blog-post-image img {
     width: 100%;
     height: 100%;
+    max-height: 80%;
     object-fit: contain;
     transition: transform 0.4s ease;
     position: relative;
@@ -939,6 +940,7 @@
 
 /* الصورة البارزة داخل الكارت — يتجاوز cover في style.css لعرض PNG كاملة دون قص */
 .success-story-card .story-card-image img {
+    max-height: 80%;
     object-fit: contain;
     position: relative;
     z-index: 2;
