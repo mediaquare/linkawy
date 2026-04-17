@@ -66,11 +66,6 @@ $adjacent = linkawy_get_adjacent_glossary();
                 
                 <!-- Main Content Box -->
                 <div class="glossary-content-box">
-                    
-                    <!-- Title -->
-                    <h2 class="glossary-term-title"><?php printf(__('ما هو %s؟', 'linkawy'), get_the_title()); ?></h2>
-                    
-                    <!-- Content -->
                     <div class="glossary-content">
                         <?php the_content(); ?>
                     </div>

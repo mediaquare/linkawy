@@ -156,16 +156,6 @@
     font-weight: 600;
 }
 
-/* Title inside content box */
-.glossary-term-title {
-    font-size: 1.8rem;
-    font-weight: 800;
-    line-height: 1.7;
-    color: #1a1a2e;
-    margin: 0 0 1.5rem 0;
-    text-align: right;
-}
-
 /* ===== Glossary Section ===== */
 .glossary-section {
     padding: 4rem 0;
@@ -1195,11 +1185,6 @@
         font-size: 0.85rem;
     }
 
-    .glossary-term-title {
-        font-size: 1.4rem;
-        line-height: 1.7;
-    }
-
     .glossary-section {
         padding: 2rem 0;
         background: #fff;
@@ -1216,10 +1201,15 @@
         gap: 1rem;
     }
 
+    /* نفس منطق المقال الفردي على الجوال: طبقة بيضاء واحدة بدون كارت */
     .glossary-content-box {
         --glossary-padding: 0;
         grid-area: content;
         padding: var(--glossary-padding);
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 100%;
     }
 
     .glossary-nav-prev {
@@ -1486,13 +1476,12 @@
         font-size: 1.5rem;
     }
 
-    .glossary-term-title {
-        font-size: 1.2rem;
-    }
-
     .glossary-content-box {
         --glossary-padding: 0;
         padding: var(--glossary-padding);
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
     }
 
     .glossary-synonyms-hero {
