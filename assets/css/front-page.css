@@ -545,9 +545,11 @@
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* مطابقة .story-card-image (style.css): ارتفاع ثابت + توسيط — لا aspect-ratio مختلف */
 .blog-post-image {
     position: relative;
-    aspect-ratio: 4/3;
+    height: 200px;
+    flex-shrink: 0;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -594,7 +596,7 @@
     );
 }
 
-/* نفس منطق قصص النجاح: الصورة البارزة (مثل PNG) تملأ المنطقة الملوّن دون قص */
+/* مطابقة .success-story-card .story-card-image img — نفس سلوك العرض داخل الحاوية */
 .blog-post-card .blog-post-image img {
     width: 100%;
     height: 100%;
@@ -683,6 +685,11 @@
     .blog-posts-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    /* مطابقة .story-card-image @768 في style.css */
+    .blog-post-image {
+        height: 180px;
     }
 }
 
