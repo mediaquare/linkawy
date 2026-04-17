@@ -2203,14 +2203,6 @@ h2.faq-question::after {
         overflow-x: clip;
     }
     
-    /* Fix container width on mobile — generous side gutters for visual breathing */
-    .container {
-        max-width: 100%;
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
-        box-sizing: border-box;
-    }
-    
     /* Lists on mobile */
     .article-content ul,
     .article-content ol {
@@ -2556,12 +2548,7 @@ h2.faq-question::after {
     
     .article-content-wrapper {
         --content-padding: 0;
-        background: transparent;
-        border-radius: 0;
-        box-shadow: none;
         padding: var(--content-padding);
-        box-sizing: border-box;
-        max-width: 100%;
     }
     
     .article-content p {
@@ -2841,11 +2828,6 @@ h2.faq-question::after {
 }
 
 @media (max-width: 480px) {
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
     .article-content .wp-block-table,
     .article-content figure.wp-block-table {
         max-width: calc(100vw - 2rem);

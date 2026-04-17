@@ -1368,12 +1368,7 @@ nav.main-nav a:hover {
     }
 }
 
-/* Improve container padding on very small screens */
 @media (max-width: 480px) {
-    .container {
-        padding: 0 12px;
-    }
-
     .hero h1 {
         font-size: 1.6rem;
     }
@@ -3472,9 +3467,41 @@ footer a:hover {
     }
 }
 
+/* ===== توحيد هوامش منطقة المحتوى — الصفحات الفردية (مرجع: المقال) ===== */
+@media (max-width: 768px) {
+    .article-content-wrapper,
+    .single-resources .page-content,
+    .glossary-content-box,
+    .prompt-single-content {
+        padding-left: 0;
+        padding-right: 0;
+        background: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-content-wrapper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .single-resources .page-content,
+    .glossary-content-box,
+    .prompt-single-content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
-        padding: 0 15px;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     footer {
@@ -3668,6 +3695,13 @@ footer a:hover {
 
     .cta-banner p {
         font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
 
