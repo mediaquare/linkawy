@@ -1415,14 +1415,14 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 }
 
 /* ========================================
-   Pre-Footer CTA Section (Blog Page)
+   Pre-Footer CTA — aligned with article.css / glossary (spacing before CTA via sections above)
    ======================================== */
 .pre-footer-cta {
     background: linear-gradient(180deg, #4f24a0 0%, #421983 100%);
-    padding: 4.5rem 0 3.75rem;
+    padding: 3.5rem 0 3.5rem;
     position: relative;
     overflow: visible;
-    margin-top: clamp(3rem, 5vw, 4.5rem);
+    margin-top: 0;
 }
 
 .pre-footer-cta::before {
@@ -1605,9 +1605,9 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     }
 
     .pre-footer-cta {
-        overflow-x: hidden;
-        padding: 3.5rem 0 3rem;
-        margin-top: 3.5rem;
+        overflow-x: clip;
+        padding: 3rem 0;
+        margin-top: 3rem;
     }
     
     .subscription-box {
@@ -1620,8 +1620,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     }
 
     .pre-footer-cta .container {
-        width: calc(100vw - 3rem);
-        max-width: 100%;
+        width: calc(100% - 2rem);
         margin-left: auto;
         margin-right: auto;
         box-sizing: border-box;
@@ -1692,8 +1691,8 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     }
     
     .pre-footer-cta {
-        padding: 2.75rem 0;
-        margin-top: 3rem;
+        padding: 2.5rem 0;
+        margin-top: 2.5rem;
     }
 
     .blog-grid-section.category-section:has(+ .pre-footer-cta) {
@@ -1701,7 +1700,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     }
 
     .pre-footer-cta .container {
-        width: calc(100vw - 3rem);
+        width: calc(100% - 2.5rem);
     }
     
     .pre-footer-cta-icons {
