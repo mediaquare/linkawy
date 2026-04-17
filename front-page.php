@@ -918,21 +918,11 @@ get_header();
                         <div class="story-card-meta blog-post-card-meta">
                             <span class="blog-post-meta-author">
                                 <?php
-                                echo get_avatar(
+                                // صورة الكاتب من «معلومات Linkawy الإضافية» (_author_avatar / _author_avatar_id) مع احتياطي Gravatar
+                                echo linkawy_get_author_avatar_img(
                                     (int) get_the_author_meta('ID'),
                                     32,
-                                    '',
-                                    esc_attr(
-                                        sprintf(
-                                            /* translators: %s: author display name */
-                                            __('صورة الملف الشخصي لـ %s', 'linkawy'),
-                                            get_the_author()
-                                        )
-                                    ),
-                                    array(
-                                        'class'   => 'blog-post-author-avatar',
-                                        'loading' => 'lazy',
-                                    )
+                                    'blog-post-author-avatar avatar'
                                 );
                                 ?>
                                 <span class="blog-post-meta-name"><?php echo esc_html(get_the_author()); ?></span>

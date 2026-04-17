@@ -3,7 +3,7 @@
  * Linkawy Theme Functions
  *
  * @package Linkawy
- * @version 11.11
+ * @version 11.12
  */
 
 // Prevent direct access
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define theme constants
-define('LINKAWY_VERSION', '11.11');
+define('LINKAWY_VERSION', '11.12');
 define('LINKAWY_DIR', get_template_directory());
 define('LINKAWY_URI', get_template_directory_uri());
 
