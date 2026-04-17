@@ -914,7 +914,32 @@ get_header();
                     </div>
                     <div class="blog-post-content">
                         <h3><?php the_title(); ?></h3>
-                        <p><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                        <p class="story-card-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                        <div class="story-card-meta blog-post-card-meta">
+                            <span class="blog-post-meta-author">
+                                <?php
+                                echo get_avatar(
+                                    (int) get_the_author_meta('ID'),
+                                    32,
+                                    '',
+                                    esc_attr(
+                                        sprintf(
+                                            /* translators: %s: author display name */
+                                            __('صورة الملف الشخصي لـ %s', 'linkawy'),
+                                            get_the_author()
+                                        )
+                                    ),
+                                    array(
+                                        'class'   => 'blog-post-author-avatar',
+                                        'loading' => 'lazy',
+                                    )
+                                );
+                                ?>
+                                <span class="blog-post-meta-name"><?php echo esc_html(get_the_author()); ?></span>
+                            </span>
+                            <span class="blog-post-meta-sep" aria-hidden="true">·</span>
+                            <span class="blog-post-meta-read"><?php echo esc_html(linkawy_reading_time()); ?></span>
+                        </div>
                     </div>
                 </a>
                 <?php

@@ -641,7 +641,7 @@
     text-align: right;
 }
 
-.blog-post-content p {
+.blog-post-content p.story-card-excerpt {
     color: #666;
     font-size: 0.9rem;
     line-height: 1.7;
@@ -652,6 +652,46 @@
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* مطابقة story-card-meta + صورة واسم الكاتب قبل وقت القراءة */
+.blog-post-card .story-card-meta.blog-post-card-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    justify-content: flex-start;
+}
+
+.blog-post-meta-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.blog-post-card .story-card-meta .avatar,
+.blog-post-card .story-card-meta img.blog-post-author-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.blog-post-meta-name {
+    color: #666;
+    font-weight: 500;
+    font-size: inherit;
+}
+
+.blog-post-meta-sep {
+    color: #bbb;
+    user-select: none;
+}
+
+.blog-post-meta-read {
+    color: #999;
 }
 
 @media (max-width: 992px) {
