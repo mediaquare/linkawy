@@ -348,25 +348,80 @@ document.addEventListener('DOMContentLoaded', () => {
             const sentinel = document.createElement('div');
             sentinel.style.cssText = 'position:absolute;top:0;left:0;right:0;height:1px;pointer-events:none;visibility:hidden;';
             alphabetNavWrapper.parentNode.insertBefore(sentinel, alphabetNavWrapper);
-            
+
+            // Sync scroll baseline when sticky toggles (avoids false "scroll down" on first stick)
+            let lastScrollY = window.scrollY;
+            let suppressConcealUntil = 0;
+
             // Position sentinel at the point where sticky should activate
             const stickyTop = parseInt(getComputedStyle(alphabetNavWrapper).top) || 80;
             sentinel.style.top = (alphabetNavWrapper.offsetTop - stickyTop) + 'px';
-            
+
             const stickyObserver = new IntersectionObserver(
                 (entries) => {
                     entries.forEach(entry => {
                         // When sentinel is not visible (scrolled past), nav should be sticky
                         if (!entry.isIntersecting) {
                             alphabetNavWrapper.classList.add('is-sticky');
+                            lastScrollY = window.scrollY;
                         } else {
                             alphabetNavWrapper.classList.remove('is-sticky');
+                            alphabetNavWrapper.classList.remove('is-concealed');
+                            lastScrollY = window.scrollY;
                         }
                     });
                 },
                 { threshold: 0, rootMargin: `-${stickyTop}px 0px 0px 0px` }
             );
             stickyObserver.observe(sentinel);
+
+            // Mobile only: hide sticky alphabet bar when scrolling down, show when scrolling up
+            const mqAlphabetHide = window.matchMedia('(max-width: 768px)');
+
+            const updateAlphabetScrollConceal = () => {
+                if (!mqAlphabetHide.matches) {
+                    alphabetNavWrapper.classList.remove('is-concealed');
+                    return;
+                }
+                const y = window.scrollY;
+                if (!alphabetNavWrapper.classList.contains('is-sticky')) {
+                    alphabetNavWrapper.classList.remove('is-concealed');
+                    lastScrollY = y;
+                    return;
+                }
+                if (Date.now() < suppressConcealUntil) {
+                    lastScrollY = y;
+                    return;
+                }
+                const delta = y - lastScrollY;
+                const threshold = 8;
+                if (delta > threshold) {
+                    alphabetNavWrapper.classList.add('is-concealed');
+                } else if (delta < -threshold) {
+                    alphabetNavWrapper.classList.remove('is-concealed');
+                }
+                lastScrollY = y;
+            };
+
+            window.addEventListener('scroll', updateAlphabetScrollConceal, { passive: true });
+
+            const onMqAlphabetHide = () => {
+                if (!mqAlphabetHide.matches) {
+                    alphabetNavWrapper.classList.remove('is-concealed');
+                }
+            };
+            if (mqAlphabetHide.addEventListener) {
+                mqAlphabetHide.addEventListener('change', onMqAlphabetHide);
+            } else if (mqAlphabetHide.addListener) {
+                mqAlphabetHide.addListener(onMqAlphabetHide);
+            }
+
+            alphabetNavWrapper.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => {
+                    suppressConcealUntil = Date.now() + 900;
+                    alphabetNavWrapper.classList.remove('is-concealed');
+                });
+            });
         }
 
         // Glossary Scroll Spy - Using IntersectionObserver

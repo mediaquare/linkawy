@@ -697,7 +697,7 @@
 .glossary-index-hero {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #fff;
-    padding: 5rem 0 3rem;
+    padding: 4rem 0 2.5rem;
     text-align: center;
     position: relative;
 }
@@ -732,20 +732,21 @@
     line-height: 1.6;
 }
 
-/* Alphabet Navigation Wrapper - Sticky container */
+/* Alphabet Navigation Wrapper - امتداد طبيعي للهيرو + sticky container */
 .alphabet-nav-wrapper {
     position: sticky;
     top: 80px;
     z-index: 999;
-    background: transparent;
-    padding: 1.25rem 0 1rem;
-    margin-top: -5rem;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* نفس خلفية الهيرو دائمًا حتى لا تتسرب خلفية المحتوى الفاتحة أسفل الحروف */
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 1.5rem 0 2rem;
+    margin-top: -2.75rem;
+    transition: padding 0.25s ease, box-shadow 0.3s ease;
 }
 
-/* When scrolled and sticky */
+/* عند اللصق: تقليل الحشو السفلي + ظل لإبراز الانفصال عن المحتوى */
 .alphabet-nav-wrapper.is-sticky {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding-bottom: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -803,14 +804,14 @@
 /* Content Area */
 .glossary-index-content {
     background: #f8fafc;
-    padding: 6rem 0 5rem;
+    padding: 3.5rem 0 4rem;
     min-height: 60vh;
 }
 
 /* Search Bar */
 .glossary-search-container {
     max-width: 600px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 3rem;
     position: relative;
     z-index: 5;
 }
@@ -859,10 +860,10 @@
 .glossary-group {
     display: grid;
     grid-template-columns: 80px 1fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
-    padding-bottom: 4rem;
-    scroll-margin-top: 180px; /* Account for sticky header + alphabet nav */
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    scroll-margin-top: 160px;
     border-bottom: 1px solid #e2e8f0;
 }
 
@@ -920,17 +921,46 @@
 /* Responsive Index */
 @media (max-width: 768px) {
     .glossary-index-hero {
-        padding: 3rem 0 2.5rem;
+        padding: 2.5rem 0 2rem;
     }
 
     .glossary-index-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
+    .glossary-index-subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 2.25rem;
+    }
+
+    .glossary-index-content {
+        padding: 2.5rem 0 3rem;
+    }
+
+    /* قاعدة الجوال: مساحة تنفس أوسع أسفل الحروف داخل الهيرو */
     .alphabet-nav-wrapper {
         top: 70px;
-        padding: 0.75rem 0.5rem 0.75rem 0.5rem;
-        margin-top: -4rem;
+        padding: 1rem 0.5rem 1.5rem;
+        margin-top: -2rem;
+        transition:
+            transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.22s ease,
+            visibility 0.22s ease,
+            padding 0.25s ease,
+            box-shadow 0.3s ease;
+    }
+
+    /* عند اللصق: تضييق الحشو لإبقاء الشريط نحيفًا */
+    .alphabet-nav-wrapper.is-sticky {
+        padding-bottom: 0.75rem;
+    }
+
+    /* إخفاء الشريط اللاصق عند التمرير لأسفل، إظهاره عند التمرير لأعلى */
+    .alphabet-nav-wrapper.is-sticky.is-concealed {
+        transform: translateY(calc(-100% - 4px));
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 
     .alphabet-nav {
@@ -944,23 +974,35 @@
 
     .glossary-group {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
         text-align: right;
-        scroll-margin-top: 160px; /* Account for smaller sticky elements on mobile */
+        scroll-margin-top: 140px;
     }
 
     .group-char {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
         position: static;
         border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0.4rem;
         display: inline-block;
     }
 
     .glossary-search-container {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
         padding: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) and (prefers-reduced-motion: reduce) {
+    .alphabet-nav-wrapper.is-sticky {
+        transition-duration: 0.01ms;
+    }
+
+    .alphabet-nav-wrapper.is-sticky.is-concealed {
+        transform: none;
     }
 }
 

@@ -36,8 +36,8 @@ ksort($grouped_terms);
     <!-- Glossary Index Hero -->
     <section class="glossary-index-hero">
         <div class="container">
-            <h1 class="glossary-index-title"><?php _e('قاموس السيو (SEO Glossary)', 'linkawy'); ?></h1>
-            <p class="glossary-index-subtitle"><?php _e('شرح مبسط لكل مصطلح مهم في عالم تحسين محركات البحث.', 'linkawy'); ?></p>
+            <h1 class="glossary-index-title"><?php _e('قاموس المصطلحات', 'linkawy'); ?></h1>
+            <p class="glossary-index-subtitle"><?php _e('شرح مبسط لكل مصطلح مهم في عالم تحسين محركات البحث والتسويق الإلكتروني.', 'linkawy'); ?></p>
         </div>
     </section>
 
