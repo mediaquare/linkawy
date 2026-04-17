@@ -23,6 +23,14 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
      * Store the current mega menu parent item
      */
     private $mega_menu_parent = null;
+
+    /**
+     * Immediate children count for the current depth-0 parent (non-mega submenu).
+     * Used to add submenu-few when there are 3 or fewer links.
+     *
+     * @var int|null
+     */
+    private $standard_submenu_child_count = null;
     
     /**
      * Starts the list before the elements are added.
@@ -50,6 +58,15 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         } else {
             // Regular submenu
             $classes = array('sub-menu');
+            if (
+                $depth === 0
+                && !$this->in_mega_menu
+                && $this->standard_submenu_child_count !== null
+                && $this->standard_submenu_child_count > 0
+                && $this->standard_submenu_child_count <= 3
+            ) {
+                $classes[] = 'submenu-few';
+            }
             $class_names = implode(' ', apply_filters('nav_menu_submenu_css_class', $classes, $args, $depth));
             $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
             $output .= "{$n}{$indent}<ul{$class_names}>{$n}";
@@ -123,8 +140,13 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
             $classes[] = 'has-dropdown';
             $this->in_mega_menu = true;
             $this->mega_menu_parent = $item;
+            $this->standard_submenu_child_count = null;
+        } elseif ($depth === 0 && $has_children) {
+            $this->standard_submenu_child_count = $this->count_immediate_menu_children($item->ID, $args);
+        } elseif ($depth === 0) {
+            $this->standard_submenu_child_count = null;
         }
-        
+
         $class_names = implode(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args, $depth));
         $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
         
@@ -162,9 +184,13 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         $item_output .= '<a' . $attributes . '>';
         $item_output .= $args->link_before . $title . $args->link_after;
         
-        // Add chevron icon for mega menu items
-        if ($depth === 0 && $enable_mega_menu && $has_children) {
-            $item_output .= ' <i class="fas fa-chevron-down"></i>';
+        // Chevron for dropdowns: mega menu or standard submenu (same UX as الخدمات)
+        if ($depth === 0 && $has_children) {
+            if ($enable_mega_menu) {
+                $item_output .= ' <i class="fas fa-chevron-down"></i>';
+            } else {
+                $item_output .= ' <i class="fas fa-chevron-down submenu-chevron" aria-hidden="true"></i>';
+            }
         }
         
         $item_output .= '</a>';
@@ -173,6 +199,31 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
     
+    /**
+     * Count direct children of a menu item in the same menu.
+     *
+     * @param int      $parent_item_id Parent nav_menu_item ID.
+     * @param stdClass $args           wp_nav_menu() arguments.
+     * @return int
+     */
+    private function count_immediate_menu_children($parent_item_id, $args) {
+        if (empty($args->menu)) {
+            return 0;
+        }
+        $items = wp_get_nav_menu_items($args->menu);
+        if (!$items || !is_array($items)) {
+            return 0;
+        }
+        $parent_id = (int) $parent_item_id;
+        $count     = 0;
+        foreach ($items as $menu_item) {
+            if ((int) $menu_item->menu_item_parent === $parent_id) {
+                $count++;
+            }
+        }
+        return $count;
+    }
+
     /**
      * Generate CTA section HTML
      *

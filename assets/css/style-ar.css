@@ -36,12 +36,32 @@ body {
     right: auto;
 }
 
+/* القائمة الفرعية RTL: تتمركز تحت الأب مع إزاحة يمين */
+nav.main-nav ul.sub-menu {
+    left: auto;
+    right: -2rem;
+}
+
 .mega-menu-btn i {
     transform: rotate(180deg);
 }
 
 .mega-menu-btn:hover i {
     transform: rotate(180deg) translateX(-3px);
+}
+
+/* تأثير انزلاق الرابط عند التحويم: في RTL يُعكس */
+.home nav.main-nav ul.sub-menu a:hover,
+.front-page nav.main-nav ul.sub-menu a:hover {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+@media (max-width: 768px) {
+    nav.main-nav ul.sub-menu a:hover {
+        padding-right: 0;
+        padding-left: 6px;
+    }
 }
 
 .lang-switch {

@@ -35,17 +35,37 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (mobileMenuToggle && mainNav) {
+        const clearMobileNavAccordions = () => {
+            mainNav.querySelectorAll('li.submenu-open').forEach((li) => li.classList.remove('submenu-open'));
+        };
+
+        const isMobileNavAccordion = () => window.matchMedia('(max-width: 768px)').matches;
+
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenuToggle.classList.toggle('active');
             mainNav.classList.toggle('active');
-            setNavOpen(mainNav.classList.contains('active'));
+            const open = mainNav.classList.contains('active');
+            setNavOpen(open);
+            if (!open) {
+                clearMobileNavAccordions();
+            }
         });
 
-        navLinks.forEach(link => {
+        navLinks.forEach((link) => {
             link.addEventListener('click', () => {
+                const li = link.closest('li');
+                const isParentToggle =
+                    li &&
+                    li.classList.contains('menu-item-has-children') &&
+                    link === li.querySelector(':scope > a') &&
+                    isMobileNavAccordion();
+                if (isParentToggle) {
+                    return;
+                }
                 mobileMenuToggle.classList.remove('active');
                 mainNav.classList.remove('active');
                 setNavOpen(false);
+                clearMobileNavAccordions();
             });
         });
 
@@ -54,7 +74,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuToggle.classList.remove('active');
                 mainNav.classList.remove('active');
                 setNavOpen(false);
+                clearMobileNavAccordions();
             }
+        });
+
+        mainNav.querySelectorAll('li.menu-item-has-children').forEach((li) => {
+            const parentLink = li.querySelector(':scope > a');
+            const panel = li.querySelector(':scope > ul.sub-menu, :scope > .mega-menu');
+            if (!parentLink || !panel) {
+                return;
+            }
+            parentLink.addEventListener('click', (e) => {
+                if (!isMobileNavAccordion()) {
+                    return;
+                }
+                e.preventDefault();
+                const wasOpen = li.classList.contains('submenu-open');
+                mainNav.querySelectorAll('li.menu-item-has-children.submenu-open').forEach((o) => {
+                    o.classList.remove('submenu-open');
+                });
+                if (!wasOpen) {
+                    li.classList.add('submenu-open');
+                }
+            });
         });
     }
 
@@ -303,7 +345,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Mega Menu moved to Lazy Init
+        // Mega Menu + قوائم فرعية عادية (نفس منطق التأخير لتجاوز الفراغ بين الرابط والقائمة)
+        const isDesktopHeaderNav = () => window.matchMedia('(min-width: 769px)').matches;
+
         const dropdownItems = document.querySelectorAll('.has-dropdown');
         let closeTimeout;
 
@@ -311,20 +355,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const megaMenu = item.querySelector('.mega-menu');
             if (megaMenu) {
                 item.addEventListener('mouseenter', () => {
+                    if (!isDesktopHeaderNav()) return;
                     clearTimeout(closeTimeout);
                     megaMenu.style.opacity = '1';
                     megaMenu.style.visibility = 'visible';
                     megaMenu.style.transform = 'translateX(-50%) translateY(0)';
                 });
                 item.addEventListener('mouseleave', () => {
+                    if (!isDesktopHeaderNav()) return;
                     closeTimeout = setTimeout(() => {
                         megaMenu.style.opacity = '0';
                         megaMenu.style.visibility = 'hidden';
                         megaMenu.style.transform = 'translateX(-50%) translateY(10px)';
                     }, 500);
                 });
-                megaMenu.addEventListener('mouseenter', () => clearTimeout(closeTimeout));
+                megaMenu.addEventListener('mouseenter', () => {
+                    if (!isDesktopHeaderNav()) return;
+                    clearTimeout(closeTimeout);
+                });
                 megaMenu.addEventListener('mouseleave', () => {
+                    if (!isDesktopHeaderNav()) return;
                     closeTimeout = setTimeout(() => {
                         megaMenu.style.opacity = '0';
                         megaMenu.style.visibility = 'hidden';
@@ -332,6 +382,82 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 200);
                 });
             }
+        });
+
+        const clearSubMenuInline = (ul) => {
+            ul.style.opacity = '';
+            ul.style.visibility = '';
+            ul.style.transform = '';
+            ul.style.pointerEvents = '';
+        };
+
+        document.querySelectorAll('nav.main-nav li.menu-item-has-children:not(.has-dropdown)').forEach((item) => {
+            const subMenu = item.querySelector(':scope > ul.sub-menu');
+            if (!subMenu) return;
+            let subCloseTimeout;
+            const showSub = () => {
+                subMenu.style.opacity = '1';
+                subMenu.style.visibility = 'visible';
+                subMenu.style.transform = 'translateY(0)';
+                subMenu.style.pointerEvents = 'auto';
+            };
+            const hideSub = () => {
+                subMenu.style.opacity = '0';
+                subMenu.style.visibility = 'hidden';
+                subMenu.style.transform = 'translateY(10px)';
+                subMenu.style.pointerEvents = 'none';
+            };
+            item.addEventListener('mouseenter', () => {
+                if (!isDesktopHeaderNav()) return;
+                clearTimeout(subCloseTimeout);
+                subMenu.__linkawyNavCloseT = undefined;
+                showSub();
+            });
+            item.addEventListener('mouseleave', () => {
+                if (!isDesktopHeaderNav()) return;
+                clearTimeout(subCloseTimeout);
+                subCloseTimeout = setTimeout(hideSub, 500);
+                subMenu.__linkawyNavCloseT = subCloseTimeout;
+            });
+            subMenu.addEventListener('mouseenter', () => {
+                if (!isDesktopHeaderNav()) return;
+                clearTimeout(subCloseTimeout);
+                subMenu.__linkawyNavCloseT = undefined;
+            });
+            subMenu.addEventListener('mouseleave', () => {
+                if (!isDesktopHeaderNav()) return;
+                clearTimeout(subCloseTimeout);
+                subCloseTimeout = setTimeout(hideSub, 200);
+                subMenu.__linkawyNavCloseT = subCloseTimeout;
+            });
+        });
+
+        document.addEventListener('focusin', (e) => {
+            document.querySelectorAll('nav.main-nav li.menu-item-has-children:not(.has-dropdown) > ul.sub-menu').forEach((ul) => {
+                const li = ul.parentElement;
+                if (li && li.contains(e.target)) {
+                    return;
+                }
+                clearSubMenuInline(ul);
+            });
+        });
+
+        window.matchMedia('(min-width: 769px)').addEventListener('change', (ev) => {
+            document.querySelectorAll('nav.main-nav li.submenu-open').forEach((li) => li.classList.remove('submenu-open'));
+            if (ev.matches) return;
+            clearTimeout(closeTimeout);
+            document.querySelectorAll('nav.main-nav li.menu-item-has-children:not(.has-dropdown) > ul.sub-menu').forEach((ul) => {
+                if (ul.__linkawyNavCloseT) {
+                    clearTimeout(ul.__linkawyNavCloseT);
+                    ul.__linkawyNavCloseT = undefined;
+                }
+                clearSubMenuInline(ul);
+            });
+            document.querySelectorAll('.has-dropdown .mega-menu').forEach((mega) => {
+                mega.style.opacity = '';
+                mega.style.visibility = '';
+                mega.style.transform = '';
+            });
         });
 
         // Sticky Nav can be initialized here too.
