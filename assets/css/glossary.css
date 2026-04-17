@@ -981,13 +981,26 @@
         scroll-margin-top: 140px;
     }
 
+    /* خط متدرج أسفل الحرف: يبدأ من اليمين (البرتقالي) ويتلاشى نحو اليسار — مثل page-title لكن بمحاذاة RTL */
     .group-char {
         font-size: 2rem;
-        margin-bottom: 0.5rem;
-        position: static;
-        border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 0.4rem;
+        margin-bottom: 0.65rem;
+        position: relative;
+        border-bottom: none;
+        padding-bottom: 0.65rem;
         display: inline-block;
+    }
+
+    .group-char::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        /* عرض قريب من حرف واحد (نسبة لحجم خط group-char) */
+        width: min(100%, 0.85em);
+        height: 3px;
+        border-radius: 2px;
+        background: linear-gradient(to left, var(--primary-color, #ff6b00), transparent);
     }
 
     .glossary-search-container {
