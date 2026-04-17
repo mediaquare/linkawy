@@ -594,9 +594,10 @@
     );
 }
 
+/* نفس منطق قصص النجاح: الصورة البارزة (مثل PNG) تملأ المنطقة الملوّن دون قص */
 .blog-post-card .blog-post-image img {
-    width: 40%;
-    height: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     transition: transform 0.4s ease;
     position: relative;
@@ -936,10 +937,8 @@
     );
 }
 
-/* Icon/vector-friendly sizing (overrides the 100% width/height in style.css) */
+/* الصورة البارزة داخل الكارت — يتجاوز cover في style.css لعرض PNG كاملة دون قص */
 .success-story-card .story-card-image img {
-    width: 40%;
-    height: auto;
     object-fit: contain;
     position: relative;
     z-index: 2;
