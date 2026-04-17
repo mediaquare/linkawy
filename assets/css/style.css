@@ -138,14 +138,20 @@ section {
     max-width: 100%;
 }
 
-/* Exception for sections with sticky elements or alignfull blocks */
+/* Exception: sections that need overflow visible for decorative layers */
 section.process-section,
 section.strategy-section,
 section.programs-section,
-section.faq-section,
-section.page-content-section {
+section.faq-section {
     overflow-x: visible;
     overflow: visible;
+}
+
+/* قسم المحتوى (صفحات + موارد): منع السكرول الأفقي — alignfull يُضبط في content-blocks على الجوال */
+section.page-content-section {
+    overflow-x: clip;
+    overflow-y: visible;
+    max-width: 100%;
 }
 
 body {

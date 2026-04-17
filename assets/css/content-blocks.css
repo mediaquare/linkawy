@@ -111,6 +111,23 @@
     clear: both;
 }
 
+/* جوال/تابلت: 100vw + margin السالب يتجاوز العرض ويسبب سكرولًا أفقيًا */
+@media (max-width: 768px) {
+    .linkawy-content .alignfull {
+        width: 100%;
+        max-width: 100%;
+        margin-inline: 0;
+        padding-left: var(--content-padding, 1.25rem) !important;
+        padding-right: var(--content-padding, 1.25rem) !important;
+    }
+
+    .linkawy-content .alignwide {
+        width: 100%;
+        max-width: 100%;
+        margin-inline: 0;
+    }
+}
+
 /* Text alignment from editor */
 .linkawy-content .has-text-align-left {
     text-align: left;
