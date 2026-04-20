@@ -296,25 +296,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // ===== FAQ Accordion =====
-    const faqItems = document.querySelectorAll('.faq-item');
+    // ===== FAQ Accordion (علامات قديمة خارج مكوّن linkawy/faq — المكوّن يُدار من main-ar.js) =====
+    const faqItems = Array.from(document.querySelectorAll('.faq-item')).filter(function (item) {
+        return !item.closest('.faq-block');
+    });
     if (faqItems.length > 0) {
-        // Open first FAQ by default
         faqItems[0].classList.add('is-open');
-        
-        faqItems.forEach(function(item) {
+        faqItems.forEach(function (item) {
             const question = item.querySelector('.faq-question');
-            
             if (question) {
-                question.addEventListener('click', function() {
+                question.addEventListener('click', function () {
                     const isOpen = item.classList.contains('is-open');
-                    
-                    // Close all FAQs
-                    faqItems.forEach(function(otherItem) {
+                    faqItems.forEach(function (otherItem) {
                         otherItem.classList.remove('is-open');
                     });
-                    
-                    // Open clicked FAQ (if it wasn't already open)
                     if (!isOpen) {
                         item.classList.add('is-open');
                     }

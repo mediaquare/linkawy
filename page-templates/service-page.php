@@ -38,8 +38,10 @@ while (have_posts()) :
     $primary_btn_icon = get_post_meta(get_the_ID(), '_service_hero_primary_btn_icon', true);
     $display_title = $hero_title !== '' ? $hero_title : get_the_title();
     $has_thumbnail = has_post_thumbnail();
+    $page_hero_bg = linkawy_get_page_hero_bg_color(get_the_ID());
+    $service_hero_style = $page_hero_bg !== '' ? ' style="' . esc_attr('background: ' . $page_hero_bg . ';') . '"' : '';
     ?>
-    <section class="service-hero">
+    <section class="service-hero"<?php echo $service_hero_style; ?>>
         <div class="container service-hero-inner">
             <div class="service-hero-content">
                 <?php linkawy_breadcrumbs(); ?>

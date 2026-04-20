@@ -131,35 +131,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // صفحة الخدمة: مكوّن Gutenberg FAQ — نفس سلوك الأكورديون وحركة max-height كقسم الأسئلة في الصفحة الرئيسية
-    if (document.body.classList.contains('linkawy-service-page')) {
-        document.querySelectorAll('.page-content-section .faq-block').forEach((block) => {
-            const items = block.querySelectorAll('.faq-item');
-            items.forEach((item) => {
-                const question = item.querySelector('h2.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const inner = item.querySelector('.faq-answer-content');
-                if (!question || !answer || !inner) {
-                    return;
-                }
-                answer.style.maxHeight = '0';
-                question.addEventListener('click', () => {
-                    const isOpen = item.classList.contains('is-open');
-                    items.forEach((other) => {
-                        other.classList.remove('is-open');
-                        const oa = other.querySelector('.faq-answer');
-                        if (oa) {
-                            oa.style.maxHeight = '0';
-                        }
-                    });
-                    if (!isOpen) {
-                        item.classList.add('is-open');
-                        answer.style.maxHeight = `${inner.scrollHeight + 24}px`;
+    // مكوّن Gutenberg FAQ (linkawy/faq): أكورديون + Schema — صفحات عادية، صفحة الخدمة، المقالات، إلخ.
+    document.querySelectorAll('.faq-block').forEach((block) => {
+        const items = block.querySelectorAll('.faq-item');
+        items.forEach((item) => {
+            const question = item.querySelector('h2.faq-question');
+            const answer = item.querySelector('.faq-answer');
+            const inner = item.querySelector('.faq-answer-content');
+            if (!question || !answer || !inner) {
+                return;
+            }
+            answer.style.maxHeight = '0';
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('is-open');
+                items.forEach((other) => {
+                    other.classList.remove('is-open');
+                    const oa = other.querySelector('.faq-answer');
+                    if (oa) {
+                        oa.style.maxHeight = '0';
                     }
                 });
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    answer.style.maxHeight = `${inner.scrollHeight + 24}px`;
+                }
             });
         });
-    }
+    });
 
     // ===== Lazy Initialization for Heavy Widgets =====
     let widgetsInitialized = false;

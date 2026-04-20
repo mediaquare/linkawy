@@ -3,7 +3,9 @@
  * Service Page Hero Meta Box
  *
  * Custom fields for the service page template hero (title, subtitle, buttons).
- * Subtitle also appears on the default page template (page.php) when filled.
+ * Hero title, subtitle, and optional hero background HEX apply to the default page template
+ * (page.php) and the service page template when filled; primary button fields apply to the
+ * service page template only.
  *
  * @package Linkawy
  */
@@ -38,6 +40,8 @@ function linkawy_service_hero_meta_box_html($post) {
     $primary_text = get_post_meta($post->ID, '_service_hero_primary_btn_text', true);
     $primary_url = get_post_meta($post->ID, '_service_hero_primary_btn_url', true);
     $primary_icon = get_post_meta($post->ID, '_service_hero_primary_btn_icon', true);
+    $page_hero_bg = get_post_meta($post->ID, '_page_hero_bg_color', true);
+    $page_hero_bg = linkawy_sanitize_article_hero_hex($page_hero_bg);
     $current_template = get_post_meta($post->ID, '_wp_page_template', true);
     $is_service_template = ($current_template === 'page-templates/service-page.php');
     $icon_options = array(
@@ -50,7 +54,7 @@ function linkawy_service_hero_meta_box_html($post) {
     );
     ?>
     <?php if (!$is_service_template) : ?>
-    <p class="description" style="margin-bottom:12px;"><?php _e('حقول العنوان والزر تُستخدم مع قالب «صفحة الخدمة» فقط. حقل «وصف الهيرو» يظهر أيضاً في القالب الافتراضي للصفحة أسفل العنوان عند تعبئته.', 'linkawy'); ?></p>
+    <p class="description" style="margin-bottom:12px;"><?php _e('«عنوان الهيرو» و«وصف الهيرو» و«لون خلفية الهيرو» تظهر في القالب الافتراضي للصفحة. حقول الزر تُستخدم مع قالب «صفحة الخدمة» فقط.', 'linkawy'); ?></p>
     <?php endif; ?>
     <div id="linkawy-service-hero-meta-box" class="linkawy-service-hero-fields">
         <p>
@@ -60,6 +64,22 @@ function linkawy_service_hero_meta_box_html($post) {
         <p>
             <label for="service_hero_subtitle" style="display:block; margin-bottom:4px; font-weight:600;"><?php _e('وصف الهيرو', 'linkawy'); ?></label>
             <textarea id="service_hero_subtitle" name="service_hero_subtitle" class="widefat" rows="3" placeholder="<?php esc_attr_e('نص وصفي يظهر تحت العنوان', 'linkawy'); ?>"><?php echo esc_textarea($subtitle); ?></textarea>
+        </p>
+        <p>
+            <label for="page_hero_bg_color" style="display:block; margin-bottom:4px; font-weight:600;"><?php _e('لون خلفية الهيرو (HEX)', 'linkawy'); ?></label>
+            <input
+                type="text"
+                name="page_hero_bg_color"
+                id="page_hero_bg_color"
+                value="<?php echo esc_attr($page_hero_bg); ?>"
+                class="widefat"
+                placeholder="#ffffff"
+                maxlength="7"
+                pattern="#?[0-9A-Fa-f]{3,6}"
+                style="font-family:monospace; padding:8px 10px;"
+                autocomplete="off"
+            >
+            <span class="description" style="display:block; margin-top:6px; color:#646970; font-size:12px;"><?php _e('اتركه فارغاً للتدرج الافتراضي. عند التعبئة يُستبدل التدرج بلون صلب (مثل مقالات المدونة).', 'linkawy'); ?></span>
         </p>
         <p>
             <label style="display:block; margin-bottom:4px; font-weight:600;"><?php _e('الزر الأساسي', 'linkawy'); ?></label>
@@ -113,6 +133,14 @@ function linkawy_save_service_hero_meta($post_id) {
             $value = sanitize_text_field($_POST[$post_key]);
         }
         update_post_meta($post_id, $meta_key, $value);
+    }
+
+    $raw_bg = isset($_POST['page_hero_bg_color']) ? wp_unslash($_POST['page_hero_bg_color']) : '';
+    $san_bg = linkawy_sanitize_article_hero_hex($raw_bg);
+    if ($san_bg === '') {
+        delete_post_meta($post_id, '_page_hero_bg_color');
+    } else {
+        update_post_meta($post_id, '_page_hero_bg_color', $san_bg);
     }
 }
 add_action('save_post', 'linkawy_save_service_hero_meta');

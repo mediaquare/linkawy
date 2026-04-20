@@ -131,8 +131,9 @@ function linkawy_scripts() {
         );
     }
 
-    // Single Post/Article styles
-    if (is_singular('post')) {
+    // Single Post/Article styles (includes Gutenberg FAQ block frontend: .faq-block)
+    // Pages: same FAQ component + Schema as posts/service template — needs article.css for accordion UI
+    if (is_singular('post') || (is_page() && !is_front_page())) {
         wp_enqueue_style(
             'linkawy-article',
             linkawy_get_asset_path('/assets/css/article', 'css'),

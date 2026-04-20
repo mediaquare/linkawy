@@ -49,6 +49,22 @@ function linkawy_get_article_hero_bg_color($post_id = null) {
 }
 
 /**
+ * Get validated page hero background color (HEX) for a page (default + service templates).
+ *
+ * @param int $post_id Page post ID.
+ * @return string Empty string for theme CSS default, or #RRGGBB.
+ */
+function linkawy_get_page_hero_bg_color($post_id) {
+    $post_id = (int) $post_id;
+    if ($post_id <= 0) {
+        return '';
+    }
+    $stored = get_post_meta($post_id, '_page_hero_bg_color', true);
+
+    return linkawy_sanitize_article_hero_hex($stored);
+}
+
+/**
  * Post ID for single templates when the global post loop may not be set yet.
  *
  * @return int 0 if unavailable.
@@ -416,6 +432,19 @@ function linkawy_register_article_hero_bg_post_meta() {
             },
             'auth_callback'     => function () {
                 return current_user_can('edit_posts');
+            },
+        )
+    );
+    register_post_meta(
+        'page',
+        '_page_hero_bg_color',
+        array(
+            'type'              => 'string',
+            'single'            => true,
+            'show_in_rest'      => true,
+            'sanitize_callback' => 'linkawy_sanitize_article_hero_hex',
+            'auth_callback'     => function () {
+                return current_user_can('edit_pages');
             },
         )
     );
