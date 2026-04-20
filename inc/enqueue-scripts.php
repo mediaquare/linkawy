@@ -131,8 +131,7 @@ function linkawy_scripts() {
         );
     }
 
-    // Single Post/Article styles (includes Gutenberg FAQ block frontend: .faq-block)
-    // Pages: same FAQ component + Schema as posts/service template — needs article.css for accordion UI
+    // Single Post/Article styles (typography, TOC, etc.). FAQ داخل المقال: article.css؛ FAQ داخل الصفحات: content-blocks.css
     if (is_singular('post') || (is_page() && !is_front_page())) {
         wp_enqueue_style(
             'linkawy-article',

@@ -858,12 +858,12 @@
     margin-bottom: 0;
 }
 
-/* ===== FAQ Block ===== */
-.faq-block {
+/* ===== FAQ Block — مقالات فقط؛ محتوى الصفحات (.page-content) يستخدم شبكة الخدمة من content-blocks.css ===== */
+.article-content .faq-block {
     margin: 2.5rem 0;
 }
 
-.faq-title {
+.article-content .faq-title {
     font-size: 1.35rem;
     font-weight: 700;
     color: #1a1a2e;
@@ -873,12 +873,12 @@
     display: inline-block;
 }
 
-.faq-container {
+.article-content .faq-container {
     display: block;
     width: 100%;
 }
 
-.faq-item {
+.article-content .faq-item {
     display: block;
     width: 100%;
     padding: 1rem 0;
@@ -886,11 +886,11 @@
     box-sizing: border-box;
 }
 
-.faq-item:last-child {
+.article-content .faq-item:last-child {
     border-bottom: none;
 }
 
-h2.faq-question {
+.article-content h2.faq-question {
     font-size: 1.3rem;
     font-weight: 600;
     color: #1a1a2e;
@@ -904,11 +904,11 @@ h2.faq-question {
     gap: 12px;
 }
 
-h2.faq-question:hover {
+.article-content h2.faq-question:hover {
     color: #ff6b00;
 }
 
-h2.faq-question::after {
+.article-content h2.faq-question::after {
     content: '●';
     color: #ffb380;
     font-size: 3em;
@@ -918,75 +918,74 @@ h2.faq-question::after {
     order: -1;
 }
 
-.faq-item.is-open h2.faq-question::after {
+.article-content .faq-item.is-open h2.faq-question::after {
     color: #ff6b00;
 }
 
-
-.faq-answer {
+.article-content .faq-answer {
     display: none;
     padding: 0;
     margin-top: 1rem;
 }
 
-.faq-item.is-open .faq-answer {
+.article-content .faq-item.is-open .faq-answer {
     display: block;
 }
 
 /* First FAQ open by default */
-.faq-item:first-child.is-open .faq-answer {
+.article-content .faq-item:first-child.is-open .faq-answer {
     display: block;
 }
 
-.faq-answer-content {
+.article-content .faq-answer-content {
     font-size: 1rem;
     line-height: 1.9;
     color: #555;
 }
 
-.faq-answer-content p {
+.article-content .faq-answer-content p {
     margin-bottom: 0.75rem;
 }
 
-.faq-answer-content p:last-child {
+.article-content .faq-answer-content p:last-child {
     margin-bottom: 0;
 }
 
-.faq-answer-content a {
+.article-content .faq-answer-content a {
     color: #ff6b00;
 }
 
-.faq-answer-content ul,
-.faq-answer-content ol {
+.article-content .faq-answer-content ul,
+.article-content .faq-answer-content ol {
     margin: 0.75rem 0;
     padding-right: 1.5rem;
 }
 
-.faq-answer-content li {
+.article-content .faq-answer-content li {
     margin-bottom: 0.5rem;
 }
 
 /* FAQ Mobile Responsive */
 @media (max-width: 768px) {
-    .faq-title {
+    .article-content .faq-title {
         font-size: 1.2rem;
     }
-    
-    .faq-item {
+
+    .article-content .faq-item {
         padding: 0.85rem 0;
     }
-    
-    h2.faq-question {
+
+    .article-content h2.faq-question {
         font-size: 1.2rem;
     }
-    
-    h2.faq-question::before {
+
+    .article-content h2.faq-question::before {
         width: 8px;
         height: 8px;
         margin-left: 8px;
     }
-    
-    .faq-answer-content {
+
+    .article-content .faq-answer-content {
         font-size: 0.95rem;
     }
 }

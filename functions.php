@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define theme constants
-define('LINKAWY_VERSION', '11.47');
+define('LINKAWY_VERSION', '11.48');
 define('LINKAWY_DIR', get_template_directory());
 define('LINKAWY_URI', get_template_directory_uri());
 
