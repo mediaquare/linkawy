@@ -56,6 +56,25 @@
     color: #721c24;
 }
 
+.faq-move-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.faq-move-btn {
+    color: #444;
+    background: #eceff3;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.faq-move-btn:hover {
+    background: #dde3ea;
+    color: #111;
+}
+
 .faq-question-input {
     flex: 1;
     font-size: 15px;
@@ -131,6 +150,10 @@
 }
 
 .editor-styles-wrapper .faq-question-row {
+    flex-direction: row-reverse;
+}
+
+.editor-styles-wrapper .faq-move-actions {
     flex-direction: row-reverse;
 }
 

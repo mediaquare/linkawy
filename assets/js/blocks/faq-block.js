@@ -53,6 +53,16 @@
                 }
             };
 
+            const moveFaq = (fromIndex, toIndex) => {
+                if (toIndex < 0 || toIndex >= faqs.length || fromIndex === toIndex) {
+                    return;
+                }
+                const newFaqs = [...faqs];
+                const [movedItem] = newFaqs.splice(fromIndex, 1);
+                newFaqs.splice(toIndex, 0, movedItem);
+                props.setAttributes({ faqs: newFaqs });
+            };
+
             // Trash icon SVG
             const trashIcon = el('svg', { 
                 xmlns: 'http://www.w3.org/2000/svg', 
@@ -81,6 +91,22 @@
                                     className: 'faq-action-btn faq-delete-btn',
                                     title: 'حذف'
                                 }, trashIcon),
+                                el('div', { className: 'faq-move-actions' },
+                                    index > 0 && el('button', {
+                                        type: 'button',
+                                        onClick: () => moveFaq(index, index - 1),
+                                        className: 'faq-action-btn faq-move-btn faq-move-up-btn',
+                                        title: 'تحريك لأعلى',
+                                        'aria-label': 'تحريك السؤال لأعلى'
+                                    }, '↑'),
+                                    index < faqs.length - 1 && el('button', {
+                                        type: 'button',
+                                        onClick: () => moveFaq(index, index + 1),
+                                        className: 'faq-action-btn faq-move-btn faq-move-down-btn',
+                                        title: 'تحريك لأسفل',
+                                        'aria-label': 'تحريك السؤال لأسفل'
+                                    }, '↓')
+                                ),
                                 el(RichText, {
                                     tagName: 'div',
                                     className: 'faq-question-input',
