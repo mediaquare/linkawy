@@ -159,6 +159,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // كتلة الشفرة (Gutenberg): زر نسخ — يعمل في المقالات، الصفحات، الموارد، المصطلحات، إلخ.
+    document.querySelectorAll('.wp-block-code').forEach((block) => {
+        if (block.querySelector(':scope > .code-copy-btn')) {
+            return;
+        }
+        const copyBtn = document.createElement('button');
+        copyBtn.type = 'button';
+        copyBtn.className = 'code-copy-btn';
+        copyBtn.innerHTML = '<i class="far fa-copy"></i>';
+        copyBtn.setAttribute('title', 'نسخ الكود');
+        copyBtn.addEventListener('click', () => {
+            const code = block.querySelector('code');
+            const text = code ? code.textContent : block.textContent;
+            if (!navigator.clipboard || !navigator.clipboard.writeText) {
+                return;
+            }
+            navigator.clipboard.writeText(text.trim()).then(() => {
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                copyBtn.classList.add('copied');
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="far fa-copy"></i>';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+        block.appendChild(copyBtn);
+    });
+
     // ===== Lazy Initialization for Heavy Widgets =====
     let widgetsInitialized = false;
 

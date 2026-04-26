@@ -742,31 +742,6 @@
     border-radius: 50%;
 }
 
-/* Code copy button (content block styles in content-blocks.css) */
-.code-copy-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: transparent;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    padding: 6px 10px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-    font-size: 14px;
-    z-index: 10;
-}
-
-.code-copy-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-}
-
-.code-copy-btn.copied {
-    color: #27c93f;
-}
-
 /* AI Prompt Box */
 .ai-prompt-box {
     background: #1a1a1a;

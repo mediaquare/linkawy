@@ -66,7 +66,7 @@ $adjacent = linkawy_get_adjacent_glossary();
                 
                 <!-- Main Content Box -->
                 <div class="glossary-content-box">
-                    <div class="glossary-content">
+                    <div class="glossary-content linkawy-content">
                         <?php the_content(); ?>
                     </div>
                 </div>

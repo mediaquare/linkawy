@@ -161,8 +161,8 @@ function linkawy_scripts() {
         );
     }
 
-    // Content blocks: shared typography and Gutenberg blocks for .linkawy-content (pages, single post, single resource, single prompt)
-    if ((is_page() && !is_front_page()) || is_singular('post') || is_singular('resources') || is_singular('prompts')) {
+    // Content blocks: shared typography and Gutenberg blocks for .linkawy-content (pages, posts, resources, prompts, glossary single)
+    if ((is_page() && !is_front_page()) || is_singular('post') || is_singular('resources') || is_singular('prompts') || is_singular('glossary')) {
         wp_enqueue_style(
             'linkawy-content-blocks',
             linkawy_get_asset_path('/assets/css/content-blocks', 'css'),

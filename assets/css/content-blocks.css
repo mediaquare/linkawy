@@ -452,6 +452,30 @@ html[dir="rtl"] .linkawy-content .wp-block-image figure.alignright {
     word-break: break-word;
 }
 
+.linkawy-content .wp-block-code > .code-copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.linkawy-content .wp-block-code > .code-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.linkawy-content .wp-block-code > .code-copy-btn.copied {
+    color: #27c93f;
+}
+
 /* ===== Gutenberg Buttons block â€“ Ù…Ø·Ø§Ø¨Ù‚ Ù„ØªÙ†Ø³ÙŠÙ‚ Ø£Ø²Ø±Ø§Ø± Ø§Ù„Ù‚Ø§Ù„Ø¨ (pillØŒ Ù„ÙˆÙ† Ø£Ø³Ø§Ø³ÙŠØŒ outline) ===== */
 .linkawy-content .wp-block-buttons {
     display: flex;

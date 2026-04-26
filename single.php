@@ -249,31 +249,6 @@ if (linkawy_article_hero_effective_pattern_enabled($single_post_id)) {
  * This script only handles: visibility toggle, scroll spy, smooth scroll, mobile toggle
  */
 document.addEventListener('DOMContentLoaded', function() {
-    // ===== Code Block Copy Button =====
-    document.querySelectorAll('.wp-block-code').forEach(function(block) {
-        const copyBtn = document.createElement('button');
-        copyBtn.className = 'code-copy-btn';
-        copyBtn.innerHTML = '<i class="far fa-copy"></i>';
-        copyBtn.setAttribute('title', 'نسخ الكود');
-        
-        copyBtn.addEventListener('click', function() {
-            const code = block.querySelector('code');
-            const text = code ? code.textContent : block.textContent;
-            
-            navigator.clipboard.writeText(text.trim()).then(function() {
-                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
-                copyBtn.classList.add('copied');
-                
-                setTimeout(function() {
-                    copyBtn.innerHTML = '<i class="far fa-copy"></i>';
-                    copyBtn.classList.remove('copied');
-                }, 2000);
-            });
-        });
-        
-        block.appendChild(copyBtn);
-    });
-    
     // ===== AI Prompt Copy Button =====
     document.querySelectorAll('.ai-prompt-box').forEach(function(box) {
         const copyBtn = box.querySelector('.ai-prompt-copy');
