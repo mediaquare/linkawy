@@ -264,9 +264,11 @@
 /* Table of Contents */
 .toc-card {
     background: transparent;
+    /* نفس عرض المحتوى مثل «شارك المقال» (بدون هامش أفقي إضافي) */
     padding: 1.5rem 0;
     margin-bottom: 0;
     border-bottom: 1px solid #e5e7eb;
+    box-sizing: border-box;
 }
 
 .toc-title {
@@ -283,14 +285,19 @@
     flex-direction: column;
     gap: 0.3rem;
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     transition: max-height 0.3s ease;
 }
 
 .toc-list.show-all {
     max-height: 220px;
     overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    /* في RTL: شريط التمرير غالبًا على inline-end؛ الهامش يدفع النص نحو اليمين لمحاذاة بقية الشريط الجانبي */
+    padding-inline-end: 0.75rem;
 }
 
 .toc-list li {
@@ -839,13 +846,27 @@
 }
 
 .article-content .faq-title {
-    font-size: 1.35rem;
+    /* مطابقة .linkawy-content h2 داخل المقال (بدون تغيير وسم HTML) */
+    font-size: 1.8rem;
     font-weight: 700;
+    line-height: 1.3;
     color: #1a1a2e;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid #ff6b00;
-    display: inline-block;
+    margin: 0 0 1.75rem;
+    padding: 0;
+    position: relative;
+    display: block;
+    scroll-margin-top: 100px;
+}
+
+.article-content .faq-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent 0%, var(--primary-color, #ff6b00) 100%);
+    border-radius: 2px;
 }
 
 .article-content .faq-container {
@@ -943,7 +964,15 @@
 /* FAQ Mobile Responsive */
 @media (max-width: 768px) {
     .article-content .faq-title {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .article-content .faq-title::after {
+        right: 50%;
+        transform: translateX(50%);
+        width: 60px;
     }
 
     .article-content .faq-item {
@@ -2802,6 +2831,11 @@
 }
 
 @media (max-width: 480px) {
+    .article-content .faq-title {
+        font-size: 1.35rem;
+        margin-bottom: 1.25rem;
+    }
+
     .article-content .wp-block-table,
     .article-content figure.wp-block-table {
         max-width: calc(100vw - 2rem);

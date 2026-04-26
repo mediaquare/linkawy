@@ -20,12 +20,9 @@ function linkawy_breadcrumbs() {
 
     if (is_singular('post')) {
         echo $separator;
-        echo '<a href="' . esc_url(get_permalink(get_option('page_for_posts'))) . '">' . __('المدونة', 'linkawy') . '</a>';
-        echo $separator;
-        $categories = get_the_category();
-        if ($categories) {
-            echo '<span class="breadcrumb-current">' . esc_html($categories[0]->name) . '</span>';
-        }
+        $blog_page_id = (int) get_option('page_for_posts');
+        $blog_url      = $blog_page_id ? get_permalink($blog_page_id) : home_url('/');
+        echo '<a href="' . esc_url($blog_url) . '">' . __('المدونة', 'linkawy') . '</a>';
     } elseif (is_singular('glossary')) {
         echo $separator;
         echo '<a href="' . esc_url(get_post_type_archive_link('glossary')) . '">' . __('المصطلحات', 'linkawy') . '</a>';
@@ -1131,18 +1128,7 @@ function linkawy_get_breadcrumb_schema() {
             'name' => __('المدونة', 'linkawy'),
             'item' => $blog_url,
         );
-        
-        // Category
-        $categories = get_the_category();
-        if ($categories) {
-            $items[] = array(
-                '@type' => 'ListItem',
-                'position' => $position++,
-                'name' => $categories[0]->name,
-                'item' => get_category_link($categories[0]->term_id),
-            );
-        }
-        
+
         // Current post (without item URL as per Google guidelines)
         $items[] = array(
             '@type' => 'ListItem',
