@@ -82,7 +82,7 @@ function linkawy_register_glossary_cpt() {
         'label'               => __('مصطلح', 'linkawy'),
         'description'         => __('قاموس مصطلحات السيو والتسويق الرقمي', 'linkawy'),
         'labels'              => $labels,
-        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields', 'revisions'),
+        'supports'            => array('title', 'editor', 'thumbnail', 'excerpt', 'author', 'custom-fields', 'revisions'),
         'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,
@@ -1061,8 +1061,8 @@ function linkawy_glossary_column_content($column, $post_id) {
             echo $synonyms ? esc_html($synonyms) : '—';
             break;
         case 'reviewer':
-            $reviewer = get_post_meta($post_id, '_glossary_reviewer_name', true);
-            echo $reviewer ? esc_html($reviewer) : '—';
+            $reviewer = linkawy_get_glossary_reviewer($post_id);
+            echo !empty($reviewer['name']) ? esc_html($reviewer['name']) : '—';
             break;
     }
 }
