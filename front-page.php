@@ -42,7 +42,7 @@ get_header();
                         </h1>
                         
                         <p class="text-lg text-gray-400 mb-8 leading-relaxed font-medium">
-                            نقدم استراتيجيات سيو متكاملة مدعومة بالذكاء الاصطناعي تضمن لك تصدر النتائج. لا نكتفي بتحسين الترتيب، بل نحول الزيارات إلى إيرادات ومبيعات حقيقية لضمان نمو مستدام لمشروعك.
+                            اختيارك شركة سيو مناسبة لا يعني تحسين الترتيب فقط، بل بناء قناة نمو تربط محركات البحث بالمبيعات. في لينكاوي نقدم استراتيجيات سيو تساعدك على تصدر النتائج وجذب زيارات مؤهلة تتحول إلى إيرادات مستدامة، لمن يبحث عن أفضل شركة سيو تفهم المتاجر والشركات.
                         </p>
                         
                         <div class="flex flex-col sm:flex-row gap-4">
@@ -323,8 +323,9 @@ get_header();
                         SEO</span>
                 </span>
                 <h2>خدمات السيو التي نقدمها</h2>
-                <p>استكشف استراتيجياتنا المخصصة التي تقدم التوجيه والدعم لمساعدتك على تصدر نتائج البحث وتحقيق النمو
-                    المستدام بثقة.</p>
+                <p>استكشف استراتيجياتنا المخصصة التي تقدم التوجيه والدعم لمساعدتك على تصدر نتائج البحث وتحقيق النمو المستدام بثقة.</p>
+                <p>نوازن في كل خدمة بين تحليل الكلمات، تحسين المحتوى، وفهم سلوك محركات البحث حتى لا تتحول خطة السيو إلى قائمة مهام تقنية فقط.</p>
+                <p>اختيار أفضل شركة سيو هنا يعني اختيار شريك يعرف كيف يحول الظهور إلى فرص تجارية واضحة.</p>
                 <a href="#contact" class="cta-button fp-cta-margin">أطلب استشارة مجانية</a>
             </div>
 
@@ -337,9 +338,7 @@ get_header();
                     </div>
                     <h3>سيو شوبيفاي</h3>
                     <span class="service-subtitle">Shopify SEO</span>
-                    <p>نساعد متاجر شوبيفاي على تحسين الصفحات، المنتجات، وبنية المحتوى بما يتوافق مع متطلبات محركات البحث.
-                        نعمل على رفع فرص الظهور في النتائج، تحسين الوصول للمنتجات، وزيادة الزيارات المستهدفة، بما يدعم
-                        نمو المتجر ويعزز حضور العلامة التجارية أمام العملاء المحتملين.</p>
+                    <p>نساعد متاجر شوبيفاي على تحسين الصفحات، المنتجات، وبنية المحتوى بما يتوافق مع متطلبات محركات البحث. نعمل على رفع فرص الظهور في النتائج، تحسين الوصول للمنتجات، وزيادة الزيارات المستهدفة، بما يدعم نمو المتجر ويعزز حضور العلامة التجارية أمام العملاء المحتملين.</p>
                 </div>
 
                 <!-- Card 2: Salla SEO -->
@@ -349,9 +348,7 @@ get_header();
                     </div>
                     <h3>سيو سلة</h3>
                     <span class="service-subtitle">Salla SEO</span>
-                    <p>نقدم خدمات SEO مخصصة لمتاجر سلة، تشمل تحسين الصفحات، الأقسام، المنتجات، والمحتوى الداخلي للمتجر.
-                        نركز على تسهيل ظهور منتجاتك في نتائج البحث، وتحسين تجربة التصفح والوصول، بما يساهم في زيادة
-                        الزيارات العضوية ورفع فرص تحقيق مبيعات أكبر بشكل مستدام.</p>
+                    <p>نقدم خدمات SEO مخصصة لمتاجر سلة، تشمل تحسين الصفحات، الأقسام، المنتجات، والمحتوى الداخلي للمتجر. نركز على تسهيل ظهور منتجاتك في نتائج البحث، وتحسين تجربة التصفح والوصول، بما يساهم في زيادة الزيارات العضوية ورفع فرص تحقيق مبيعات أكبر بشكل مستدام.</p>
                 </div>
 
                 <!-- Card 4: On-Page SEO -->
@@ -361,9 +358,7 @@ get_header();
                     </div>
                     <h3>السيو الداخلي</h3>
                     <span class="service-subtitle">On-Page SEO</span>
-                    <p>نعمل على تحسين العناصر الداخلية في موقعك مثل العناوين، المحتوى، الروابط الداخلية، والهيكلة العامة
-                        للصفحات. الهدف هو مساعدة محركات البحث على فهم صفحاتك بشكل أفضل، ورفع جودة التجربة للزائر، بما
-                        ينعكس على ترتيب الموقع وتحسين فرص التحويل من الزيارات العضوية.</p>
+                    <p>نعمل على تحسين العناصر الداخلية في موقعك مثل العناوين، المحتوى، الروابط الداخلية، والهيكلة العامة للصفحات. الهدف هو مساعدة محركات البحث على فهم صفحاتك بشكل أفضل، ورفع جودة التجربة للزائر، بما ينعكس على ترتيب الموقع وتحسين فرص التحويل من الزيارات العضوية.</p>
                 </div>
 
                 <!-- Card 5: Off-Page SEO -->
@@ -373,9 +368,7 @@ get_header();
                     </div>
                     <h3>السيو الخارجي</h3>
                     <span class="service-subtitle">Off-Page SEO</span>
-                    <p>نعزز حضور موقعك خارج نطاقه الداخلي عبر استراتيجيات السيو الخارجي، وعلى رأسها بناء روابط خلفية عالية
-                        الجودة من مواقع موثوقة وذات صلة. يساعد ذلك في رفع موثوقية موقعك أمام محركات البحث، وتحسين
-                        ترتيبه، وتوسيع انتشاره الرقمي على المستوى المحلي أو الإقليمي.</p>
+                    <p>نعزز حضور موقعك خارج نطاقه الداخلي عبر استراتيجيات السيو الخارجي، وعلى رأسها بناء روابط خلفية عالية الجودة من مواقع موثوقة وذات صلة. يساعد ذلك في رفع موثوقية موقعك أمام محركات البحث، وتحسين ترتيبه، وتوسيع انتشاره الرقمي على المستوى المحلي أو الإقليمي.</p>
                 </div>
 
                 <!-- Card 6: SEO Audits -->
@@ -385,9 +378,7 @@ get_header();
                     </div>
                     <h3>فحص مشاكل الموقع</h3>
                     <span class="service-subtitle">SEO Audits</span>
-                    <p>نقدم تدقيقًا شاملًا لموقعك للكشف عن المشكلات التي تؤثر على ظهوره في نتائج البحث، سواء كانت تقنية،
-                        أو مرتبطة بالسرعة، أو الفهرسة، أو المحتوى، أو الروابط. ثم نضع لك صورة واضحة عن نقاط الضعف
-                        والفرص، مع توصيات عملية تساعدك على تحسين الأداء بفعالية.</p>
+                    <p>نقدم تدقيقًا شاملًا لموقعك للكشف عن المشكلات التي تؤثر على ظهوره في نتائج البحث، سواء كانت تقنية، أو مرتبطة بسرعة الموقع، أو الفهرسة، أو المحتوى، أو الروابط. ثم نضع لك صورة واضحة عن نقاط الضعف والفرص، مع توصيات عملية تساعدك على تحسين الأداء بفعالية، ويشمل الفحص تحليل منافسين سرعة الموقع تحسين الأداء.</p>
                 </div>
 
                 <!-- Card 7: SEO Consulting -->
@@ -397,9 +388,7 @@ get_header();
                     </div>
                     <h3>استشارات SEO</h3>
                     <span class="service-subtitle">SEO Consulting</span>
-                    <p>نوفر استشارات SEO عملية تناسب طبيعة مشروعك ومرحلة نموه، سواء كنت تبدأ من الصفر أو تسعى لتطوير
-                        نتائجك الحالية. نساعدك في بناء رؤية واضحة، تحليل المنافسين، تحديد الأولويات، واختيار الخطوات التي
-                        تمنحك أفضل فرصة للظهور وتحقيق نمو حقيقي عبر البحث.</p>
+                    <p>نوفر استشارات SEO عملية تناسب طبيعة مشروعك ومرحلة نموه، سواء كنت تبدأ من الصفر أو تسعى لتطوير نتائجك الحالية. نساعدك في بناء رؤية واضحة، تحليل الكلمات، تحليل المنافسين، تحديد الأولويات، واختيار الخطوات التي تمنحك أفضل فرصة للظهور وتحقيق نمو حقيقي عبر محركات البحث.</p>
                 </div>
 
                 <!-- Card 8: Technical SEO -->
@@ -409,9 +398,7 @@ get_header();
                     </div>
                     <h3>السيو التقني</h3>
                     <span class="service-subtitle">Technical SEO</span>
-                    <p>نحسن الجوانب التقنية في موقعك لضمان توافقه مع متطلبات محركات البحث وسهولة الزحف والفهرسة. يشمل ذلك
-                        تحسين سرعة التحميل، تجربة الجوال، الأمان، بنية الروابط، والهيكلة التقنية للموقع، بما يساهم في
-                        رفع كفاءة الموقع وتحسين فرص ظهوره وترتيبه في النتائج.</p>
+                    <p>نحسن الجوانب التقنية في موقعك لضمان توافقه مع متطلبات محركات البحث وسهولة الزحف والفهرسة. يشمل ذلك تحسين سرعة الموقع، تجربة الجوال، الأمان، بنية الروابط، والهيكلة التقنية للموقع، بما يساهم في رفع كفاءة الموقع وتحسين فرص ظهوره وترتيبه في النتائج، مع تحليل منافسين سرعة الموقع تحسين الأداء.</p>
                 </div>
 
                 <!-- Card 8: GEO / AI SEO -->
@@ -421,9 +408,7 @@ get_header();
                     </div>
                     <h3>سيو الذكاء الإصطناعي</h3>
                     <span class="service-subtitle">GEO</span>
-                    <p>نساعدك على تهيئة محتوى موقعك ليظهر بشكل أفضل في محركات الإجابة وتجارب البحث المعتمدة على الذكاء
-                        الاصطناعي. نركز على بناء محتوى واضح، موثوق، ومنظم يسهل فهمه واقتباسه، بما يعزز فرص ظهور علامتك
-                        التجارية في النتائج التفسيرية والإجابات المباشرة.</p>
+                    <p>نساعدك على تهيئة محتوى موقعك ليظهر بشكل أفضل في محركات الإجابة وتجارب البحث المعتمدة على الذكاء الاصطناعي. نركز على بناء محتوى واضح، موثوق، ومنظم يسهل فهمه واقتباسه، بما يعزز فرص ظهور علامتك التجارية في النتائج التفسيرية والإجابات المباشرة.</p>
                 </div>
             </div>
         </div>
@@ -434,7 +419,7 @@ get_header();
         <div class="section-container">
             <h2 class="section-title">في المتوسط ساعدنا عملائنا في زيادة المبيعات العضوية لأكثر من <span class="highlight">270%</span> عن طريق الزيارات المستهدفة من Google و ChatGPT</h2>
             <div class="seo-image-container glass-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.webp" alt="SEO Proof" loading="lazy" decoding="async" width="800" height="450">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.webp" alt="لقطة من Google Search Console توضح نمو الزيارات العضوية والنقرات بعد تطبيق استراتيجيات أفضل شركة سيو لينكاوي" loading="lazy" decoding="async" width="800" height="450">
             </div>
         </div>
     </section>
@@ -444,22 +429,10 @@ get_header();
         <div class="section-container">
             <div class="strategy-grid">
                 <div class="strategy-intro">
-                    <p class="strategy-label">
-                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/soft-star.svg' ); ?>" alt="Star Icon"
-                            class="soft-star-icon" width="22" height="22" loading="lazy">
-                        كيف نحقق نتائج تنعكس على المبيعات؟
-                    </p>
                     <h2>تحسين محركات البحث... <br><span>هو آخر خطوة عندنا</span></h2>
-                    <p class="description-text">لأن أولويتنا هي زيادة مبيعاتك، خطوات عملنا تبدأ من البيزنس وتنتهي
-                        بالتسويق.</p>
-                    <p class="description-text">
-                        نستخدم أحدث استراتيجيات النمو لرفع معدل التحويل، وزيادة عدد العملاء المؤهلين، وخفض تكلفة اكتساب
-                        العميل عبر المحتوى وتحسين رحلة المستخدم. والنتائج؟ تقدر تشوفها بنفسك تحت وتحكم!
-                    </p>
-                    <p class="highlight-text">
-                        باستخدام تلك الإستراتيجية نهدف إلى تحويل من <span class="highlight">100%</span> من زوار موقعك
-                        إلى عملاء جاهزين للشراء.
-                    </p>
+                    <p class="description-text">لأن أولويتنا هي زيادة مبيعاتك، خطوات عملنا تبدأ من البيزنس وتنتهي بالتسويق.</p>
+                    <p class="description-text">نستخدم أحدث استراتيجيات النمو لرفع معدل التحويل، وزيادة عدد العملاء المؤهلين، وخفض تكلفة اكتساب العميل عبر المحتوى وتحسين رحلة المستخدم. والنتائج؟ تقدر تشوفها بنفسك تحت وتحكم!</p>
+                    <p class="highlight-text">باستخدام تلك الإستراتيجية نهدف إلى تحويل من <span class="highlight">100%</span> من زوار موقعك إلى عملاء جاهزين للشراء.</p>
                 </div>
                 <div class="accordion">
                     <div class="accordion-item active" data-link="">
@@ -470,11 +443,7 @@ get_header();
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">
-                                نبدأ بفهم السوق، الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل
-                                اتخاذ قرار الشراء.
-                                <br><br>
-                            </div>
+                            <div class="accordion-content-inner">نبدأ بفهم السوق، تحليل الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل اتخاذ قرار الشراء.</div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
@@ -485,8 +454,7 @@ get_header();
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما
-                                يزيد من نسبة تحويل الزوار إلى مشترين فعليين.</div>
+                            <div class="accordion-content-inner">نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما يزيد من نسبة تحويل الزوار إلى مشترين فعليين.</div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
@@ -497,8 +465,7 @@ get_header();
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج
-                                اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.</div>
+                            <div class="accordion-content-inner">نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.</div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
@@ -509,8 +476,7 @@ get_header();
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير
-                                محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.</div>
+                            <div class="accordion-content-inner">نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.</div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
@@ -521,9 +487,7 @@ get_header();
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى
-                                أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity
-                                Metrics) كالترتيب أو حجم الزيارات.</div>
+                            <div class="accordion-content-inner">نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity Metrics) كالترتيب أو حجم الزيارات.</div>
                         </div>
                     </div>
                 </div>
@@ -618,17 +582,14 @@ get_header();
     </section>
     <?php endif; ?>
 
-    <!-- Process Section (كيف يتصدر موقعك النتائج الأولى على جوجل عن طريق شركة سيو؟) -->
+    <!-- Process Section -->
     <section class="process-section fp-scroll-anchor" id="كيف-نعمل">
         <div class="process-container">
             <!-- Left Column: Sticky Info -->
             <div class="process-sticky-col">
-                <h2 class="process-subtitle">كيف يتصدر موقعك النتائج الأولى على جوجل عن طريق شركة سيو؟</h2>
+                <h2 class="process-subtitle">كيف يتصدر موقعك النتائج الأولى على محركات البحث عن طريق شركة سيو لينكاوي؟</h2>
 
-                <p class="process-description fp-process-desc">
-                    الخطوة الأولى نحو النجاح الرقمي تبدأ من هنا! عند تعاونك مع أفضل شركة سيو، نتبع خطوات مدروسة لضمان
-                    تحسين ترتيب موقعك في محركات البحث وتحقيق نتائج ملموسة.
-                </p>
+                <p class="process-description fp-process-desc">الخطوة الأولى نحو النجاح الرقمي تبدأ من هنا! عند تعاونك مع أفضل شركة سيو، نتبع خطوات مدروسة لضمان تحسين ترتيب موقعك في محركات البحث وتحقيق نتائج ملموسة.</p>
 
                 <div class="fp-mt-2">
                     <a href="#contact" class="cta-button">ابدأ الآن</a>
@@ -645,8 +606,7 @@ get_header();
                         <div class="timeline-content">
                             <span class="timeline-step-badge">الخطوة الأولى</span>
                             <h3 class="timeline-title">نحلل موقعك لنكتشف فرص النمو</h3>
-                            <p class="timeline-desc">نراجع موقعك بالكامل، نحدد نقاط القوة والضعف، ونكتشف أين تضيع
-                                عليك الزيارات والفرص قبل منافسيك.</p>
+                            <p class="timeline-desc">نراجع موقعك بالكامل، نحدد نقاط القوة والضعف، ونكتشف أين تضيع عليك الزيارات والفرص قبل منافسيك عبر تحليل منافسين سرعة الموقع تحسين الأداء.</p>
                         </div>
                     </div>
 
@@ -655,9 +615,8 @@ get_header();
                         <div class="timeline-marker"><i class="fas fa-key"></i></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge">الخطوة الثانية</span>
-                            <h3 class="timeline-title">نختار الكلمات التي تجذب عملاء حقيقيين</h3>
-                            <p class="timeline-desc">لا نطارد كلمات بلا قيمة، بل نستهدف ما يبحث عنه عملاؤك فعلًا
-                                عندما يكونون مستعدين للشراء أو التواصل.</p>
+                            <h3 class="timeline-title">نختار الكلمات عبر تحليل الكلمات التي تجذب عملاء حقيقيين</h3>
+                            <p class="timeline-desc">لا نطارد كلمات بلا قيمة، بل نستهدف ما يبحث عنه عملاؤك فعلًا عندما يكونون مستعدين للشراء أو التواصل.</p>
                         </div>
                     </div>
 
@@ -666,9 +625,8 @@ get_header();
                         <div class="timeline-marker"><i class="fas fa-chess-board"></i></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge">الخطوة الثالثة</span>
-                            <h3 class="timeline-title">نبني استراتيجية SEO مصممة لك</h3>
-                            <p class="timeline-desc">نضع خطة واضحة تناسب نشاطك وأهدافك، تشمل المحتوى، الصفحات،
-                                والبنية التقنية — بدون حلول جاهزة.</p>
+                            <h3 class="timeline-title">نبني استراتيجية سيو مصممة لك</h3>
+                            <p class="timeline-desc">نضع خطة واضحة تناسب نشاطك وأهدافك، تشمل المحتوى، الصفحات، والبنية التقنية — بدون حلول جاهزة.</p>
                         </div>
                     </div>
 
@@ -678,8 +636,7 @@ get_header();
                         <div class="timeline-content">
                             <span class="timeline-step-badge">الخطوة الرابعة</span>
                             <h3 class="timeline-title">ننفّذ التحسينات ونحرّك النتائج</h3>
-                            <p class="timeline-desc">نبدأ التنفيذ العملي لتحسين موقعك ورفع ظهوره، خطوة بخطوة، حتى
-                                يتحول إلى قناة جذب فعّالة.</p>
+                            <p class="timeline-desc">نبدأ التنفيذ العملي لتحسين موقعك ورفع ظهوره، خطوة بخطوة، حتى يتحول إلى قناة جذب فعّالة.</p>
                         </div>
                     </div>
 
@@ -689,8 +646,7 @@ get_header();
                         <div class="timeline-content">
                             <span class="timeline-step-badge">الخطوة الخامسة</span>
                             <h3 class="timeline-title">نراقب الأداء ونحسّن باستمرار</h3>
-                            <p class="timeline-desc">نقيس النتائج، نراجع الأداء، ونعدّل الاستراتيجية باستمرار لضمان
-                                أفضل نمو ممكن.</p>
+                            <p class="timeline-desc">نقيس النتائج، نراجع الأداء، ونعدّل الاستراتيجية باستمرار لضمان أفضل نمو ممكن.</p>
                         </div>
                     </div>
 
@@ -700,8 +656,7 @@ get_header();
                         <div class="timeline-content">
                             <span class="timeline-step-badge">الخطوة السادسة</span>
                             <h3 class="timeline-title">نتابع النتائج ونبني نموًا مستدامًا</h3>
-                            <p class="timeline-desc">نقدم تقارير واضحة، وخطة طويلة المدى تضمن استمرار التقدم وتفوّقك
-                                في نتائج البحث.</p>
+                            <p class="timeline-desc">نقدم تقارير واضحة، وخطة طويلة المدى تضمن استمرار التقدم وتفوّقك في نتائج البحث.</p>
                         </div>
                     </div>
                 </div>
@@ -713,7 +668,6 @@ get_header();
     <section id="why-linkawy" class="problems-section reasons-section">
         <div class="container">
             <div class="section-header">
-                <span class="badge">لماذا نحن</span>
                 <h2>9 أسباب لاختيار أفضل شركة سيو لينكاوي</h2>
             </div>
 
@@ -724,7 +678,7 @@ get_header();
                         <span class="reason-number">1.</span>
                     </div>
                     <h3>خبرة عابرة للقارات</h3>
-                    <p>نمتلك سجلًا حافلاً يمتد لأكثر من 12 عاماً في تقديم خدمات تحسين محركات البحث (SEO) في أسواق تنافسية مثل الإمارات، السعودية، وأمريكا. نحن لا نطبق استراتيجيات عامة، بل ننقل لك خبرات عالمية في تصدر نتائج البحث الأولى.</p>
+                    <p>نمتلك سجلًا حافلاً يمتد لأكثر من 12 عاماً في تقديم خدمات تحسين محركات البحث (SEO) في أسواق تنافسية مثل الإمارات، السعودية، وأمريكا. نحن شركة سيو لا نطبق استراتيجيات عامة، بل ننقل لك خبرات عالمية في تصدر نتائج البحث الأولى.</p>
                 </div>
 
                 <!-- Card 2 -->
@@ -742,7 +696,7 @@ get_header();
                         <span class="reason-number">3.</span>
                     </div>
                     <h3>نتائج موثقة في زيادة الظهور الرقمي</h3>
-                    <p>نجاحنا يُقاس بالأرقام. لدينا قائمة من قصص النجاح في زيادة حركة المرور المجانية (Organic Traffic) لشركات كبرى، حيث ساعدناهم في القفز إلى الصفحة الأولى في جوجل، مما أدى لزيادة ملموسة في المبيعات والانتشار.</p>
+                    <p>نجاحنا يُقاس بالأرقام. لدينا قائمة من قصص النجاح في زيادة حركة المرور المجانية (Organic Traffic) لشركات كبرى، حيث ساعدناهم في القفز إلى الصفحة الأولى في محركات البحث، مما أدى لزيادة ملموسة في المبيعات والانتشار.</p>
                 </div>
 
                 <!-- Card 4 -->
@@ -751,7 +705,7 @@ get_header();
                         <span class="reason-number">4.</span>
                     </div>
                     <h3>تحسين السيو التقني (Technical SEO) بالكامل</h3>
-                    <p>نقوم بضبط كل تفاصيل موقعك "خلف الكواليس". من تحسين سرعة الموقع، وضبط بنية البيانات (Schema Markup)، إلى تحسين تجربة المستخدم (UX)، لضمان زحف عناكب جوجل وأرشفة صفحاتك بأفضل صورة ممكنة.</p>
+                    <p>نقوم بضبط كل تفاصيل موقعك "خلف الكواليس". من تحسين سرعة الموقع، وضبط بنية البيانات (Schema Markup)، إلى تحسين تجربة المستخدم (UX)، لضمان زحف عناكب محركات البحث وأرشفة صفحاتك بأفضل صورة ممكنة.</p>
                 </div>
 
                 <!-- Card 5 -->
@@ -760,7 +714,7 @@ get_header();
                         <span class="reason-number">5.</span>
                     </div>
                     <h3>تقارير أداء دورية وشفافية مطلقة</h3>
-                    <p>في لينكاوي، نؤمن بالوضوح. ستحصل على تقارير مفصلة لمراقبة أداء الكلمات المفتاحية ووضع الروابط، وتتواصل مباشرة مع خبير السيو المهندس علي عطوة وفريق العمل لمناقشة تطورات المشروع دون أي تعقيدات إدارية.</p>
+                    <p>في لينكاوي، نحن شركة سيو نؤمن بالوضوح. ستحصل على تقارير مفصلة لمراقبة أداء تحليل الكلمات المفتاحية ووضع الروابط، وتتواصل مباشرة مع خبير السيو المهندس علي عطوة وفريق العمل لمناقشة تطورات المشروع دون أي تعقيدات إدارية.</p>
                 </div>
 
                 <!-- Card 6 -->
@@ -768,8 +722,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">6.</span>
                     </div>
-                    <h3>مواكبة مستمرة لـ "تحديثات خوارزميات جوجل"</h3>
-                    <p>عالم السيو متغير، ونحن نراقب خوارزميات جوجل (Google Algorithms) لحظة بلحظة. نقوم بتعديل خططنا باستمرار لضمان حماية موقعك من أي تراجعات، مع التركيز على استراتيجيات White Hat SEO بعيداً عن أي ممارسات قد تضر موقعك.</p>
+                    <h3>مواكبة مستمرة لـ "تحديثات خوارزميات محركات البحث"</h3>
+                    <p>عالم السيو متغير، ونحن نراقب خوارزميات محركات البحث (Google Algorithms) لحظة بلحظة. نقوم بتعديل خططنا باستمرار لضمان حماية موقعك من أي تراجعات، مع التركيز على استراتيجيات White Hat SEO بعيداً عن أي ممارسات قد تضر موقعك.</p>
                 </div>
 
                 <!-- Card 7 -->
@@ -787,7 +741,7 @@ get_header();
                         <span class="reason-number">8.</span>
                     </div>
                     <h3>استشارات مباشرة من خبير السيو الأول</h3>
-                    <p>الميزة التنافسية في "لينكاوي" هي أنك تتعامل مع العقل المدبر مباشرة. المهندس علي عطوة يضع خبرته الطويلة بين يديك عبر استشارات فنية متخصصة تضمن لك اتخاذ قرارات تسويقية ذكية مبنية على بيانات حقيقية.</p>
+                    <p>الميزة التنافسية في "لينكاوي" كـ شركة سيو هي أنك تتعامل مع العقل المدبر مباشرة. المهندس علي عطوة يضع خبرته الطويلة بين يديك عبر استشارات فنية متخصصة تضمن لك اتخاذ قرارات تسويقية ذكية مبنية على بيانات حقيقية.</p>
                 </div>
 
                 <!-- Card 9 -->
@@ -796,7 +750,7 @@ get_header();
                         <span class="reason-number">9.</span>
                     </div>
                     <h3>تدريب فريقك على ممارسات السيو المستدام</h3>
-                    <p>نحن نبني معك نظاماً يدوم؛ حيث نحرص على تدريب فريقك على أساسيات كتابة المحتوى المتوافق مع السيو وكيفية الحفاظ على النتائج المحققة، لضمان استمرارية تصدرك للمنافسين حتى على المدى الطويل.</p>
+                    <p>نحن شركة سيو نبني معك نظاماً يدوم؛ حيث نحرص على تدريب فريقك على أساسيات كتابة المحتوى المتوافق مع السيو وكيفية الحفاظ على النتائج المحققة، لضمان استمرارية تصدرك للمنافسين حتى على المدى الطويل.</p>
                 </div>
             </div>
         </div>
@@ -816,30 +770,21 @@ get_header();
                         <div class="benefit-item" data-target="img-1">
                             <div class="benefit-text-wrap">
                                 <h3>1. فهم السوق والجمهور</h3>
-                                <p>نبدأ بدراسة نشاطك التجاري والسوق الذي تنافس فيه، مع فهم الفئة المستهدفة واحتياجاتها
-                                    وطريقة بحثها الفعلية في جوجل. هذه الخطوة تساعدنا على اكتشاف الفرص الأقوى، وتحديد ما
-                                    يبحث عنه عملاؤك المحتملون، وبناء أساس صحيح يجعل الزيارات القادمة إلى موقعك أكثر
-                                    قيمة وقابلية للتحول إلى مبيعات.</p>
+                                <p>هذه الخطوة تساعدنا على اكتشاف الفرص الأقوى، وتحديد ما يبحث عنه عملاؤك المحتملون، وبناء أساس صحيح يجعل الزيارات القادمة إلى موقعك أكثر قيمة وقابلية للتحول إلى مبيعات.</p>
                             </div>
                         </div>
 
                         <div class="benefit-item" data-target="img-2">
                             <div class="benefit-text-wrap">
-                                <h3>2. خطة SEO واضحة الأهداف</h3>
-                                <p>بعد فهم السوق والجمهور، نضع خطة SEO مدروسة تستهدف تحسين ظهور موقعك في الكلمات
-                                    المفتاحية الأكثر ارتباطًا بقرار الشراء. نحن لا نسعى إلى زيادة الأرقام شكليًا، بل
-                                    نركز على جذب زيارات مؤهلة تحمل نية حقيقية، لأن الزيارة التي يمكن أن تتحول إلى عميل
-                                    أهم بكثير من أي رقم بلا أثر.</p>
+                                <h3>2. خطة سيو  واضحة الأهداف</h3>
+                                <p>نحن لا نسعى إلى زيادة الأرقام شكليًا، بل نركز على جذب زيارات مؤهلة تحمل نية حقيقية، لأن الزيارة التي يمكن أن تتحول إلى عميل أهم بكثير من أي رقم بلا أثر.</p>
                             </div>
                         </div>
 
                         <div class="benefit-item" data-target="img-3">
                             <div class="benefit-text-wrap">
                                 <h3>3. نتائج تنمو يومًا بعد يوم</h3>
-                                <p>السيو ليس نتيجة لحظية، بل مسار نمو تراكمي يزداد أثره مع الوقت. لذلك نعمل على تحقيق نمو
-                                    شهري مستمر في الزيارات العضوية، مع تحسين فرص التحويل ورفع جودة الوصول إلى الجمهور
-                                    المناسب. ومع هذا التقدم المنتظم، تبدأ النتائج بالظهور بشكل أوضح على مستوى الطلبات
-                                    والمبيعات والنمو التجاري.</p>
+                                <p>السيو ليس نتيجة لحظية، بل مسار نمو تراكمي يزداد أثره مع الوقت. لذلك نعمل على تحقيق نمو شهري مستمر في الزيارات العضوية، مع تحسين فرص التحويل ورفع جودة الوصول إلى الجمهور المناسب.</p>
                             </div>
                         </div>
                     </div>
@@ -848,15 +793,18 @@ get_header();
                     <div class="benefits-images">
                         <div class="benefit-img active" id="img-1">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/growth/seo-product-research.png"
-                                alt="فهم السوق والجمهور" loading="lazy" width="400" height="300">
+                                alt="تحليل سوق وجمهور ومتجر إلكتروني ضمن استراتيجية سيو لفهم سلوك البحث في محركات البحث" loading="lazy" width="400" height="300">
+                            <p class="benefit-img-caption">نبدأ بدراسة نشاطك التجاري والسوق الذي تنافس فيه، مع فهم الفئة المستهدفة واحتياجاتها وطريقة بحثها الفعلية في محركات البحث، كأساس لاستراتيجية سيو تركز على النمو.</p>
                         </div>
                         <div class="benefit-img" id="img-2">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/growth/seo-marketing-plan.webp"
-                                alt="خطة SEO واضحة الأهداف" loading="lazy" width="400" height="300">
+                                alt="تخطيط استراتيجية سيو لتحسين الظهور في نتائج البحث واستهداف كلمات مرتبطة بقرار الشراء" loading="lazy" width="400" height="300">
+                            <p class="benefit-img-caption">بعد فهم السوق والجمهور، نضع خطة ضمن استراتيجية سيو مدروسة تستهدف تحسين ظهور موقعك في الكلمات المفتاحية الأكثر ارتباطًا بقرار الشراء.</p>
                         </div>
                         <div class="benefit-img" id="img-3">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/growth/sales-growth-dashboard.png"
-                                alt="نتائج تنمو يومًا بعد يوم" loading="lazy" width="400" height="300">
+                                alt="لوحة مؤشرات لزيادة الزيارات العضوية والمبيعات بعد تطبيق استراتيجية سيو" loading="lazy" width="400" height="300">
+                            <p class="benefit-img-caption">مع هذا التقدم المنتظم في استراتيجية سيو، تبدأ النتائج بالظهور بشكل أوضح على مستوى الطلبات والمبيعات والنمو التجاري.</p>
                         </div>
                     </div>
                 </div>
@@ -949,7 +897,7 @@ get_header();
             </div>
             <div class="about-content">
                 <span class="about-label">أهلًا بالمؤسس</span>
-                <h2>استشارات سيو برؤية بيزنس</h2>
+                <h2>استشارات أفضل شركة سيو برؤية بيزنس</h2>
                 <p>ندرك حجم الضغط الذي تواجهه كمؤسس وأنت ترى ميزانيتك تُستنزف في الإعلانات، لذا صممنا هذه الـ استشارات سيو لتخرجك من مصيدة 'الدفع مقابل الظهور' والتحسينات الشكلية. من خلال العمل مباشرة مع خبير سيو يمتلك رؤية بيزنس، ستُمنح منهجية استراتيجية نقلت شركات ناشئة من مجرد التواجد إلى الهيمنة عبر الزيارات المجانية.</p>
                 <a href="#contact" class="cta-button">اطلب استشارة سيو</a>
             </div>
@@ -968,19 +916,19 @@ get_header();
             <!-- Slider -->
             <div class="swiper resultsSwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="Result 1" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="Result 2" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="Result 3" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="Result 4" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="Result 5" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="Result 6" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو" loading="lazy" decoding="async"></div>
 
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="Result 1 Copy" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="Result 2 Copy" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="Result 3 Copy" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="Result 4 Copy" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="Result 5 Copy" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="Result 6 Copy" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو" loading="lazy" decoding="async"></div>
                 </div>
             </div>
 
@@ -1056,7 +1004,7 @@ get_header();
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>كيف يتم تحديد سعر خدمة تحسين محركات البحث؟</h3>
+                            <h3>كيف يتم تحديد سعر خدمة السيو؟</h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
@@ -1071,12 +1019,12 @@ get_header();
                 <div class="seo-faq-column">
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في جوجل؟</h3>
+                            <h3>هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في محركات البحث؟</h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                لا يمكن لأي شركة سيو محترفة ضمان المرتبة الأولى بشكل مطلق، لأن خوارزميات جوجل تتغير باستمرار. لكننا نضمن لك تطبيق أفضل الممارسات العالمية، واستراتيجيات مدروسة تحقق نمواً ملموساً في الترتيب والزيارات والمبيعات بشكل مستدام.
+                                لا يمكن لأي شركة سيو محترفة ضمان المرتبة الأولى بشكل مطلق، لأن خوارزميات محركات البحث تتغير باستمرار. لكننا نضمن لك تطبيق أفضل الممارسات العالمية، واستراتيجيات مدروسة تحقق نمواً ملموساً في الترتيب والزيارات والمبيعات بشكل مستدام.
                             </div>
                         </div>
                     </div>
@@ -1088,7 +1036,7 @@ get_header();
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                الروابط الخلفية من أهم عوامل ترتيب جوجل. كل رابط من موقع موثوق يُعتبر بمثابة "تصويت ثقة" لموقعك. نحن نبني روابط عالية الجودة من مواقع ذات سلطة عالية (High Domain Authority) بطرق آمنة تتوافق مع إرشادات جوجل لتعزيز ترتيب موقعك بشكل دائم.
+                                الروابط الخلفية من أهم عوامل ترتيب محركات البحث. كل رابط من موقع موثوق يُعتبر بمثابة "تصويت ثقة" لموقعك. نحن نبني روابط عالية الجودة من مواقع ذات سلطة عالية (High Domain Authority) بطرق آمنة تتوافق مع إرشادات محركات البحث لتعزيز ترتيب موقعك بشكل دائم.
                             </div>
                         </div>
                     </div>
@@ -1112,7 +1060,7 @@ get_header();
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                السيو التقني يعالج البنية التحتية للموقع لتسهيل زحف وفهرسة محركات البحث. يشمل تحسين سرعة الموقع، التوافق مع الجوال، بنية الروابط، خرائط الموقع (Sitemap)، ملف Robots.txt، وبيانات Schema المنظمة. كل موقع يحتاج سيو تقني سليم كأساس لأي استراتيجية سيو ناجحة.
+                                السيو التقني يعالج البنية التحتية للموقع لتسهيل زحف وفهرسة محركات البحث. يشمل تحسين سرعة الموقع، التوافق مع الجوال، بنية الروابط، خرائط الموقع (Sitemap)، ملف Robots.txt، وبيانات Schema المنظمة. كل موقع يحتاج سيو تقني سليم كأساس لأي استراتيجية سيو ناجحة، مع تحليل منافسين سرعة الموقع تحسين الأداء.
                             </div>
                         </div>
                     </div>

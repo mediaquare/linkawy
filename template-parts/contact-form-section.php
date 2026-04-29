@@ -39,7 +39,7 @@ $cf = array(
     'formSuccessOverlay' => 'formSuccessOverlay' . $linkawy_cf_sfx,
 );
 
-$header_h2 = 'ابدأ رحلة تصدّر نتائج البحث';
+$header_h2 = 'ابدأ رحلة تصدّر موقعك';
 $header_p  = 'أخبرنا عن مشروعك وسنتواصل معك خلال 24 ساعة بخطة عمل مخصصة.';
 if (!empty($linkawy_contact_form_header_title)) {
     $header_h2 = $linkawy_contact_form_header_title;
