@@ -512,7 +512,7 @@ function linkawy_customize_register($wp_customize) {
     
     // Footer Address
     $wp_customize->add_setting('linkawy_footer_address', array(
-        'default'           => __('دبي، الإمارات العربية المتحدة', 'linkawy'),
+        'default'           => __('الرياض, السعودية', 'linkawy'),
         'sanitize_callback' => 'sanitize_text_field',
         'transport'         => 'refresh',
     ));
@@ -642,7 +642,7 @@ function linkawy_get_social_links() {
 function linkawy_get_footer_settings() {
     return array(
         'description' => get_theme_mod('linkawy_footer_description', __('شريكك الاستراتيجي في النمو الرقمي. نقدم حلول سيو وتصميم مواقع مبتكرة لضمان تصدرك النتائج.', 'linkawy')),
-        'address'     => get_theme_mod('linkawy_footer_address', __('دبي، الإمارات العربية المتحدة', 'linkawy')),
+        'address'     => get_theme_mod('linkawy_footer_address', __('الرياض, السعودية', 'linkawy')),
         'email'       => get_theme_mod('linkawy_footer_email', 'info@linkawy.io'),
         'phone'       => get_theme_mod('linkawy_footer_phone', ''),
         'copyright'   => get_theme_mod('linkawy_footer_copyright', __('جميع الحقوق محفوظة.', 'linkawy')),
