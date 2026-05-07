@@ -95,6 +95,83 @@ if (class_exists('WP_Customize_Control')) {
 }
 
 /**
+ * Category choices for front-page Customizer selects (term_id => name).
+ *
+ * @return array<string, string>
+ */
+function linkawy_customizer_get_category_choices() {
+    $choices = array(
+        '0' => __('— كل المقالات —', 'linkawy'),
+    );
+    $categories = get_categories(array(
+        'hide_empty' => false,
+        'orderby'    => 'name',
+    ));
+    foreach ($categories as $cat) {
+        $choices[(string) (int) $cat->term_id] = $cat->name;
+    }
+    return $choices;
+}
+
+/**
+ * Tag choices for front-page Customizer selects (slug => name).
+ *
+ * @return array<string, string>
+ */
+function linkawy_customizer_get_tag_choices() {
+    $choices = array(
+        '' => __('— لا يوجد —', 'linkawy'),
+    );
+    $tags = get_terms(array(
+        'taxonomy'   => 'post_tag',
+        'hide_empty' => false,
+        'orderby'    => 'name',
+    ));
+    if (is_wp_error($tags) || empty($tags)) {
+        return $choices;
+    }
+    foreach ($tags as $tag) {
+        $choices[$tag->slug] = $tag->name;
+    }
+    return $choices;
+}
+
+/**
+ * @param mixed $value Raw setting value.
+ * @return int Category term_id or 0.
+ */
+function linkawy_sanitize_front_page_category_id($value) {
+    if ($value === '' || $value === null) {
+        return 0;
+    }
+    $id = absint($value);
+    if ($id === 0) {
+        return 0;
+    }
+    $exists = term_exists($id, 'category');
+    return $exists ? $id : 0;
+}
+
+/**
+ * @param mixed $value Raw setting value (tag slug).
+ * @return string Sanitized slug or empty string.
+ */
+function linkawy_sanitize_front_page_tag_slug($value) {
+    if ($value === '' || $value === null) {
+        return '';
+    }
+    if (!is_string($value)) {
+        return '';
+    }
+    $slug = sanitize_title($value);
+    if ($slug === '') {
+        return '';
+    }
+    $term = get_term_by('slug', $slug, 'post_tag');
+    return ($term && !is_wp_error($term)) ? $slug : '';
+}
+
+/**
  * Register customizer settings and controls
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
@@ -488,6 +565,67 @@ function linkawy_customize_register($wp_customize) {
     ));
     
     // =====================================================
+    // Front Page – Blog Blocks
+    // =====================================================
+    $wp_customize->add_section('linkawy_front_posts_section', array(
+        'title'       => __('الصفحة الرئيسية – المقالات', 'linkawy'),
+        'description' => __('حدد التصنيف أو الوسم لكل قسم. إذا اخترت تصنيفاً يُستخدم فقط التصنيف ويُتجاهل الوسم لذلك القسم.', 'linkawy'),
+        'priority'    => 39,
+    ));
+    
+    $wp_customize->add_setting('linkawy_front_success_category', array(
+        'default'           => 0,
+        'sanitize_callback' => 'linkawy_sanitize_front_page_category_id',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('linkawy_front_success_category', array(
+        'label'       => __('قصص نجاح المتاجر: التصنيف', 'linkawy'),
+        'description' => __('المقالات المعروضة من هذا التصنيف (أو كل المقالات إن اخترت «كل المقالات»).', 'linkawy'),
+        'section'     => 'linkawy_front_posts_section',
+        'type'        => 'select',
+        'choices'     => linkawy_customizer_get_category_choices(),
+    ));
+    
+    $wp_customize->add_setting('linkawy_front_success_tag', array(
+        'default'           => '',
+        'sanitize_callback' => 'linkawy_sanitize_front_page_tag_slug',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('linkawy_front_success_tag', array(
+        'label'       => __('قصص نجاح المتاجر: الوسم', 'linkawy'),
+        'description' => __('يُستخدم فقط عندما يكون التصنيف «كل المقالات». يفلتر المقالات بهذا الوسم.', 'linkawy'),
+        'section'     => 'linkawy_front_posts_section',
+        'type'        => 'select',
+        'choices'     => linkawy_customizer_get_tag_choices(),
+    ));
+    
+    $wp_customize->add_setting('linkawy_front_blog_category', array(
+        'default'           => 0,
+        'sanitize_callback' => 'linkawy_sanitize_front_page_category_id',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('linkawy_front_blog_category', array(
+        'label'       => __('أحدث المقالات: التصنيف', 'linkawy'),
+        'description' => __('المقالات المعروضة من هذا التصنيف.', 'linkawy'),
+        'section'     => 'linkawy_front_posts_section',
+        'type'        => 'select',
+        'choices'     => linkawy_customizer_get_category_choices(),
+    ));
+    
+    $wp_customize->add_setting('linkawy_front_blog_tag', array(
+        'default'           => '',
+        'sanitize_callback' => 'linkawy_sanitize_front_page_tag_slug',
+        'transport'         => 'refresh',
+    ));
+    $wp_customize->add_control('linkawy_front_blog_tag', array(
+        'label'       => __('أحدث المقالات: الوسم', 'linkawy'),
+        'description' => __('يُستخدم فقط عندما يكون التصنيف «كل المقالات».', 'linkawy'),
+        'section'     => 'linkawy_front_posts_section',
+        'type'        => 'select',
+        'choices'     => linkawy_customizer_get_tag_choices(),
+    ));
+    
+    // =====================================================
     // Footer Section
     // =====================================================
     $wp_customize->add_section('linkawy_footer_section', array(
@@ -647,6 +785,62 @@ function linkawy_get_footer_settings() {
         'phone'       => get_theme_mod('linkawy_footer_phone', ''),
         'copyright'   => get_theme_mod('linkawy_footer_copyright', __('جميع الحقوق محفوظة.', 'linkawy')),
     );
+}
+
+/**
+ * Merge taxonomy filters from theme mods into a post query args array.
+ * Category wins over tag when a category is selected.
+ *
+ * @param array  $args         WP_Query arguments.
+ * @param string $category_mod Theme mod key for category id.
+ * @param string $tag_mod      Theme mod key for tag slug.
+ * @return array
+ */
+function linkawy_front_page_merge_tax_query_args($args, $category_mod, $tag_mod) {
+    $cat_id = (int) get_theme_mod($category_mod, 0);
+    if ($cat_id > 0 && term_exists($cat_id, 'category')) {
+        $args['cat'] = $cat_id;
+        return $args;
+    }
+    $tag_slug = get_theme_mod($tag_mod, '');
+    if (!is_string($tag_slug) || $tag_slug === '') {
+        return $args;
+    }
+    $tag_slug = sanitize_title($tag_slug);
+    if ($tag_slug === '') {
+        return $args;
+    }
+    $term = get_term_by('slug', $tag_slug, 'post_tag');
+    if ($term && !is_wp_error($term)) {
+        $args['tag'] = $tag_slug;
+    }
+    return $args;
+}
+
+/**
+ * Archive URL for «المزيد» links: category, tag, or posts page.
+ *
+ * @param string $category_mod Theme mod key for category id.
+ * @param string $tag_mod      Theme mod key for tag slug.
+ * @return string
+ */
+function linkawy_get_front_page_section_archive_url($category_mod, $tag_mod) {
+    $cat_id = (int) get_theme_mod($category_mod, 0);
+    if ($cat_id > 0 && term_exists($cat_id, 'category')) {
+        return get_category_link($cat_id);
+    }
+    $tag_slug = get_theme_mod($tag_mod, '');
+    if (is_string($tag_slug) && $tag_slug !== '') {
+        $tag_slug = sanitize_title($tag_slug);
+        if ($tag_slug !== '') {
+            $term = get_term_by('slug', $tag_slug, 'post_tag');
+            if ($term && !is_wp_error($term)) {
+                return get_tag_link($term);
+            }
+        }
+    }
+    $posts_page = (int) get_option('page_for_posts');
+    return $posts_page ? (string) get_permalink($posts_page) : home_url('/');
 }
 
 // =====================================================

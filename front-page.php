@@ -525,13 +525,19 @@ get_header();
 
     <!-- قصص نجاح المتاجر -->
     <?php
-    $success_stories = new WP_Query(array(
+    $success_args = array(
         'post_type'      => 'post',
         'posts_per_page' => 3,
         'orderby'        => 'date',
         'order'          => 'DESC',
         'post_status'    => 'publish',
-    ));
+    );
+    $success_args = linkawy_front_page_merge_tax_query_args(
+        $success_args,
+        'linkawy_front_success_category',
+        'linkawy_front_success_tag'
+    );
+    $success_stories = new WP_Query($success_args);
     
     if ($success_stories->have_posts()) :
     ?>
@@ -539,7 +545,7 @@ get_header();
         <div class="container">
             <div class="success-stories-header">
                 <h2 class="success-stories-title">قصص نجاح المتاجر</h2>
-                <a href="<?php echo esc_url(get_permalink(get_option('page_for_posts'))); ?>" class="success-stories-link">
+                <a href="<?php echo esc_url(linkawy_get_front_page_section_archive_url('linkawy_front_success_category', 'linkawy_front_success_tag')); ?>" class="success-stories-link">
                     المزيد من قصص النجاح
                 </a>
             </div>
@@ -819,7 +825,7 @@ get_header();
                     <h2>أحدث المقالات من المدونة</h2>
                     <p>نشارك معكم آخر التحديثات والاستراتيجيات في عالم تحسين محركات البحث.</p>
                 </div>
-                <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="blog-posts-btn">
+                <a href="<?php echo esc_url(linkawy_get_front_page_section_archive_url('linkawy_front_blog_category', 'linkawy_front_blog_tag')); ?>" class="blog-posts-btn">
                     تصفح كل المقالات
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
@@ -829,13 +835,19 @@ get_header();
 
             <div class="blog-posts-grid">
                 <?php
-                $blog_query = new WP_Query(array(
-                    'post_type' => 'post',
+                $blog_args = array(
+                    'post_type'      => 'post',
                     'posts_per_page' => 3,
-                    'post_status' => 'publish',
-                    'orderby' => 'date',
-                    'order' => 'DESC',
-                ));
+                    'post_status'    => 'publish',
+                    'orderby'        => 'date',
+                    'order'          => 'DESC',
+                );
+                $blog_args = linkawy_front_page_merge_tax_query_args(
+                    $blog_args,
+                    'linkawy_front_blog_category',
+                    'linkawy_front_blog_tag'
+                );
+                $blog_query = new WP_Query($blog_args);
 
                 $all_gradients = linkawy_get_card_gradients();
                 // Cycle: Yellow Green → Pink Rose → Orange Coral (reusing theme card gradients)
