@@ -103,9 +103,9 @@
     }
     </style>
     <?php endif; ?>
-    <?php if (is_front_page() && linkawy_exp(9)) : ?>
-    <!-- exp9 (measurement only): hide the hero visual wall to quantify its cost -->
-    <style>.wall-container { display: none !important; }</style>
+    <?php if (is_front_page() && linkawy_exp(10)) : ?>
+    <!-- exp10: also skip the platforms strip (below the fold at every viewport) -->
+    <style>.dark-platforms-bar { content-visibility: auto; contain-intrinsic-size: auto 260px; }</style>
     <?php endif; ?>
 
     <!-- Header scroll detection script -->
