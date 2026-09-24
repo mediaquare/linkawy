@@ -207,7 +207,8 @@
 }
 
 /* Images */
-.linkawy-content img[src$=".svg"]:not(.ai-prompt-icon) {
+.linkawy-content img[src$=".svg"]:not(.ai-prompt-icon),
+.linkawy-content img[src$=".svg.webp"]:not(.ai-prompt-icon) {
     aspect-ratio: 16 / 9;
     width: 100%;
     height: auto;
@@ -215,7 +216,8 @@
     object-fit: contain;
 }
 
-.linkawy-content figure.wp-block-image img[src$=".svg"] {
+.linkawy-content figure.wp-block-image img[src$=".svg"],
+.linkawy-content figure.wp-block-image img[src$=".svg.webp"] {
     aspect-ratio: 16 / 9;
     width: 100%;
     height: auto;
