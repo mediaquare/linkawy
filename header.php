@@ -103,10 +103,6 @@
     }
     </style>
     <?php endif; ?>
-    <?php if (is_front_page() && linkawy_exp(10)) : ?>
-    <!-- exp10: also skip the platforms strip (below the fold at every viewport) -->
-    <style>.dark-platforms-bar { content-visibility: auto; contain-intrinsic-size: auto 260px; }</style>
-    <?php endif; ?>
 
     <!-- Header scroll detection script -->
     <script>
