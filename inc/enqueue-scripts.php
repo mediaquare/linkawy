@@ -69,15 +69,16 @@ add_action('wp_enqueue_scripts', 'linkawy_replace_elementor_font_awesome', 20);
  */
 function linkawy_defer_font_awesome_css($html, $handle) {
     if ($handle === 'font-awesome-v6') {
-        // Replace media="all" with media="print" onload pattern
-        $html = str_replace(
-            "media='all'",
-            "media='print' onload=\"this.media='all'\"",
-            $html
-        );
-        // Add noscript fallback
-        $noscript = '<noscript>' . str_replace(" media='print' onload=\"this.media='all'\"", '', $html) . '</noscript>';
-        $html .= $noscript;
+        // Inject the stylesheet after window "load". With the media="print" trick the
+        // ~250KB of FA webfonts were often requested (at high priority) before first
+        // paint, which Lighthouse then treats as critical -> FCP/LCP swung by ~2s.
+        if (preg_match("/href='([^']+)'/", $html, $m)) {
+            $href = $m[1];
+            return '<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="stylesheet";l.href=' . wp_json_encode($href) . ';document.head.appendChild(l);});</script>' . "\n"
+                . '<noscript>' . $html . '</noscript>' . "\n";
+        }
+        // Fallback: previous non-blocking pattern
+        $html = str_replace("media='all'", "media='print' onload=\"this.media='all'\"", $html);
     }
     return $html;
 }
