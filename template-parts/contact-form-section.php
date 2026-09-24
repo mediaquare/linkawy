@@ -292,9 +292,12 @@ if ($linkawy_cf_sfx !== '') {
 })();
 </script>
 
-<script src="https://unpkg.com/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
+<script defer src="https://unpkg.com/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
 <script>
 (function() {
+// Deferred JustValidate runs before DOMContentLoaded, so init there instead of blocking HTML parsing.
+function linkawyInitContactForm() {
+    if (typeof JustValidate === 'undefined') return;
     var formId = <?php echo wp_json_encode($cf['form']); ?>;
     var formSel = '#' + formId;
     var globalError = document.getElementById(<?php echo wp_json_encode($cf['formGlobalError']); ?>);
@@ -433,5 +436,11 @@ if ($linkawy_cf_sfx !== '') {
                 submitForm('');
             }
         });
+}
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', linkawyInitContactForm);
+} else {
+    linkawyInitContactForm();
+}
 })();
 </script>

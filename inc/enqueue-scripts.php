@@ -503,8 +503,11 @@ add_filter('script_loader_tag', 'linkawy_script_loader_tag', 10, 3);
  */
 function linkawy_async_css_loading($html, $handle) {
     // DO NOT defer critical styles that affect layout or UX
-    // Empty array means all styles load synchronously
     $async_styles = array();
+    // Front page: the contact form section is far below the fold
+    if (is_front_page()) {
+        $async_styles[] = 'linkawy-contact-form';
+    }
 
     if (in_array($handle, $async_styles)) {
         return str_replace(
