@@ -263,16 +263,14 @@ function linkawy_scripts() {
             . '.breadcrumb-separator{color:rgba(255,255,255,.3);font-size:.65rem}.breadcrumb-current{color:#ff6b00;font-weight:500}'
             . '@media (max-width:768px){body{overflow-x:clip}.breadcrumbs{font-size:.8rem;margin-bottom:2rem;gap:.4rem}}'
             . '@media (max-width:480px){.breadcrumbs{font-size:.75rem;margin-bottom:1.75rem}}');
-        if (linkawy_exp(20)) {
-            // When the browser paints before the rest of the HTML arrives, the hero form card
-            // is painted empty, then grows ~400px and pushes everything below it (lab CLS 0.3-0.4).
-            // Reserve its final height (measured per breakpoint, floored so the natural
-            // fractional height still wins and the finished layout is unchanged).
-            wp_add_inline_style('linkawy-service-page', '.service-hero-form-card{min-height:637px}'
-                . '@media (max-width:1024px){.service-hero-form-card{min-height:673px}}'
-                . '@media (max-width:900px){.service-hero-form-card{min-height:569px}}'
-                . '@media (max-width:480px){.service-hero-form-card{min-height:686px}}');
-        }
+        // When the browser paints before the rest of the HTML arrives, the hero form card
+        // is painted empty, then grows ~400px and pushes everything below it (lab CLS 0.3-0.4).
+        // Reserve its final height (measured per breakpoint, floored so the natural
+        // fractional height still wins and the finished layout is unchanged).
+        wp_add_inline_style('linkawy-service-page', '.service-hero-form-card{min-height:637px}'
+            . '@media (max-width:1024px){.service-hero-form-card{min-height:673px}}'
+            . '@media (max-width:900px){.service-hero-form-card{min-height:569px}}'
+            . '@media (max-width:480px){.service-hero-form-card{min-height:686px}}');
     }
 
     // Landing page template: blank shell, full-width Gutenberg
