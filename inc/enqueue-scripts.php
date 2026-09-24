@@ -522,6 +522,26 @@ function linkawy_async_css_loading($html, $handle) {
 add_filter('style_loader_tag', 'linkawy_async_css_loading', 10, 2);
 
 /**
+ * exp7 (?lkexp=7): load Site Kit's gtag.js library after window load. The inline
+ * config (dataLayer + gtag() + config) stays in place, so page_view and other
+ * calls are queued in dataLayer and sent once the library arrives.
+ */
+function linkawy_exp7_delay_gtag($tag, $handle) {
+    if ($handle !== 'google_gtagjs' || !linkawy_exp(7)) {
+        return $tag;
+    }
+    return preg_replace_callback(
+        '#<script[^>]*\sid=["\']google_gtagjs-js["\'][^>]*\ssrc=["\']([^"\']+)["\'][^>]*></script>#',
+        function ($m) {
+            return '<script>window.addEventListener("load",function(){setTimeout(function(){var s=document.createElement("script");s.async=true;s.src=' . wp_json_encode(html_entity_decode($m[1])) . ';document.head.appendChild(s);},0);});</script>';
+        },
+        $tag,
+        1
+    );
+}
+add_filter('script_loader_tag', 'linkawy_exp7_delay_gtag', 30, 2);
+
+/**
  * Register AI Prompt Gutenberg Block
  */
 function linkawy_register_ai_prompt_block() {
