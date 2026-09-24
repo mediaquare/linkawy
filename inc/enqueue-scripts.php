@@ -557,6 +557,65 @@ function linkawy_webp_swap($html) {
 }
 
 /**
+ * Write "<file>.webp" next to an upload (kept only if smaller than the original).
+ */
+function linkawy_make_webp_sibling($path) {
+    if (!preg_match('/\.(png|jpe?g)$/i', $path) || !file_exists($path) || file_exists($path . '.webp') || !function_exists('imagewebp')) {
+        return;
+    }
+    $im = preg_match('/\.png$/i', $path) ? @imagecreatefrompng($path) : @imagecreatefromjpeg($path);
+    if (!$im) {
+        return;
+    }
+    if (!imageistruecolor($im)) {
+        imagepalettetotruecolor($im);
+    }
+    imagealphablending($im, true);
+    imagesavealpha($im, true);
+    $ok = @imagewebp($im, $path . '.webp', 80);
+    imagedestroy($im);
+    clearstatcache();
+    if (!$ok || !filesize($path . '.webp') || filesize($path . '.webp') >= filesize($path)) {
+        @unlink($path . '.webp');
+    }
+}
+
+/**
+ * New uploads (and regenerated thumbnails): create WebP siblings for the original and every size.
+ */
+function linkawy_webp_on_upload($metadata, $attachment_id) {
+    $file = get_attached_file($attachment_id);
+    if (!$file || empty($metadata['file'])) {
+        return $metadata;
+    }
+    $dir = dirname($file);
+    $files = array($file);
+    if (!empty($metadata['original_image'])) {
+        $files[] = $dir . '/' . $metadata['original_image'];
+    }
+    foreach ((array) ($metadata['sizes'] ?? array()) as $size) {
+        if (!empty($size['file'])) {
+            $files[] = $dir . '/' . $size['file'];
+        }
+    }
+    foreach (array_unique($files) as $f) {
+        linkawy_make_webp_sibling($f);
+    }
+    return $metadata;
+}
+add_filter('wp_generate_attachment_metadata', 'linkawy_webp_on_upload', 20, 2);
+
+/**
+ * Remove WebP siblings when WordPress deletes an attachment file.
+ */
+add_filter('wp_delete_file', function ($path) {
+    if (preg_match('/\.(png|jpe?g)$/i', $path) && file_exists($path . '.webp')) {
+        @unlink($path . '.webp');
+    }
+    return $path;
+});
+
+/**
  * Singular pages: WebP hero/content images and lazy iframes (e.g. YouTube oEmbed).
  */
 function linkawy_webp_lazy_iframes_setup() {
@@ -568,6 +627,36 @@ function linkawy_webp_lazy_iframes_setup() {
     add_filter('the_content', function ($content) {
         return preg_replace('/<iframe(?![^>]*\sloading=)/i', '<iframe loading="lazy"', $content);
     }, 99);
+    if (linkawy_exp(15)) {
+        add_filter('the_content', 'linkawy_youtube_facade', 100);
+    }
+}
+
+/**
+ * Replace YouTube iframes with a thumbnail button; the real player loads on click
+ * (the player pulls ~700KB of JS and ~300ms of main-thread work on load).
+ */
+function linkawy_youtube_facade($content) {
+    $count = 0;
+    $content = preg_replace_callback('#<iframe[^>]*\ssrc="https://www\.youtube(?:-nocookie)?\.com/embed/([\w-]{11})[^"]*"[^>]*></iframe>#i', function ($m) {
+        $title = preg_match('/\stitle="([^"]*)"/', $m[0], $t) ? $t[1] : 'YouTube';
+        return '<button type="button" class="lk-yt" data-yt="' . esc_attr($m[1]) . '" aria-label="' . esc_attr('تشغيل الفيديو: ' . html_entity_decode($title)) . '">'
+            . '<img src="https://i.ytimg.com/vi/' . esc_attr($m[1]) . '/hqdefault.jpg" alt="' . $title . '" width="480" height="360" loading="lazy" decoding="async">'
+            . '<span class="lk-yt-play" aria-hidden="true"></span></button>'
+            . '<noscript>' . $m[0] . '</noscript>';
+    }, $content, -1, $count);
+    if ($count) {
+        $content .= '<style>.lk-yt{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:#000;cursor:pointer;overflow:hidden}'
+            . '.wp-has-aspect-ratio .lk-yt{position:absolute;inset:0;height:100%;aspect-ratio:auto}'
+            . '.lk-yt img{width:100%;height:100%;object-fit:cover;display:block}'
+            . '.lk-yt-play{position:absolute;top:50%;left:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#f00}'
+            . '.lk-yt-play:after{content:"";position:absolute;top:14px;left:27px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}</style>'
+            . '<script>document.addEventListener("click",function(e){var b=e.target.closest(".lk-yt");if(!b)return;var f=document.createElement("iframe");'
+            . 'f.src="https://www.youtube.com/embed/"+b.dataset.yt+"?autoplay=1";f.title=b.querySelector("img").alt;f.width=800;f.height=450;'
+            . 'f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";f.allowFullscreen=true;'
+            . 'f.setAttribute("frameborder","0");b.replaceWith(f);});</script>';
+    }
+    return $content;
 }
 add_action('wp', 'linkawy_webp_lazy_iframes_setup');
 
