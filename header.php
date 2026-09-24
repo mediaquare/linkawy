@@ -26,11 +26,6 @@
         $critical_css = file_get_contents($critical_css_path);
         echo str_replace('{{THEME_URI}}', get_theme_file_uri(), $critical_css);
     }
-    // Template-specific above-the-fold CSS; its full stylesheets then load non-blocking.
-    $template_critical = function_exists('linkawy_critical_css_file') ? linkawy_critical_css_file() : '';
-    if ($template_critical) {
-        echo "\n" . file_get_contents($template_critical);
-    }
     ?>
     </style>
     <?php endif; ?>
