@@ -59,7 +59,7 @@ $linkawy_nl_post_id = absint($linkawy_nl['source_post_id']);
                     <input type="hidden" name="source_post_id" value="<?php echo esc_attr((string) $linkawy_nl_post_id); ?>">
                 <?php endif; ?>
                 <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('linkawy_newsletter_form')); ?>">
-                <input type="text" name="hp_field" value="" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;">
+                <div aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;pointer-events:none;"><label>Leave this field empty <input type="text" name="hp_field" value="" tabindex="-1" autocomplete="off"></label></div>
                 <button type="submit"><i class="fas fa-paper-plane"></i> <?php _e('اشترك الآن', 'linkawy'); ?></button>
             </form>
             <p class="newsletter-feedback" role="status" aria-live="polite"></p>

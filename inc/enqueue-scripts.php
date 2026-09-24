@@ -635,9 +635,7 @@ function linkawy_webp_lazy_iframes_setup() {
     add_filter('the_content', function ($content) {
         return preg_replace('/<iframe(?![^>]*\sloading=)/i', '<iframe loading="lazy"', $content);
     }, 99);
-    if (linkawy_exp(15)) {
-        add_filter('the_content', 'linkawy_youtube_facade', 100);
-    }
+    add_filter('the_content', 'linkawy_youtube_facade', 100);
 }
 
 /**
@@ -660,7 +658,7 @@ function linkawy_youtube_facade($content) {
             . '.lk-yt-play{position:absolute;top:50%;left:50%;width:68px;height:48px;margin:-24px 0 0 -34px;border-radius:12px;background:#f00}'
             . '.lk-yt-play:after{content:"";position:absolute;top:14px;left:27px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}</style>'
             . '<script>document.addEventListener("click",function(e){var b=e.target.closest(".lk-yt");if(!b)return;var f=document.createElement("iframe");'
-            . 'f.src="https://www.youtube.com/embed/"+b.dataset.yt+"?autoplay=1";f.title=b.querySelector("img").alt;f.width=800;f.height=450;'
+            . 'f.src="https://www.youtube-nocookie.com/embed/"+b.dataset.yt+"?autoplay=1";f.title=b.querySelector("img").alt;f.width=800;f.height=450;'
             . 'f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";f.allowFullscreen=true;'
             . 'f.setAttribute("frameborder","0");b.replaceWith(f);});</script>';
     }

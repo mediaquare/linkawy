@@ -111,7 +111,7 @@ while (have_posts()) :
                                         <input type="hidden" name="source_post_id" value="<?php echo esc_attr((string) $post_id); ?>">
                                         <input type="hidden" name="unlock_prompt_id" value="<?php echo esc_attr((string) $post_id); ?>">
                                         <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('linkawy_newsletter_form')); ?>">
-                                        <input type="text" name="hp_field" value="" tabindex="-1" autocomplete="off" class="prompt-content-lock-hp" aria-hidden="true">
+                                        <input type="text" name="hp_field" value="" tabindex="-1" autocomplete="off" class="prompt-content-lock-hp" aria-hidden="true" aria-label="Leave this field empty">
                                         <button type="submit" class="prompt-content-lock-submit"><?php esc_html_e('فتح البرومت', 'linkawy'); ?></button>
                                     </form>
                                     <p class="prompt-content-lock-feedback" role="status" aria-live="polite"></p>
