@@ -1345,7 +1345,7 @@
 }
 .ai-summary-label {
     font-weight: 500;
-    color: #888;
+    color: #6b6b6b;
     font-size: 0.8rem;
     margin-bottom: 0.65rem;
 }
@@ -1403,7 +1403,7 @@
         flex-shrink: 0;
         white-space: nowrap;
         font-size: 0.775rem;
-        color: #999;
+        color: #6b6b6b;
     }
     .ai-summary-list {
         flex: 1 1 auto;

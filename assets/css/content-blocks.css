@@ -68,14 +68,15 @@
     line-height: 1.9;
 }
 
+/* Darker brand orange for text links: #ff6b00 on white is 2.86:1, #c75300 is 4.5:1 (WCAG AA) */
 .linkawy-content a {
-    color: var(--primary-color);
+    color: #c75300;
     text-decoration: none;
 }
 
 .linkawy-content a:hover {
     text-decoration: underline;
-    text-decoration-color: var(--primary-color);
+    text-decoration-color: #c75300;
     text-underline-offset: 3px;
 }
 
