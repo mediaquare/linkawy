@@ -559,8 +559,8 @@ function linkawy_webp_swap($html) {
 /**
  * Singular pages: WebP hero/content images and lazy iframes (e.g. YouTube oEmbed).
  */
-function linkawy_exp13_setup() {
-    if (!linkawy_exp(13) || is_front_page() || !is_singular()) {
+function linkawy_webp_lazy_iframes_setup() {
+    if (is_front_page() || !is_singular()) {
         return;
     }
     add_filter('post_thumbnail_html', 'linkawy_webp_swap', 20);
@@ -569,7 +569,7 @@ function linkawy_exp13_setup() {
         return preg_replace('/<iframe(?![^>]*\sloading=)/i', '<iframe loading="lazy"', $content);
     }, 99);
 }
-add_action('wp', 'linkawy_exp13_setup');
+add_action('wp', 'linkawy_webp_lazy_iframes_setup');
 
 
 /**
