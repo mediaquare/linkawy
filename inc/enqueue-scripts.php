@@ -76,7 +76,9 @@ function linkawy_defer_font_awesome_css($html, $handle) {
         // load, fonts fetched on load still counted as pre-FCP in Lighthouse.
         if (preg_match("/href='([^']+)'/", $html, $m)) {
             $href = $m[1];
-            $js = '(function(){var done=false;function go(){if(done)return;done=true;var l=document.createElement("link");l.rel="stylesheet";l.href=' . wp_json_encode($href) . ';document.head.appendChild(l);}'
+            // Also pushes a "linkawy_after_paint" dataLayer event so GTM can fire heavy tags
+            // (Clarity, Yandex) after first paint instead of on window load.
+            $js = '(function(){var done=false;function go(){if(done)return;done=true;var l=document.createElement("link");l.rel="stylesheet";l.href=' . wp_json_encode($href) . ';document.head.appendChild(l);window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:"linkawy_after_paint"});}'
                 . 'function afterPaint(){try{if(performance.getEntriesByName("first-contentful-paint").length){go();return;}'
                 . 'new PerformanceObserver(function(list,obs){if(list.getEntriesByName("first-contentful-paint").length){obs.disconnect();go();}}).observe({type:"paint",buffered:true});}catch(e){go();}'
                 . 'setTimeout(go,4000);}'
