@@ -522,13 +522,13 @@ function linkawy_async_css_loading($html, $handle) {
 add_filter('style_loader_tag', 'linkawy_async_css_loading', 10, 2);
 
 /**
- * exp12 (?lkexp=12): on singular posts/pages (not the front page) lazy-load every
+ * Singular posts/pages (not the front page): lazy-load every
  * content image and drop fetchpriority=high. Their LCP element is text, yet WP
  * core + linkawy_optimize_lcp_content_image made the first images eager/high
  * (e.g. a 1.5MB GIF and a 424KB PNG fetched before first paint).
  */
-function linkawy_exp12_setup() {
-    if (!linkawy_exp(12) || is_front_page() || !is_singular()) {
+function linkawy_lazy_content_images_setup() {
+    if (is_front_page() || !is_singular()) {
         return;
     }
     add_filter('wp_omit_loading_attr_threshold', '__return_zero');
@@ -542,7 +542,7 @@ function linkawy_exp12_setup() {
         return $img;
     }, 20);
 }
-add_action('wp', 'linkawy_exp12_setup');
+add_action('wp', 'linkawy_lazy_content_images_setup');
 
 
 /**
