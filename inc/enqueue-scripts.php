@@ -119,10 +119,10 @@ function linkawy_scripts() {
         LINKAWY_VERSION
     );
 
-    // Arabic Style (exp21: identical copy with font-display:optional instead of swap)
+    // Arabic Style
     wp_enqueue_style(
         'linkawy-style-ar',
-        linkawy_exp(21) ? LINKAWY_URI . '/assets/css/style-ar-fontopt.min.css' : linkawy_get_asset_path('/assets/css/style-ar', 'css'),
+        linkawy_get_asset_path('/assets/css/style-ar', 'css'),
         array('linkawy-style'),
         LINKAWY_VERSION
     );
@@ -430,9 +430,6 @@ add_action('wp_enqueue_scripts', 'linkawy_scripts');
  * Strategy: Keep critical path minimal and avoid font chaining.
  */
 function linkawy_preload_somar_fonts() {
-    if (linkawy_exp(22)) {
-        return; // Diagnostic only: late font -> does the glossary layout shift show up more often?
-    }
     $font_url = LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2';
     echo '<link rel="preload" href="' . esc_url($font_url) . '" as="font" type="font/woff2" crossorigin>' . "\n";
 }
@@ -469,8 +466,7 @@ function linkawy_preload_critical_css() {
     // Use linkawy_get_asset_path() so the preload URL matches the enqueued file
     // (style.min.css doesn't exist; preloading it was a wasted 404 request).
     echo '<link rel="preload" as="style" href="' . esc_url(linkawy_get_asset_path('/assets/css/style', 'css') . '?ver=' . $version) . '">' . "\n";
-    $style_ar = linkawy_exp(21) ? LINKAWY_URI . '/assets/css/style-ar-fontopt.min.css' : linkawy_get_asset_path('/assets/css/style-ar', 'css');
-    echo '<link rel="preload" as="style" href="' . esc_url($style_ar . '?ver=' . $version) . '">' . "\n";
+    echo '<link rel="preload" as="style" href="' . esc_url(linkawy_get_asset_path('/assets/css/style-ar', 'css') . '?ver=' . $version) . '">' . "\n";
 
     // Front page: preload hero CSS (above-fold critical)
     if (is_front_page()) {
