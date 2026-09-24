@@ -1310,13 +1310,38 @@ get_header();
     })();
     </script>
 
-    <!-- Swiper for Results Section -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.js" crossorigin="anonymous"></script>
+    <!-- Swiper for Results Section: JS loads only when the slider nears the viewport -->
     <script>
     (function() {
-        if (typeof Swiper === 'undefined') return;
         var resultsEl = document.querySelector('.resultsSwiper');
         if (!resultsEl) return;
+        var requested = false;
+
+        function loadSwiper() {
+            if (requested) return;
+            requested = true;
+            var s = document.createElement('script');
+            s.src = 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.js';
+            s.crossOrigin = 'anonymous';
+            s.onload = initResultsSwiper;
+            document.body.appendChild(s);
+        }
+
+        if (!('IntersectionObserver' in window)) {
+            loadSwiper();
+            return;
+        }
+        var io = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+                io.disconnect();
+                loadSwiper();
+            }
+        }, { rootMargin: '600px 0px' });
+        io.observe(resultsEl);
+    })();
+
+    function initResultsSwiper() {
+        if (typeof Swiper === 'undefined') return;
         new Swiper('.resultsSwiper', {
             loop: true,
             speed: 600,
@@ -1345,7 +1370,7 @@ get_header();
                 prevEl: '.results-section .swiper-button-prev'
             }
         });
-    })();
+    }
     </script>
 
 

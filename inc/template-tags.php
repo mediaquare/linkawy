@@ -438,7 +438,8 @@ function linkawy_get_logo_url() {
         $logo = wp_get_attachment_image_src($custom_logo_id, 'full');
         return $logo[0];
     }
-    return LINKAWY_URI . '/assets/images/logo.svg';
+    // ?ver busts Cloudflare's long-lived cache when the logo file changes
+    return LINKAWY_URI . '/assets/images/logo.svg?ver=' . LINKAWY_VERSION;
 }
 
 /**
