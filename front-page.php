@@ -419,9 +419,26 @@ get_header();
         <div class="section-container">
             <h2 class="section-title">في المتوسط ساعدنا عملائنا في زيادة المبيعات العضوية لأكثر من <span class="highlight">270%</span> عن طريق الزيارات المستهدفة من Google و ChatGPT</h2>
             <div class="seo-image-container glass-card">
-                <video autoplay muted loop playsinline preload="metadata" width="748" height="300" poster="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof-poster.webp" aria-label="لقطة من Google Search Console توضح نمو الزيارات العضوية والنقرات بعد تطبيق استراتيجيات أفضل شركة سيو لينكاوي">
-                    <source src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.mp4" type="video/mp4">
-                </video>
+                <video class="js-lazy-video" muted loop playsinline preload="none" width="748" height="300" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof-poster.webp" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.mp4" aria-label="لقطة من Google Search Console توضح نمو الزيارات العضوية والنقرات بعد تطبيق استراتيجيات أفضل شركة سيو لينكاوي"></video>
+                <script>
+                /* Lazy video: load poster + mp4 only near the viewport; play only if motion is allowed. */
+                (function () {
+                    var v = document.currentScript.previousElementSibling;
+                    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    function start() {
+                        v.poster = v.getAttribute('data-poster');
+                        if (reduce) { return; }
+                        v.src = v.getAttribute('data-src');
+                        var p = v.play();
+                        if (p && p.catch) { p.catch(function () {}); }
+                    }
+                    if (!('IntersectionObserver' in window)) { start(); return; }
+                    var io = new IntersectionObserver(function (entries) {
+                        if (entries[0].isIntersecting) { io.disconnect(); start(); }
+                    }, { rootMargin: '300px 0px' });
+                    io.observe(v);
+                })();
+                </script>
             </div>
         </div>
     </section>
