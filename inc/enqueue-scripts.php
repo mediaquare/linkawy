@@ -72,10 +72,16 @@ function linkawy_defer_font_awesome_css($html, $handle) {
         // Inject the stylesheet after window "load". With the media="print" trick the
         // ~250KB of FA webfonts were often requested (at high priority) before first
         // paint, which Lighthouse then treats as critical -> FCP/LCP swung by ~2s.
+        // Wait for BOTH window load and first contentful paint: when paint lands after
+        // load, fonts fetched on load still counted as pre-FCP in Lighthouse.
         if (preg_match("/href='([^']+)'/", $html, $m)) {
             $href = $m[1];
-            return '<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="stylesheet";l.href=' . wp_json_encode($href) . ';document.head.appendChild(l);});</script>' . "\n"
-                . '<noscript>' . $html . '</noscript>' . "\n";
+            $js = '(function(){var done=false;function go(){if(done)return;done=true;var l=document.createElement("link");l.rel="stylesheet";l.href=' . wp_json_encode($href) . ';document.head.appendChild(l);}'
+                . 'function afterPaint(){try{if(performance.getEntriesByName("first-contentful-paint").length){go();return;}'
+                . 'new PerformanceObserver(function(list,obs){if(list.getEntriesByName("first-contentful-paint").length){obs.disconnect();go();}}).observe({type:"paint",buffered:true});}catch(e){go();}'
+                . 'setTimeout(go,4000);}'
+                . 'if(document.readyState==="complete"){afterPaint();}else{window.addEventListener("load",afterPaint);}})();';
+            return '<script>' . $js . '</script>' . "\n" . '<noscript>' . $html . '</noscript>' . "\n";
         }
         // Fallback: previous non-blocking pattern
         $html = str_replace("media='all'", "media='print' onload=\"this.media='all'\"", $html);
