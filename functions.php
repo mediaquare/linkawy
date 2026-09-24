@@ -17,6 +17,19 @@ define('LINKAWY_DIR', get_template_directory());
 define('LINKAWY_URI', get_template_directory_uri());
 
 /**
+ * Performance A/B switch: an experiment is active only when the request carries
+ * ?lkexp=<n> (comma-separated for several). Normal visitors never send it, so
+ * experiments can be measured side by side with the control in the same batch.
+ */
+function linkawy_exp($n) {
+    if (empty($_GET['lkexp'])) {
+        return false;
+    }
+    $on = array_map('intval', explode(',', (string) $_GET['lkexp']));
+    return in_array((int) $n, $on, true);
+}
+
+/**
  * Load theme setup
  */
 require_once LINKAWY_DIR . '/inc/theme-setup.php';
