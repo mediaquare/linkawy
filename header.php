@@ -92,12 +92,12 @@
             padding-top: 0;
         }
     </style>
-    <?php if (linkawy_exp(5)) : ?>
+    <?php if (is_front_page() && linkawy_exp(5)) : ?>
     <!-- exp5: skip layout/paint of below-the-fold sections until they approach the viewport -->
     <style>
     .programs-section, .seo-proof-section, .strategy-section, .partners-section, .success-stories-section,
     .process-section, .problems-section, .benefits-section, .blog-posts-section, .about-section,
-    .results-section, .seo-faq-section, .contact-form-section, body > footer, footer {
+    .results-section, .seo-faq-section, .contact-form-section, footer {
         content-visibility: auto;
         contain-intrinsic-size: auto 900px;
     }
