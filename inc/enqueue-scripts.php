@@ -564,10 +564,23 @@ add_action('wp', 'linkawy_lazy_content_images_setup');
 function linkawy_webp_swap($html) {
     $uploads = wp_get_upload_dir();
     $base = set_url_scheme($uploads['baseurl'], 'https');
-    return preg_replace_callback('#' . preg_quote($base, '#') . '/[^\s"\',]+\.(?:png|jpe?g)#i', function ($m) use ($uploads, $base) {
+    $exp = linkawy_exp(19);
+    $types = $exp ? 'png|jpe?g|svg' : 'png|jpe?g';
+    $html = preg_replace_callback('#' . preg_quote($base, '#') . '/[^\s"\',]+\.(?:' . $types . ')#i', function ($m) use ($uploads, $base, $exp) {
         $rel = substr($m[0], strlen($base));
+        $rel = $exp ? rawurldecode($rel) : $rel;
         return file_exists($uploads['basedir'] . $rel . '.webp') ? $m[0] . '.webp' : $m[0];
     }, $html);
+    // Heavy SVGs swapped for WebP usually carry no width/height; give them the
+    // raster's intrinsic size so lazy-loading and layout reservation work.
+    if (strpos($html, '.svg.webp') !== false && strpos($html, '<img') === 0 && !preg_match('/\swidth=/', $html)
+        && preg_match('#\ssrc="' . preg_quote($base, '#') . '(/[^"]+\.svg)\.webp"#i', $html, $src)) {
+        $size = @getimagesize($uploads['basedir'] . rawurldecode($src[1]) . '.webp');
+        if ($size) {
+            $html = preg_replace('/^<img\s/', '<img width="' . (int) $size[0] . '" height="' . (int) $size[1] . '" ', $html);
+        }
+    }
+    return $html;
 }
 
 /**
