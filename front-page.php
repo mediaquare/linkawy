@@ -1293,11 +1293,15 @@ get_header();
             }, { once: true });
         }
 
-        // Initialize
-        init();
-
-        // Start stepping
-        setInterval(step, PAUSE);
+        // Initialize after the first frame is painted: init() measures layout, and doing
+        // that while the HTML is still parsing forced a full-page layout before first paint.
+        // The conveyor sits below the fold at every viewport size, so this causes no shift.
+        requestAnimationFrame(function() {
+            setTimeout(function() {
+                init();
+                setInterval(step, PAUSE);
+            }, 0);
+        });
 
         // Recalculate on resize
         var resizeTimer;
