@@ -438,16 +438,16 @@ add_action('wp_head', 'linkawy_preconnect_cdn_domains', 0);
  * Priority 1 ensures output right after preconnect hints
  */
 function linkawy_preload_critical_css() {
-    $suffix = linkawy_get_asset_suffix();
     $version = LINKAWY_VERSION;
-    
-    // Always preload base styles (used on all pages)
-    echo '<link rel="preload" as="style" href="' . esc_url(LINKAWY_URI . '/assets/css/style' . $suffix . '.css?ver=' . $version) . '">' . "\n";
-    echo '<link rel="preload" as="style" href="' . esc_url(LINKAWY_URI . '/assets/css/style-ar' . $suffix . '.css?ver=' . $version) . '">' . "\n";
-    
+
+    // Use linkawy_get_asset_path() so the preload URL matches the enqueued file
+    // (style.min.css doesn't exist; preloading it was a wasted 404 request).
+    echo '<link rel="preload" as="style" href="' . esc_url(linkawy_get_asset_path('/assets/css/style', 'css') . '?ver=' . $version) . '">' . "\n";
+    echo '<link rel="preload" as="style" href="' . esc_url(linkawy_get_asset_path('/assets/css/style-ar', 'css') . '?ver=' . $version) . '">' . "\n";
+
     // Front page: preload hero CSS (above-fold critical)
     if (is_front_page()) {
-        echo '<link rel="preload" as="style" href="' . esc_url(LINKAWY_URI . '/assets/css/hero' . $suffix . '.css?ver=' . $version) . '">' . "\n";
+        echo '<link rel="preload" as="style" href="' . esc_url(linkawy_get_asset_path('/assets/css/hero', 'css') . '?ver=' . $version) . '">' . "\n";
     }
 }
 add_action('wp_head', 'linkawy_preload_critical_css', 1);
@@ -463,17 +463,8 @@ function linkawy_preload_lcp_image() {
             echo '<link rel="preload" as="image" href="' . esc_url($featured_img_url) . '" fetchpriority="high">' . "\n";
         }
     }
-    
-    // Preload hero image on front page (if exists)
-    if (is_front_page()) {
-        // Preload main hero/above-fold images
-        $hero_images = array(
-            LINKAWY_URI . '/assets/images/Placeholder-Image-scaled.webp',
-        );
-        foreach ($hero_images as $img_url) {
-            echo '<link rel="preload" as="image" href="' . esc_url($img_url) . '" fetchpriority="high">' . "\n";
-        }
-    }
+    // Front page: no hero image preload. The front-page LCP element is hero text,
+    // and the previously preloaded Placeholder-Image-scaled.webp (178KB) is unused.
 }
 add_action('wp_head', 'linkawy_preload_lcp_image', 2);
 
@@ -525,23 +516,6 @@ function linkawy_async_css_loading($html, $handle) {
     return $html;
 }
 add_filter('style_loader_tag', 'linkawy_async_css_loading', 10, 2);
-
-/**
- * Preload critical Font Awesome font files to improve font-display
- */
-function linkawy_preload_font_awesome_fonts() {
-    // Preload the most commonly used Font Awesome font files
-    $fonts = array(
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2',
-        'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2',
-    );
-    
-    foreach ($fonts as $font_url) {
-        echo '<link rel="preload" href="' . esc_url($font_url) . '" as="font" type="font/woff2" crossorigin="anonymous">' . "\n";
-    }
-}
-add_action('wp_head', 'linkawy_preload_font_awesome_fonts', 1);
 
 /**
  * Register AI Prompt Gutenberg Block
