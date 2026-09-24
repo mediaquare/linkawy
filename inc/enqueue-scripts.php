@@ -521,26 +521,6 @@ function linkawy_async_css_loading($html, $handle) {
 }
 add_filter('style_loader_tag', 'linkawy_async_css_loading', 10, 2);
 
-/**
- * exp8 (?lkexp=8): on the front page, swap logo SVG URLs for the svgo-optimized
- * *.opt.svg copies (only where such a copy exists).
- */
-function linkawy_exp8_svg_buffer() {
-    if (!is_front_page() || !linkawy_exp(8)) {
-        return;
-    }
-    ob_start(function ($html) {
-        return preg_replace_callback(
-            '#(/assets/images/(?:clients/|partners/)?[a-z0-9 -]+)\.svg#i',
-            function ($m) {
-                $rel = substr($m[1], strlen('/assets/images/')) . '.opt.svg';
-                return file_exists(LINKAWY_DIR . '/assets/images/' . $rel) ? $m[1] . '.opt.svg' : $m[0];
-            },
-            $html
-        );
-    });
-}
-add_action('template_redirect', 'linkawy_exp8_svg_buffer');
 
 /**
  * Register AI Prompt Gutenberg Block

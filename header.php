@@ -103,6 +103,10 @@
     }
     </style>
     <?php endif; ?>
+    <?php if (is_front_page() && linkawy_exp(9)) : ?>
+    <!-- exp9 (measurement only): hide the hero visual wall to quantify its cost -->
+    <style>.wall-container { display: none !important; }</style>
+    <?php endif; ?>
 
     <!-- Header scroll detection script -->
     <script>
