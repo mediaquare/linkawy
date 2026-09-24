@@ -59,9 +59,9 @@ get_header();
                             <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
                                 <p class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">عملاء تشرفنا بمعاونتهم:</p>
                                 <div class="clients-logos-wrapper flex flex-wrap items-center gap-8">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg" alt="Dinar" width="67" height="28" loading="eager" decoding="async" class="client-logo-item h-7 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/asharq.svg" alt="Asharq Bloomberg" width="43" height="24" loading="eager" decoding="async" class="client-logo-item h-6 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/alyom.svg" alt="Alyom Digital" width="73" height="28" loading="eager" decoding="async" class="client-logo-item h-7 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Dinar" width="67" height="28" loading="eager" decoding="async" class="client-logo-item h-7 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/asharq.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Asharq Bloomberg" width="43" height="24" loading="eager" decoding="async" class="client-logo-item h-6 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/alyom.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Alyom Digital" width="73" height="28" loading="eager" decoding="async" class="client-logo-item h-7 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                                 </div>
                             </div>
                         </div>
@@ -114,7 +114,7 @@ get_header();
                                         <!-- Card 3: Gemini -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg" alt="Gemini" width="16" height="16"></div>
+                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Gemini" width="16" height="16"></div>
                                                 <span class="mini-badge">Gemini</span>
                                             </div>
                                             <div class="space-y-1.5 relative">
@@ -130,14 +130,14 @@ get_header();
                                     <div class="marquee-group" aria-hidden="true">
                                          <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><i class="fab fa-google"></i></div><span class="mini-badge">Result #1</span></div><div><div class="h-2.5 w-3/4 bg-[#f26833] rounded mb-2 shadow-[0_0_10px_rgba(242,104,51,0.5)] anim-scan"></div><div class="skeleton-bar mb-1"></div><div class="skeleton-bar w-2/3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Google SERP</div></div>
                                          <div class="wall-card relative"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-link"></i></div><span class="mini-badge">Links</span></div><div class="text-center py-1 relative"><div class="flex items-baseline justify-center gap-1"><span class="text-[10px] font-bold text-gray-300">DR</span><div class="text-xl font-bold text-white anim-score"><span class="dr-counter">80</span></div></div><div class="absolute top-0 right-10 text-[9px] text-[#f26833] font-extrabold anim-float-plus">+3</div><div class="text-[9px] text-gray-500">Authority Score</div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Backlinks</div></div>
-                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
+                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
                                     </div>
 
                                     <!-- Marquee Group 3 (Duplicate for Safety) -->
                                     <div class="marquee-group" aria-hidden="true">
                                          <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><i class="fab fa-google"></i></div><span class="mini-badge">Result #1</span></div><div><div class="h-2.5 w-3/4 bg-[#f26833] rounded mb-2 shadow-[0_0_10px_rgba(242,104,51,0.5)] anim-scan"></div><div class="skeleton-bar mb-1"></div><div class="skeleton-bar w-2/3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Google SERP</div></div>
                                          <div class="wall-card relative"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-link"></i></div><span class="mini-badge">Links</span></div><div class="text-center py-1 relative"><div class="flex items-baseline justify-center gap-1"><span class="text-[10px] font-bold text-gray-300">DR</span><div class="text-xl font-bold text-white anim-score"><span class="dr-counter">80</span></div></div><div class="absolute top-0 right-10 text-[9px] text-[#f26833] font-extrabold anim-float-plus">+3</div><div class="text-[9px] text-gray-500">Authority Score</div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Backlinks</div></div>
-                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
+                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
                                     </div>
                                 </div>
 
@@ -148,7 +148,7 @@ get_header();
                                         <!-- Card 1: ChatGPT -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div>
+                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="OpenAI" width="16" height="16"></div>
                                                 <span class="mini-badge">ChatGPT</span>
                                             </div>
                                             <div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative">
@@ -195,14 +195,14 @@ get_header();
 
                                     <!-- Marquee Group 2 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text">"الظهور في اجابات الذكاء الاصطناعي..."</span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text">"الظهور في اجابات الذكاء الاصطناعي..."</span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-pen-nib"></i></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
                                     </div>
                                     
                                     <!-- Marquee Group 3 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text">"الظهور في اجابات الذكاء الاصطناعي..."</span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text">"الظهور في اجابات الذكاء الاصطناعي..."</span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-pen-nib"></i></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
                                     </div>
@@ -334,7 +334,7 @@ get_header();
                 <!-- Card 1: Shopify SEO -->
                 <div class="program-card program-card--shopify">
                     <div class="icon-box">
-                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/shopify.svg' ); ?>
+                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/shopify.svg?ver=<?php echo LINKAWY_VERSION; ?>' ); ?>
                     </div>
                     <h3>سيو شوبيفاي</h3>
                     <span class="service-subtitle">Shopify SEO</span>
@@ -344,7 +344,7 @@ get_header();
                 <!-- Card 2: Salla SEO -->
                 <div class="program-card program-card--salla">
                     <div class="icon-box">
-                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/sall.svg' ); ?>
+                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/sall.svg?ver=<?php echo LINKAWY_VERSION; ?>' ); ?>
                     </div>
                     <h3>سيو سلة</h3>
                     <span class="service-subtitle">Salla SEO</span>
@@ -520,23 +520,23 @@ get_header();
             <h2 class="partners-title">شركاء النجاح:</h2>
             <div class="partners-marquee">
                 <div class="partners-track">
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg" alt="Dinar" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/asharq.svg" alt="Asharq" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/move.svg" alt="Move" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/alyom.svg" alt="Alyom" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/inspire.svg" alt="Inspire" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/francis.svg" alt="Francis" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/aswaq.svg" alt="Aswaq" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/reef.svg" alt="Reef" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Dinar" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/asharq.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Asharq" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/move.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Move" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/alyom.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Alyom" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/inspire.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Inspire" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/francis.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Francis" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/aswaq.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Aswaq" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/reef.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Reef" loading="lazy" width="120" height="40"></div>
                     <!-- Duplicate set for seamless marquee loop -->
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg" alt="Dinar" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/asharq.svg" alt="Asharq" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/move.svg" alt="Move" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/alyom.svg" alt="Alyom" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/inspire.svg" alt="Inspire" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/francis.svg" alt="Francis" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/aswaq.svg" alt="Aswaq" loading="lazy" width="120" height="40"></div>
-                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/reef.svg" alt="Reef" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Dinar" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/asharq.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Asharq" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/move.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Move" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/alyom.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Alyom" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/inspire.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Inspire" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/francis.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Francis" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/aswaq.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Aswaq" loading="lazy" width="120" height="40"></div>
+                    <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/reef.svg?ver=<?php echo LINKAWY_VERSION; ?>" alt="Reef" loading="lazy" width="120" height="40"></div>
                 </div>
             </div>
         </div>
@@ -1182,15 +1182,15 @@ get_header();
     <script>
     (function() {
         var platforms = [
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/sall.svg', name: 'Salla', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/zid.svg', name: 'Zid', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/shopify.svg', name: 'Shopify', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/woocommerce.svg', name: 'WooCommerce', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/wordpress.svg', name: 'WordPress', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/laravel.svg', name: 'Laravel', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google ads.svg', name: 'Google Ads', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google my business.svg', name: 'Google Business', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google-play-store.svg', name: 'Google Play', badge: 'Expert' }
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/sall.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'Salla', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/zid.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'Zid', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/shopify.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'Shopify', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/woocommerce.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'WooCommerce', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/wordpress.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'WordPress', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/laravel.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'Laravel', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google ads.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'Google Ads', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google my business.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'Google Business', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google-play-store.svg?ver=<?php echo LINKAWY_VERSION; ?>', name: 'Google Play', badge: 'Expert' }
         ];
 
         var PAUSE = 3000; // ms between each step
