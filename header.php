@@ -92,7 +92,12 @@
             padding-top: 0;
         }
     </style>
-    
+    <?php if (is_front_page()) : ?>
+    <!-- exp4: hold hero animations on their first frame until window load -->
+    <style>html:not(.lk-loaded) .hero-dark-section *, html:not(.lk-loaded) .hero-dark-section *::before, html:not(.lk-loaded) .hero-dark-section *::after { animation-play-state: paused !important; }</style>
+    <script>window.addEventListener('load', function () { document.documentElement.classList.add('lk-loaded'); });</script>
+    <?php endif; ?>
+
     <!-- Header scroll detection script -->
     <script>
     (function() {
