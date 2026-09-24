@@ -119,18 +119,13 @@ function linkawy_scripts() {
         LINKAWY_VERSION
     );
 
-    // Arabic Style
+    // Arabic Style (exp21: identical copy with font-display:optional instead of swap)
     wp_enqueue_style(
         'linkawy-style-ar',
-        linkawy_get_asset_path('/assets/css/style-ar', 'css'),
+        linkawy_exp(21) ? LINKAWY_URI . '/assets/css/style-ar-fontopt.min.css' : linkawy_get_asset_path('/assets/css/style-ar', 'css'),
         array('linkawy-style'),
         LINKAWY_VERSION
     );
-    if (linkawy_exp(21)) {
-        // Same face with font-display:optional (the later @font-face wins): if the font is not
-        // ready at first paint the fallback stays for this view instead of swapping and reflowing.
-        wp_add_inline_style('linkawy-style-ar', "@font-face{font-family:'Somar Sans';font-style:normal;font-weight:500;font-display:optional;src:local('Somar Sans'),url('" . esc_url(LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2') . "') format('woff2')}");
-    }
 
     // Blog/Archive styles (also on 404 page for related posts)
     if (is_home() || is_archive() || is_search() || is_404()) {
@@ -474,7 +469,8 @@ function linkawy_preload_critical_css() {
     // Use linkawy_get_asset_path() so the preload URL matches the enqueued file
     // (style.min.css doesn't exist; preloading it was a wasted 404 request).
     echo '<link rel="preload" as="style" href="' . esc_url(linkawy_get_asset_path('/assets/css/style', 'css') . '?ver=' . $version) . '">' . "\n";
-    echo '<link rel="preload" as="style" href="' . esc_url(linkawy_get_asset_path('/assets/css/style-ar', 'css') . '?ver=' . $version) . '">' . "\n";
+    $style_ar = linkawy_exp(21) ? LINKAWY_URI . '/assets/css/style-ar-fontopt.min.css' : linkawy_get_asset_path('/assets/css/style-ar', 'css');
+    echo '<link rel="preload" as="style" href="' . esc_url($style_ar . '?ver=' . $version) . '">' . "\n";
 
     // Front page: preload hero CSS (above-fold critical)
     if (is_front_page()) {
