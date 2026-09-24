@@ -564,11 +564,10 @@ add_action('wp', 'linkawy_lazy_content_images_setup');
 function linkawy_webp_swap($html) {
     $uploads = wp_get_upload_dir();
     $base = set_url_scheme($uploads['baseurl'], 'https');
-    $exp = linkawy_exp(19);
-    $types = $exp ? 'png|jpe?g|svg' : 'png|jpe?g';
-    $html = preg_replace_callback('#' . preg_quote($base, '#') . '/[^\s"\',]+\.(?:' . $types . ')#i', function ($m) use ($uploads, $base, $exp) {
-        $rel = substr($m[0], strlen($base));
-        $rel = $exp ? rawurldecode($rel) : $rel;
+    // Heavy SVGs (>150KB, raster images wrapped in SVG) have "<file>.svg.webp" siblings:
+    // A/B page weight 1.9MB -> 0.75MB, stalled PSI runs 76 -> 85.
+    $html = preg_replace_callback('#' . preg_quote($base, '#') . '/[^\s"\',]+\.(?:png|jpe?g|svg)#i', function ($m) use ($uploads, $base) {
+        $rel = rawurldecode(substr($m[0], strlen($base)));
         return file_exists($uploads['basedir'] . $rel . '.webp') ? $m[0] . '.webp' : $m[0];
     }, $html);
     // Heavy SVGs swapped for WebP usually carry no width/height; give them the
