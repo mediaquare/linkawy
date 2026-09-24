@@ -33,11 +33,36 @@ function linkawy_get_asset_path($base_path, $extension) {
     $min_file = LINKAWY_DIR . $base_path . $suffix . '.' . $extension;
     
     // Check if minified file exists, fallback to non-minified
-    if ($suffix === '.min' && !file_exists($min_file)) {
+    if ($suffix === '.min' && (!file_exists($min_file) || !linkawy_min_is_fresh(LINKAWY_DIR . $base_path . '.' . $extension, $min_file))) {
         return LINKAWY_URI . $base_path . '.' . $extension;
     }
-    
+    if ($suffix === '.min' && $base_path === '/assets/css/style' && !linkawy_exp(18)) {
+        return LINKAWY_URI . $base_path . '.' . $extension;
+    }
+
     return LINKAWY_URI . $base_path . $suffix . '.' . $extension;
+}
+
+/**
+ * A .min file stamped with "src-md5:<hash>" is only used while it matches its source,
+ * so editing the source without regenerating the .min can never serve stale CSS.
+ * Unstamped (hand-made) .min files keep the old behaviour.
+ */
+function linkawy_min_is_fresh($source, $min_file) {
+    if (!file_exists($source)) {
+        return true;
+    }
+    $head = (string) file_get_contents($min_file, false, null, 0, 120);
+    if (!preg_match('/src-md5:([0-9a-f]{32})/', $head, $m)) {
+        return true;
+    }
+    $key = 'linkawy_min_' . md5($source . filemtime($source) . filesize($source));
+    $source_md5 = get_transient($key);
+    if ($source_md5 === false) {
+        $source_md5 = md5_file($source);
+        set_transient($key, $source_md5, WEEK_IN_SECONDS);
+    }
+    return $source_md5 === $m[1];
 }
 
 /**
