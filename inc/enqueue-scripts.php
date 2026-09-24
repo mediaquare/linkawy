@@ -544,6 +544,33 @@ function linkawy_lazy_content_images_setup() {
 }
 add_action('wp', 'linkawy_lazy_content_images_setup');
 
+/**
+ * Swap upload URLs (png/jpg) for a sibling "<file>.webp" when one exists on disk.
+ */
+function linkawy_webp_swap($html) {
+    $uploads = wp_get_upload_dir();
+    $base = set_url_scheme($uploads['baseurl'], 'https');
+    return preg_replace_callback('#' . preg_quote($base, '#') . '/[^\s"\',]+\.(?:png|jpe?g)#i', function ($m) use ($uploads, $base) {
+        $rel = substr($m[0], strlen($base));
+        return file_exists($uploads['basedir'] . $rel . '.webp') ? $m[0] . '.webp' : $m[0];
+    }, $html);
+}
+
+/**
+ * Singular pages: WebP hero/content images and lazy iframes (e.g. YouTube oEmbed).
+ */
+function linkawy_exp13_setup() {
+    if (!linkawy_exp(13) || is_front_page() || !is_singular()) {
+        return;
+    }
+    add_filter('post_thumbnail_html', 'linkawy_webp_swap', 20);
+    add_filter('wp_content_img_tag', 'linkawy_webp_swap', 30);
+    add_filter('the_content', function ($content) {
+        return preg_replace('/<iframe(?![^>]*\sloading=)/i', '<iframe loading="lazy"', $content);
+    }, 99);
+}
+add_action('wp', 'linkawy_exp13_setup');
+
 
 /**
  * Register AI Prompt Gutenberg Block
