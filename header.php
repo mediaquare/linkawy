@@ -103,6 +103,15 @@
     }
     </style>
     <?php endif; ?>
+    <?php if (is_singular('glossary') && linkawy_exp(6)) : ?>
+    <!-- exp6: same for below-the-fold parts of glossary terms -->
+    <style>
+    .related-terms-section, .pre-footer-cta, footer {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 600px;
+    }
+    </style>
+    <?php endif; ?>
 
     <!-- Header scroll detection script -->
     <script>
