@@ -126,6 +126,11 @@ function linkawy_scripts() {
         array('linkawy-style'),
         LINKAWY_VERSION
     );
+    if (linkawy_exp(21)) {
+        // Same face with font-display:optional (the later @font-face wins): if the font is not
+        // ready at first paint the fallback stays for this view instead of swapping and reflowing.
+        wp_add_inline_style('linkawy-style-ar', "@font-face{font-family:'Somar Sans';font-style:normal;font-weight:500;font-display:optional;src:local('Somar Sans'),url('" . esc_url(LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2') . "') format('woff2')}");
+    }
 
     // Blog/Archive styles (also on 404 page for related posts)
     if (is_home() || is_archive() || is_search() || is_404()) {
@@ -430,6 +435,9 @@ add_action('wp_enqueue_scripts', 'linkawy_scripts');
  * Strategy: Keep critical path minimal and avoid font chaining.
  */
 function linkawy_preload_somar_fonts() {
+    if (linkawy_exp(22)) {
+        return; // Diagnostic only: late font -> does the glossary layout shift show up more often?
+    }
     $font_url = LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2';
     echo '<link rel="preload" href="' . esc_url($font_url) . '" as="font" type="font/woff2" crossorigin>' . "\n";
 }
