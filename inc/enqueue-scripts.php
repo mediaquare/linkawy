@@ -254,16 +254,15 @@ function linkawy_scripts() {
             array('linkawy-style'),
             LINKAWY_VERSION
         );
-        if (linkawy_exp(17)) {
-            // Service pages use 8 of article.css's 439 rules (breadcrumbs); inline those
-            // where article.css sat in the cascade instead of loading the 61KB file.
-            wp_dequeue_style('linkawy-article');
-            wp_add_inline_style('linkawy-style-ar', '.breadcrumbs{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:2.5rem;font-size:.85rem;flex-wrap:wrap}'
-                . '.breadcrumbs a{color:#c4c4c4;transition:color .3s}.breadcrumbs a:hover{color:#ff6b00}'
-                . '.breadcrumb-separator{color:rgba(255,255,255,.3);font-size:.65rem}.breadcrumb-current{color:#ff6b00;font-weight:500}'
-                . '@media (max-width:768px){body{overflow-x:clip}.breadcrumbs{font-size:.8rem;margin-bottom:2rem;gap:.4rem}}'
-                . '@media (max-width:480px){.breadcrumbs{font-size:.75rem;margin-bottom:1.75rem}}');
-        }
+        // Service pages use 8 of article.css's 439 rules (breadcrumbs); inline those
+        // where article.css sat in the cascade instead of loading the 61KB file
+        // (A/B: FCP 1.35s -> 1.20s, LCP ~2.4-2.9s -> 1.73s; layout identical on all 6 pages).
+        wp_dequeue_style('linkawy-article');
+        wp_add_inline_style('linkawy-style-ar', '.breadcrumbs{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:2.5rem;font-size:.85rem;flex-wrap:wrap}'
+            . '.breadcrumbs a{color:#c4c4c4;transition:color .3s}.breadcrumbs a:hover{color:#ff6b00}'
+            . '.breadcrumb-separator{color:rgba(255,255,255,.3);font-size:.65rem}.breadcrumb-current{color:#ff6b00;font-weight:500}'
+            . '@media (max-width:768px){body{overflow-x:clip}.breadcrumbs{font-size:.8rem;margin-bottom:2rem;gap:.4rem}}'
+            . '@media (max-width:480px){.breadcrumbs{font-size:.75rem;margin-bottom:1.75rem}}');
     }
 
     // Landing page template: blank shell, full-width Gutenberg
