@@ -864,3 +864,58 @@ function linkawy_optimize_lcp_content_image($content) {
     return $content;
 }
 add_filter('the_content', 'linkawy_optimize_lcp_content_image', 20);
+
+/**
+ * Real-user Core Web Vitals (RUM) -> GA4
+ *
+ * Loads the self-hosted web-vitals library after window load (it reads buffered
+ * performance entries, so LCP/FCP/CLS/TTFB are still captured) and sends each
+ * metric to GA4 through the Site Kit gtag. Skipped when gtag isn't present
+ * (e.g. logged-in users, whom Site Kit excludes from tracking).
+ */
+function linkawy_web_vitals_rum() {
+    if (is_admin()) {
+        return;
+    }
+    $src = LINKAWY_URI . '/assets/js/web-vitals.iife.js?ver=' . LINKAWY_VERSION;
+    ?>
+    <script>
+    (function() {
+        function send(m) {
+            if (typeof window.gtag !== 'function') return;
+            window.gtag('event', m.name, {
+                value: Math.round(m.name === 'CLS' ? m.delta * 1000 : m.delta),
+                metric_id: m.id,
+                metric_value: m.value,
+                metric_delta: m.delta,
+                metric_rating: m.rating,
+                navigation_type: m.navigationType,
+                non_interaction: true
+            });
+        }
+        function start() {
+            if (typeof window.gtag !== 'function') return;
+            var s = document.createElement('script');
+            s.src = <?php echo wp_json_encode($src); ?>;
+            s.async = true;
+            s.onload = function() {
+                var wv = window.webVitals;
+                if (!wv) return;
+                wv.onLCP(send);
+                wv.onINP(send);
+                wv.onCLS(send);
+                wv.onFCP(send);
+                wv.onTTFB(send);
+            };
+            document.head.appendChild(s);
+        }
+        if (document.readyState === 'complete') {
+            setTimeout(start, 0);
+        } else {
+            window.addEventListener('load', function() { setTimeout(start, 0); });
+        }
+    })();
+    </script>
+    <?php
+}
+add_action('wp_footer', 'linkawy_web_vitals_rum', 99);
