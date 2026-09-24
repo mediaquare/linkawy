@@ -74,6 +74,14 @@ function linkawy_defer_font_awesome_css($html, $handle) {
         // paint, which Lighthouse then treats as critical -> FCP/LCP swung by ~2s.
         if (preg_match("/href='([^']+)'/", $html, $m)) {
             $href = $m[1];
+            if (linkawy_exp(16)) {
+                // Wait for window "load" AND the first paint: when paint lands after load, a
+                // load-only trigger still pulls ~270KB of FA CSS/fonts in ahead of first paint.
+                return '<script>(function(){var l=0,p=0,d=0;function go(){if(d||!l||!p)return;d=1;var s=document.createElement("link");s.rel="stylesheet";s.href=' . wp_json_encode($href) . ';document.head.appendChild(s);}'
+                    . 'window.addEventListener("load",function(){l=1;go();setTimeout(function(){p=1;go();},4000);});'
+                    . 'try{new PerformanceObserver(function(e){if(e.getEntriesByName("first-contentful-paint").length){p=1;go();}}).observe({type:"paint",buffered:true});}catch(x){p=1;}})();</script>' . "\n"
+                    . '<noscript>' . $html . '</noscript>' . "\n";
+            }
             return '<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="stylesheet";l.href=' . wp_json_encode($href) . ';document.head.appendChild(l);});</script>' . "\n"
                 . '<noscript>' . $html . '</noscript>' . "\n";
         }
