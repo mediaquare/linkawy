@@ -92,8 +92,8 @@
             padding-top: 0;
         }
     </style>
-    <?php if (is_front_page() && linkawy_exp(5)) : ?>
-    <!-- exp5: skip layout/paint of below-the-fold sections until they approach the viewport -->
+    <?php if (is_front_page()) : ?>
+    <!-- Skip layout/paint of below-the-fold front-page sections until they near the viewport (A/B: bad-PSI runs 13/20 -> 4/20) -->
     <style>
     .programs-section, .seo-proof-section, .strategy-section, .partners-section, .success-stories-section,
     .process-section, .problems-section, .benefits-section, .blog-posts-section, .about-section,
