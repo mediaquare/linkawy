@@ -509,15 +509,35 @@ function linkawy_async_css_loading($html, $handle) {
     if (is_front_page()) {
         $async_styles[] = 'linkawy-contact-form';
     }
+    // Templates with inlined critical CSS (see linkawy_critical_css_file()): all theme
+    // sheets load non-blocking; the inlined above-the-fold CSS covers first paint.
+    if (linkawy_critical_css_file()) {
+        $async_styles = array_merge($async_styles, array(
+            'linkawy-style', 'linkawy-style-ar', 'linkawy-glossary', 'linkawy-content-blocks',
+        ));
+    }
 
     if (in_array($handle, $async_styles)) {
         return str_replace(
             "media='all'",
             "media='print' onload=\"this.media='all'\"",
             $html
-        );
+        ) . '<noscript>' . $html . '</noscript>';
     }
     return $html;
+}
+
+/**
+ * Per-template critical CSS (generated from the live page for mobile, tablet and
+ * desktop viewports). Returns the absolute file path, or '' when the current
+ * template has none. Currently only single glossary terms (experiment).
+ */
+function linkawy_critical_css_file() {
+    if (is_admin() || !is_singular('glossary')) {
+        return '';
+    }
+    $file = LINKAWY_DIR . '/assets/css/critical-glossary.css';
+    return file_exists($file) ? $file : '';
 }
 add_filter('style_loader_tag', 'linkawy_async_css_loading', 10, 2);
 
