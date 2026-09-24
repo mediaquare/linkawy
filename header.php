@@ -92,10 +92,16 @@
             padding-top: 0;
         }
     </style>
-    <?php if (is_front_page() && linkawy_exp(4)) : ?>
-    <!-- exp4: hold hero animations on their first frame until window load -->
-    <style>html:not(.lk-loaded) .hero-dark-section *, html:not(.lk-loaded) .hero-dark-section *::before, html:not(.lk-loaded) .hero-dark-section *::after { animation-play-state: paused !important; }</style>
-    <script>window.addEventListener('load', function () { document.documentElement.classList.add('lk-loaded'); });</script>
+    <?php if (linkawy_exp(5)) : ?>
+    <!-- exp5: skip layout/paint of below-the-fold sections until they approach the viewport -->
+    <style>
+    .programs-section, .seo-proof-section, .strategy-section, .partners-section, .success-stories-section,
+    .process-section, .problems-section, .benefits-section, .blog-posts-section, .about-section,
+    .results-section, .seo-faq-section, .contact-form-section, body > footer, footer {
+        content-visibility: auto;
+        contain-intrinsic-size: auto 900px;
+    }
+    </style>
     <?php endif; ?>
 
     <!-- Header scroll detection script -->
