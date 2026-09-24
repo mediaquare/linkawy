@@ -885,7 +885,8 @@ get_header();
                 <a href="<?php the_permalink(); ?>" class="blog-post-card">
                     <div class="blog-post-image" style="--card-gradient: <?php echo esc_attr($card_gradient); ?>;">
                         <?php if (has_post_thumbnail()) : ?>
-                            <?php the_post_thumbnail('medium_large'); ?>
+                            <?php // Far below the fold: override WP's auto fetchpriority=high / eager on the first images
+                            the_post_thumbnail('medium_large', array('loading' => 'lazy', 'fetchpriority' => 'low', 'decoding' => 'async')); ?>
                         <?php endif; ?>
                         <?php if ($category_name) : ?>
                             <span class="blog-post-category-badge"><?php echo esc_html($category_name); ?></span>
