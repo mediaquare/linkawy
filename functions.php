@@ -105,6 +105,11 @@ require_once LINKAWY_DIR . '/inc/mega-menu-custom-fields.php';
 require_once LINKAWY_DIR . '/inc/customizer.php';
 
 /**
+ * Purge Cloudflare's HTML cache when content changes
+ */
+require_once LINKAWY_DIR . '/inc/cloudflare-purge.php';
+
+/**
  * تفعيل Yoast Duplicate Post لأنواع المقالات المخصصة (الموارد والبرومبتات)
  * Enable Yoast Duplicate Post for custom post types: resources & prompts
  */
