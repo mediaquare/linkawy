@@ -522,24 +522,25 @@ function linkawy_async_css_loading($html, $handle) {
 add_filter('style_loader_tag', 'linkawy_async_css_loading', 10, 2);
 
 /**
- * exp7 (?lkexp=7): load Site Kit's gtag.js library after window load. The inline
- * config (dataLayer + gtag() + config) stays in place, so page_view and other
- * calls are queued in dataLayer and sent once the library arrives.
+ * exp8 (?lkexp=8): on the front page, swap logo SVG URLs for the svgo-optimized
+ * *.opt.svg copies (only where such a copy exists).
  */
-function linkawy_exp7_delay_gtag($tag, $handle) {
-    if ($handle !== 'google_gtagjs' || !linkawy_exp(7)) {
-        return $tag;
+function linkawy_exp8_svg_buffer() {
+    if (!is_front_page() || !linkawy_exp(8)) {
+        return;
     }
-    return preg_replace_callback(
-        '#<script[^>]*\sid=["\']google_gtagjs-js["\'][^>]*\ssrc=["\']([^"\']+)["\'][^>]*></script>#',
-        function ($m) {
-            return '<script>window.addEventListener("load",function(){setTimeout(function(){var s=document.createElement("script");s.async=true;s.src=' . wp_json_encode(html_entity_decode($m[1])) . ';document.head.appendChild(s);},0);});</script>';
-        },
-        $tag,
-        1
-    );
+    ob_start(function ($html) {
+        return preg_replace_callback(
+            '#(/assets/images/(?:clients/|partners/)?[a-z0-9 -]+)\.svg#i',
+            function ($m) {
+                $rel = substr($m[1], strlen('/assets/images/')) . '.opt.svg';
+                return file_exists(LINKAWY_DIR . '/assets/images/' . $rel) ? $m[1] . '.opt.svg' : $m[0];
+            },
+            $html
+        );
+    });
 }
-add_filter('script_loader_tag', 'linkawy_exp7_delay_gtag', 30, 2);
+add_action('template_redirect', 'linkawy_exp8_svg_buffer');
 
 /**
  * Register AI Prompt Gutenberg Block
