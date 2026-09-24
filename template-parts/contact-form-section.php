@@ -292,7 +292,7 @@ if ($linkawy_cf_sfx !== '') {
 })();
 </script>
 
-<script defer src="<?php echo esc_url(LINKAWY_URI . '/assets/js/vendor/just-validate-4.3.0.min.js'); ?>"></script>
+<script defer src="https://unpkg.com/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
 <script>
 (function() {
 // Deferred JustValidate runs before DOMContentLoaded, so init there instead of blocking HTML parsing.

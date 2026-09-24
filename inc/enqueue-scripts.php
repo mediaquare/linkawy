@@ -422,7 +422,14 @@ add_action('wp_head', 'linkawy_preload_somar_fonts', 1);
 function linkawy_preconnect_cdn_domains() {
     // Cloudflare CDN (Font Awesome + Swiper)
     echo '<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>' . "\n";
-    // just-validate is self-hosted (assets/js/vendor), so no unpkg preconnect is needed.
+    // unpkg (just-validate) - front page, service page with hero image, or pages with contact shortcode
+    if (is_front_page()) {
+        echo '<link rel="preconnect" href="https://unpkg.com" crossorigin>' . "\n";
+    } elseif (is_page_template('page-templates/service-page.php') && get_queried_object_id() && has_post_thumbnail(get_queried_object_id())) {
+        echo '<link rel="preconnect" href="https://unpkg.com" crossorigin>' . "\n";
+    } elseif (function_exists('linkawy_content_includes_contact_form_shortcode') && linkawy_content_includes_contact_form_shortcode()) {
+        echo '<link rel="preconnect" href="https://unpkg.com" crossorigin>' . "\n";
+    }
 }
 add_action('wp_head', 'linkawy_preconnect_cdn_domains', 0);
 
