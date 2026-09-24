@@ -419,7 +419,9 @@ get_header();
         <div class="section-container">
             <h2 class="section-title">في المتوسط ساعدنا عملائنا في زيادة المبيعات العضوية لأكثر من <span class="highlight">270%</span> عن طريق الزيارات المستهدفة من Google و ChatGPT</h2>
             <div class="seo-image-container glass-card">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.webp" alt="لقطة من Google Search Console توضح نمو الزيارات العضوية والنقرات بعد تطبيق استراتيجيات أفضل شركة سيو لينكاوي" loading="lazy" decoding="async" width="800" height="450">
+                <video autoplay muted loop playsinline preload="metadata" width="748" height="300" poster="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof-poster.webp" aria-label="لقطة من Google Search Console توضح نمو الزيارات العضوية والنقرات بعد تطبيق استراتيجيات أفضل شركة سيو لينكاوي">
+                    <source src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
     </section>

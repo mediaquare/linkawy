@@ -288,7 +288,7 @@ function linkawy_scripts() {
     // Removed from frontend to reduce render-blocking requests
     // WordPress still recognizes the theme via style.css header
 
-    // reCAPTCHA v2 Invisible (shared helper: window.linkawyWithRecaptcha). Loads api.js when site key is set.
+    // reCAPTCHA v2 Invisible (shared helper: window.linkawyWithRecaptcha). Loads api.js on first form interaction when site key is set.
     wp_enqueue_script(
         'linkawy-recaptcha-v2',
         linkawy_get_asset_path('/assets/js/recaptcha-v2-invisible', 'js'),

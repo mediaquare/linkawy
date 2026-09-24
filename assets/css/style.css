@@ -2458,7 +2458,8 @@ nav.main-nav li.menu-item-has-children:not(.has-dropdown):hover > a .submenu-che
     padding: 1rem;
 }
 
-.seo-proof-section .seo-image-container img {
+.seo-proof-section .seo-image-container img,
+.seo-proof-section .seo-image-container video {
     width: 100%;
     height: auto;
     display: block;

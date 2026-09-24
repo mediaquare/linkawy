@@ -158,12 +158,21 @@
     var mgr = new Manager();
     w.linkawyRecaptchaV2 = mgr;
 
-    function boot() {
+    // Load api.js lazily on first interaction with any form (keeps ~500KB of
+    // reCAPTCHA JS off the initial page load). execute() also loads it on demand,
+    // so a submit without prior interaction still works.
+    var warmEvents = ['focusin', 'pointerdown', 'touchstart'];
+    function warmUp(e) {
+        var t = e.target;
+        if (!t || typeof t.closest !== 'function' || !t.closest('form')) {
+            return;
+        }
+        for (var i = 0; i < warmEvents.length; i++) {
+            d.removeEventListener(warmEvents[i], warmUp, true);
+        }
         mgr._loadApi();
     }
-    if (d.readyState === 'loading') {
-        d.addEventListener('DOMContentLoaded', boot);
-    } else {
-        boot();
+    for (var i = 0; i < warmEvents.length; i++) {
+        d.addEventListener(warmEvents[i], warmUp, { capture: true, passive: true });
     }
 })(window, document);
