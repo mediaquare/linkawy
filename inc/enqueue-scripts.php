@@ -423,7 +423,9 @@ function linkawy_preconnect_cdn_domains() {
     // Cloudflare CDN (Font Awesome + Swiper)
     echo '<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>' . "\n";
     // unpkg (just-validate) - front page, service page with hero image, or pages with contact shortcode
-    if (is_front_page()) {
+    if (linkawy_exp(11)) {
+        // exp11: just-validate is self-hosted, no unpkg connection needed
+    } elseif (is_front_page()) {
         echo '<link rel="preconnect" href="https://unpkg.com" crossorigin>' . "\n";
     } elseif (is_page_template('page-templates/service-page.php') && get_queried_object_id() && has_post_thumbnail(get_queried_object_id())) {
         echo '<link rel="preconnect" href="https://unpkg.com" crossorigin>' . "\n";
@@ -520,6 +522,27 @@ function linkawy_async_css_loading($html, $handle) {
     return $html;
 }
 add_filter('style_loader_tag', 'linkawy_async_css_loading', 10, 2);
+
+/**
+ * exp11 (?lkexp=11): on the front page, swap logo SVG URLs for the svgo-optimized
+ * *.opt.svg copies (only where such a copy exists).
+ */
+function linkawy_exp11_svg_buffer() {
+    if (!is_front_page() || !linkawy_exp(11)) {
+        return;
+    }
+    ob_start(function ($html) {
+        return preg_replace_callback(
+            '#(/assets/images/(?:clients/|partners/)?[a-z0-9 -]+)\.svg#i',
+            function ($m) {
+                $rel = substr($m[1], strlen('/assets/images/')) . '.opt.svg';
+                return file_exists(LINKAWY_DIR . '/assets/images/' . $rel) ? $m[1] . '.opt.svg' : $m[0];
+            },
+            $html
+        );
+    });
+}
+add_action('template_redirect', 'linkawy_exp11_svg_buffer');
 
 
 /**
