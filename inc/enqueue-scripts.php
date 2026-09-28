@@ -29,9 +29,16 @@ function linkawy_get_asset_suffix() {
  * @return string Full path to use
  */
 function linkawy_get_asset_path($base_path, $extension) {
+    // English (LTR) pages use the generated mirror in assets/css/ltr/ (tools/build-ltr-css.js).
+    if ($extension === 'css' && !is_rtl() && strpos($base_path, '/assets/css/') === 0) {
+        $ltr_base = '/assets/css/ltr/' . substr($base_path, strlen('/assets/css/'));
+        if (file_exists(LINKAWY_DIR . $ltr_base . '.css')) {
+            $base_path = $ltr_base;
+        }
+    }
     $suffix = linkawy_get_asset_suffix();
     $min_file = LINKAWY_DIR . $base_path . $suffix . '.' . $extension;
-    
+
     // Check if minified file exists, fallback to non-minified
     if ($suffix === '.min' && !file_exists($min_file)) {
         return LINKAWY_URI . $base_path . '.' . $extension;
@@ -430,7 +437,9 @@ add_action('wp_enqueue_scripts', 'linkawy_scripts');
  * Strategy: Keep critical path minimal and avoid font chaining.
  */
 function linkawy_preload_somar_fonts() {
-    $font_url = LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2';
+    $font_url = is_rtl()
+        ? LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2'
+        : LINKAWY_URI . '/assets/fonts/inter/inter-latin-var.woff2';
     echo '<link rel="preload" href="' . esc_url($font_url) . '" as="font" type="font/woff2" crossorigin>' . "\n";
 }
 add_action('wp_head', 'linkawy_preload_somar_fonts', 1);

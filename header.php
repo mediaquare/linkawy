@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?><?php if (is_page() && !is_front_page()) { echo ' class="linkawy-page-template"'; } ?> dir="rtl">
+<html <?php language_attributes(); ?><?php if (is_page() && !is_front_page()) { echo ' class="linkawy-page-template"'; } ?>>
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
@@ -21,7 +21,7 @@
     <!-- Critical CSS: Inline above-the-fold styles to reduce render-blocking -->
     <style id="critical-css">
     <?php 
-    $critical_css_path = get_theme_file_path('/assets/css/critical.css');
+    $critical_css_path = get_theme_file_path(is_rtl() ? '/assets/css/critical.css' : '/assets/css/ltr/critical.css');
     if (file_exists($critical_css_path)) {
         $critical_css = file_get_contents($critical_css_path);
         echo str_replace('{{THEME_URI}}', get_theme_file_uri(), $critical_css);

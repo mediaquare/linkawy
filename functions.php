@@ -110,6 +110,11 @@ require_once LINKAWY_DIR . '/inc/customizer.php';
 require_once LINKAWY_DIR . '/inc/cloudflare-purge.php';
 
 /**
+ * Multilingual (Polylang): English under /en/
+ */
+require_once LINKAWY_DIR . '/inc/multilingual.php';
+
+/**
  * تفعيل Yoast Duplicate Post لأنواع المقالات المخصصة (الموارد والبرومبتات)
  * Enable Yoast Duplicate Post for custom post types: resources & prompts
  */
