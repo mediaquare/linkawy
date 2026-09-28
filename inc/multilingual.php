@@ -119,6 +119,15 @@ function linkawy_lang_url($url) {
 add_filter('theme_mod_linkawy_header_cta_url', 'linkawy_lang_url');
 add_filter('theme_mod_linkawy_mobile_cta_url', 'linkawy_lang_url');
 
+// The static FAQ block saves an Arabic title; translate it when rendering English pages
+// (the stored markup stays unchanged so the block remains valid in the editor).
+add_filter('render_block_linkawy/faq', function ($html) {
+    if (!linkawy_is_en()) {
+        return $html;
+    }
+    return str_replace('>الأسئلة الشائعة</div>', '>' . esc_html__('الأسئلة الشائعة', 'linkawy') . '</div>', $html);
+});
+
 /**
  * Footer widget areas: English pages use their own copies (footer-services-en, ...).
  */
