@@ -34,6 +34,10 @@ const ltrExtras = `
 .fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
 /* Inline SVG "forward" arrows */
 .blog-posts-btn svg,.service-hero-btn-arrow,.sh-btn-arrow svg{scale:-1 1}
+/* English home hero title: Plus Jakarta Sans 800 (latin, self-hosted, preloaded on the English front page) */
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;
+src:url('../../fonts/plus-jakarta-sans/plus-jakarta-sans-latin-800.woff2') format('woff2')}
+.hero-header h1{font-family:'Plus Jakarta Sans','Inter',sans-serif}
 /* Language switcher (header, English pages) */
 .lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
 border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
