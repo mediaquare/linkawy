@@ -39,7 +39,7 @@ msgstr "How We Work"
 
 #: front-page.php:62
 msgid "عملاء تشرفنا بمعاونتهم:"
-msgstr "Clients we're proud to work with:"
+msgstr "Trusted by:"
 
 #: front-page.php:157 front-page.php:200 front-page.php:207
 msgid "\"الظهور في اجابات الذكاء الاصطناعي...\""
