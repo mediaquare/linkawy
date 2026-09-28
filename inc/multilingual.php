@@ -119,6 +119,11 @@ function linkawy_lang_url($url) {
 add_filter('theme_mod_linkawy_header_cta_url', 'linkawy_lang_url');
 add_filter('theme_mod_linkawy_mobile_cta_url', 'linkawy_lang_url');
 
+// Rank Math takes og:site_name from its own settings (Arabic); use the translated site name on English pages.
+add_filter('rank_math/opengraph/facebook/og_site_name', function ($name) {
+    return linkawy_is_en() ? get_bloginfo('name') : $name;
+});
+
 // The static FAQ block saves an Arabic title; translate it when rendering English pages
 // (the stored markup stays unchanged so the block remains valid in the editor).
 add_filter('render_block_linkawy/faq', function ($html) {
