@@ -164,13 +164,13 @@
 
 .form-field input.form-input-ltr,
 .form-field input[dir="ltr"].form-input-ltr {
-    text-align: right;
+    text-align: left;
 }
 
 .phone-field-group {
     display: flex;
     gap: 0;
-    direction: rtl;
+    direction: ltr;
 }
 
 .phone-country-select {
@@ -210,7 +210,7 @@
 .phone-country-btn .country-code {
     font-weight: 600;
     font-size: 0.88rem;
-    direction: rtl;
+    direction: ltr;
     font-family: 'Inter', sans-serif;
 }
 
@@ -261,7 +261,7 @@
     cursor: pointer;
     font-size: 0.88rem;
     transition: background 0.15s ease;
-    direction: rtl;
+    direction: ltr;
 }
 
 .phone-country-dropdown .country-option:hover {
@@ -284,11 +284,11 @@
 }
 
 .phone-field-group input[type="tel"] {
-    border-radius: 10px 0 0 10px;
-    border-left: none;
+    border-radius: 0 10px 10px 0;
+    border-right: none;
     flex: 1;
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
+    text-align: left;
     min-width: 0;
 }
 

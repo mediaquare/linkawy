@@ -368,7 +368,7 @@ html[dir="rtl"] .service-hero-buttons {
     display: flex;
     align-items: stretch;
     gap: 0;
-    direction: rtl;
+    direction: ltr;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
     background: #fafafa;
@@ -406,15 +406,15 @@ html[dir="rtl"] .service-hero-buttons {
 }
 
 .service-hero-form-card .sh-phone-input-wrap .service-hero-form-input {
-    direction: rtl;
-    text-align: right;
-    padding-right: 1rem;
+    direction: ltr;
+    text-align: left;
+    padding-left: 1rem;
 }
 
 /* حقل رقم الهاتف في نموذج الهيرو */
 .service-hero-form-card .sh-phone-wrapper input[type="tel"] {
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
+    text-align: left;
 }
 
 /* رسالة الخطأ العامة (مطابقة الفورم الرئيسي) */

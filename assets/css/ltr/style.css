@@ -3120,8 +3120,8 @@ body[dir="rtl"] .partners-title {
 }
 
 body[dir="ltr"] .partners-title {
-    margin-left: 2rem;
-    margin-right: 0;
+    margin-right: 2rem;
+    margin-left: 0;
 }
 
 .partners-marquee {
@@ -3131,7 +3131,7 @@ body[dir="ltr"] .partners-title {
     padding: 1rem 0;
     mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
     -webkit-mask-image: linear-gradient(to left, transparent, black 8%, black 92%, transparent);
-    direction: rtl;
+    direction: ltr;
     /* keep track order consistent for seamless -50% loop in RTL */
 }
 
@@ -4409,7 +4409,7 @@ footer a:hover {
     align-items: stretch;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    direction: rtl;
+    direction: ltr;
 }
 
 .dark-platform-box {
@@ -4615,7 +4615,7 @@ footer a:hover {
     padding: 3rem 0;
     overflow: hidden;
     overflow-x: hidden;
-    direction: rtl;
+    direction: ltr;
     border-top: 1px solid #eee;
     border-bottom: 1px solid #eee;
     max-width: 100vw;
@@ -5537,8 +5537,11 @@ footer a:hover {
    The individual "scale" property composes with any existing transform. */
 .fa-arrow-left,.fa-arrow-right,.fa-long-arrow-alt-left,.fa-long-arrow-alt-right,
 .fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
+/* Inline SVG "forward" arrows */
+.blog-posts-btn svg,.service-hero-btn-arrow,.sh-btn-arrow svg{scale:-1 1}
 /* Language switcher (header, English pages) */
 .lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
 border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
 .lang-switch:hover{opacity:1}
+.home .lang-switch,.front-page .lang-switch{color:rgba(255,255,255,.9)}
 @media (max-width:991px){.lang-switch{padding:.35rem .75rem;font-size:.8rem;margin-inline-end:.5rem}}

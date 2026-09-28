@@ -570,7 +570,7 @@ html[dir="rtl"] .page-content .wp-block-image figure.alignright {
     border-radius: 12px;
     padding: 50px 20px 20px;
     margin: 2rem 0;
-    direction: rtl;
+    direction: ltr;
     font-family: 'IBM Plex Mono', 'Courier New', monospace;
     font-size: 14px;
     line-height: 1.8;
@@ -598,8 +598,8 @@ html[dir="rtl"] .page-content .wp-block-image figure.alignright {
     margin: 0;
     font-family: 'IBM Plex Mono', 'Courier New', monospace;
     font-size: inherit;
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
+    text-align: left;
     display: block;
     white-space: pre-wrap;
     word-break: break-word;
@@ -663,7 +663,7 @@ html[dir="rtl"] .page-content .wp-block-image figure.alignright {
     grid-template-columns: 50% 1fr;
     margin: 2rem 0;
     align-items: stretch;
-    direction: rtl;
+    direction: ltr;
 }
 
 /* في الصفحات RTL النص داخل منطقة المحتوى يبقى من اليمين لليسار */
@@ -806,7 +806,7 @@ html[dir="rtl"] .page-content .wp-block-media-text .wp-block-media-text__content
 @media (max-width: 781px) {
     .page-content .wp-block-media-text {
         grid-template-columns: 1fr !important;
-        direction: rtl;
+        direction: ltr;
     }
 
     .page-content .wp-block-media-text .wp-block-media-text__media {
@@ -820,7 +820,7 @@ html[dir="rtl"] .page-content .wp-block-media-text .wp-block-media-text__content
     }
 
     .page-content .wp-block-media-text.has-media-on-the-right > * {
-        direction: rtl;
+        direction: ltr;
     }
 }
 

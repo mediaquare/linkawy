@@ -86,7 +86,7 @@
 .platforms-conveyor {
     overflow: hidden;
     position: relative;
-    direction: rtl;
+    direction: ltr;
     padding-bottom: 2px;
 }
 

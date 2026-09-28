@@ -32,10 +32,13 @@ const ltrExtras = `
    The individual "scale" property composes with any existing transform. */
 .fa-arrow-left,.fa-arrow-right,.fa-long-arrow-alt-left,.fa-long-arrow-alt-right,
 .fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
+/* Inline SVG "forward" arrows */
+.blog-posts-btn svg,.service-hero-btn-arrow,.sh-btn-arrow svg{scale:-1 1}
 /* Language switcher (header, English pages) */
 .lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
 border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
 .lang-switch:hover{opacity:1}
+.home .lang-switch,.front-page .lang-switch{color:rgba(255,255,255,.9)}
 @media (max-width:991px){.lang-switch{padding:.35rem .75rem;font-size:.8rem;margin-inline-end:.5rem}}
 `;
 
@@ -46,7 +49,13 @@ for (const name of fs.readdirSync(cssDir)) {
         continue;
     }
     const src = fs.readFileSync(path.join(cssDir, name), 'utf8');
-    let css = rtlcss.process(src);
+    // Rules written for LTR content inside the RTL page (phone/email/URL fields: `direction: ltr`
+    // or an "ltr" selector) are already correct for an LTR page, so rtlcss must not flip them.
+    const guarded = src.replace(/([^{}]+)\{([^{}]*)\}/g, (rule, selector, body) =>
+        (/direction\s*:\s*ltr/i.test(body) || /ltr/i.test(selector)) && !/^\s*@/.test(selector.trim())
+            ? `/*rtl:begin:ignore*/${rule}/*rtl:end:ignore*/`
+            : rule);
+    let css = rtlcss.process(guarded);
     // Files move one level down (assets/css/ltr/), so relative asset URLs go one level up.
     css = css.replace(/url\((['"]?)\.\.\//g, 'url($1../../');
     // Arabic font -> Inter (Somar Sans has no Latin design we want to use).

@@ -840,6 +840,7 @@ get_header();
         </div>
     </section>
 
+<?php /* English has no posts yet: hide the blog section there. */ if (!linkawy_is_en()) : ?>
     <section class="blog-posts-section">
         <div class="blog-posts-container">
             <div class="blog-posts-header">
@@ -924,6 +925,7 @@ get_header();
             </div>
         </div>
     </section>
+<?php endif; ?>
 
     <!-- About / Intro Section -->
     <section class="about-section">

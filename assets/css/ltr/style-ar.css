@@ -234,9 +234,9 @@ section.programs-section {
 }
 
 .footer-bottom {
-    direction: rtl;
-    /* Keep copyright YYYY Name LTR to avoid mess, or just Text Align center handles it */
     direction: ltr;
+    /* Keep copyright YYYY Name LTR to avoid mess, or just Text Align center handles it */
+    direction: rtl;
 }
 
 /* Utilities */
