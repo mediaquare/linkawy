@@ -17,15 +17,15 @@ if (!defined('ABSPATH')) {
         <input type="hidden" id="sh_cf_country_code" name="country_code" value="+20">
 
         <div class="sh-steps">
-            <div class="sh-step active"><span class="sh-step-num">1</span><span>رابط موقعك</span></div>
+            <div class="sh-step active"><span class="sh-step-num">1</span><span><?php esc_html_e('رابط موقعك', 'linkawy'); ?></span></div>
             <div class="sh-step-line"></div>
-            <div class="sh-step"><span class="sh-step-num">2</span><span>تحليل فوري</span></div>
+            <div class="sh-step"><span class="sh-step-num">2</span><span><?php esc_html_e('تحليل فوري', 'linkawy'); ?></span></div>
             <div class="sh-step-line"></div>
-            <div class="sh-step"><span class="sh-step-num">3</span><span>تقرير مفصل</span></div>
+            <div class="sh-step"><span class="sh-step-num">3</span><span><?php esc_html_e('تقرير مفصل', 'linkawy'); ?></span></div>
         </div>
 
         <div class="form-field sh-field">
-            <label for="sh_cf_website" class="sh-label">رابط الموقع</label>
+            <label for="sh_cf_website" class="sh-label"><?php esc_html_e('رابط الموقع', 'linkawy'); ?></label>
             <div class="sh-input-wrapper">
                 <span class="sh-input-icon" aria-hidden="true">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -37,7 +37,7 @@ if (!defined('ABSPATH')) {
 
         <div class="sh-field-row">
             <div class="form-field sh-field">
-                <label for="sh_cf_email" class="sh-label">بريدك الإلكتروني</label>
+                <label for="sh_cf_email" class="sh-label"><?php esc_html_e('بريدك الإلكتروني', 'linkawy'); ?></label>
                 <div class="sh-input-wrapper">
                     <span class="sh-input-icon" aria-hidden="true">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -47,19 +47,19 @@ if (!defined('ABSPATH')) {
                 <span class="sh-field-error" aria-live="polite"></span>
             </div>
             <div class="form-field sh-field">
-                <label for="sh_cf_name" class="sh-label">اسمك</label>
+                <label for="sh_cf_name" class="sh-label"><?php esc_html_e('اسمك', 'linkawy'); ?></label>
                 <div class="sh-input-wrapper">
                     <span class="sh-input-icon" aria-hidden="true">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                     </span>
-                    <input type="text" id="sh_cf_name" name="full_name" placeholder="اسمك" class="service-hero-form-input" required autocomplete="name">
+                    <input type="text" id="sh_cf_name" name="full_name" placeholder="<?php esc_attr_e('اسمك', 'linkawy'); ?>" class="service-hero-form-input" required autocomplete="name">
                 </div>
                 <span class="sh-field-error" aria-live="polite"></span>
             </div>
         </div>
 
         <div class="form-field sh-field">
-            <label for="sh_cf_phone" class="sh-label">رقم الهاتف</label>
+            <label for="sh_cf_phone" class="sh-label"><?php esc_html_e('رقم الهاتف', 'linkawy'); ?></label>
             <div class="phone-field-group sh-phone-wrapper">
                 <span class="sh-input-icon sh-phone-icon" aria-hidden="true">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -71,12 +71,12 @@ if (!defined('ABSPATH')) {
                         <span class="dropdown-arrow">▾</span>
                     </button>
                     <div class="phone-country-dropdown" id="sh_phoneDropdown">
-                        <input type="text" class="country-search" id="sh_countrySearch" placeholder="ابحث عن دولة...">
+                        <input type="text" class="country-search" id="sh_countrySearch" placeholder="<?php esc_attr_e('ابحث عن دولة...', 'linkawy'); ?>">
                         <div id="sh_countryList"></div>
                     </div>
                 </div>
                 <div class="sh-phone-input-wrap">
-                    <input type="tel" id="sh_cf_phone" name="phone" placeholder="رقم الهاتف" class="service-hero-form-input" autocomplete="tel">
+                    <input type="tel" id="sh_cf_phone" name="phone" placeholder="<?php esc_attr_e('رقم الهاتف', 'linkawy'); ?>" class="service-hero-form-input" autocomplete="tel">
                 </div>
             </div>
             <span class="sh-field-error" aria-live="polite"></span>
@@ -87,20 +87,20 @@ if (!defined('ABSPATH')) {
                 <span class="sh-btn-arrow" aria-hidden="true">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
                 </span>
-                <span class="sh-btn-text">ابدأ تحليل موقعك</span>
+                <span class="sh-btn-text"><?php esc_html_e('ابدأ تحليل موقعك', 'linkawy'); ?></span>
             </button>
-            <p class="form-global-error" id="serviceHeroFormError">يوجد خطأ في خانة واحدة أو أكثر. يرجى التحقق والمحاولة مرة أخرى.</p>
+            <p class="form-global-error" id="serviceHeroFormError"><?php esc_html_e('يوجد خطأ في خانة واحدة أو أكثر. يرجى التحقق والمحاولة مرة أخرى.', 'linkawy'); ?></p>
         </div>
     </form>
 
     <div class="sh-trust-bar">
         <div class="sh-trust-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-            <span>أكثر من 600 موقع تم تحليله</span>
+            <span><?php esc_html_e('أكثر من 600 موقع تم تحليله', 'linkawy'); ?></span>
         </div>
         <div class="sh-trust-item">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            <span>التقارير تصلك خلال أقل من 30 دقيقة</span>
+            <span><?php esc_html_e('التقارير تصلك خلال أقل من 30 دقيقة', 'linkawy'); ?></span>
         </div>
     </div>
 
@@ -109,8 +109,8 @@ if (!defined('ABSPATH')) {
             <div class="form-success-icon">
                 <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/rocket.svg' ); ?>" alt="" width="64" height="64" class="form-success-rocket">
             </div>
-            <div class="form-success-title">تحليل موقعك قيد التنفيذ</div>
-            <p class="form-success-desc">نعمل الآن على تحليل موقعك واكتشاف فرص النمو والتطوير، وسيصلك تقرير شامل خلال الساعات القادمة عبر بريدك الإلكتروني.</p>
+            <div class="form-success-title"><?php esc_html_e('تحليل موقعك قيد التنفيذ', 'linkawy'); ?></div>
+            <p class="form-success-desc"><?php esc_html_e('نعمل الآن على تحليل موقعك واكتشاف فرص النمو والتطوير، وسيصلك تقرير شامل خلال الساعات القادمة عبر بريدك الإلكتروني.', 'linkawy'); ?></p>
         </div>
     </div>
 </div>
@@ -118,14 +118,14 @@ if (!defined('ABSPATH')) {
 <script>
 (function() {
     var countries = [
-        {name:'مصر',code:'+20',flag:'🇪🇬',iso:'EG'},{name:'السعودية',code:'+966',flag:'🇸🇦',iso:'SA'},{name:'الإمارات',code:'+971',flag:'🇦🇪',iso:'AE'},
-        {name:'الكويت',code:'+965',flag:'🇰🇼',iso:'KW'},{name:'قطر',code:'+974',flag:'🇶🇦',iso:'QA'},{name:'البحرين',code:'+973',flag:'🇧🇭',iso:'BH'},
-        {name:'عُمان',code:'+968',flag:'🇴🇲',iso:'OM'},{name:'الأردن',code:'+962',flag:'🇯🇴',iso:'JO'},{name:'العراق',code:'+964',flag:'🇮🇶',iso:'IQ'},
-        {name:'لبنان',code:'+961',flag:'🇱🇧',iso:'LB'},{name:'فلسطين',code:'+970',flag:'🇵🇸',iso:'PS'},{name:'سوريا',code:'+963',flag:'🇸🇾',iso:'SY'},
-        {name:'ليبيا',code:'+218',flag:'🇱🇾',iso:'LY'},{name:'تونس',code:'+216',flag:'🇹🇳',iso:'TN'},{name:'الجزائر',code:'+213',flag:'🇩🇿',iso:'DZ'},
-        {name:'المغرب',code:'+212',flag:'🇲🇦',iso:'MA'},{name:'السودان',code:'+249',flag:'🇸🇩',iso:'SD'},{name:'اليمن',code:'+967',flag:'🇾🇪',iso:'YE'},
-        {name:'تركيا',code:'+90',flag:'🇹🇷',iso:'TR'},{name:'الولايات المتحدة',code:'+1',flag:'🇺🇸',iso:'US'},{name:'المملكة المتحدة',code:'+44',flag:'🇬🇧',iso:'GB'},
-        {name:'ألمانيا',code:'+49',flag:'🇩🇪',iso:'DE'},{name:'فرنسا',code:'+33',flag:'🇫🇷',iso:'FR'},{name:'كندا',code:'+1',flag:'🇨🇦',iso:'CA'}
+        {name:<?php echo wp_json_encode(__('مصر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+20',flag:'🇪🇬',iso:'EG'},{name:<?php echo wp_json_encode(__('السعودية', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+966',flag:'🇸🇦',iso:'SA'},{name:<?php echo wp_json_encode(__('الإمارات', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+971',flag:'🇦🇪',iso:'AE'},
+        {name:<?php echo wp_json_encode(__('الكويت', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+965',flag:'🇰🇼',iso:'KW'},{name:<?php echo wp_json_encode(__('قطر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+974',flag:'🇶🇦',iso:'QA'},{name:<?php echo wp_json_encode(__('البحرين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+973',flag:'🇧🇭',iso:'BH'},
+        {name:<?php echo wp_json_encode(__('عُمان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+968',flag:'🇴🇲',iso:'OM'},{name:<?php echo wp_json_encode(__('الأردن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+962',flag:'🇯🇴',iso:'JO'},{name:<?php echo wp_json_encode(__('العراق', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+964',flag:'🇮🇶',iso:'IQ'},
+        {name:<?php echo wp_json_encode(__('لبنان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+961',flag:'🇱🇧',iso:'LB'},{name:<?php echo wp_json_encode(__('فلسطين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+970',flag:'🇵🇸',iso:'PS'},{name:<?php echo wp_json_encode(__('سوريا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+963',flag:'🇸🇾',iso:'SY'},
+        {name:<?php echo wp_json_encode(__('ليبيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+218',flag:'🇱🇾',iso:'LY'},{name:<?php echo wp_json_encode(__('تونس', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+216',flag:'🇹🇳',iso:'TN'},{name:<?php echo wp_json_encode(__('الجزائر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+213',flag:'🇩🇿',iso:'DZ'},
+        {name:<?php echo wp_json_encode(__('المغرب', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+212',flag:'🇲🇦',iso:'MA'},{name:<?php echo wp_json_encode(__('السودان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+249',flag:'🇸🇩',iso:'SD'},{name:<?php echo wp_json_encode(__('اليمن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+967',flag:'🇾🇪',iso:'YE'},
+        {name:<?php echo wp_json_encode(__('تركيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+90',flag:'🇹🇷',iso:'TR'},{name:<?php echo wp_json_encode(__('الولايات المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇺🇸',iso:'US'},{name:<?php echo wp_json_encode(__('المملكة المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+44',flag:'🇬🇧',iso:'GB'},
+        {name:<?php echo wp_json_encode(__('ألمانيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+49',flag:'🇩🇪',iso:'DE'},{name:<?php echo wp_json_encode(__('فرنسا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+33',flag:'🇫🇷',iso:'FR'},{name:<?php echo wp_json_encode(__('كندا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇨🇦',iso:'CA'}
     ];
     var selectedFlag = document.getElementById('sh_selectedFlag');
     var selectedCode = document.getElementById('sh_selectedCode');
@@ -203,7 +203,7 @@ if (!defined('ABSPATH')) {
     var websiteRe = /^(https?:\/\/)?[\w\-]+(\.[\w\-]+)+/;
     function showValidationError(inputOrNull, showGlobalMessage) {
         if (showGlobalMessage && errEl) {
-            errEl.textContent = 'يوجد خطأ في خانة واحدة أو أكثر. يرجى التحقق والمحاولة مرة أخرى.';
+            errEl.textContent = <?php echo wp_json_encode(__('يوجد خطأ في خانة واحدة أو أكثر. يرجى التحقق والمحاولة مرة أخرى.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
             errEl.classList.add('visible');
         }
         if (inputOrNull) {
@@ -221,13 +221,13 @@ if (!defined('ABSPATH')) {
         wrapper.classList.remove('sh-error', 'sh-valid');
         if (input.hasAttribute('required') && !input.value.trim()) {
             wrapper.classList.add('sh-error');
-            if (errorEl) errorEl.textContent = 'هذه الخانة مطلوبة.';
+            if (errorEl) errorEl.textContent = <?php echo wp_json_encode(__('هذه الخانة مطلوبة.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
         } else if (input.type === 'email' && input.value.trim()) {
             var emailVal = input.value.trim();
             var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRe.test(emailVal)) {
                 wrapper.classList.add('sh-error');
-                if (errorEl) errorEl.textContent = 'يرجى إدخال بريد إلكتروني صحيح.';
+                if (errorEl) errorEl.textContent = <?php echo wp_json_encode(__('يرجى إدخال بريد إلكتروني صحيح.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
             } else {
                 wrapper.classList.add('sh-valid');
                 if (errorEl) errorEl.textContent = '';
@@ -235,7 +235,7 @@ if (!defined('ABSPATH')) {
         } else if (input.id === 'sh_cf_website' && input.value.trim()) {
             if (!websiteRe.test(input.value.trim())) {
                 wrapper.classList.add('sh-error');
-                if (errorEl) errorEl.textContent = 'يرجى إدخال رابط صحيح (مثال: example.com).';
+                if (errorEl) errorEl.textContent = <?php echo wp_json_encode(__('يرجى إدخال رابط صحيح (مثال: example.com).', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
             } else {
                 wrapper.classList.add('sh-valid');
                 if (errorEl) errorEl.textContent = '';
@@ -307,7 +307,7 @@ if (!defined('ABSPATH')) {
         if (card) card.classList.add('sh-loading');
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="spinner-loading"></span> جاري التحليل...';
+            submitBtn.innerHTML = <?php echo wp_json_encode(__('<span class="spinner-loading"></span> جاري التحليل...', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
         }
         function sendServiceHeroContact(recaptchaToken) {
             var formData = new FormData(form);
@@ -325,11 +325,11 @@ if (!defined('ABSPATH')) {
                         successEl.classList.add('visible');
                         form.reset();
                     } else {
-                        if (errEl) { errEl.textContent = (data.data && data.data.message) ? data.data.message : 'حدث خطأ. يرجى المحاولة مرة أخرى.'; errEl.classList.add('visible'); }
+                        if (errEl) { errEl.textContent = (data.data && data.data.message) ? data.data.message : <?php echo wp_json_encode(__('حدث خطأ. يرجى المحاولة مرة أخرى.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>; errEl.classList.add('visible'); }
                     }
                 })
                 .catch(function() {
-                    if (errEl) { errEl.textContent = 'حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.'; errEl.classList.add('visible'); }
+                    if (errEl) { errEl.textContent = <?php echo wp_json_encode(__('حدث خطأ في الاتصال. يرجى المحاولة مرة أخرى.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>; errEl.classList.add('visible'); }
                 })
                 .finally(function() {
                     if (card) card.classList.remove('sh-loading');

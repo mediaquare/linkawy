@@ -39,8 +39,8 @@ $cf = array(
     'formSuccessOverlay' => 'formSuccessOverlay' . $linkawy_cf_sfx,
 );
 
-$header_h2 = 'ابدأ رحلة تصدّر موقعك';
-$header_p  = 'أخبرنا عن مشروعك وسنتواصل معك خلال 24 ساعة بخطة عمل مخصصة.';
+$header_h2 = __('ابدأ رحلة تصدّر موقعك', 'linkawy');
+$header_p  = __('أخبرنا عن مشروعك وسنتواصل معك خلال 24 ساعة بخطة عمل مخصصة.', 'linkawy');
 if (!empty($linkawy_contact_form_header_title)) {
     $header_h2 = $linkawy_contact_form_header_title;
 }
@@ -51,7 +51,7 @@ $linkawy_contact_form_header_title = null;
 $linkawy_contact_form_header_desc  = null;
 
 if (is_front_page()) {
-    $linkawy_cf_source_title = 'الرئيسية';
+    $linkawy_cf_source_title = __('الرئيسية', 'linkawy');
 } elseif (is_singular()) {
     $qid = (int) get_queried_object_id();
     $linkawy_cf_source_title = $qid ? get_the_title($qid) : get_bloginfo('name');
@@ -77,17 +77,17 @@ if ($linkawy_cf_sfx !== '') {
 
             <form id="<?php echo esc_attr($cf['form']); ?>" class="contact-form-grid" action="#" method="POST" novalidate>
                 <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_name']); ?>">الاسم</label>
-                    <input type="text" id="<?php echo esc_attr($cf['cf_name']); ?>" name="full_name" placeholder="اسمك" required>
+                    <label for="<?php echo esc_attr($cf['cf_name']); ?>"><?php esc_html_e('الاسم', 'linkawy'); ?></label>
+                    <input type="text" id="<?php echo esc_attr($cf['cf_name']); ?>" name="full_name" placeholder="<?php esc_attr_e('اسمك', 'linkawy'); ?>" required>
                 </div>
 
                 <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_email']); ?>">البريد الإلكتروني</label>
+                    <label for="<?php echo esc_attr($cf['cf_email']); ?>"><?php esc_html_e('البريد الإلكتروني', 'linkawy'); ?></label>
                     <input type="email" id="<?php echo esc_attr($cf['cf_email']); ?>" name="email" placeholder="you@company.com" dir="ltr" class="form-input-ltr" required>
                 </div>
 
                 <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_phone']); ?>">رقم الهاتف</label>
+                    <label for="<?php echo esc_attr($cf['cf_phone']); ?>"><?php esc_html_e('رقم الهاتف', 'linkawy'); ?></label>
                     <div class="phone-field-group">
                         <div class="phone-country-select" id="<?php echo esc_attr($cf['phoneCountrySelect']); ?>">
                             <button type="button" class="phone-country-btn" id="<?php echo esc_attr($cf['phoneCountryBtn']); ?>">
@@ -96,46 +96,46 @@ if ($linkawy_cf_sfx !== '') {
                                 <span class="dropdown-arrow">▾</span>
                             </button>
                             <div class="phone-country-dropdown" id="<?php echo esc_attr($cf['phoneDropdown']); ?>">
-                                <input type="text" class="country-search" id="<?php echo esc_attr($cf['countrySearch']); ?>" placeholder="ابحث عن دولة...">
+                                <input type="text" class="country-search" id="<?php echo esc_attr($cf['countrySearch']); ?>" placeholder="<?php esc_attr_e('ابحث عن دولة...', 'linkawy'); ?>">
                                 <div id="<?php echo esc_attr($cf['countryList']); ?>"></div>
                             </div>
                         </div>
-                        <input type="tel" id="<?php echo esc_attr($cf['cf_phone']); ?>" name="phone" placeholder="رقم الهاتف">
+                        <input type="tel" id="<?php echo esc_attr($cf['cf_phone']); ?>" name="phone" placeholder="<?php esc_attr_e('رقم الهاتف', 'linkawy'); ?>">
                     </div>
                     <input type="hidden" id="<?php echo esc_attr($cf['cf_country_code']); ?>" name="country_code" value="+20">
                 </div>
 
                 <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_company']); ?>">اسم الشركة</label>
-                    <input type="text" id="<?php echo esc_attr($cf['cf_company']); ?>" name="company" placeholder="اسم شركتك / متجرك" required>
+                    <label for="<?php echo esc_attr($cf['cf_company']); ?>"><?php esc_html_e('اسم الشركة', 'linkawy'); ?></label>
+                    <input type="text" id="<?php echo esc_attr($cf['cf_company']); ?>" name="company" placeholder="<?php esc_attr_e('اسم شركتك / متجرك', 'linkawy'); ?>" required>
                 </div>
 
                 <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_website']); ?>">رابط الموقع</label>
+                    <label for="<?php echo esc_attr($cf['cf_website']); ?>"><?php esc_html_e('رابط الموقع', 'linkawy'); ?></label>
                     <input type="text" id="<?php echo esc_attr($cf['cf_website']); ?>" name="website" placeholder="example.com" dir="ltr" class="form-input-ltr">
                 </div>
 
                 <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_budget']); ?>">الميزانية الشهرية</label>
+                    <label for="<?php echo esc_attr($cf['cf_budget']); ?>"><?php esc_html_e('الميزانية الشهرية', 'linkawy'); ?></label>
                     <select id="<?php echo esc_attr($cf['cf_budget']); ?>" name="budget" required>
-                        <option value="" disabled selected hidden>اختر الميزانية المتوقعة</option>
-                        <option value="below-750">أقل من 750$</option>
+                        <option value="" disabled selected hidden><?php esc_html_e('اختر الميزانية المتوقعة', 'linkawy'); ?></option>
+                        <option value="below-750"><?php esc_html_e('أقل من 750$', 'linkawy'); ?></option>
                         <option value="750-1500">750$ - 1,500$</option>
                         <option value="1500-3000">1,500$ - 3,000$</option>
                         <option value="3000-5000">3,000$ - 5,000$</option>
                         <option value="5000-10000">5,000$ - 10,000$</option>
-                        <option value="above-10000">أكثر من 10,000$</option>
+                        <option value="above-10000"><?php esc_html_e('أكثر من 10,000$', 'linkawy'); ?></option>
                     </select>
                 </div>
 
                 <div class="form-field full-width">
-                    <label for="<?php echo esc_attr($cf['cf_goals']); ?>">الأهداف والتحديات</label>
-                    <textarea id="<?php echo esc_attr($cf['cf_goals']); ?>" name="goals" placeholder="زيادة المبيعات، تحسين الظهور في جوجل، اجابات الذكاء الإصطناعي، أو دخول أسواق جديدة..."></textarea>
+                    <label for="<?php echo esc_attr($cf['cf_goals']); ?>"><?php esc_html_e('الأهداف والتحديات', 'linkawy'); ?></label>
+                    <textarea id="<?php echo esc_attr($cf['cf_goals']); ?>" name="goals" placeholder="<?php esc_attr_e('زيادة المبيعات، تحسين الظهور في جوجل، اجابات الذكاء الإصطناعي، أو دخول أسواق جديدة...', 'linkawy'); ?>"></textarea>
                 </div>
 
                 <div class="full-width">
-                    <button type="submit" class="contact-form-submit">إرسال الطلب</button>
-                    <p class="form-global-error" id="<?php echo esc_attr($cf['formGlobalError']); ?>">يوجد خطأ في خانة واحدة أو أكثر. يرجى التحقق والمحاولة مرة أخرى.</p>
+                    <button type="submit" class="contact-form-submit"><?php esc_html_e('إرسال الطلب', 'linkawy'); ?></button>
+                    <p class="form-global-error" id="<?php echo esc_attr($cf['formGlobalError']); ?>"><?php esc_html_e('يوجد خطأ في خانة واحدة أو أكثر. يرجى التحقق والمحاولة مرة أخرى.', 'linkawy'); ?></p>
                 </div>
             </form>
 
@@ -147,8 +147,8 @@ if ($linkawy_cf_sfx !== '') {
                             <path d="M20 33L28 41L44 23" stroke="#2ecc71" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
                         </svg>
                     </div>
-                    <div class="form-success-title">تم إرسال طلبك بنجاح!</div>
-                    <p class="form-success-desc">شكراً لتواصلك معنا. سنراجع طلبك ونتواصل معك خلال 24 ساعة بخطة عمل مخصصة.</p>
+                    <div class="form-success-title"><?php esc_html_e('تم إرسال طلبك بنجاح!', 'linkawy'); ?></div>
+                    <p class="form-success-desc"><?php esc_html_e('شكراً لتواصلك معنا. سنراجع طلبك ونتواصل معك خلال 24 ساعة بخطة عمل مخصصة.', 'linkawy'); ?></p>
                 </div>
             </div>
         </div>
@@ -158,30 +158,30 @@ if ($linkawy_cf_sfx !== '') {
 <script>
 (function() {
     var countries = [
-        {name:'مصر',code:'+20',flag:'🇪🇬',iso:'EG'},
-        {name:'السعودية',code:'+966',flag:'🇸🇦',iso:'SA'},
-        {name:'الإمارات',code:'+971',flag:'🇦🇪',iso:'AE'},
-        {name:'الكويت',code:'+965',flag:'🇰🇼',iso:'KW'},
-        {name:'قطر',code:'+974',flag:'🇶🇦',iso:'QA'},
-        {name:'البحرين',code:'+973',flag:'🇧🇭',iso:'BH'},
-        {name:'عُمان',code:'+968',flag:'🇴🇲',iso:'OM'},
-        {name:'الأردن',code:'+962',flag:'🇯🇴',iso:'JO'},
-        {name:'العراق',code:'+964',flag:'🇮🇶',iso:'IQ'},
-        {name:'لبنان',code:'+961',flag:'🇱🇧',iso:'LB'},
-        {name:'فلسطين',code:'+970',flag:'🇵🇸',iso:'PS'},
-        {name:'سوريا',code:'+963',flag:'🇸🇾',iso:'SY'},
-        {name:'ليبيا',code:'+218',flag:'🇱🇾',iso:'LY'},
-        {name:'تونس',code:'+216',flag:'🇹🇳',iso:'TN'},
-        {name:'الجزائر',code:'+213',flag:'🇩🇿',iso:'DZ'},
-        {name:'المغرب',code:'+212',flag:'🇲🇦',iso:'MA'},
-        {name:'السودان',code:'+249',flag:'🇸🇩',iso:'SD'},
-        {name:'اليمن',code:'+967',flag:'🇾🇪',iso:'YE'},
-        {name:'تركيا',code:'+90',flag:'🇹🇷',iso:'TR'},
-        {name:'الولايات المتحدة',code:'+1',flag:'🇺🇸',iso:'US'},
-        {name:'المملكة المتحدة',code:'+44',flag:'🇬🇧',iso:'GB'},
-        {name:'ألمانيا',code:'+49',flag:'🇩🇪',iso:'DE'},
-        {name:'فرنسا',code:'+33',flag:'🇫🇷',iso:'FR'},
-        {name:'كندا',code:'+1',flag:'🇨🇦',iso:'CA'}
+        {name:<?php echo wp_json_encode(__('مصر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+20',flag:'🇪🇬',iso:'EG'},
+        {name:<?php echo wp_json_encode(__('السعودية', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+966',flag:'🇸🇦',iso:'SA'},
+        {name:<?php echo wp_json_encode(__('الإمارات', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+971',flag:'🇦🇪',iso:'AE'},
+        {name:<?php echo wp_json_encode(__('الكويت', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+965',flag:'🇰🇼',iso:'KW'},
+        {name:<?php echo wp_json_encode(__('قطر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+974',flag:'🇶🇦',iso:'QA'},
+        {name:<?php echo wp_json_encode(__('البحرين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+973',flag:'🇧🇭',iso:'BH'},
+        {name:<?php echo wp_json_encode(__('عُمان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+968',flag:'🇴🇲',iso:'OM'},
+        {name:<?php echo wp_json_encode(__('الأردن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+962',flag:'🇯🇴',iso:'JO'},
+        {name:<?php echo wp_json_encode(__('العراق', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+964',flag:'🇮🇶',iso:'IQ'},
+        {name:<?php echo wp_json_encode(__('لبنان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+961',flag:'🇱🇧',iso:'LB'},
+        {name:<?php echo wp_json_encode(__('فلسطين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+970',flag:'🇵🇸',iso:'PS'},
+        {name:<?php echo wp_json_encode(__('سوريا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+963',flag:'🇸🇾',iso:'SY'},
+        {name:<?php echo wp_json_encode(__('ليبيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+218',flag:'🇱🇾',iso:'LY'},
+        {name:<?php echo wp_json_encode(__('تونس', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+216',flag:'🇹🇳',iso:'TN'},
+        {name:<?php echo wp_json_encode(__('الجزائر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+213',flag:'🇩🇿',iso:'DZ'},
+        {name:<?php echo wp_json_encode(__('المغرب', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+212',flag:'🇲🇦',iso:'MA'},
+        {name:<?php echo wp_json_encode(__('السودان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+249',flag:'🇸🇩',iso:'SD'},
+        {name:<?php echo wp_json_encode(__('اليمن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+967',flag:'🇾🇪',iso:'YE'},
+        {name:<?php echo wp_json_encode(__('تركيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+90',flag:'🇹🇷',iso:'TR'},
+        {name:<?php echo wp_json_encode(__('الولايات المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇺🇸',iso:'US'},
+        {name:<?php echo wp_json_encode(__('المملكة المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+44',flag:'🇬🇧',iso:'GB'},
+        {name:<?php echo wp_json_encode(__('ألمانيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+49',flag:'🇩🇪',iso:'DE'},
+        {name:<?php echo wp_json_encode(__('فرنسا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+33',flag:'🇫🇷',iso:'FR'},
+        {name:<?php echo wp_json_encode(__('كندا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇨🇦',iso:'CA'}
     ];
 
     var selectedFlag = document.getElementById(<?php echo wp_json_encode($cf['selectedFlag']); ?>);
@@ -321,11 +321,11 @@ function linkawyInitContactForm() {
 
     validator
         .addField(formSel + ' [name="full_name"]', [
-            { rule: 'required', errorMessage: 'هذه الخانة مطلوبة.' }
+            { rule: 'required', errorMessage: <?php echo wp_json_encode(__('هذه الخانة مطلوبة.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?> }
         ])
         .addField(formSel + ' [name="email"]', [
-            { rule: 'required', errorMessage: 'هذه الخانة مطلوبة.' },
-            { rule: 'email', errorMessage: 'يرجى إدخال بريد إلكتروني صحيح.' },
+            { rule: 'required', errorMessage: <?php echo wp_json_encode(__('هذه الخانة مطلوبة.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?> },
+            { rule: 'email', errorMessage: <?php echo wp_json_encode(__('يرجى إدخال بريد إلكتروني صحيح.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?> },
             {
                 validator: function(value) {
                     return new Promise(function(resolve) {
@@ -344,11 +344,11 @@ function linkawyInitContactForm() {
                             });
                     });
                 },
-                errorMessage: 'يرجى استخدام بريد إلكتروني حقيقي (لا نقبل البريد المؤقت).'
+                errorMessage: <?php echo wp_json_encode(__('يرجى استخدام بريد إلكتروني حقيقي (لا نقبل البريد المؤقت).', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
             }
         ])
         .addField(formSel + ' [name="company"]', [
-            { rule: 'required', errorMessage: 'هذه الخانة مطلوبة.' }
+            { rule: 'required', errorMessage: <?php echo wp_json_encode(__('هذه الخانة مطلوبة.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?> }
         ])
         .addField(formSel + ' [name="website"]', [
             {
@@ -356,11 +356,11 @@ function linkawyInitContactForm() {
                     if (!value || !value.trim()) return true;
                     return /^(https?:\/\/)?[\w\-]+(\.[\w\-]+)+/.test(value.trim());
                 },
-                errorMessage: 'يرجى إدخال رابط صحيح (مثال: example.com).'
+                errorMessage: <?php echo wp_json_encode(__('يرجى إدخال رابط صحيح (مثال: example.com).', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
             }
         ])
         .addField(formSel + ' [name="budget"]', [
-            { rule: 'required', errorMessage: 'هذه الخانة مطلوبة.' }
+            { rule: 'required', errorMessage: <?php echo wp_json_encode(__('هذه الخانة مطلوبة.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?> }
         ])
         .onFail(function() {
             if (globalError) globalError.classList.add('visible');
@@ -371,7 +371,7 @@ function linkawyInitContactForm() {
 
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span class="spinner-loading"></span> جاري الإرسال...';
+                submitBtn.innerHTML = <?php echo wp_json_encode(__('<span class="spinner-loading"></span> جاري الإرسال...', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
             }
 
             function submitForm(recaptchaToken) {
@@ -409,14 +409,14 @@ function linkawyInitContactForm() {
                             if (globalError) {
                                 globalError.textContent = data.data && data.data.message
                                     ? data.data.message
-                                    : 'حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.';
+                                    : <?php echo wp_json_encode(__('حدث خطأ أثناء إرسال الطلب. يرجى المحاولة مرة أخرى.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
                                 globalError.classList.add('visible');
                             }
                         }
                     })
                     .catch(function() {
                         if (globalError) {
-                            globalError.textContent = 'حدث خطأ في الاتصال. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.';
+                            globalError.textContent = <?php echo wp_json_encode(__('حدث خطأ في الاتصال. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
                             globalError.classList.add('visible');
                         }
                     })

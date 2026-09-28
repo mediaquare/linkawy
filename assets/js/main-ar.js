@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         copyBtn.type = 'button';
         copyBtn.className = 'code-copy-btn';
         copyBtn.innerHTML = '<i class="far fa-copy"></i>';
-        copyBtn.setAttribute('title', 'نسخ الكود');
+        copyBtn.setAttribute('title', (typeof linkawySiteData !== 'undefined' && linkawySiteData.i18n && linkawySiteData.i18n.copyCode) || 'نسخ الكود');
         copyBtn.addEventListener('click', () => {
             const code = block.querySelector('code');
             const text = code ? code.textContent : block.textContent;

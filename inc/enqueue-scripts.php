@@ -349,6 +349,9 @@ function linkawy_scripts() {
         'homeUrl' => home_url('/'),
         'themeUrl' => LINKAWY_URI,
         'isRTL' => is_rtl(),
+        'i18n' => array(
+            'copyCode' => __('نسخ الكود', 'linkawy'),
+        ),
     ));
 
     // Comment reply script
@@ -681,7 +684,7 @@ function linkawy_youtube_facade($content) {
     $count = 0;
     $content = preg_replace_callback('#<iframe[^>]*\ssrc="https://www\.youtube(?:-nocookie)?\.com/embed/([\w-]{11})[^"]*"[^>]*></iframe>#i', function ($m) {
         $title = preg_match('/\stitle="([^"]*)"/', $m[0], $t) ? $t[1] : 'YouTube';
-        return '<button type="button" class="lk-yt" data-yt="' . esc_attr($m[1]) . '" aria-label="' . esc_attr('تشغيل الفيديو: ' . html_entity_decode($title)) . '">'
+        return '<button type="button" class="lk-yt" data-yt="' . esc_attr($m[1]) . '" aria-label="' . esc_attr(sprintf(/* translators: %s: video title */ __('تشغيل الفيديو: %s', 'linkawy'), html_entity_decode($title))) . '">'
             . '<img src="https://i.ytimg.com/vi/' . esc_attr($m[1]) . '/hqdefault.jpg" alt="' . $title . '" width="480" height="360" loading="lazy" decoding="async">'
             . '<span class="lk-yt-play" aria-hidden="true"></span></button>'
             . '<noscript>' . $m[0] . '</noscript>';

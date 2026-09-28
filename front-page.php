@@ -36,28 +36,28 @@ get_header();
                     <!-- TEXT CONTENT (Right - 40% Width) -->
                     <div class="lg:w-[40%] z-20 text-right">
                         <h1 class="text-3xl lg:text-5xl font-extrabold text-white leading-[1.3] mb-6">
-                            أفضل <span class="text-[#f26833]">شركة سيو</span>
+                            <?php esc_html_e('أفضل', 'linkawy'); ?> <span class="text-[#f26833]"><?php esc_html_e('شركة سيو', 'linkawy'); ?></span>
                             <br>
-                            للمتاجر الإلكترونية والشركات
+                            <?php esc_html_e('للمتاجر الإلكترونية والشركات', 'linkawy'); ?>
                         </h1>
                         
                         <p class="text-lg text-gray-400 mb-8 leading-relaxed font-medium">
-                            اختيارك شركة سيو مناسبة لا يعني تحسين الترتيب فقط، بل بناء قناة نمو تربط محركات البحث بالمبيعات. في لينكاوي نقدم استراتيجيات سيو تساعدك على تصدر النتائج وجذب زيارات مؤهلة تتحول إلى إيرادات مستدامة، لمن يبحث عن أفضل شركة سيو في السعودية للمتاجر والشركات.
+                            <?php esc_html_e('اختيارك شركة سيو مناسبة لا يعني تحسين الترتيب فقط، بل بناء قناة نمو تربط محركات البحث بالمبيعات. في لينكاوي نقدم استراتيجيات سيو تساعدك على تصدر النتائج وجذب زيارات مؤهلة تتحول إلى إيرادات مستدامة، لمن يبحث عن أفضل شركة سيو في السعودية للمتاجر والشركات.', 'linkawy'); ?>
                         </p>
                         
                         <div class="flex flex-col sm:flex-row gap-4">
                             <a href="#خدمات-سيو" class="inline-flex items-center justify-center gap-2 bg-accent text-white px-8 py-3.5 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(242,104,51,0.3)] hover:shadow-[0_0_30px_rgba(242,104,51,0.5)] hover:-translate-y-0.5 transition-all w-full sm:w-auto hover-accent">
-                                <span>اكتشف الخدمات</span>
+                                <span><?php esc_html_e('اكتشف الخدمات', 'linkawy'); ?></span>
                             </a>
                              <a href="#كيف-نعمل" class="inline-flex items-center justify-center gap-2 bg-transparent border border-[#333] text-gray-300 px-8 py-3.5 rounded-full font-bold text-lg hover:bg-[#111] hover:text-white hover:border-gray-500 transition-all w-full sm:w-auto">
-                                <span>كيف نعمل؟</span>
+                                <span><?php esc_html_e('كيف نعمل؟', 'linkawy'); ?></span>
                             </a>
                         </div>
 
                         <!-- Client Logos Section -->
                         <div class="hero-clients mt-12 pt-8 border-t border-[#222]">
                             <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-8">
-                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap">عملاء تشرفنا بمعاونتهم:</p>
+                                <p class="text-xs font-bold text-gray-500 uppercase tracking-widest whitespace-nowrap"><?php esc_html_e('عملاء تشرفنا بمعاونتهم:', 'linkawy'); ?></p>
                                 <div class="clients-logos-wrapper flex flex-wrap items-center gap-8">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg" alt="Dinar" width="67" height="28" loading="eager" decoding="async" class="client-logo-item h-7 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/asharq.svg" alt="Asharq Bloomberg" width="43" height="24" loading="eager" decoding="async" class="client-logo-item h-6 w-auto opacity-40 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300">
@@ -152,7 +152,7 @@ get_header();
                                                 <span class="mini-badge">ChatGPT</span>
                                             </div>
                                             <div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative">
-                                                <span class="anim-typewriter-text">"الظهور في اجابات الذكاء الاصطناعي..."</span>
+                                                <span class="anim-typewriter-text"><?php esc_html_e('"الظهور في اجابات الذكاء الاصطناعي..."', 'linkawy'); ?></span>
                                                 <span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span>
                                             </div>
                                             <div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div>
@@ -195,14 +195,14 @@ get_header();
 
                                     <!-- Marquee Group 2 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text">"الظهور في اجابات الذكاء الاصطناعي..."</span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text"><?php esc_html_e('"الظهور في اجابات الذكاء الاصطناعي..."', 'linkawy'); ?></span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-pen-nib"></i></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
                                     </div>
                                     
                                     <!-- Marquee Group 3 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text">"الظهور في اجابات الذكاء الاصطناعي..."</span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text"><?php esc_html_e('"الظهور في اجابات الذكاء الاصطناعي..."', 'linkawy'); ?></span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-pen-nib"></i></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
                                     </div>
@@ -281,7 +281,7 @@ get_header();
     <!-- Dark Platforms Conveyor Belt (attached below hero) -->
     <section class="dark-platforms-bar">
         <div class="dark-platforms-container">
-            <h2 class="dark-platforms-label">شركة سيو رائدة في تحويل الزيارات إلى أرباح حقيقية عبر مختلف المنصات</h2>
+            <h2 class="dark-platforms-label"><?php esc_html_e('شركة سيو رائدة في تحويل الزيارات إلى أرباح حقيقية عبر مختلف المنصات', 'linkawy'); ?></h2>
             <div class="platforms-conveyor" id="platformsConveyor">
                 <div class="platforms-track" id="platformsTrack">
                     <!-- JS will populate items here -->
@@ -322,11 +322,11 @@ get_header();
                     <span id="services-slide-text" class="services-slide-text">Shopify
                         SEO</span>
                 </span>
-                <h2>خدمات السيو التي نقدمها</h2>
-                <p>استكشف استراتيجياتنا المخصصة التي تقدم التوجيه والدعم لمساعدتك على تصدر نتائج البحث وتحقيق النمو المستدام بثقة.</p>
-                <p>نوازن في كل خدمة بين تحليل الكلمات، تحسين المحتوى، وفهم سلوك محركات البحث حتى لا تتحول خطة السيو إلى قائمة مهام تقنية فقط.</p>
-                <p>اختيار أفضل شركة سيو هنا يعني اختيار شريك يعرف كيف يحول الظهور إلى فرص تجارية واضحة.</p>
-                <a href="#contact" class="cta-button fp-cta-margin">أطلب استشارة مجانية</a>
+                <h2><?php esc_html_e('خدمات السيو التي نقدمها', 'linkawy'); ?></h2>
+                <p><?php esc_html_e('استكشف استراتيجياتنا المخصصة التي تقدم التوجيه والدعم لمساعدتك على تصدر نتائج البحث وتحقيق النمو المستدام بثقة.', 'linkawy'); ?></p>
+                <p><?php esc_html_e('نوازن في كل خدمة بين تحليل الكلمات، تحسين المحتوى، وفهم سلوك محركات البحث حتى لا تتحول خطة السيو إلى قائمة مهام تقنية فقط.', 'linkawy'); ?></p>
+                <p><?php esc_html_e('اختيار أفضل شركة سيو هنا يعني اختيار شريك يعرف كيف يحول الظهور إلى فرص تجارية واضحة.', 'linkawy'); ?></p>
+                <a href="#contact" class="cta-button fp-cta-margin"><?php esc_html_e('أطلب استشارة مجانية', 'linkawy'); ?></a>
             </div>
 
             <!-- Right Side: Grid -->
@@ -336,9 +336,9 @@ get_header();
                     <div class="icon-box">
                         <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/shopify.svg' ); ?>
                     </div>
-                    <h3>سيو شوبيفاي</h3>
+                    <h3><?php esc_html_e('سيو شوبيفاي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Shopify SEO</span>
-                    <p>نساعد متاجر شوبيفاي على تحسين الصفحات، المنتجات، وبنية المحتوى بما يتوافق مع متطلبات محركات البحث. نعمل على رفع فرص الظهور في النتائج، تحسين الوصول للمنتجات، وزيادة الزيارات المستهدفة، بما يدعم نمو المتجر ويعزز حضور العلامة التجارية أمام العملاء المحتملين.</p>
+                    <p><?php esc_html_e('نساعد متاجر شوبيفاي على تحسين الصفحات، المنتجات، وبنية المحتوى بما يتوافق مع متطلبات محركات البحث. نعمل على رفع فرص الظهور في النتائج، تحسين الوصول للمنتجات، وزيادة الزيارات المستهدفة، بما يدعم نمو المتجر ويعزز حضور العلامة التجارية أمام العملاء المحتملين.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 2: Salla SEO -->
@@ -346,9 +346,9 @@ get_header();
                     <div class="icon-box">
                         <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/sall.svg' ); ?>
                     </div>
-                    <h3>سيو سلة</h3>
+                    <h3><?php esc_html_e('سيو سلة', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Salla SEO</span>
-                    <p>نقدم خدمات SEO مخصصة لمتاجر سلة، تشمل تحسين الصفحات، الأقسام، المنتجات، والمحتوى الداخلي للمتجر. نركز على تسهيل ظهور منتجاتك في نتائج البحث، وتحسين تجربة التصفح والوصول، بما يساهم في زيادة الزيارات العضوية ورفع فرص تحقيق مبيعات أكبر بشكل مستدام.</p>
+                    <p><?php esc_html_e('نقدم خدمات SEO مخصصة لمتاجر سلة، تشمل تحسين الصفحات، الأقسام، المنتجات، والمحتوى الداخلي للمتجر. نركز على تسهيل ظهور منتجاتك في نتائج البحث، وتحسين تجربة التصفح والوصول، بما يساهم في زيادة الزيارات العضوية ورفع فرص تحقيق مبيعات أكبر بشكل مستدام.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 4: On-Page SEO -->
@@ -356,9 +356,9 @@ get_header();
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-10 -226 532 468" fill="currentColor"><path d="M0 168v-296c0-13 11-24 24-24s24 11 24 24v288c0 13 11 24 24 24s24-11 24-24v-312c0-35 29-64 64-64h288c35 0 64 29 64 64v320c0 35-29 64-64 64H64c-35 0-64-29-64-64zm160-288v64c0 18 14 32 32 32h64c18 0 32-14 32-32v-64c0-18-14-32-32-32h-64c-18 0-32 14-32 32zm24 240c-13 0-24 11-24 24s11 24 24 24h240c13 0 24-11 24-24s-11-24-24-24H184zm-24-72c0 13 11 24 24 24h240c13 0 24-11 24-24s-11-24-24-24H184c-13 0-24 11-24 24zM360-72c-13 0-24 11-24 24s11 24 24 24h64c13 0 24-11 24-24s-11-24-24-24h-64z"/></svg>
                     </div>
-                    <h3>السيو الداخلي</h3>
+                    <h3><?php esc_html_e('السيو الداخلي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">On-Page SEO</span>
-                    <p>نعمل على تحسين العناصر الداخلية في موقعك مثل العناوين، المحتوى، الروابط الداخلية، والهيكلة العامة للصفحات. الهدف هو مساعدة محركات البحث على فهم صفحاتك بشكل أفضل، ورفع جودة التجربة للزائر، بما ينعكس على ترتيب الموقع وتحسين فرص التحويل من الزيارات العضوية.</p>
+                    <p><?php esc_html_e('نعمل على تحسين العناصر الداخلية في موقعك مثل العناوين، المحتوى، الروابط الداخلية، والهيكلة العامة للصفحات. الهدف هو مساعدة محركات البحث على فهم صفحاتك بشكل أفضل، ورفع جودة التجربة للزائر، بما ينعكس على ترتيب الموقع وتحسين فرص التحويل من الزيارات العضوية.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 5: Off-Page SEO -->
@@ -366,9 +366,9 @@ get_header();
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 560 560" fill="currentColor"><path d="M37 337c0 7 6 13 14 13 7 0 13-6 13-13 0-42 17-83 47-113 5-5 5-13 0-19-6-5-14-5-19 0-35 35-55 83-55 132zm166 146c0 7 6 13 14 13 40 0 79-16 108-45 5-5 5-13 0-19-6-5-14-5-19 0-24 24-56 37-89 37-8 0-14 6-14 14zm2-391c-5 5-5 13 0 19 6 5 14 5 19 0 30-30 71-47 113-47 7 0 13-6 13-13 0-8-6-14-13-14-49 0-97 20-132 55zm2 223c-5 5-5 14 0 19s14 5 19 0l108-108c5 5 14 5 19 0s5-14 0-19c-10-11-27-11-38 0L207 315zm225-9c-5 5-5 13 0 19 6 5 14 5 19 0 29-29 45-68 45-108 0-8-6-14-13-14-8 0-14 6-14 14 0 33-13 65-37 89z"/><path d="M263 149c-21 21-56 21-77 0s-21-55 0-77c42-42 98-62 157-62 114 0 207 93 207 207 0 55-22 107-61 146-21 21-55 21-76 0s-21-55 0-76c18-19 29-44 29-70 0-55-44-99-99-99-30 0-59 9-81 31zm0 0zm-39-38c30-30 71-47 113-47 7 0 13-6 13-13 0-8-6-14-13-14-49 0-97 20-132 55-5 5-5 13 0 19 6 5 14 5 19 0zm272 106c0-8-6-14-13-14-8 0-14 6-14 14 0 33-13 65-37 89-5 5-5 13 0 19 6 5 14 5 19 0 29-29 45-68 45-108zm-347-31c21 21 21 56 0 77-22 22-31 50-31 80 0 55 44 99 99 99 26 0 51-10 70-29 21-21 55-21 76 0s21 55 0 77c-39 38-91 60-146 60-114 0-207-92-207-207 0-58 20-115 62-157 22-21 56-21 77 0zm-38 38c5-5 5-13 0-19-6-5-14-5-19 0-35 35-55 83-55 132 0 7 6 13 14 13 7 0 13-6 13-13 0-42 17-83 47-113zm214 227c5-5 5-13 0-19-6-5-14-5-19 0-24 24-56 37-89 37-8 0-14 6-14 14 0 7 6 13 14 13 40 0 79-16 108-45zm-29-263c21-21 55-21 76 0s21 55 0 76L264 372c-21 21-55 21-76 0s-21-55 0-76l108-108zm57 19c-10-11-27-11-38 0L207 315c-5 5-5 14 0 19s14 5 19 0l108-108c5 5 14 5 19 0s5-14 0-19z"/></svg>
                     </div>
-                    <h3>السيو الخارجي</h3>
+                    <h3><?php esc_html_e('السيو الخارجي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Off-Page SEO</span>
-                    <p>نعزز حضور موقعك خارج نطاقه الداخلي عبر استراتيجيات السيو الخارجي، وعلى رأسها بناء روابط خلفية عالية الجودة من مواقع موثوقة وذات صلة. يساعد ذلك في رفع موثوقية موقعك أمام محركات البحث، وتحسين ترتيبه، وتوسيع انتشاره الرقمي على المستوى المحلي أو الإقليمي.</p>
+                    <p><?php esc_html_e('نعزز حضور موقعك خارج نطاقه الداخلي عبر استراتيجيات السيو الخارجي، وعلى رأسها بناء روابط خلفية عالية الجودة من مواقع موثوقة وذات صلة. يساعد ذلك في رفع موثوقية موقعك أمام محركات البحث، وتحسين ترتيبه، وتوسيع انتشاره الرقمي على المستوى المحلي أو الإقليمي.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 6: SEO Audits -->
@@ -376,9 +376,9 @@ get_header();
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="22 -258 546 545" fill="currentColor"><path d="M256-248c124 0 224 100 224 224 0 50-16 97-44 134l122 122-46 45-122-122c-37 28-83 45-134 45C133 200 32 100 32-24s101-224 224-224zm0 64c-88 0-160 72-160 160s72 160 160 160c89 0 160-72 160-160s-71-160-160-160zm28 132h68V4h-68v68h-56V4h-68v-56h68v-68h56v68z"/></svg>
                     </div>
-                    <h3>فحص مشاكل الموقع</h3>
+                    <h3><?php esc_html_e('فحص مشاكل الموقع', 'linkawy'); ?></h3>
                     <span class="service-subtitle">SEO Audits</span>
-                    <p>نقدم تدقيقًا شاملًا لموقعك للكشف عن المشكلات التي تؤثر على ظهوره في نتائج البحث، سواء كانت تقنية، أو مرتبطة بسرعة الموقع، أو الفهرسة، أو المحتوى، أو الروابط. ثم نضع لك صورة واضحة عن نقاط الضعف والفرص، مع توصيات عملية تساعدك على تحسين الأداء بفعالية، ويشمل الفحص تحليل منافسين سرعة الموقع تحسين الأداء.</p>
+                    <p><?php esc_html_e('نقدم تدقيقًا شاملًا لموقعك للكشف عن المشكلات التي تؤثر على ظهوره في نتائج البحث، سواء كانت تقنية، أو مرتبطة بسرعة الموقع، أو الفهرسة، أو المحتوى، أو الروابط. ثم نضع لك صورة واضحة عن نقاط الضعف والفرص، مع توصيات عملية تساعدك على تحسين الأداء بفعالية، ويشمل الفحص تحليل منافسين سرعة الموقع تحسين الأداء.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 7: SEO Consulting -->
@@ -386,9 +386,9 @@ get_header();
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-10 -286 580 608" fill="currentColor"><path d="M52-227c37-33 90-49 158-49 79 0 139 22 174 67 7 8 8 20 3 30-4 9-14 15-25 15h-12c-75 0-143 17-194 60-38 33-58 74-67 118-2 10-10 19-20 22-10 2-21-1-28-9C12-5 0-48 0-94c0-52 15-100 52-133zm298 119c-67 0-120 15-157 47s-53 77-53 128c0 47 13 89 45 121 30 30 74 48 130 53l70 61c7 7 16 10 25 10 21 0 38-17 38-38 0-15-5-29-6-44 37-11 66-30 86-57 23-30 32-67 32-106 0-51-16-96-53-128-36-32-90-47-157-47z"/></svg>
                     </div>
-                    <h3>استشارات SEO</h3>
+                    <h3><?php esc_html_e('استشارات SEO', 'linkawy'); ?></h3>
                     <span class="service-subtitle">SEO Consulting</span>
-                    <p>نوفر استشارات SEO عملية تناسب طبيعة مشروعك ومرحلة نموه، سواء كنت تبدأ من الصفر أو تسعى لتطوير نتائجك الحالية. نساعدك في بناء رؤية واضحة، تحليل الكلمات، تحليل المنافسين، تحديد الأولويات، واختيار الخطوات التي تمنحك أفضل فرصة للظهور وتحقيق نمو حقيقي عبر محركات البحث.</p>
+                    <p><?php esc_html_e('نوفر استشارات SEO عملية تناسب طبيعة مشروعك ومرحلة نموه، سواء كنت تبدأ من الصفر أو تسعى لتطوير نتائجك الحالية. نساعدك في بناء رؤية واضحة، تحليل الكلمات، تحليل المنافسين، تحديد الأولويات، واختيار الخطوات التي تمنحك أفضل فرصة للظهور وتحقيق نمو حقيقي عبر محركات البحث.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 8: Technical SEO -->
@@ -396,9 +396,9 @@ get_header();
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-11 -258 532 532" fill="currentColor"><path d="M303-248h-96l-7 56c-17 4-33 11-47 20l-45-35-68 68 35 45c-8 15-15 30-19 47l-57 7 1 96 56 7c4 17 11 32 19 47l-35 45 68 68 45-35c14 9 30 16 47 20l7 56h96l7-55c17-5 34-11 49-20l43 34 68-68-33-43c8-15 15-32 20-49l54-7v-96l-54-7c-5-17-12-34-20-49l33-43-68-68-43 34c-16-9-32-15-49-20l-7-55zm-3 157-48 208-5 19-39-9 5-19 48-208 4-20 39 9-4 20zM182-10 165 8c12 13 23 23 32 32l-29 28-46-46-14-14 46-46 14-14 29 28-14 14zm0 0zm176-28c25 24 40 40 47 46-7 6-22 22-47 46l-14 14-28-28c9-9 20-19 32-32l-32-32 28-28 14 14z"/></svg>
                     </div>
-                    <h3>السيو التقني</h3>
+                    <h3><?php esc_html_e('السيو التقني', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Technical SEO</span>
-                    <p>نحسن الجوانب التقنية في موقعك لضمان توافقه مع متطلبات محركات البحث وسهولة الزحف والفهرسة. يشمل ذلك تحسين سرعة الموقع، تجربة الجوال، الأمان، بنية الروابط، والهيكلة التقنية للموقع، بما يساهم في رفع كفاءة الموقع وتحسين فرص ظهوره وترتيبه في النتائج، مع تحليل منافسين سرعة الموقع تحسين الأداء.</p>
+                    <p><?php esc_html_e('نحسن الجوانب التقنية في موقعك لضمان توافقه مع متطلبات محركات البحث وسهولة الزحف والفهرسة. يشمل ذلك تحسين سرعة الموقع، تجربة الجوال، الأمان، بنية الروابط، والهيكلة التقنية للموقع، بما يساهم في رفع كفاءة الموقع وتحسين فرص ظهوره وترتيبه في النتائج، مع تحليل منافسين سرعة الموقع تحسين الأداء.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 8: GEO / AI SEO -->
@@ -406,9 +406,9 @@ get_header();
                     <div class="icon-box">
                         <i class="fas fa-brain program-card-icon-accent"></i>
                     </div>
-                    <h3>سيو الذكاء الإصطناعي</h3>
+                    <h3><?php esc_html_e('سيو الذكاء الإصطناعي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">GEO</span>
-                    <p>نساعدك على تهيئة محتوى موقعك ليظهر بشكل أفضل في محركات الإجابة وتجارب البحث المعتمدة على الذكاء الاصطناعي. نركز على بناء محتوى واضح، موثوق، ومنظم يسهل فهمه واقتباسه، بما يعزز فرص ظهور علامتك التجارية في النتائج التفسيرية والإجابات المباشرة.</p>
+                    <p><?php esc_html_e('نساعدك على تهيئة محتوى موقعك ليظهر بشكل أفضل في محركات الإجابة وتجارب البحث المعتمدة على الذكاء الاصطناعي. نركز على بناء محتوى واضح، موثوق، ومنظم يسهل فهمه واقتباسه، بما يعزز فرص ظهور علامتك التجارية في النتائج التفسيرية والإجابات المباشرة.', 'linkawy'); ?></p>
                 </div>
             </div>
         </div>
@@ -417,9 +417,9 @@ get_header();
     <!-- SEO Proof Section -->
     <section class="seo-proof-section">
         <div class="section-container">
-            <h2 class="section-title">في المتوسط ساعدنا عملائنا في زيادة المبيعات العضوية لأكثر من <span class="highlight">270%</span> عن طريق الزيارات المستهدفة من Google و ChatGPT</h2>
+            <h2 class="section-title"><?php esc_html_e('في المتوسط ساعدنا عملائنا في زيادة المبيعات العضوية لأكثر من', 'linkawy'); ?> <span class="highlight">270%</span> <?php esc_html_e('عن طريق الزيارات المستهدفة من Google و ChatGPT', 'linkawy'); ?></h2>
             <div class="seo-image-container glass-card">
-                <video class="js-lazy-video" muted loop playsinline preload="none" width="748" height="300" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof-poster.webp" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.mp4" aria-label="لقطة من Google Search Console توضح نمو الزيارات العضوية والنقرات بعد تطبيق استراتيجيات أفضل شركة سيو لينكاوي"></video>
+                <video class="js-lazy-video" muted loop playsinline preload="none" width="748" height="300" data-poster="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof-poster.webp" data-src="<?php echo get_template_directory_uri(); ?>/assets/images/results/gsc-proof.mp4" aria-label="<?php esc_attr_e('لقطة من Google Search Console توضح نمو الزيارات العضوية والنقرات بعد تطبيق استراتيجيات أفضل شركة سيو لينكاوي', 'linkawy'); ?>"></video>
                 <script>
                 /* Lazy video: load poster + mp4 only near the viewport; play only if motion is allowed. */
                 (function () {
@@ -448,65 +448,65 @@ get_header();
         <div class="section-container">
             <div class="strategy-grid">
                 <div class="strategy-intro">
-                    <h2>تحسين محركات البحث... <br><span>هو آخر خطوة عندنا</span></h2>
-                    <p class="description-text">لأن أولويتنا هي زيادة مبيعاتك، خطوات عملنا تبدأ من البيزنس وتنتهي بالتسويق.</p>
-                    <p class="description-text">نستخدم أحدث استراتيجيات النمو لرفع معدل التحويل، وزيادة عدد العملاء المؤهلين، وخفض تكلفة اكتساب العميل عبر المحتوى وتحسين رحلة المستخدم. والنتائج؟ تقدر تشوفها بنفسك تحت وتحكم!</p>
-                    <p class="highlight-text">باستخدام تلك الإستراتيجية نهدف إلى تحويل من <span class="highlight">100%</span> من زوار موقعك إلى عملاء جاهزين للشراء.</p>
+                    <h2><?php esc_html_e('تحسين محركات البحث...', 'linkawy'); ?> <br><span><?php esc_html_e('هو آخر خطوة عندنا', 'linkawy'); ?></span></h2>
+                    <p class="description-text"><?php esc_html_e('لأن أولويتنا هي زيادة مبيعاتك، خطوات عملنا تبدأ من البيزنس وتنتهي بالتسويق.', 'linkawy'); ?></p>
+                    <p class="description-text"><?php esc_html_e('نستخدم أحدث استراتيجيات النمو لرفع معدل التحويل، وزيادة عدد العملاء المؤهلين، وخفض تكلفة اكتساب العميل عبر المحتوى وتحسين رحلة المستخدم. والنتائج؟ تقدر تشوفها بنفسك تحت وتحكم!', 'linkawy'); ?></p>
+                    <p class="highlight-text"><?php esc_html_e('باستخدام تلك الإستراتيجية نهدف إلى تحويل من', 'linkawy'); ?> <span class="highlight">100%</span> <?php esc_html_e('من زوار موقعك إلى عملاء جاهزين للشراء.', 'linkawy'); ?></p>
                 </div>
                 <div class="accordion">
                     <div class="accordion-item active" data-link="">
                         <div class="accordion-header">
                             <div class="accordion-title"><span class="accordion-number">01</span>
-                                <h3>تحليل السوق، والمنافسين، ونوايا الشراء</h3>
+                                <h3><?php esc_html_e('تحليل السوق، والمنافسين، ونوايا الشراء', 'linkawy'); ?></h3>
                             </div>
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نبدأ بفهم السوق، تحليل الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل اتخاذ قرار الشراء.</div>
+                            <div class="accordion-content-inner"><?php esc_html_e('نبدأ بفهم السوق، تحليل الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل اتخاذ قرار الشراء.', 'linkawy'); ?></div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
                         <div class="accordion-header">
                             <div class="accordion-title"><span class="accordion-number">02</span>
-                                <h3>هندسة صفحات البيع ورفع معدلات التحويل</h3>
+                                <h3><?php esc_html_e('هندسة صفحات البيع ورفع معدلات التحويل', 'linkawy'); ?></h3>
                             </div>
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما يزيد من نسبة تحويل الزوار إلى مشترين فعليين.</div>
+                            <div class="accordion-content-inner"><?php esc_html_e('نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما يزيد من نسبة تحويل الزوار إلى مشترين فعليين.', 'linkawy'); ?></div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
                         <div class="accordion-header">
                             <div class="accordion-title"><span class="accordion-number">03</span>
-                                <h3>صناعة محتوى يبيع القيمة</h3>
+                                <h3><?php esc_html_e('صناعة محتوى يبيع القيمة', 'linkawy'); ?></h3>
                             </div>
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.</div>
+                            <div class="accordion-content-inner"><?php esc_html_e('نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.', 'linkawy'); ?></div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
                         <div class="accordion-header">
                             <div class="accordion-title"><span class="accordion-number">04</span>
-                                <h3>التحسين لمحركات البحث والذكاء الاصطناعي</h3>
+                                <h3><?php esc_html_e('التحسين لمحركات البحث والذكاء الاصطناعي', 'linkawy'); ?></h3>
                             </div>
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.</div>
+                            <div class="accordion-content-inner"><?php esc_html_e('نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.', 'linkawy'); ?></div>
                         </div>
                     </div>
                     <div class="accordion-item" data-link="">
                         <div class="accordion-header">
                             <div class="accordion-title"><span class="accordion-number">05</span>
-                                <h3>قياس الربحية.. وليس الترتيب</h3>
+                                <h3><?php esc_html_e('قياس الربحية.. وليس الترتيب', 'linkawy'); ?></h3>
                             </div>
                             <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
                         </div>
                         <div class="accordion-content">
-                            <div class="accordion-content-inner">نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity Metrics) كالترتيب أو حجم الزيارات.</div>
+                            <div class="accordion-content-inner"><?php esc_html_e('نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity Metrics) كالترتيب أو حجم الزيارات.', 'linkawy'); ?></div>
                         </div>
                     </div>
                 </div>
@@ -517,7 +517,7 @@ get_header();
     <!-- شركاء النجاح -->
     <section class="partners-section">
         <div class="partners-container">
-            <h2 class="partners-title">شركاء النجاح:</h2>
+            <h2 class="partners-title"><?php esc_html_e('شركاء النجاح:', 'linkawy'); ?></h2>
             <div class="partners-marquee">
                 <div class="partners-track">
                     <div class="partners-item"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/clients/dinar.svg" alt="Dinar" loading="lazy" width="120" height="40"></div>
@@ -563,9 +563,9 @@ get_header();
     <section class="success-stories-section">
         <div class="container">
             <div class="success-stories-header">
-                <h2 class="success-stories-title">قصص نجاح المتاجر</h2>
+                <h2 class="success-stories-title"><?php esc_html_e('قصص نجاح المتاجر', 'linkawy'); ?></h2>
                 <a href="<?php echo esc_url(linkawy_get_front_page_section_archive_url('linkawy_front_success_category', 'linkawy_front_success_tag')); ?>" class="success-stories-link">
-                    المزيد من قصص النجاح
+                    <?php esc_html_e('المزيد من قصص النجاح', 'linkawy'); ?>
                 </a>
             </div>
             
@@ -612,12 +612,12 @@ get_header();
         <div class="process-container">
             <!-- Left Column: Sticky Info -->
             <div class="process-sticky-col">
-                <h2 class="process-subtitle">كيف يتصدر موقعك النتائج الأولى على محركات البحث عن طريق شركة سيو لينكاوي؟</h2>
+                <h2 class="process-subtitle"><?php esc_html_e('كيف يتصدر موقعك النتائج الأولى على محركات البحث عن طريق شركة سيو لينكاوي؟', 'linkawy'); ?></h2>
 
-                <p class="process-description fp-process-desc">الخطوة الأولى نحو النجاح الرقمي تبدأ من هنا! عند تعاونك مع أفضل شركة سيو، نتبع خطوات مدروسة لضمان تحسين ترتيب موقعك في محركات البحث وتحقيق نتائج ملموسة.</p>
+                <p class="process-description fp-process-desc"><?php esc_html_e('الخطوة الأولى نحو النجاح الرقمي تبدأ من هنا! عند تعاونك مع أفضل شركة سيو، نتبع خطوات مدروسة لضمان تحسين ترتيب موقعك في محركات البحث وتحقيق نتائج ملموسة.', 'linkawy'); ?></p>
 
                 <div class="fp-mt-2">
-                    <a href="#contact" class="cta-button">ابدأ الآن</a>
+                    <a href="#contact" class="cta-button"><?php esc_html_e('ابدأ الآن', 'linkawy'); ?></a>
                 </div>
             </div>
 
@@ -629,9 +629,9 @@ get_header();
                     <div class="timeline-item">
                         <div class="timeline-marker"><i class="fas fa-search-dollar"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-step-badge">الخطوة الأولى</span>
-                            <h3 class="timeline-title">نحلل موقعك لنكتشف فرص النمو</h3>
-                            <p class="timeline-desc">نراجع موقعك بالكامل، نحدد نقاط القوة والضعف، ونكتشف أين تضيع عليك الزيارات والفرص قبل منافسيك عبر تحليل منافسين سرعة الموقع تحسين الأداء.</p>
+                            <span class="timeline-step-badge"><?php esc_html_e('الخطوة الأولى', 'linkawy'); ?></span>
+                            <h3 class="timeline-title"><?php esc_html_e('نحلل موقعك لنكتشف فرص النمو', 'linkawy'); ?></h3>
+                            <p class="timeline-desc"><?php esc_html_e('نراجع موقعك بالكامل، نحدد نقاط القوة والضعف، ونكتشف أين تضيع عليك الزيارات والفرص قبل منافسيك عبر تحليل منافسين سرعة الموقع تحسين الأداء.', 'linkawy'); ?></p>
                         </div>
                     </div>
 
@@ -639,9 +639,9 @@ get_header();
                     <div class="timeline-item">
                         <div class="timeline-marker"><i class="fas fa-key"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-step-badge">الخطوة الثانية</span>
-                            <h3 class="timeline-title">نختار الكلمات عبر تحليل الكلمات التي تجذب عملاء حقيقيين</h3>
-                            <p class="timeline-desc">لا نطارد كلمات بلا قيمة، بل نستهدف ما يبحث عنه عملاؤك فعلًا عندما يكونون مستعدين للشراء أو التواصل.</p>
+                            <span class="timeline-step-badge"><?php esc_html_e('الخطوة الثانية', 'linkawy'); ?></span>
+                            <h3 class="timeline-title"><?php esc_html_e('نختار الكلمات عبر تحليل الكلمات التي تجذب عملاء حقيقيين', 'linkawy'); ?></h3>
+                            <p class="timeline-desc"><?php esc_html_e('لا نطارد كلمات بلا قيمة، بل نستهدف ما يبحث عنه عملاؤك فعلًا عندما يكونون مستعدين للشراء أو التواصل.', 'linkawy'); ?></p>
                         </div>
                     </div>
 
@@ -649,9 +649,9 @@ get_header();
                     <div class="timeline-item">
                         <div class="timeline-marker"><i class="fas fa-chess-board"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-step-badge">الخطوة الثالثة</span>
-                            <h3 class="timeline-title">نبني استراتيجية سيو مصممة لك</h3>
-                            <p class="timeline-desc">نضع خطة واضحة تناسب نشاطك وأهدافك، تشمل المحتوى، الصفحات، والبنية التقنية — بدون حلول جاهزة.</p>
+                            <span class="timeline-step-badge"><?php esc_html_e('الخطوة الثالثة', 'linkawy'); ?></span>
+                            <h3 class="timeline-title"><?php esc_html_e('نبني استراتيجية سيو مصممة لك', 'linkawy'); ?></h3>
+                            <p class="timeline-desc"><?php esc_html_e('نضع خطة واضحة تناسب نشاطك وأهدافك، تشمل المحتوى، الصفحات، والبنية التقنية — بدون حلول جاهزة.', 'linkawy'); ?></p>
                         </div>
                     </div>
 
@@ -659,9 +659,9 @@ get_header();
                     <div class="timeline-item">
                         <div class="timeline-marker"><i class="fas fa-rocket"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-step-badge">الخطوة الرابعة</span>
-                            <h3 class="timeline-title">ننفّذ التحسينات ونحرّك النتائج</h3>
-                            <p class="timeline-desc">نبدأ التنفيذ العملي لتحسين موقعك ورفع ظهوره، خطوة بخطوة، حتى يتحول إلى قناة جذب فعّالة.</p>
+                            <span class="timeline-step-badge"><?php esc_html_e('الخطوة الرابعة', 'linkawy'); ?></span>
+                            <h3 class="timeline-title"><?php esc_html_e('ننفّذ التحسينات ونحرّك النتائج', 'linkawy'); ?></h3>
+                            <p class="timeline-desc"><?php esc_html_e('نبدأ التنفيذ العملي لتحسين موقعك ورفع ظهوره، خطوة بخطوة، حتى يتحول إلى قناة جذب فعّالة.', 'linkawy'); ?></p>
                         </div>
                     </div>
 
@@ -669,9 +669,9 @@ get_header();
                     <div class="timeline-item">
                         <div class="timeline-marker"><i class="fas fa-chart-line"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-step-badge">الخطوة الخامسة</span>
-                            <h3 class="timeline-title">نراقب الأداء ونحسّن باستمرار</h3>
-                            <p class="timeline-desc">نقيس النتائج، نراجع الأداء، ونعدّل الاستراتيجية باستمرار لضمان أفضل نمو ممكن.</p>
+                            <span class="timeline-step-badge"><?php esc_html_e('الخطوة الخامسة', 'linkawy'); ?></span>
+                            <h3 class="timeline-title"><?php esc_html_e('نراقب الأداء ونحسّن باستمرار', 'linkawy'); ?></h3>
+                            <p class="timeline-desc"><?php esc_html_e('نقيس النتائج، نراجع الأداء، ونعدّل الاستراتيجية باستمرار لضمان أفضل نمو ممكن.', 'linkawy'); ?></p>
                         </div>
                     </div>
 
@@ -679,9 +679,9 @@ get_header();
                     <div class="timeline-item">
                         <div class="timeline-marker"><i class="fas fa-leaf"></i></div>
                         <div class="timeline-content">
-                            <span class="timeline-step-badge">الخطوة السادسة</span>
-                            <h3 class="timeline-title">نتابع النتائج ونبني نموًا مستدامًا</h3>
-                            <p class="timeline-desc">نقدم تقارير واضحة، وخطة طويلة المدى تضمن استمرار التقدم وتفوّقك في نتائج البحث.</p>
+                            <span class="timeline-step-badge"><?php esc_html_e('الخطوة السادسة', 'linkawy'); ?></span>
+                            <h3 class="timeline-title"><?php esc_html_e('نتابع النتائج ونبني نموًا مستدامًا', 'linkawy'); ?></h3>
+                            <p class="timeline-desc"><?php esc_html_e('نقدم تقارير واضحة، وخطة طويلة المدى تضمن استمرار التقدم وتفوّقك في نتائج البحث.', 'linkawy'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -693,7 +693,7 @@ get_header();
     <section id="why-linkawy" class="problems-section reasons-section">
         <div class="container">
             <div class="section-header">
-                <h2>9 أسباب لاختيار أفضل شركة سيو لينكاوي</h2>
+                <h2><?php esc_html_e('9 أسباب لاختيار أفضل شركة سيو لينكاوي', 'linkawy'); ?></h2>
             </div>
 
             <div class="problems-grid reasons-grid">
@@ -702,8 +702,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">1.</span>
                     </div>
-                    <h3>خبرة عابرة للقارات</h3>
-                    <p>نمتلك سجلًا حافلاً يمتد لأكثر من 12 عاماً في تقديم خدمات تحسين محركات البحث (SEO) في أسواق تنافسية مثل الإمارات، السعودية، وأمريكا. نحن شركة سيو لا نطبق استراتيجيات عامة، بل ننقل لك خبرات عالمية في تصدر نتائج البحث الأولى.</p>
+                    <h3><?php esc_html_e('خبرة عابرة للقارات', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('نمتلك سجلًا حافلاً يمتد لأكثر من 12 عاماً في تقديم خدمات تحسين محركات البحث (SEO) في أسواق تنافسية مثل الإمارات، السعودية، وأمريكا. نحن شركة سيو لا نطبق استراتيجيات عامة، بل ننقل لك خبرات عالمية في تصدر نتائج البحث الأولى.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 2 -->
@@ -711,8 +711,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">2.</span>
                     </div>
-                    <h3>تحليل الكلمات المفتاحية الأكثر ربحية</h3>
-                    <p>نبتعد عن الحلول التقليدية؛ حيث نبدأ عملنا بـ تحليل الكلمات المفتاحية (Keyword Analysis) بدقة لنستهدف العبارات التي تجلب لك "عملاء" وليس مجرد "زيارات". هدفنا هو رفع معدل التحويل (Conversion Rate) وضمان أعلى عائد على الاستثمار.</p>
+                    <h3><?php esc_html_e('تحليل الكلمات المفتاحية الأكثر ربحية', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('نبتعد عن الحلول التقليدية؛ حيث نبدأ عملنا بـ تحليل الكلمات المفتاحية (Keyword Analysis) بدقة لنستهدف العبارات التي تجلب لك "عملاء" وليس مجرد "زيارات". هدفنا هو رفع معدل التحويل (Conversion Rate) وضمان أعلى عائد على الاستثمار.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 3 -->
@@ -720,8 +720,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">3.</span>
                     </div>
-                    <h3>نتائج موثقة في زيادة الظهور الرقمي</h3>
-                    <p>نجاحنا يُقاس بالأرقام. لدينا قائمة من قصص النجاح في زيادة حركة المرور المجانية (Organic Traffic) لشركات كبرى، حيث ساعدناهم في القفز إلى الصفحة الأولى في محركات البحث، مما أدى لزيادة ملموسة في المبيعات والانتشار.</p>
+                    <h3><?php esc_html_e('نتائج موثقة في زيادة الظهور الرقمي', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('نجاحنا يُقاس بالأرقام. لدينا قائمة من قصص النجاح في زيادة حركة المرور المجانية (Organic Traffic) لشركات كبرى، حيث ساعدناهم في القفز إلى الصفحة الأولى في محركات البحث، مما أدى لزيادة ملموسة في المبيعات والانتشار.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 4 -->
@@ -729,8 +729,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">4.</span>
                     </div>
-                    <h3>تحسين السيو التقني (Technical SEO) بالكامل</h3>
-                    <p>نقوم بضبط كل تفاصيل موقعك "خلف الكواليس". من تحسين سرعة الموقع، وضبط بنية البيانات (Schema Markup)، إلى تحسين تجربة المستخدم (UX)، لضمان زحف عناكب محركات البحث وأرشفة صفحاتك بأفضل صورة ممكنة.</p>
+                    <h3><?php esc_html_e('تحسين السيو التقني (Technical SEO) بالكامل', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('نقوم بضبط كل تفاصيل موقعك "خلف الكواليس". من تحسين سرعة الموقع، وضبط بنية البيانات (Schema Markup)، إلى تحسين تجربة المستخدم (UX)، لضمان زحف عناكب محركات البحث وأرشفة صفحاتك بأفضل صورة ممكنة.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 5 -->
@@ -738,8 +738,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">5.</span>
                     </div>
-                    <h3>تقارير أداء دورية وشفافية مطلقة</h3>
-                    <p>في لينكاوي، نحن شركة سيو نؤمن بالوضوح. ستحصل على تقارير مفصلة لمراقبة أداء تحليل الكلمات المفتاحية ووضع الروابط، وتتواصل مباشرة مع خبير السيو المهندس علي عطوة وفريق العمل لمناقشة تطورات المشروع دون أي تعقيدات إدارية.</p>
+                    <h3><?php esc_html_e('تقارير أداء دورية وشفافية مطلقة', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('في لينكاوي، نحن شركة سيو نؤمن بالوضوح. ستحصل على تقارير مفصلة لمراقبة أداء تحليل الكلمات المفتاحية ووضع الروابط، وتتواصل مباشرة مع خبير السيو المهندس علي عطوة وفريق العمل لمناقشة تطورات المشروع دون أي تعقيدات إدارية.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 6 -->
@@ -747,8 +747,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">6.</span>
                     </div>
-                    <h3>مواكبة مستمرة لـ "تحديثات خوارزميات محركات البحث"</h3>
-                    <p>عالم السيو متغير، ونحن نراقب خوارزميات محركات البحث (Google Algorithms) لحظة بلحظة. نقوم بتعديل خططنا باستمرار لضمان حماية موقعك من أي تراجعات، مع التركيز على استراتيجيات White Hat SEO بعيداً عن أي ممارسات قد تضر موقعك.</p>
+                    <h3><?php esc_html_e('مواكبة مستمرة لـ "تحديثات خوارزميات محركات البحث"', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('عالم السيو متغير، ونحن نراقب خوارزميات محركات البحث (Google Algorithms) لحظة بلحظة. نقوم بتعديل خططنا باستمرار لضمان حماية موقعك من أي تراجعات، مع التركيز على استراتيجيات White Hat SEO بعيداً عن أي ممارسات قد تضر موقعك.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 7 -->
@@ -756,8 +756,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">7.</span>
                     </div>
-                    <h3>بناء روابط قوية (Backlinks) واستراتيجية محتوى</h3>
-                    <p>لا نكتفي بالتحسين الداخلي فقط، بل نركز على بناء الروابط (Link Building) من مواقع ذات سلطة عالية (High DA)، بالتوازي مع تسويق بالمحتوى احترافي يجعل من موقعك مرجعاً في مجالك ويقوي "سلطة النطاق" (Domain Authority) لديك.</p>
+                    <h3><?php esc_html_e('بناء روابط قوية (Backlinks) واستراتيجية محتوى', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('لا نكتفي بالتحسين الداخلي فقط، بل نركز على بناء الروابط (Link Building) من مواقع ذات سلطة عالية (High DA)، بالتوازي مع تسويق بالمحتوى احترافي يجعل من موقعك مرجعاً في مجالك ويقوي "سلطة النطاق" (Domain Authority) لديك.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 8 -->
@@ -765,8 +765,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">8.</span>
                     </div>
-                    <h3>استشارات مباشرة من خبير السيو الأول</h3>
-                    <p>الميزة التنافسية في "لينكاوي" كـ شركة سيو هي أنك تتعامل مع العقل المدبر مباشرة. المهندس علي عطوة يضع خبرته الطويلة بين يديك عبر استشارات فنية متخصصة تضمن لك اتخاذ قرارات تسويقية ذكية مبنية على بيانات حقيقية.</p>
+                    <h3><?php esc_html_e('استشارات مباشرة من خبير السيو الأول', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('الميزة التنافسية في "لينكاوي" كـ شركة سيو هي أنك تتعامل مع العقل المدبر مباشرة. المهندس علي عطوة يضع خبرته الطويلة بين يديك عبر استشارات فنية متخصصة تضمن لك اتخاذ قرارات تسويقية ذكية مبنية على بيانات حقيقية.', 'linkawy'); ?></p>
                 </div>
 
                 <!-- Card 9 -->
@@ -774,8 +774,8 @@ get_header();
                     <div class="problem-icon">
                         <span class="reason-number">9.</span>
                     </div>
-                    <h3>تدريب فريقك على ممارسات السيو المستدام</h3>
-                    <p>نحن شركة سيو نبني معك نظاماً يدوم؛ حيث نحرص على تدريب فريقك على أساسيات كتابة المحتوى المتوافق مع السيو وكيفية الحفاظ على النتائج المحققة، لضمان استمرارية تصدرك للمنافسين حتى على المدى الطويل.</p>
+                    <h3><?php esc_html_e('تدريب فريقك على ممارسات السيو المستدام', 'linkawy'); ?></h3>
+                    <p><?php esc_html_e('نحن شركة سيو نبني معك نظاماً يدوم؛ حيث نحرص على تدريب فريقك على أساسيات كتابة المحتوى المتوافق مع السيو وكيفية الحفاظ على النتائج المحققة، لضمان استمرارية تصدرك للمنافسين حتى على المدى الطويل.', 'linkawy'); ?></p>
                 </div>
             </div>
         </div>
@@ -786,7 +786,7 @@ get_header();
         <div class="container">
             <div class="benefits-inner-container">
                 <div class="section-header center-text">
-                    <h2>نقود مشروعك نحو صدارة محركات البحث وتعظيم العائد في 3 خطوات</h2>
+                    <h2><?php esc_html_e('نقود مشروعك نحو صدارة محركات البحث وتعظيم العائد في 3 خطوات', 'linkawy'); ?></h2>
                 </div>
 
                 <div class="benefits-grid">
@@ -794,22 +794,22 @@ get_header();
                     <div class="benefits-content">
                         <div class="benefit-item" data-target="img-1">
                             <div class="benefit-text-wrap">
-                                <h3>1. فهم السوق والجمهور</h3>
-                                <p>هذه الخطوة تساعدنا على اكتشاف الفرص الأقوى، وتحديد ما يبحث عنه عملاؤك المحتملون، وبناء أساس صحيح يجعل الزيارات القادمة إلى موقعك أكثر قيمة وقابلية للتحول إلى مبيعات.</p>
+                                <h3><?php esc_html_e('1. فهم السوق والجمهور', 'linkawy'); ?></h3>
+                                <p><?php esc_html_e('هذه الخطوة تساعدنا على اكتشاف الفرص الأقوى، وتحديد ما يبحث عنه عملاؤك المحتملون، وبناء أساس صحيح يجعل الزيارات القادمة إلى موقعك أكثر قيمة وقابلية للتحول إلى مبيعات.', 'linkawy'); ?></p>
                             </div>
                         </div>
 
                         <div class="benefit-item" data-target="img-2">
                             <div class="benefit-text-wrap">
-                                <h3>2. خطة سيو  واضحة الأهداف</h3>
-                                <p>نحن لا نسعى إلى زيادة الأرقام شكليًا، بل نركز على جذب زيارات مؤهلة تحمل نية حقيقية، لأن الزيارة التي يمكن أن تتحول إلى عميل أهم بكثير من أي رقم بلا أثر.</p>
+                                <h3><?php esc_html_e('2. خطة سيو  واضحة الأهداف', 'linkawy'); ?></h3>
+                                <p><?php esc_html_e('نحن لا نسعى إلى زيادة الأرقام شكليًا، بل نركز على جذب زيارات مؤهلة تحمل نية حقيقية، لأن الزيارة التي يمكن أن تتحول إلى عميل أهم بكثير من أي رقم بلا أثر.', 'linkawy'); ?></p>
                             </div>
                         </div>
 
                         <div class="benefit-item" data-target="img-3">
                             <div class="benefit-text-wrap">
-                                <h3>3. نتائج تنمو يومًا بعد يوم</h3>
-                                <p>السيو ليس نتيجة لحظية، بل مسار نمو تراكمي يزداد أثره مع الوقت. لذلك نعمل على تحقيق نمو شهري مستمر في الزيارات العضوية، مع تحسين فرص التحويل ورفع جودة الوصول إلى الجمهور المناسب.</p>
+                                <h3><?php esc_html_e('3. نتائج تنمو يومًا بعد يوم', 'linkawy'); ?></h3>
+                                <p><?php esc_html_e('السيو ليس نتيجة لحظية، بل مسار نمو تراكمي يزداد أثره مع الوقت. لذلك نعمل على تحقيق نمو شهري مستمر في الزيارات العضوية، مع تحسين فرص التحويل ورفع جودة الوصول إلى الجمهور المناسب.', 'linkawy'); ?></p>
                             </div>
                         </div>
                     </div>
@@ -818,18 +818,18 @@ get_header();
                     <div class="benefits-images">
                         <div class="benefit-img active" id="img-1">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/growth/seo-product-research.png"
-                                alt="تحليل سوق وجمهور ومتجر إلكتروني ضمن استراتيجية سيو لفهم سلوك البحث في محركات البحث" loading="lazy" width="400" height="300">
-                            <p class="benefit-img-caption">نبدأ بدراسة نشاطك التجاري والسوق الذي تنافس فيه، مع فهم الفئة المستهدفة واحتياجاتها وطريقة بحثها الفعلية في محركات البحث، كأساس لاستراتيجية سيو تركز على النمو.</p>
+                                alt="<?php esc_attr_e('تحليل سوق وجمهور ومتجر إلكتروني ضمن استراتيجية سيو لفهم سلوك البحث في محركات البحث', 'linkawy'); ?>" loading="lazy" width="400" height="300">
+                            <p class="benefit-img-caption"><?php esc_html_e('نبدأ بدراسة نشاطك التجاري والسوق الذي تنافس فيه، مع فهم الفئة المستهدفة واحتياجاتها وطريقة بحثها الفعلية في محركات البحث، كأساس لاستراتيجية سيو تركز على النمو.', 'linkawy'); ?></p>
                         </div>
                         <div class="benefit-img" id="img-2">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/growth/seo-marketing-plan.webp"
-                                alt="تخطيط استراتيجية سيو لتحسين الظهور في نتائج البحث واستهداف كلمات مرتبطة بقرار الشراء" loading="lazy" width="400" height="300">
-                            <p class="benefit-img-caption">بعد فهم السوق والجمهور، نضع خطة ضمن استراتيجية سيو مدروسة تستهدف تحسين ظهور موقعك في الكلمات المفتاحية الأكثر ارتباطًا بقرار الشراء.</p>
+                                alt="<?php esc_attr_e('تخطيط استراتيجية سيو لتحسين الظهور في نتائج البحث واستهداف كلمات مرتبطة بقرار الشراء', 'linkawy'); ?>" loading="lazy" width="400" height="300">
+                            <p class="benefit-img-caption"><?php esc_html_e('بعد فهم السوق والجمهور، نضع خطة ضمن استراتيجية سيو مدروسة تستهدف تحسين ظهور موقعك في الكلمات المفتاحية الأكثر ارتباطًا بقرار الشراء.', 'linkawy'); ?></p>
                         </div>
                         <div class="benefit-img" id="img-3">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/growth/sales-growth-dashboard.png"
-                                alt="لوحة مؤشرات لزيادة الزيارات العضوية والمبيعات بعد تطبيق استراتيجية سيو" loading="lazy" width="400" height="300">
-                            <p class="benefit-img-caption">مع هذا التقدم المنتظم في استراتيجية سيو، تبدأ النتائج بالظهور بشكل أوضح على مستوى الطلبات والمبيعات والنمو التجاري.</p>
+                                alt="<?php esc_attr_e('لوحة مؤشرات لزيادة الزيارات العضوية والمبيعات بعد تطبيق استراتيجية سيو', 'linkawy'); ?>" loading="lazy" width="400" height="300">
+                            <p class="benefit-img-caption"><?php esc_html_e('مع هذا التقدم المنتظم في استراتيجية سيو، تبدأ النتائج بالظهور بشكل أوضح على مستوى الطلبات والمبيعات والنمو التجاري.', 'linkawy'); ?></p>
                         </div>
                     </div>
                 </div>
@@ -841,11 +841,11 @@ get_header();
         <div class="blog-posts-container">
             <div class="blog-posts-header">
                 <div class="blog-posts-header-text">
-                    <h2>أحدث المقالات من المدونة</h2>
-                    <p>نشارك معكم آخر التحديثات والاستراتيجيات في عالم تحسين محركات البحث.</p>
+                    <h2><?php esc_html_e('أحدث المقالات من المدونة', 'linkawy'); ?></h2>
+                    <p><?php esc_html_e('نشارك معكم آخر التحديثات والاستراتيجيات في عالم تحسين محركات البحث.', 'linkawy'); ?></p>
                 </div>
                 <a href="<?php echo esc_url(linkawy_get_front_page_section_archive_url('linkawy_front_blog_category', 'linkawy_front_blog_tag')); ?>" class="blog-posts-btn">
-                    تصفح كل المقالات
+                    <?php esc_html_e('تصفح كل المقالات', 'linkawy'); ?>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
@@ -925,13 +925,13 @@ get_header();
     <section class="about-section">
         <div class="container about-container">
             <div class="about-image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ali-atwa-seo-consulting.webp" alt="استشارات سيو" width="500" height="600" loading="lazy">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ali-atwa-seo-consulting.webp" alt="<?php esc_attr_e('استشارات سيو', 'linkawy'); ?>" width="500" height="600" loading="lazy">
             </div>
             <div class="about-content">
-                <span class="about-label">أهلًا بالمؤسس</span>
-                <h2>استشارات أفضل شركة سيو برؤية بيزنس</h2>
-                <p>ندرك حجم الضغط الذي تواجهه كمؤسس وأنت ترى ميزانيتك تُستنزف في الإعلانات، لذا صممنا هذه الـ استشارات سيو لتخرجك من مصيدة 'الدفع مقابل الظهور' والتحسينات الشكلية. من خلال العمل مباشرة مع خبير سيو يمتلك رؤية بيزنس، ستُمنح منهجية استراتيجية نقلت شركات ناشئة من مجرد التواجد إلى الهيمنة عبر الزيارات المجانية.</p>
-                <a href="#contact" class="cta-button">اطلب استشارة سيو</a>
+                <span class="about-label"><?php esc_html_e('أهلًا بالمؤسس', 'linkawy'); ?></span>
+                <h2><?php esc_html_e('استشارات أفضل شركة سيو برؤية بيزنس', 'linkawy'); ?></h2>
+                <p><?php esc_html_e('ندرك حجم الضغط الذي تواجهه كمؤسس وأنت ترى ميزانيتك تُستنزف في الإعلانات، لذا صممنا هذه الـ استشارات سيو لتخرجك من مصيدة \'الدفع مقابل الظهور\' والتحسينات الشكلية. من خلال العمل مباشرة مع خبير سيو يمتلك رؤية بيزنس، ستُمنح منهجية استراتيجية نقلت شركات ناشئة من مجرد التواجد إلى الهيمنة عبر الزيارات المجانية.', 'linkawy'); ?></p>
+                <a href="#contact" class="cta-button"><?php esc_html_e('اطلب استشارة سيو', 'linkawy'); ?></a>
             </div>
         </div>
     </section>
@@ -941,26 +941,26 @@ get_header();
         <div class="section-container">
             <div class="section-header results-header">
                 <span class="results-live-badge"><span class="results-live-dot"></span>LIVE RESULTS</span>
-                <h2 class="section-title results-title">نتائج SEO</h2>
-                <p class="results-desc">شاهد النتائج من داخل الحسابات والمتاجر</p>
+                <h2 class="section-title results-title"><?php esc_html_e('نتائج SEO', 'linkawy'); ?></h2>
+                <p class="results-desc"><?php esc_html_e('شاهد النتائج من داخل الحسابات والمتاجر', 'linkawy'); ?></p>
             </div>
 
             <!-- Slider -->
             <div class="swiper resultsSwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="<?php esc_attr_e('لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
 
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="<?php esc_attr_e('لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
                 </div>
             </div>
 
@@ -972,7 +972,7 @@ get_header();
 
             <!-- CTA: 40px below arrows -->
             <div class="text-center mt-8 md:mt-10">
-                <a href="#contact" class="btn-cyber" data-link>ابدأ قصة نجاحك الآن <i class="fas fa-arrow-left"></i></a>
+                <a href="#contact" class="btn-cyber" data-link><?php esc_html_e('ابدأ قصة نجاحك الآن', 'linkawy'); ?> <i class="fas fa-arrow-left"></i></a>
             </div>
         </div>
     </section>
@@ -980,7 +980,7 @@ get_header();
     <section class="seo-faq-section" id="seo-faq">
         <div class="seo-faq-container">
             <div class="seo-faq-header">
-                <h2>الأسئلة الشائعة</h2>
+                <h2><?php esc_html_e('الأسئلة الشائعة', 'linkawy'); ?></h2>
             </div>
 
             <div class="seo-faq-grid">
@@ -988,60 +988,60 @@ get_header();
                 <div class="seo-faq-column">
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>ما هي خدمات تحسين محركات البحث (SEO) التي تقدمونها؟</h3>
+                            <h3><?php esc_html_e('ما هي خدمات تحسين محركات البحث (SEO) التي تقدمونها؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                نقدم مجموعة شاملة من خدمات السيو تشمل: التحسين الداخلي (On-Page SEO)، التحسين الخارجي وبناء الروابط (Off-Page SEO)، السيو التقني (Technical SEO)، تحسين المحتوى، تحليل الكلمات المفتاحية، تحسين سيو المتاجر الإلكترونية على شوبيفاي وسلة وزد، بالإضافة إلى استشارات السيو المتخصصة.
+                                <?php esc_html_e('نقدم مجموعة شاملة من خدمات السيو تشمل: التحسين الداخلي (On-Page SEO)، التحسين الخارجي وبناء الروابط (Off-Page SEO)، السيو التقني (Technical SEO)، تحسين المحتوى، تحليل الكلمات المفتاحية، تحسين سيو المتاجر الإلكترونية على شوبيفاي وسلة وزد، بالإضافة إلى استشارات السيو المتخصصة.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>كم من الوقت يستغرق تحسين ترتيب موقعي في نتائج البحث؟</h3>
+                            <h3><?php esc_html_e('كم من الوقت يستغرق تحسين ترتيب موقعي في نتائج البحث؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                تحسين محركات البحث عملية تراكمية وليست فورية. عادةً تبدأ النتائج الملموسة بالظهور خلال 3 إلى 6 أشهر من بدء العمل، وتتحسن بشكل مستمر مع مرور الوقت. النتائج تعتمد على حالة الموقع الحالية، المنافسة في المجال، وحجم العمل المطلوب.
+                                <?php esc_html_e('تحسين محركات البحث عملية تراكمية وليست فورية. عادةً تبدأ النتائج الملموسة بالظهور خلال 3 إلى 6 أشهر من بدء العمل، وتتحسن بشكل مستمر مع مرور الوقت. النتائج تعتمد على حالة الموقع الحالية، المنافسة في المجال، وحجم العمل المطلوب.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>هل تقدمون خدمات السيو للمتاجر الإلكترونية؟</h3>
+                            <h3><?php esc_html_e('هل تقدمون خدمات السيو للمتاجر الإلكترونية؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                نعم، نحن متخصصون في تحسين محركات البحث للمتاجر الإلكترونية على مختلف المنصات مثل شوبيفاي وسلة وزد ووكومرس. نعمل على تحسين صفحات المنتجات والتصنيفات والبنية التقنية للمتجر لزيادة الزيارات العضوية وتحويلها إلى مبيعات حقيقية.
+                                <?php esc_html_e('نعم، نحن متخصصون في تحسين محركات البحث للمتاجر الإلكترونية على مختلف المنصات مثل شوبيفاي وسلة وزد ووكومرس. نعمل على تحسين صفحات المنتجات والتصنيفات والبنية التقنية للمتجر لزيادة الزيارات العضوية وتحويلها إلى مبيعات حقيقية.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>ما الفرق بين السيو الداخلي والسيو الخارجي؟</h3>
+                            <h3><?php esc_html_e('ما الفرق بين السيو الداخلي والسيو الخارجي؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                السيو الداخلي (On-Page) يركز على تحسين عناصر الموقع نفسه مثل المحتوى، العناوين، الوصف، الصور، والروابط الداخلية. أما السيو الخارجي (Off-Page) فيركز على بناء سمعة الموقع خارجياً من خلال الروابط الخلفية (Backlinks) من مواقع موثوقة، والعلاقات العامة الرقمية، والإشارات الاجتماعية.
+                                <?php esc_html_e('السيو الداخلي (On-Page) يركز على تحسين عناصر الموقع نفسه مثل المحتوى، العناوين، الوصف، الصور، والروابط الداخلية. أما السيو الخارجي (Off-Page) فيركز على بناء سمعة الموقع خارجياً من خلال الروابط الخلفية (Backlinks) من مواقع موثوقة، والعلاقات العامة الرقمية، والإشارات الاجتماعية.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>كيف يتم تحديد سعر خدمة السيو؟</h3>
+                            <h3><?php esc_html_e('كيف يتم تحديد سعر خدمة السيو؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                يعتمد التسعير على عدة عوامل منها: حجم الموقع وعدد صفحاته، مستوى المنافسة في المجال، حالة الموقع التقنية الحالية، الأهداف المطلوب تحقيقها، ونطاق العمل. نقدم عروض أسعار مخصصة بعد تحليل دقيق لموقعك ومتطلباتك.
+                                <?php esc_html_e('يعتمد التسعير على عدة عوامل منها: حجم الموقع وعدد صفحاته، مستوى المنافسة في المجال، حالة الموقع التقنية الحالية، الأهداف المطلوب تحقيقها، ونطاق العمل. نقدم عروض أسعار مخصصة بعد تحليل دقيق لموقعك ومتطلباتك.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
@@ -1051,60 +1051,60 @@ get_header();
                 <div class="seo-faq-column">
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في محركات البحث؟</h3>
+                            <h3><?php esc_html_e('هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في محركات البحث؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                لا يمكن لأي شركة سيو محترفة ضمان المرتبة الأولى بشكل مطلق، لأن خوارزميات محركات البحث تتغير باستمرار. لكننا نضمن لك تطبيق أفضل الممارسات العالمية، واستراتيجيات مدروسة تحقق نمواً ملموساً في الترتيب والزيارات والمبيعات بشكل مستدام.
+                                <?php esc_html_e('لا يمكن لأي شركة سيو محترفة ضمان المرتبة الأولى بشكل مطلق، لأن خوارزميات محركات البحث تتغير باستمرار. لكننا نضمن لك تطبيق أفضل الممارسات العالمية، واستراتيجيات مدروسة تحقق نمواً ملموساً في الترتيب والزيارات والمبيعات بشكل مستدام.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>ما أهمية بناء الروابط الخلفية (Backlinks) للسيو؟</h3>
+                            <h3><?php esc_html_e('ما أهمية بناء الروابط الخلفية (Backlinks) للسيو؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                الروابط الخلفية من أهم عوامل ترتيب محركات البحث. كل رابط من موقع موثوق يُعتبر بمثابة "تصويت ثقة" لموقعك. نحن نبني روابط عالية الجودة من مواقع ذات سلطة عالية (High Domain Authority) بطرق آمنة تتوافق مع إرشادات محركات البحث لتعزيز ترتيب موقعك بشكل دائم.
+                                <?php esc_html_e('الروابط الخلفية من أهم عوامل ترتيب محركات البحث. كل رابط من موقع موثوق يُعتبر بمثابة "تصويت ثقة" لموقعك. نحن نبني روابط عالية الجودة من مواقع ذات سلطة عالية (High Domain Authority) بطرق آمنة تتوافق مع إرشادات محركات البحث لتعزيز ترتيب موقعك بشكل دائم.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>هل تقدمون تقارير أداء دورية لمتابعة تقدم المشروع؟</h3>
+                            <h3><?php esc_html_e('هل تقدمون تقارير أداء دورية لمتابعة تقدم المشروع؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                نعم، نوفر تقارير أداء تفصيلية بشكل شهري تشمل: تطور ترتيب الكلمات المفتاحية، حجم الزيارات العضوية، تحليل الروابط المبنية، أداء الصفحات، ومعدلات التحويل. كما يمكنك التواصل مباشرة مع فريق العمل لمناقشة أي تفاصيل في أي وقت.
+                                <?php esc_html_e('نعم، نوفر تقارير أداء تفصيلية بشكل شهري تشمل: تطور ترتيب الكلمات المفتاحية، حجم الزيارات العضوية، تحليل الروابط المبنية، أداء الصفحات، ومعدلات التحويل. كما يمكنك التواصل مباشرة مع فريق العمل لمناقشة أي تفاصيل في أي وقت.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>ما هو السيو التقني وهل يحتاجه موقعي؟</h3>
+                            <h3><?php esc_html_e('ما هو السيو التقني وهل يحتاجه موقعي؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                السيو التقني يعالج البنية التحتية للموقع لتسهيل زحف وفهرسة محركات البحث. يشمل تحسين سرعة الموقع، التوافق مع الجوال، بنية الروابط، خرائط الموقع (Sitemap)، ملف Robots.txt، وبيانات Schema المنظمة. كل موقع يحتاج سيو تقني سليم كأساس لأي استراتيجية سيو ناجحة، مع تحليل منافسين سرعة الموقع تحسين الأداء.
+                                <?php esc_html_e('السيو التقني يعالج البنية التحتية للموقع لتسهيل زحف وفهرسة محركات البحث. يشمل تحسين سرعة الموقع، التوافق مع الجوال، بنية الروابط، خرائط الموقع (Sitemap)، ملف Robots.txt، وبيانات Schema المنظمة. كل موقع يحتاج سيو تقني سليم كأساس لأي استراتيجية سيو ناجحة، مع تحليل منافسين سرعة الموقع تحسين الأداء.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>
 
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3>كيف يتم قياس نجاح استراتيجية السيو؟</h3>
+                            <h3><?php esc_html_e('كيف يتم قياس نجاح استراتيجية السيو؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
-                                نقيس النجاح من خلال مؤشرات أداء حقيقية تشمل: نمو الزيارات العضوية، تحسن ترتيب الكلمات المفتاحية المستهدفة، زيادة معدلات التحويل والمبيعات، تحسن سلطة النطاق (Domain Authority)، والعائد على الاستثمار (ROI). نركز على المقاييس التي تترجم مباشرة إلى إيرادات وليس مجرد أرقام.
+                                <?php esc_html_e('نقيس النجاح من خلال مؤشرات أداء حقيقية تشمل: نمو الزيارات العضوية، تحسن ترتيب الكلمات المفتاحية المستهدفة، زيادة معدلات التحويل والمبيعات، تحسن سلطة النطاق (Domain Authority)، والعائد على الاستثمار (ROI). نركز على المقاييس التي تترجم مباشرة إلى إيرادات وليس مجرد أرقام.', 'linkawy'); ?>
                             </div>
                         </div>
                     </div>

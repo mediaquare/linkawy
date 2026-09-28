@@ -119,7 +119,7 @@ $linkawy_nl_article_title = $linkawy_nl_article_id ? get_the_title($linkawy_nl_a
             if (!emailInput || !emailVal || !emailInput.checkValidity()) {
                 if (feedback) {
                     feedback.innerHTML = '';
-                    feedback.textContent = 'يرجى إدخال بريد إلكتروني صحيح.';
+                    feedback.textContent = <?php echo wp_json_encode(__('يرجى إدخال بريد إلكتروني صحيح.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
                     feedback.classList.add('newsletter-feedback--error');
                     feedback.style.removeProperty('color');
                     feedback.style.display = 'block';
@@ -130,7 +130,7 @@ $linkawy_nl_article_title = $linkawy_nl_article_id ? get_the_title($linkawy_nl_a
 
             if (submitBtn) {
                 submitBtn.disabled = true;
-                submitBtn.innerHTML = '<span class="spinner-loading"></span> جاري الاشتراك...';
+                submitBtn.innerHTML = <?php echo wp_json_encode(__('<span class="spinner-loading"></span> جاري الاشتراك...', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
             }
 
             function sendNewsletterArticle(recaptchaToken) {
@@ -165,7 +165,7 @@ $linkawy_nl_article_title = $linkawy_nl_article_id ? get_the_title($linkawy_nl_a
                             box.classList.remove('linkawy-newsletter-success');
                         }
                         feedback.innerHTML = '';
-                        feedback.textContent = (data && data.data && data.data.message) ? data.data.message : 'تعذر الاشتراك حاليًا.';
+                        feedback.textContent = (data && data.data && data.data.message) ? data.data.message : <?php echo wp_json_encode(__('تعذر الاشتراك حاليًا.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
                         feedback.classList.add('newsletter-feedback--error');
                         feedback.style.removeProperty('color');
                         feedback.style.display = 'block';
@@ -178,7 +178,7 @@ $linkawy_nl_article_title = $linkawy_nl_article_id ? get_the_title($linkawy_nl_a
                     }
                     if (feedback) {
                         feedback.innerHTML = '';
-                        feedback.textContent = 'حدث خطأ في الاتصال. حاول مرة أخرى.';
+                        feedback.textContent = <?php echo wp_json_encode(__('حدث خطأ في الاتصال. حاول مرة أخرى.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>;
                         feedback.classList.add('newsletter-feedback--error');
                         feedback.style.removeProperty('color');
                         feedback.style.display = 'block';

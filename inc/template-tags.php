@@ -154,13 +154,15 @@ function linkawy_reading_time($post_id = null) {
 
     // Arabic grammar rules for reading time
     if ($reading_time === 1) {
-        return 'دقيقة واحدة قراءة';
+        return __('دقيقة واحدة قراءة', 'linkawy');
     } elseif ($reading_time === 2) {
-        return 'دقيقتين قراءة';
+        return __('دقيقتين قراءة', 'linkawy');
     } elseif ($reading_time <= 10) {
-        return sprintf('%d دقائق قراءة', $reading_time);
+        /* translators: %d: minutes */
+        return sprintf(__('%d دقائق قراءة', 'linkawy'), $reading_time);
     } else {
-        return sprintf('%d دقيقة قراءة', $reading_time);
+        /* translators: %d: minutes */
+        return sprintf(__('%d دقيقة قراءة', 'linkawy'), $reading_time);
     }
 }
 
@@ -983,7 +985,7 @@ function linkawy_get_article_schema($post_id = null) {
     // Build Publisher/Organization schema
     $publisher_schema = array(
         '@type' => 'Organization',
-        'name' => 'لينكاوي',
+        'name' => __('لينكاوي', 'linkawy'),
         'alternateName' => 'Linkawy',
         'url' => home_url('/'),
         'logo' => array(
@@ -1025,7 +1027,7 @@ function linkawy_get_article_schema($post_id = null) {
         ),
         'wordCount' => $word_count,
         'timeRequired' => $time_required, // ISO 8601 duration for AI Search
-        'inLanguage' => 'ar',
+        'inLanguage' => linkawy_current_lang(),
     );
     
     // Add articleSection (category)
@@ -1184,11 +1186,11 @@ function linkawy_get_webpage_schema() {
         'isPartOf' => array(
             '@type' => 'WebSite',
             '@id' => home_url('/') . '#website',
-            'name' => 'لينكاوي',
+            'name' => __('لينكاوي', 'linkawy'),
             'alternateName' => 'Linkawy',
             'url' => home_url('/'),
         ),
-        'inLanguage' => 'ar',
+        'inLanguage' => linkawy_current_lang(),
         'datePublished' => get_the_date('c', $post_id),
         'dateModified' => get_the_modified_date('c', $post_id),
         // Link to Article as mainEntity (important for semantic understanding)

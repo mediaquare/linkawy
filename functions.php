@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Define theme constants
-define('LINKAWY_VERSION', '11.67');
+define('LINKAWY_VERSION', '11.68');
 define('LINKAWY_DIR', get_template_directory());
 define('LINKAWY_URI', get_template_directory_uri());
 
@@ -452,7 +452,7 @@ add_action('wp_ajax_nopriv_linkawy_validate_email', 'linkawy_validate_email_doma
 function linkawy_submit_contact_form() {
     // Verify nonce
     if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'linkawy_contact_form')) {
-        wp_send_json_error(['message' => 'طلب غير صالح. يرجى تحديث الصفحة والمحاولة مرة أخرى.']);
+        wp_send_json_error(['message' => __('طلب غير صالح. يرجى تحديث الصفحة والمحاولة مرة أخرى.', 'linkawy')]);
     }
 
     $recaptcha_check = linkawy_verify_recaptcha_from_request();
@@ -477,15 +477,15 @@ function linkawy_submit_contact_form() {
 
     // Validate required fields (full form: name, email, company, budget; short form: name, email only)
     if (empty($name) || empty($email)) {
-        wp_send_json_error(['message' => 'يرجى ملء الحقول المطلوبة.']);
+        wp_send_json_error(['message' => __('يرجى ملء الحقول المطلوبة.', 'linkawy')]);
     }
     if (!$is_short_form && (empty($company) || empty($budget))) {
-        wp_send_json_error(['message' => 'يرجى ملء جميع الحقول المطلوبة.']);
+        wp_send_json_error(['message' => __('يرجى ملء جميع الحقول المطلوبة.', 'linkawy')]);
     }
 
     // Validate email
     if (!is_email($email)) {
-        wp_send_json_error(['message' => 'البريد الإلكتروني غير صالح.']);
+        wp_send_json_error(['message' => __('البريد الإلكتروني غير صالح.', 'linkawy')]);
     }
 
     // Create contact_request post
@@ -498,7 +498,7 @@ function linkawy_submit_contact_form() {
     $post_id = wp_insert_post($post_data);
 
     if (is_wp_error($post_id)) {
-        wp_send_json_error(['message' => 'حدث خطأ أثناء حفظ الطلب. يرجى المحاولة مرة أخرى.']);
+        wp_send_json_error(['message' => __('حدث خطأ أثناء حفظ الطلب. يرجى المحاولة مرة أخرى.', 'linkawy')]);
     }
 
     // Save meta fields
@@ -602,7 +602,7 @@ function linkawy_submit_contact_form() {
         ));
     }
 
-    wp_send_json_success(['message' => 'تم إرسال طلبك بنجاح!']);
+    wp_send_json_success(['message' => __('تم إرسال طلبك بنجاح!', 'linkawy')]);
 }
 add_action('wp_ajax_linkawy_submit_contact', 'linkawy_submit_contact_form');
 add_action('wp_ajax_nopriv_linkawy_submit_contact', 'linkawy_submit_contact_form');
