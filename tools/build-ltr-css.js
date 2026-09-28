@@ -57,8 +57,9 @@ for (const name of fs.readdirSync(cssDir)) {
             : rule);
     let css = rtlcss.process(guarded);
     // Source rules scoped to html[dir="rtl"] are the direction-specific adjustments; after flipping
-    // they are exactly what the LTR page needs, so scope them to html[dir="ltr"].
-    css = css.replace(/html\[dir=("?)rtl\1\]/g, 'html[dir="ltr"]');
+    // they are exactly what the LTR page needs. WordPress prints no dir attribute for LTR,
+    // so match "not RTL" rather than [dir="ltr"].
+    css = css.replace(/html\[dir=("?)rtl\1\]/g, 'html:not([dir="rtl"])');
     // Files move one level down (assets/css/ltr/), so relative asset URLs go one level up.
     css = css.replace(/url\((['"]?)\.\.\//g, 'url($1../../');
     // Arabic font -> Inter (Somar Sans has no Latin design we want to use).
