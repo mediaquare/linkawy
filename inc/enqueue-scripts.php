@@ -444,6 +444,10 @@ function linkawy_preload_somar_fonts() {
         ? LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2'
         : LINKAWY_URI . '/assets/fonts/inter/inter-latin-var.woff2';
     echo '<link rel="preload" href="' . esc_url($font_url) . '" as="font" type="font/woff2" crossorigin>' . "\n";
+    // English home: hero title font (Plus Jakarta Sans, see tools/build-ltr-css.js).
+    if (!is_rtl() && is_front_page()) {
+        echo '<link rel="preload" href="' . esc_url(LINKAWY_URI . '/assets/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-800.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
+    }
 }
 add_action('wp_head', 'linkawy_preload_somar_fonts', 1);
 
