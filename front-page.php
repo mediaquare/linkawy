@@ -39,10 +39,12 @@ get_header();
                             <?php esc_html_e('أفضل', 'linkawy'); ?> <span class="text-[#f26833]"><?php esc_html_e('شركة سيو', 'linkawy'); ?></span>
                             <br>
                             <?php esc_html_e('للمتاجر الإلكترونية والشركات', 'linkawy'); ?>
+
                         </h1>
                         
                         <p class="text-lg text-gray-400 mb-8 leading-relaxed font-medium">
                             <?php esc_html_e('اختيارك شركة سيو مناسبة لا يعني تحسين الترتيب فقط، بل بناء قناة نمو تربط محركات البحث بالمبيعات. في لينكاوي نقدم استراتيجيات سيو تساعدك على تصدر النتائج وجذب زيارات مؤهلة تتحول إلى إيرادات مستدامة، لمن يبحث عن أفضل شركة سيو في السعودية للمتاجر والشركات.', 'linkawy'); ?>
+
                         </p>
                         
                         <div class="flex flex-col sm:flex-row gap-4">
@@ -566,6 +568,7 @@ get_header();
                 <h2 class="success-stories-title"><?php esc_html_e('قصص نجاح المتاجر', 'linkawy'); ?></h2>
                 <a href="<?php echo esc_url(linkawy_get_front_page_section_archive_url('linkawy_front_success_category', 'linkawy_front_success_tag')); ?>" class="success-stories-link">
                     <?php esc_html_e('المزيد من قصص النجاح', 'linkawy'); ?>
+
                 </a>
             </div>
             
@@ -846,6 +849,7 @@ get_header();
                 </div>
                 <a href="<?php echo esc_url(linkawy_get_front_page_section_archive_url('linkawy_front_blog_category', 'linkawy_front_blog_tag')); ?>" class="blog-posts-btn">
                     <?php esc_html_e('تصفح كل المقالات', 'linkawy'); ?>
+
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M19 12H5M12 19l-7-7 7-7"/>
                     </svg>
@@ -994,6 +998,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('نقدم مجموعة شاملة من خدمات السيو تشمل: التحسين الداخلي (On-Page SEO)، التحسين الخارجي وبناء الروابط (Off-Page SEO)، السيو التقني (Technical SEO)، تحسين المحتوى، تحليل الكلمات المفتاحية، تحسين سيو المتاجر الإلكترونية على شوبيفاي وسلة وزد، بالإضافة إلى استشارات السيو المتخصصة.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1006,6 +1011,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('تحسين محركات البحث عملية تراكمية وليست فورية. عادةً تبدأ النتائج الملموسة بالظهور خلال 3 إلى 6 أشهر من بدء العمل، وتتحسن بشكل مستمر مع مرور الوقت. النتائج تعتمد على حالة الموقع الحالية، المنافسة في المجال، وحجم العمل المطلوب.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1018,6 +1024,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('نعم، نحن متخصصون في تحسين محركات البحث للمتاجر الإلكترونية على مختلف المنصات مثل شوبيفاي وسلة وزد ووكومرس. نعمل على تحسين صفحات المنتجات والتصنيفات والبنية التقنية للمتجر لزيادة الزيارات العضوية وتحويلها إلى مبيعات حقيقية.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1030,6 +1037,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('السيو الداخلي (On-Page) يركز على تحسين عناصر الموقع نفسه مثل المحتوى، العناوين، الوصف، الصور، والروابط الداخلية. أما السيو الخارجي (Off-Page) فيركز على بناء سمعة الموقع خارجياً من خلال الروابط الخلفية (Backlinks) من مواقع موثوقة، والعلاقات العامة الرقمية، والإشارات الاجتماعية.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1042,6 +1050,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('يعتمد التسعير على عدة عوامل منها: حجم الموقع وعدد صفحاته، مستوى المنافسة في المجال، حالة الموقع التقنية الحالية، الأهداف المطلوب تحقيقها، ونطاق العمل. نقدم عروض أسعار مخصصة بعد تحليل دقيق لموقعك ومتطلباتك.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1057,6 +1066,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('لا يمكن لأي شركة سيو محترفة ضمان المرتبة الأولى بشكل مطلق، لأن خوارزميات محركات البحث تتغير باستمرار. لكننا نضمن لك تطبيق أفضل الممارسات العالمية، واستراتيجيات مدروسة تحقق نمواً ملموساً في الترتيب والزيارات والمبيعات بشكل مستدام.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1069,6 +1079,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('الروابط الخلفية من أهم عوامل ترتيب محركات البحث. كل رابط من موقع موثوق يُعتبر بمثابة "تصويت ثقة" لموقعك. نحن نبني روابط عالية الجودة من مواقع ذات سلطة عالية (High Domain Authority) بطرق آمنة تتوافق مع إرشادات محركات البحث لتعزيز ترتيب موقعك بشكل دائم.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1081,6 +1092,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('نعم، نوفر تقارير أداء تفصيلية بشكل شهري تشمل: تطور ترتيب الكلمات المفتاحية، حجم الزيارات العضوية، تحليل الروابط المبنية، أداء الصفحات، ومعدلات التحويل. كما يمكنك التواصل مباشرة مع فريق العمل لمناقشة أي تفاصيل في أي وقت.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1093,6 +1105,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('السيو التقني يعالج البنية التحتية للموقع لتسهيل زحف وفهرسة محركات البحث. يشمل تحسين سرعة الموقع، التوافق مع الجوال، بنية الروابط، خرائط الموقع (Sitemap)، ملف Robots.txt، وبيانات Schema المنظمة. كل موقع يحتاج سيو تقني سليم كأساس لأي استراتيجية سيو ناجحة، مع تحليل منافسين سرعة الموقع تحسين الأداء.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>
@@ -1105,6 +1118,7 @@ get_header();
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
                                 <?php esc_html_e('نقيس النجاح من خلال مؤشرات أداء حقيقية تشمل: نمو الزيارات العضوية، تحسن ترتيب الكلمات المفتاحية المستهدفة، زيادة معدلات التحويل والمبيعات، تحسن سلطة النطاق (Domain Authority)، والعائد على الاستثمار (ROI). نركز على المقاييس التي تترجم مباشرة إلى إيرادات وليس مجرد أرقام.', 'linkawy'); ?>
+
                             </div>
                         </div>
                     </div>

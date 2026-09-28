@@ -345,6 +345,7 @@ function linkawyInitContactForm() {
                     });
                 },
                 errorMessage: <?php echo wp_json_encode(__('يرجى استخدام بريد إلكتروني حقيقي (لا نقبل البريد المؤقت).', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
+
             }
         ])
         .addField(formSel + ' [name="company"]', [
@@ -357,6 +358,7 @@ function linkawyInitContactForm() {
                     return /^(https?:\/\/)?[\w\-]+(\.[\w\-]+)+/.test(value.trim());
                 },
                 errorMessage: <?php echo wp_json_encode(__('يرجى إدخال رابط صحيح (مثال: example.com).', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
+
             }
         ])
         .addField(formSel + ' [name="budget"]', [
