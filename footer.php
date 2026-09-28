@@ -43,8 +43,8 @@ if (!$is_elementor_preview) {
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="footer-accordion-content">
-                        <?php if (is_active_sidebar('footer-services')) : ?>
-                            <?php dynamic_sidebar('footer-services'); ?>
+                        <?php if (is_active_sidebar(linkawy_sidebar_id('footer-services'))) : ?>
+                            <?php dynamic_sidebar(linkawy_sidebar_id('footer-services')); ?>
                         <?php else : ?>
                             <ul>
                                 <li><a href="#"><?php _e('تحسين محركات البحث', 'linkawy'); ?></a></li>
@@ -66,8 +66,8 @@ if (!$is_elementor_preview) {
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="footer-accordion-content">
-                        <?php if (is_active_sidebar('footer-resources')) : ?>
-                            <?php dynamic_sidebar('footer-resources'); ?>
+                        <?php if (is_active_sidebar(linkawy_sidebar_id('footer-resources'))) : ?>
+                            <?php dynamic_sidebar(linkawy_sidebar_id('footer-resources')); ?>
                         <?php else : ?>
                             <ul>
                                 <li><a href="#"><?php _e('دليل تعلم السيو', 'linkawy'); ?></a></li>
@@ -86,8 +86,8 @@ if (!$is_elementor_preview) {
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="footer-accordion-content">
-                        <?php if (is_active_sidebar('footer-company')) : ?>
-                            <?php dynamic_sidebar('footer-company'); ?>
+                        <?php if (is_active_sidebar(linkawy_sidebar_id('footer-company'))) : ?>
+                            <?php dynamic_sidebar(linkawy_sidebar_id('footer-company')); ?>
                         <?php else : ?>
                             <ul>
                                 <li><a href="#"><?php _e('من نحن', 'linkawy'); ?></a></li>

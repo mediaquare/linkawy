@@ -2000,3 +2000,27 @@ msgstr "Security verification failed. Please try again."
 #: taxonomy-resource_type.php:57
 msgid "لا توجد موارد في هذا النوع."
 msgstr "No resources of this type."
+
+#: inc/customizer.php:377 inc/customizer.php:717
+msgid "تواصل معنا"
+msgstr "Contact Us"
+
+#: inc/customizer.php:407 inc/customizer.php:729
+msgid "اطلب عرض سعر"
+msgstr "Get a Quote"
+
+#: inc/customizer.php:639 inc/customizer.php:782
+msgid ""
+"شريكك الاستراتيجي في النمو الرقمي. نقدم حلول سيو وتصميم مواقع مبتكرة لضمان "
+"تصدرك النتائج."
+msgstr ""
+"Your strategic partner in digital growth. We deliver SEO and innovative web "
+"design solutions that put you at the top of search results."
+
+#: inc/customizer.php:653 inc/customizer.php:783
+msgid "الرياض, السعودية"
+msgstr "Riyadh, Saudi Arabia"
+
+#: inc/customizer.php:695 inc/customizer.php:786
+msgid "جميع الحقوق محفوظة."
+msgstr "All rights reserved."

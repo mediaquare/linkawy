@@ -164,7 +164,7 @@ if (!$is_elementor_preview) {
     <header>
         <div class="container">
             <div class="logo">
-                <a href="<?php echo esc_url(home_url('/')); ?>">
+                <a href="<?php echo esc_url(linkawy_home_url()); ?>">
                     <img src="<?php echo esc_url(linkawy_get_logo_url()); ?>" alt="<?php bloginfo('name'); ?>" width="180" height="52">
                 </a>
             </div>
@@ -197,7 +197,8 @@ if (!$is_elementor_preview) {
                     </div>
                 </div>
             </nav>
-            <?php 
+            <?php
+            linkawy_language_switcher();
             $header_cta = linkawy_get_header_cta();
             if ($header_cta['show']) : 
                 $cta_url = strpos($header_cta['url'], 'http') === 0 ? $header_cta['url'] : home_url($header_cta['url']);

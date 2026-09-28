@@ -5533,3 +5533,12 @@ footer a:hover {
         filter: blur(80px);
     }
 }
+/* Directional icons: in RTL "forward" arrows point left; mirror them for LTR.
+   The individual "scale" property composes with any existing transform. */
+.fa-arrow-left,.fa-arrow-right,.fa-long-arrow-alt-left,.fa-long-arrow-alt-right,
+.fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
+/* Language switcher (header, English pages) */
+.lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
+border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
+.lang-switch:hover{opacity:1}
+@media (max-width:991px){.lang-switch{padding:.35rem .75rem;font-size:.8rem;margin-inline-end:.5rem}}

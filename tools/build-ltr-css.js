@@ -26,6 +26,19 @@ const skip = new Set(['editor-style.css']);
 const interFace = "@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:optional;" +
     "src:url('../../fonts/inter/inter-latin-var.woff2') format('woff2')}";
 
+// English-only additions appended to ltr/style.css (never shipped to Arabic pages).
+const ltrExtras = `
+/* Directional icons: in RTL "forward" arrows point left; mirror them for LTR.
+   The individual "scale" property composes with any existing transform. */
+.fa-arrow-left,.fa-arrow-right,.fa-long-arrow-alt-left,.fa-long-arrow-alt-right,
+.fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
+/* Language switcher (header, English pages) */
+.lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
+border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
+.lang-switch:hover{opacity:1}
+@media (max-width:991px){.lang-switch{padding:.35rem .75rem;font-size:.8rem;margin-inline-end:.5rem}}
+`;
+
 fs.mkdirSync(outDir, { recursive: true });
 let count = 0;
 for (const name of fs.readdirSync(cssDir)) {
@@ -40,7 +53,7 @@ for (const name of fs.readdirSync(cssDir)) {
     css = css.replace(/@font-face\s*\{[^}]*Somar Sans[^}]*\}/g, interFace);
     css = css.replace(/(['"])Somar Sans\1/g, "'Inter'");
     const banner = `/* GENERATED from assets/css/${name} by tools/build-ltr-css.js. Do not edit. */\n`;
-    fs.writeFileSync(path.join(outDir, name), banner + css);
+    fs.writeFileSync(path.join(outDir, name), banner + css + (name === 'style.css' ? ltrExtras : ''));
     count++;
 }
 console.log(`built ${count} LTR stylesheets in assets/css/ltr/`);
