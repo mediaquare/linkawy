@@ -534,13 +534,13 @@ ul {
 .prompts-resource-hero.resource-hero-saas.prompt-hero-no-media .breadcrumbs {
     justify-content: center;
 }
-html[dir="rtl"] .prompts-resource-hero.resource-hero-saas.prompt-hero-no-media .breadcrumbs {
+html[dir="ltr"] .prompts-resource-hero.resource-hero-saas.prompt-hero-no-media .breadcrumbs {
     justify-content: center;
 }
 .prompts-resource-hero.resource-hero-saas.prompt-hero-no-media .service-hero-buttons {
     justify-content: center;
 }
-html[dir="rtl"] .prompts-resource-hero.resource-hero-saas.prompt-hero-no-media .service-hero-buttons {
+html[dir="ltr"] .prompts-resource-hero.resource-hero-saas.prompt-hero-no-media .service-hero-buttons {
     justify-content: center;
 }
 .prompts-resource-hero.resource-hero-saas .service-hero-title {

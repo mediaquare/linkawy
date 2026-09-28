@@ -413,14 +413,14 @@ body.page {
     margin: 0.5em 1em 1em 0;
 }
 
-html[dir="rtl"] .page-content figure.alignleft,
-html[dir="rtl"] .page-content .wp-block-image figure.alignleft {
+html[dir="ltr"] .page-content figure.alignleft,
+html[dir="ltr"] .page-content .wp-block-image figure.alignleft {
     float: left;
     margin: 0.5em 1em 1em 0;
 }
 
-html[dir="rtl"] .page-content figure.alignright,
-html[dir="rtl"] .page-content .wp-block-image figure.alignright {
+html[dir="ltr"] .page-content figure.alignright,
+html[dir="ltr"] .page-content .wp-block-image figure.alignright {
     float: right;
     margin: 0.5em 0 1em 1em;
 }
@@ -667,7 +667,7 @@ html[dir="rtl"] .page-content .wp-block-image figure.alignright {
 }
 
 /* في الصفحات RTL النص داخل منطقة المحتوى يبقى من اليمين لليسار */
-html[dir="rtl"] .page-content .wp-block-media-text .wp-block-media-text__content {
+html[dir="ltr"] .page-content .wp-block-media-text .wp-block-media-text__content {
     direction: ltr;
     text-align: left;
 }

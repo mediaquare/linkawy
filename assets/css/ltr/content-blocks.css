@@ -267,14 +267,14 @@
     margin: 0.5em 1em 1em 0;
 }
 
-html[dir="rtl"] .linkawy-content figure.alignleft,
-html[dir="rtl"] .linkawy-content .wp-block-image figure.alignleft {
+html[dir="ltr"] .linkawy-content figure.alignleft,
+html[dir="ltr"] .linkawy-content .wp-block-image figure.alignleft {
     float: left;
     margin: 0.5em 1em 1em 0;
 }
 
-html[dir="rtl"] .linkawy-content figure.alignright,
-html[dir="rtl"] .linkawy-content .wp-block-image figure.alignright {
+html[dir="ltr"] .linkawy-content figure.alignright,
+html[dir="ltr"] .linkawy-content .wp-block-image figure.alignright {
     float: right;
     margin: 0.5em 0 1em 1em;
 }
@@ -546,7 +546,7 @@ html[dir="rtl"] .linkawy-content .wp-block-image figure.alignright {
 }
 
 /* ÙÙŠ Ø§Ù„ØµÙØ­Ø§Øª RTL Ø§Ù„Ù†Øµ Ø¯Ø§Ø®Ù„ Ù…Ù†Ø·Ù‚Ø© Ø§Ù„Ù…Ø­ØªÙˆÙ‰ ÙŠØ¨Ù‚Ù‰ Ù…Ù† Ø§Ù„ÙŠÙ…ÙŠÙ† Ù„Ù„ÙŠØ³Ø§Ø± */
-html[dir="rtl"] .linkawy-content .wp-block-media-text .wp-block-media-text__content {
+html[dir="ltr"] .linkawy-content .wp-block-media-text .wp-block-media-text__content {
     direction: ltr;
     text-align: left;
 }
