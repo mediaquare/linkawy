@@ -14,7 +14,7 @@ msgstr "SEO Agency"
 
 #: front-page.php:41
 msgid "للمتاجر الإلكترونية والشركات"
-msgstr "for E-commerce Stores and Businesses"
+msgstr "in Saudi Arabia & the UAE"
 
 #: front-page.php:46
 msgid ""
