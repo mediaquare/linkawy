@@ -112,8 +112,8 @@ nav.main-nav ul.sub-menu {
 /* Mobile Navigation RTL Adjustments */
 @media (max-width: 768px) {
     nav.main-nav {
-        right: -100%;
-        left: auto;
+        left: 0;
+        right: auto;
     }
 
     nav.main-nav.active {
