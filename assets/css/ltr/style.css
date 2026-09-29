@@ -3164,15 +3164,13 @@ body[dir="ltr"] .partners-title {
 .partners-item img:hover {
     opacity: 1;
     filter: grayscale(0%);
-}
-
-@keyframes partners-scroll {
+}@keyframes partners-scroll {
     0% {
         transform: translate3d(0, 0, 0);
     }
 
     100% {
-        transform: translate3d(50%, 0, 0);
+        transform: translate3d(-50%, 0, 0);
     }
 }
 

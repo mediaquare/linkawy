@@ -73,7 +73,11 @@ for (const name of fs.readdirSync(cssDir)) {
         (/direction\s*:\s*ltr/i.test(body) || /ltr/i.test(selector)) && !/^\s*@/.test(selector.trim())
             ? `/*rtl:begin:ignore*/${rule}/*rtl:end:ignore*/`
             : rule);
-    let css = rtlcss.process(guarded);
+    // Direction-neutral animations: the partners marquee runs inside a direction:ltr box and must
+    // keep scrolling by -50% (seamless loop over the duplicated logo set) in both languages.
+    const guardedAnim = guarded.replace(/@keyframes\s+partners-scroll\s*\{[\s\S]*?\}\s*\}/g,
+        m => `/*rtl:begin:ignore*/${m}/*rtl:end:ignore*/`);
+    let css = rtlcss.process(guardedAnim);
     // Source rules scoped to html[dir="rtl"] are the direction-specific adjustments; after flipping
     // they are exactly what the LTR page needs. WordPress prints no dir attribute for LTR,
     // so match "not RTL" rather than [dir="ltr"].
