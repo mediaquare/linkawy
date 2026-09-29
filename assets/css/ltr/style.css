@@ -5548,6 +5548,14 @@ src:url('../../fonts/plus-jakarta-sans/plus-jakarta-sans-latin-800.woff2') forma
 border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
 .lang-switch:hover{opacity:1}
 .home .lang-switch,.front-page .lang-switch{color:rgba(255,255,255,.9)}
+/* Desktop mega menu: open from the start of the nav (under "Home") instead of centring on "Services",
+   so it does not cover the hero title. --mega-x is read by main-ar.js for the hover transform. */
+@media (min-width:769px){
+nav.main-nav{position:relative}
+nav.main-nav li.has-dropdown{position:static}
+html:not([dir="rtl"]) nav.main-nav .mega-menu{--mega-x:0px;left:0;right:auto;transform:translateY(10px)}
+html:not([dir="rtl"]) nav.main-nav .has-dropdown:hover .mega-menu{transform:translateY(0)}
+}
 /* Desktop: sit the switcher right next to the header CTA at the same height. The nav keeps its
    position: its auto margins and the switcher's leading auto margin share the free space. */
 @media (min-width:769px){

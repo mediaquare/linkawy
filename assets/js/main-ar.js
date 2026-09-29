@@ -376,8 +376,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const dropdownItems = document.querySelectorAll('.has-dropdown');
         let closeTimeout;
-        // Mega menu is centred with left:50% in RTL and right:50% in the generated LTR CSS, so the X shift flips too.
-        const megaX = document.documentElement.dir === 'rtl' ? '-50%' : '50%';
+        // Mega menu X shift: the stylesheet may set --mega-x (English aligns the menu to the nav start);
+        // otherwise it is centred with left:50% (RTL) / right:50% (LTR), so the shift follows the direction.
+        const megaXDefault = document.documentElement.dir === 'rtl' ? '-50%' : '50%';
+        const megaXOf = (el) => getComputedStyle(el).getPropertyValue('--mega-x').trim() || megaXDefault;
 
         dropdownItems.forEach(item => {
             const megaMenu = item.querySelector('.mega-menu');
@@ -387,14 +389,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     clearTimeout(closeTimeout);
                     megaMenu.style.opacity = '1';
                     megaMenu.style.visibility = 'visible';
-                    megaMenu.style.transform = `translateX(${megaX}) translateY(0)`;
+                    megaMenu.style.transform = `translateX(${megaXOf(megaMenu)}) translateY(0)`;
                 });
                 item.addEventListener('mouseleave', () => {
                     if (!isDesktopHeaderNav()) return;
                     closeTimeout = setTimeout(() => {
                         megaMenu.style.opacity = '0';
                         megaMenu.style.visibility = 'hidden';
-                        megaMenu.style.transform = `translateX(${megaX}) translateY(10px)`;
+                        megaMenu.style.transform = `translateX(${megaXOf(megaMenu)}) translateY(10px)`;
                     }, 500);
                 });
                 megaMenu.addEventListener('mouseenter', () => {
@@ -406,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     closeTimeout = setTimeout(() => {
                         megaMenu.style.opacity = '0';
                         megaMenu.style.visibility = 'hidden';
-                        megaMenu.style.transform = `translateX(${megaX}) translateY(10px)`;
+                        megaMenu.style.transform = `translateX(${megaXOf(megaMenu)}) translateY(10px)`;
                     }, 200);
                 });
             }
