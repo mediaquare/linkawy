@@ -134,6 +134,39 @@ add_filter('render_block_linkawy/faq', function ($html) {
 });
 
 /**
+ * English blog index at /en/blog/.
+ * The Arabic posts page owns the slug "blog" and Polylang (free) cannot share slugs, so the
+ * English translation of the posts page is allowed to keep "blog" too, and /en/blog/ requests
+ * are pointed at it by ID (WordPress would otherwise resolve "blog" to the Arabic page).
+ */
+function linkawy_en_posts_page_id() {
+    $ar = (int) get_option('page_for_posts');
+    if (!$ar || !function_exists('pll_get_post')) {
+        return 0;
+    }
+    return (int) pll_get_post($ar, 'en');
+}
+
+add_filter('wp_unique_post_slug', function ($slug, $post_id, $status, $type, $parent, $original) {
+    if ('page' === $type && 'blog' === $original && $post_id
+        && function_exists('pll_get_post_language') && 'en' === pll_get_post_language($post_id)) {
+        return 'blog';
+    }
+    return $slug;
+}, 10, 6);
+
+add_filter('request', function ($vars) {
+    if (isset($vars['pagename'], $vars['lang']) && 'blog' === $vars['pagename'] && 'en' === $vars['lang']) {
+        $en = linkawy_en_posts_page_id();
+        if ($en) {
+            unset($vars['pagename']);
+            $vars['page_id'] = $en;
+        }
+    }
+    return $vars;
+});
+
+/**
  * Footer widget areas: English pages use their own copies (footer-services-en, ...).
  */
 add_action('widgets_init', function () {
