@@ -5273,14 +5273,15 @@ footer a:hover {
         color: #ff6b00;
     }
 
-    .home .mobile-nav-cta,
-    .front-page .mobile-nav-cta {
+    /* nav.main-nav in the selector so this beats ".home nav.main-nav a" (white link text) */
+    .home nav.main-nav .mobile-nav-cta,
+    .front-page nav.main-nav .mobile-nav-cta {
         background: #fff;
         color: #1a1a1a;
     }
 
-    .home .mobile-nav-cta:hover,
-    .front-page .mobile-nav-cta:hover {
+    .home nav.main-nav .mobile-nav-cta:hover,
+    .front-page nav.main-nav .mobile-nav-cta:hover {
         background: #f0f0f0;
         color: #1a1a1a;
     }
