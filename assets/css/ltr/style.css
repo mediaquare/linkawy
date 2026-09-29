@@ -5547,6 +5547,11 @@ src:url('../../fonts/plus-jakarta-sans/plus-jakarta-sans-latin-800.woff2') forma
 border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
 .lang-switch:hover{opacity:1}
 .home .lang-switch,.front-page .lang-switch{color:rgba(255,255,255,.9)}
+/* Home: the dark strategy section ends on a sub-pixel boundary in English, and while scrolling Chrome
+   can show a white hairline (body background) between it and the partners strip. Overlap them by 1px
+   and paint the partners strip on top so its own border stays visible. */
+.strategy-section--dark{margin-bottom:-1px}
+.strategy-section--dark+.partners-section{position:relative;z-index:1}
 /* Desktop mega menu: open from the start of the nav (under "Home") instead of centring on "Services",
    so it does not cover the hero title. --mega-x is read by main-ar.js for the hover transform. */
 @media (min-width:769px){
