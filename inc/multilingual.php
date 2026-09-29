@@ -167,6 +167,25 @@ add_filter('request', function ($vars) {
 });
 
 /**
+ * Author bios on English pages: use "<key>_en" user meta when it exists
+ * (covers the WP biography "description" and the theme's "_linkawy_short_bio").
+ */
+add_filter('get_user_metadata', function ($value, $user_id, $key, $single) {
+    static $busy = false;
+    if ($busy || !in_array($key, array('description', '_linkawy_short_bio'), true) || is_admin() || !linkawy_is_en()) {
+        return $value;
+    }
+    $busy = true;
+    $en = get_user_meta($user_id, $key . '_en', true);
+    $busy = false;
+    if ('' === $en || null === $en) {
+        return $value;
+    }
+    // get_metadata() unwraps [0] itself when $single is true.
+    return array($en);
+}, 10, 4);
+
+/**
  * Footer widget areas: English pages use their own copies (footer-services-en, ...).
  */
 add_action('widgets_init', function () {
