@@ -144,7 +144,7 @@
    6. Partners + success stories (dark, one continuous surface)
    ========================================================================== */
 .home .partners-section{background:var(--dark);border:0;padding:40px 0 0;margin-top:-1px}
-.home .partners-container{max-width:var(--content-max);padding:0 var(--gutter);box-sizing:content-box;flex-direction:column;align-items:stretch;gap:var(--space-block)}
+.home .partners-container{max-width:calc(var(--content-max) + 2 * var(--gutter));padding:0 var(--gutter);box-sizing:border-box;flex-direction:column;align-items:stretch;gap:var(--space-block)}
 .home .partners-title{justify-content:center;margin:0!important;white-space:normal;text-align:center}
 .home .partners-item img{opacity:.6;filter:grayscale(100%) brightness(0) invert(1)}
 .home .partners-item img:hover{opacity:1;filter:grayscale(100%) brightness(0) invert(1)}
@@ -168,7 +168,7 @@
    7. Process (white) — the timeline keeps its layout; markers become icon tiles
    ========================================================================== */
 .home .process-section{background:var(--white);padding:var(--space-section) 0}
-.home .process-container{max-width:var(--content-max);padding-inline:var(--gutter);box-sizing:content-box}
+.home .process-container{max-width:calc(var(--content-max) + 2 * var(--gutter));padding-inline:var(--gutter);box-sizing:border-box}
 .home .process-sticky-col{top:112px}
 .home .process-description{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
 .home .timeline-item::before{border-color:var(--border-light);opacity:1}
@@ -220,7 +220,7 @@
    10. Blog (cream)
    ========================================================================== */
 .home .blog-posts-section{background:var(--cream);padding:var(--space-section) 0}
-.home .blog-posts-container{max-width:var(--content-max);padding-inline:var(--gutter);box-sizing:content-box}
+.home .blog-posts-container{max-width:calc(var(--content-max) + 2 * var(--gutter));padding-inline:var(--gutter);box-sizing:border-box}
 .home .blog-posts-header{align-items:flex-end;margin-bottom:var(--space-block)}
 .home .blog-posts-header p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
 .home .blog-posts-btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 24px;border-radius:var(--radius-pill);background:var(--dark);color:var(--white);font-size:15px;font-weight:600}
@@ -249,7 +249,7 @@
    12. FAQ (white) — DS FAQ items: 16-radius cards, Plus icon turns 45°
    ========================================================================== */
 .home .seo-faq-section{background:var(--white);padding:0 0 var(--space-section)}
-.home .seo-faq-container{max-width:var(--content-max);padding-inline:var(--gutter);box-sizing:content-box}
+.home .seo-faq-container{max-width:calc(var(--content-max) + 2 * var(--gutter));padding-inline:var(--gutter);box-sizing:border-box}
 .home .seo-faq-header{margin-bottom:var(--space-block)}
 .home .seo-faq-grid{gap:12px 20px}
 .home .seo-faq-column{gap:12px}
@@ -294,6 +294,9 @@
   .home .program-card h3,.home .program-card .service-subtitle{text-align:start}
 }
 @media (max-width:768px){
+  .home .process-container,.home .blog-posts-container,.home .seo-faq-container,.home .partners-container{padding-inline:20px}
+  .home .timeline-marker{position:relative!important}
+  .home .timeline-step-badge{width:fit-content!important;margin-inline:auto}
   .home .seo-faq-grid{gap:12px}
   .home .seo-faq-question{padding:18px 20px}
   .home .seo-faq-answer-inner{padding:0 20px 18px}
