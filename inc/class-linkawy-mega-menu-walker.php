@@ -186,11 +186,8 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         
         // Chevron for dropdowns: mega menu or standard submenu (same UX as الخدمات)
         if ($depth === 0 && $has_children) {
-            if ($enable_mega_menu) {
-                $item_output .= ' <i class="fas fa-chevron-down"></i>';
-            } else {
-                $item_output .= ' <i class="fas fa-chevron-down submenu-chevron" aria-hidden="true"></i>';
-            }
+            // Redesign: Lucide ChevronDown (same markup for mega menu and standard submenu)
+            $item_output .= ' ' . linkawy_icon('ChevronDown', 16, 'submenu-chevron');
         }
         
         $item_output .= '</a>';
@@ -255,7 +252,7 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         if (!empty($cta_button_text) && !empty($cta_button_url)) {
             $output .= "{$indent}\t<a href=\"" . esc_url($cta_button_url) . "\" class=\"mega-menu-btn\">";
             $output .= esc_html($cta_button_text);
-            $output .= " <i class=\"fas fa-arrow-right\"></i></a>\n";
+            $output .= ' ' . linkawy_icon('ArrowRight', 16) . "</a>\n";
         }
         
         $output .= "{$indent}</div>\n";

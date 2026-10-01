@@ -435,18 +435,30 @@ function linkawy_scripts() {
 add_action('wp_enqueue_scripts', 'linkawy_scripts');
 
 /**
+ * Redesign: design-system layer (tokens, fonts, components, header, footer) on every page,
+ * plus the front-page sections. Enqueued after every theme stylesheet so it wins the cascade.
+ */
+function linkawy_ds_styles() {
+    if (is_admin() || !wp_style_is('linkawy-style', 'enqueued')) {
+        return;
+    }
+    wp_enqueue_style('linkawy-ds', linkawy_get_asset_path('/assets/css/ds', 'css'), array('linkawy-style'), LINKAWY_VERSION);
+    if (is_front_page()) {
+        wp_enqueue_style('linkawy-ds-home', linkawy_get_asset_path('/assets/css/ds-home', 'css'), array('linkawy-ds'), LINKAWY_VERSION);
+    }
+}
+add_action('wp_enqueue_scripts', 'linkawy_ds_styles', 30);
+
+/**
  * Preload ONLY the critical Medium weight font (WOFF2)
  * 
  * Strategy: Keep critical path minimal and avoid font chaining.
  */
 function linkawy_preload_somar_fonts() {
-    $font_url = is_rtl()
-        ? LINKAWY_URI . '/assets/fonts/SomarSans-Medium.woff2'
-        : LINKAWY_URI . '/assets/fonts/inter/inter-latin-var.woff2';
-    echo '<link rel="preload" href="' . esc_url($font_url) . '" as="font" type="font/woff2" crossorigin>' . "\n";
-    // English home: hero title font (Plus Jakarta Sans, see tools/build-ltr-css.js).
-    if (!is_rtl() && is_front_page()) {
-        echo '<link rel="preload" href="' . esc_url(LINKAWY_URI . '/assets/fonts/plus-jakarta-sans/plus-jakarta-sans-latin-800.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
+    // Redesign: Alexandria (Arabic) / Sora (English), body 400 + headings 700 (faces in assets/css/ds.css).
+    $family = is_rtl() ? 'alexandria' : 'sora';
+    foreach (array(400, 700) as $weight) {
+        echo '<link rel="preload" href="' . esc_url(LINKAWY_URI . '/assets/fonts/ds/' . $family . '-' . $weight . '.woff2') . '" as="font" type="font/woff2" crossorigin>' . "\n";
     }
 }
 add_action('wp_head', 'linkawy_preload_somar_fonts', 1);

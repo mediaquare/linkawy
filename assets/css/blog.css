@@ -2,7 +2,7 @@
 
 /* Hover marker: orange tint — titles & «عرض الكل» only (not category / author) */
 :root {
-    --blog-link-marker: rgba(255, 107, 0, 0.09);
+    --blog-link-marker: rgba(255, 98, 7, 0.09);
 }
 
 /* Blog Hero */
@@ -56,7 +56,7 @@
     right: -100px;
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -114,8 +114,8 @@
 .category-filter.active {
     background: #fff;
     color: var(--primary-color);
-    border-color: rgba(255, 107, 0, 0.18);
-    box-shadow: 0 1px 4px rgba(255, 107, 0, 0.06);
+    border-color: rgba(255, 98, 7, 0.18);
+    box-shadow: 0 1px 4px rgba(255, 98, 7, 0.06);
     font-weight: 600;
 }
 
@@ -504,9 +504,9 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 }
 
 .page-link:hover {
-    border-color: rgba(255, 107, 0, 0.2);
+    border-color: rgba(255, 98, 7, 0.2);
     color: var(--primary-color);
-    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(255, 98, 7, 0.08);
 }
 
 .page-link.active {
@@ -535,8 +535,8 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     gap: 2rem;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 107, 0, 0.08);
-    box-shadow: 0 4px 40px rgba(255, 107, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(255, 98, 7, 0.08);
+    box-shadow: 0 4px 40px rgba(255, 98, 7, 0.06), 0 8px 32px rgba(0, 0, 0, 0.03);
 }
 
 .subscription-box::before {
@@ -546,7 +546,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     right: -80px;
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.12) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -558,7 +558,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     left: -100px;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -566,13 +566,13 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 .sub-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(135deg, var(--primary-color), #ff8c4d);
+    background: linear-gradient(135deg, var(--primary-color), #FF852F);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.25rem;
-    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 98, 7, 0.3);
 }
 
 .sub-icon i {
@@ -658,7 +658,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 .sub-form input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1);
+    box-shadow: 0 0 0 4px rgba(255, 98, 7, 0.1);
 }
 
 .sub-form input[type="email"].newsletter-email--error:focus {
@@ -668,7 +668,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 
 .sub-form button {
     padding: 18px 35px;
-    background: linear-gradient(135deg, var(--primary-color), #ff8c4d);
+    background: linear-gradient(135deg, var(--primary-color), #FF852F);
     color: #fff;
     border: none;
     border-radius: 14px;
@@ -676,13 +676,13 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 98, 7, 0.3);
     white-space: nowrap;
 }
 
 .sub-form button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(255, 107, 0, 0.4);
+    box-shadow: 0 12px 35px rgba(255, 98, 7, 0.4);
 }
 
 .subscription-box .newsletter-feedback {
@@ -778,9 +778,9 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     font-size: 1.65rem;
     line-height: 1;
     color: #fff;
-    background: linear-gradient(135deg, var(--primary-color), #ff8c4d);
+    background: linear-gradient(135deg, var(--primary-color), #FF852F);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 107, 0, 0.28);
+    box-shadow: 0 10px 30px rgba(255, 98, 7, 0.28);
     flex-shrink: 0;
 }
 
@@ -937,7 +937,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     align-items: center;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(255, 107, 0, 0.15);
+    border: 1px solid rgba(255, 98, 7, 0.15);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 }
 
@@ -983,7 +983,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     right: -100px;
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -1006,7 +1006,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 }
 
 .help-cta h3 .cta-highlight {
-    color: #ff6b00;
+    color: #FF6207;
 }
 
 .help-cta p {
@@ -1021,7 +1021,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 }
 
 .btn-orange {
-    background-color: #ff6b00;
+    background-color: #FF6207;
     color: #fff;
     padding: 14px 32px;
     border-radius: 10px;
@@ -1032,16 +1032,16 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     align-items: center;
     gap: 8px;
     transition: all 0.3s ease;
-    border: 2px solid #ff6b00;
-    box-shadow: 0 4px 16px rgba(255, 107, 0, 0.3);
+    border: 2px solid #FF6207;
+    box-shadow: 0 4px 16px rgba(255, 98, 7, 0.3);
     white-space: nowrap;
 }
 
 .btn-orange:hover {
-    background-color: #e05a00;
-    border-color: #e05a00;
+    background-color: #CE3000;
+    border-color: #CE3000;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4);
+    box-shadow: 0 6px 20px rgba(255, 98, 7, 0.4);
 }
 
 .btn-orange i {
@@ -1528,7 +1528,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 
 .pre-footer-cta-btn {
     display: inline-block;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff7a22 100%);
+    background: linear-gradient(135deg, #FF6207 0%, #FF852F 100%);
     color: #fff;
     padding: 1rem 3rem;
     border-radius: 12px;
@@ -1536,7 +1536,7 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
     font-weight: 700;
     text-decoration: none;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 10px rgba(255, 107, 0, 0.35);
+    box-shadow: 0 4px 10px rgba(255, 98, 7, 0.35);
     position: relative;
     overflow: hidden;
 }
@@ -1557,9 +1557,9 @@ section.container:has(.help-cta):has(+ .pre-footer-cta) {
 }
 
 .pre-footer-cta-btn:hover {
-    background: linear-gradient(135deg, #e05a00 0%, #ff6b00 100%);
+    background: linear-gradient(135deg, #CE3000 0%, #FF6207 100%);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+    box-shadow: 0 5px 15px rgba(255, 98, 7, 0.4);
     text-decoration: none;
 }
 

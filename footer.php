@@ -14,8 +14,11 @@ if (!is_admin() && class_exists('\Elementor\Plugin')) {
 if (!$is_elementor_preview) {
 ?>
 
-    <!-- Footer -->
-    <footer>
+    <!-- Footer (redesign: Footer E — cream, same widgets/menus) -->
+    <footer class="lk-footer" data-surface="cream">
+        <?php if (is_front_page()) : ?>
+        <div class="lk-sunset lk-sunset--down" aria-hidden="true"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/sunset-dark-to-cream.webp'); ?>" alt="" width="1920" height="300" loading="lazy" decoding="async"></div>
+        <?php endif; ?>
         <div class="container">
             <?php 
             $footer_settings = linkawy_get_footer_settings();
@@ -24,15 +27,15 @@ if (!$is_elementor_preview) {
             <div class="footer-grid">
                 <!-- Logo & Description Section -->
                 <div class="footer-logo">
-                    <img src="<?php echo esc_url(linkawy_get_logo_url()); ?>" alt="<?php bloginfo('name'); ?>" width="180" height="52" loading="lazy">
-                    <p style="font-size: 0.9rem; line-height: 1.8; margin-top: 1rem;">
+                    <img src="<?php echo esc_url(linkawy_ds_logo_url()); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo linkawy_is_en() ? 115 : 88; ?>" height="34" loading="lazy">
+                    <p class="footer-description">
                         <?php echo esc_html($footer_settings['description']); ?>
                     </p>
                     <div class="footer-social-icons">
-                        <a href="https://www.linkedin.com/in/aliatwa/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com/@linkawy?sub_confirmation=1" aria-label="YouTube" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.tiktok.com/@linkawy" aria-label="TikTok" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://www.facebook.com/linkawy1" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.linkedin.com/in/aliatwa/" aria-label="LinkedIn" target="_blank" rel="noopener"><?php echo linkawy_icon('Linkedin', 18); ?></a>
+                        <a href="https://www.youtube.com/@linkawy?sub_confirmation=1" aria-label="YouTube" target="_blank" rel="noopener"><?php echo linkawy_icon('Youtube', 18); ?></a>
+                        <a href="https://www.tiktok.com/@linkawy" aria-label="TikTok" target="_blank" rel="noopener"><?php echo linkawy_brand_icon('tiktok', 16); ?></a>
+                        <a href="https://www.facebook.com/linkawy1" aria-label="Facebook" target="_blank" rel="noopener"><?php echo linkawy_icon('Facebook', 18); ?></a>
                     </div>
                 </div>
 
@@ -40,7 +43,7 @@ if (!$is_elementor_preview) {
                 <div class="footer-links footer-accordion">
                     <div class="footer-accordion-header">
                         <span><?php _e('خدماتنا', 'linkawy'); ?></span>
-                        <i class="fas fa-chevron-down"></i>
+                        <?php echo linkawy_icon('ChevronDown', 18, 'footer-accordion-chevron'); ?>
                     </div>
                     <div class="footer-accordion-content">
                         <?php if (is_active_sidebar(linkawy_sidebar_id('footer-services'))) : ?>
@@ -63,7 +66,7 @@ if (!$is_elementor_preview) {
                 <div class="footer-links footer-accordion">
                     <div class="footer-accordion-header">
                         <span><?php _e('المصادر', 'linkawy'); ?></span>
-                        <i class="fas fa-chevron-down"></i>
+                        <?php echo linkawy_icon('ChevronDown', 18, 'footer-accordion-chevron'); ?>
                     </div>
                     <div class="footer-accordion-content">
                         <?php if (is_active_sidebar(linkawy_sidebar_id('footer-resources'))) : ?>
@@ -83,7 +86,7 @@ if (!$is_elementor_preview) {
                 <div class="footer-links footer-accordion">
                     <div class="footer-accordion-header">
                         <span><?php _e('الشركة', 'linkawy'); ?></span>
-                        <i class="fas fa-chevron-down"></i>
+                        <?php echo linkawy_icon('ChevronDown', 18, 'footer-accordion-chevron'); ?>
                     </div>
                     <div class="footer-accordion-content">
                         <?php if (is_active_sidebar(linkawy_sidebar_id('footer-company'))) : ?>
@@ -103,22 +106,25 @@ if (!$is_elementor_preview) {
                 <div class="footer-links footer-accordion footer-contact">
                     <div class="footer-accordion-header">
                         <span><?php _e('اتصل بنا', 'linkawy'); ?></span>
-                        <i class="fas fa-chevron-down"></i>
+                        <?php echo linkawy_icon('ChevronDown', 18, 'footer-accordion-chevron'); ?>
                     </div>
                     <ul class="footer-accordion-content">
                         <?php if (!empty($footer_settings['address'])) : ?>
-                        <li><i class="fas fa-map-marker-alt"></i> <?php echo esc_html($footer_settings['address']); ?></li>
+                        <li><?php echo linkawy_icon('MapPin', 16); ?> <?php echo esc_html($footer_settings['address']); ?></li>
                         <?php endif; ?>
                         <?php if (!empty($footer_settings['email'])) : ?>
-                        <li><a href="mailto:<?php echo esc_attr($footer_settings['email']); ?>"><i class="fas fa-envelope"></i> <?php echo esc_html($footer_settings['email']); ?></a></li>
+                        <li><a href="mailto:<?php echo esc_attr($footer_settings['email']); ?>"><?php echo linkawy_icon('Mail', 16); ?> <?php echo esc_html($footer_settings['email']); ?></a></li>
                         <?php endif; ?>
                         <?php if (!empty($footer_settings['phone'])) : ?>
-                        <li><a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $footer_settings['phone'])); ?>"><i class="fas fa-phone"></i> <?php echo esc_html($footer_settings['phone']); ?></a></li>
+                        <li><a href="tel:<?php echo esc_attr(preg_replace('/[^0-9+]/', '', $footer_settings['phone'])); ?>"><?php echo linkawy_icon('Phone', 16); ?> <?php echo esc_html($footer_settings['phone']); ?></a></li>
                         <?php endif; ?>
                     </ul>
                 </div>
             </div>
             
+            <!-- Footer E: giant watermark logo -->
+            <div class="lk-footer__watermark" aria-hidden="true"><img src="<?php echo esc_url(linkawy_ds_logo_url()); ?>" alt="" width="1200" height="<?php echo linkawy_is_en() ? 354 : 462; ?>" loading="lazy" decoding="async"></div>
+
             <!-- Footer Bottom -->
             <div class="footer-bottom">
                 <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. <?php echo esc_html($footer_settings['copyright']); ?></p>

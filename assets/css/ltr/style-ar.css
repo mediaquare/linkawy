@@ -2,8 +2,7 @@
 /* Somar Sans Font Definitions - WOFF2 optimized for performance */
 /* Strategy: Use ONLY Medium (500) to avoid critical chain requests. */
 
-/* Critical font - loads immediately (preloaded) */
-@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:optional;src:url('../../fonts/inter/inter-latin-var.woff2') format('woff2')}
+/* Font faces: Alexandria (Arabic) / Sora (English) live in ds.css (redesign). */
 
 /* NOTE: Other weights removed to prevent extra font downloads.
  * Browser will synthesize weight via font-synthesis.
@@ -14,7 +13,7 @@
 body {
     direction: ltr;
     text-align: left;
-    font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
     font-synthesis: weight style; /* Allow browser to synthesize weights if needed */
 }
 

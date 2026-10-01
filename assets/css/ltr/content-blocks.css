@@ -69,7 +69,7 @@
     line-height: 1.9;
 }
 
-/* Darker brand orange for text links: #ff6b00 on white is 2.86:1, #c75300 is 4.5:1 (WCAG AA).
+/* Darker brand orange for text links: #FF6207 on white is 2.86:1, #c75300 is 4.5:1 (WCAG AA).
  * Underlined because no single colour can also reach 3:1 against the #444 body text
  * (Lighthouse link-in-text-block). */
 .linkawy-content a {
@@ -200,7 +200,7 @@
     padding: 1.25rem 1.5rem;
     border-left: 4px solid var(--primary-color);
     border-right: none;
-    background: rgba(255, 107, 0, 0.06);
+    background: rgba(255, 98, 7, 0.06);
     border-radius: 8px 0 0 8px;
     font-size: 1.1rem;
     line-height: 1.8;
@@ -312,7 +312,7 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-image figure.alignright {
     color: #fff;
     text-align: left;
     white-space: nowrap;
-    border-bottom: 2px solid #ff6b00;
+    border-bottom: 2px solid #FF6207;
     letter-spacing: 0.01em;
 }
 
@@ -348,7 +348,7 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-image figure.alignright {
 
 .linkawy-content .wp-block-table tbody tr:hover,
 .linkawy-content table tbody tr:hover {
-    background-color: rgba(255, 107, 0, 0.04);
+    background-color: rgba(255, 98, 7, 0.04);
 }
 
 .linkawy-content .wp-block-table tbody tr:last-child td,
@@ -509,13 +509,13 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-image figure.alignright {
 
 .linkawy-content .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .linkawy-content .wp-block-button:not(.is-style-outline) .wp-element-button {
-    background: var(--primary-color, #ff6b00);
+    background: var(--primary-color, #FF6207);
     color: #fff;
 }
 
 .linkawy-content .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 .linkawy-content .wp-block-button:not(.is-style-outline) .wp-element-button:hover {
-    background: var(--primary-color-dark, #e05a00);
+    background: var(--primary-color-dark, #CE3000);
     color: #fff;
     transform: translateY(-1px);
 }
@@ -523,15 +523,15 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-image figure.alignright {
 .linkawy-content .wp-block-button.is-style-outline .wp-block-button__link,
 .linkawy-content .wp-block-button.is-style-outline .wp-element-button {
     background: transparent;
-    color: var(--primary-color, #ff6b00);
-    border-color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
+    border-color: var(--primary-color, #FF6207);
 }
 
 .linkawy-content .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .linkawy-content .wp-block-button.is-style-outline .wp-element-button:hover {
-    background: rgba(255, 107, 0, 0.08);
-    color: var(--primary-color, #ff6b00);
-    border-color: var(--primary-color, #ff6b00);
+    background: rgba(255, 98, 7, 0.08);
+    color: var(--primary-color, #FF6207);
+    border-color: var(--primary-color, #FF6207);
     transform: translateY(-1px);
 }
 
@@ -802,7 +802,7 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-media-text .wp-block-media-text
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255, 107, 0, 0.3) transparent;
+        scrollbar-color: rgba(255, 98, 7, 0.3) transparent;
         padding: 0;
         position: relative;
         max-width: 100%;
@@ -819,7 +819,7 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-media-text .wp-block-media-text
     }
 
     .linkawy-content .wp-block-table::-webkit-scrollbar-thumb {
-        background: rgba(255, 107, 0, 0.3);
+        background: rgba(255, 98, 7, 0.3);
         border-radius: 3px;
     }
 
@@ -949,11 +949,11 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-media-text .wp-block-media-text
 }
 
 .page-content.linkawy-content .faq-block h2.faq-question:hover {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 .page-content.linkawy-content .faq-block .faq-item.is-open h2.faq-question {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 .page-content.linkawy-content .faq-block h2.faq-question::after {
@@ -972,11 +972,11 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-media-text .wp-block-media-text
 }
 
 .page-content.linkawy-content .faq-block h2.faq-question:hover::after {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 .page-content.linkawy-content .faq-block .faq-item.is-open h2.faq-question::after {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
     transform: rotate(-45deg);
 }
 
@@ -1001,7 +1001,7 @@ html:not([dir="rtl"]) .linkawy-content .wp-block-media-text .wp-block-media-text
 }
 
 .page-content.linkawy-content .faq-block .faq-answer-content a {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 @media (max-width: 768px) {

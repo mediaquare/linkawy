@@ -31,67 +31,7 @@
     <?php endif; ?>
     
     <?php wp_head(); ?>
-    <!-- Ensure glass header styles override minified CSS -->
-    <style id="header-glass-override">
-        /* Glass effect via ::before pseudo-element.
-           This avoids the "backdrop root" issue where backdrop-filter
-           on a parent prevents children (mega menu) from having their
-           own visible backdrop-filter effect. */
-        header {
-            background: transparent !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            border-bottom: none !important;
-            box-shadow: none !important;
-        }
-        header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            background: rgba(255,255,255,.75);
-            backdrop-filter: blur(14px) saturate(180%);
-            -webkit-backdrop-filter: blur(14px) saturate(180%);
-            border-bottom: 1px solid rgba(0,0,0,.06);
-            box-shadow: 0 8px 24px rgba(0,0,0,.06);
-            pointer-events: none;
-        }
-        /* Homepage: header is part of the hero scene – fully transparent */
-        .home header,
-        .front-page header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-        }
-        .home header::before,
-        .front-page header::before {
-            background: transparent !important;
-            backdrop-filter: none !important;
-            -webkit-backdrop-filter: none !important;
-            border-bottom: 1px solid transparent !important;
-            box-shadow: none !important;
-            transition: background 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-                        backdrop-filter 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-                        -webkit-backdrop-filter 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-                        border-color 0.45s cubic-bezier(0.4, 0, 0.2, 1),
-                        box-shadow 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        /* Homepage: glassmorphism kicks in on scroll */
-        .home header.scrolled::before,
-        .front-page header.scrolled::before {
-            background-color: rgba(10, 10, 10, 0.72) !important;
-            backdrop-filter: blur(20px) saturate(180%) !important;
-            -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15) !important;
-        }
-        /* Ensure main content has no extra padding on homepage */
-        .home main#main-content,
-        .front-page main#main-content {
-            padding-top: 0;
-        }
-    </style>
+    <!-- Redesign: the header is solid #0A0A0A and sticky on every page (assets/css/ds.css); the old glass override was removed. -->
     <?php if (is_front_page()) : ?>
     <!-- Skip layout/paint of below-the-fold front-page sections until they near the viewport (A/B: bad-PSI runs 13/20 -> 4/20) -->
     <style>
@@ -165,7 +105,7 @@ if (!$is_elementor_preview) {
         <div class="container">
             <div class="logo">
                 <a href="<?php echo esc_url(linkawy_home_url()); ?>">
-                    <img src="<?php echo esc_url(linkawy_get_logo_url()); ?>" alt="<?php bloginfo('name'); ?>" width="180" height="52">
+                    <img src="<?php echo esc_url(linkawy_ds_logo_url()); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo linkawy_is_en() ? 115 : 88; ?>" height="34">
                 </a>
             </div>
             <button class="mobile-menu-toggle" aria-label="<?php esc_attr_e('قائمة التنقل', 'linkawy'); ?>">
@@ -191,9 +131,9 @@ if (!$is_elementor_preview) {
                     ?>
                     <a href="<?php echo esc_url($mobile_cta_url); ?>" class="mobile-nav-cta"><?php echo esc_html($mobile_cta['text']); ?></a>
                     <div class="mobile-nav-social">
-                        <a href="https://www.linkedin.com/in/aliatwa/" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                        <a href="https://www.facebook.com/linkawy1" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                        <a href="https://wa.me/201063676963" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/in/aliatwa/" aria-label="LinkedIn" target="_blank" rel="noopener"><?php echo linkawy_icon('Linkedin', 18); ?></a>
+                        <a href="https://www.facebook.com/linkawy1" aria-label="Facebook" target="_blank" rel="noopener"><?php echo linkawy_icon('Facebook', 18); ?></a>
+                        <a href="https://wa.me/201063676963" aria-label="WhatsApp" target="_blank" rel="noopener"><?php echo linkawy_brand_icon('whatsapp', 18); ?></a>
                     </div>
                 </div>
             </nav>

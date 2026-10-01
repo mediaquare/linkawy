@@ -20,8 +20,8 @@
     pointer-events: none;
     z-index: 0;
     background:
-        radial-gradient(9% 85% at 79% 10%, rgba(242, 104, 51, 0.55) 0%, rgba(242, 104, 51, 0.28) 30%, rgba(242, 104, 51, 0.12) 50%, rgba(0, 0, 0, 0) 75%),
-        radial-gradient(70% 70% at 0% 100%, rgba(242, 104, 51, 0.85) 0%, rgba(242, 104, 51, 0.45) 35%, rgba(242, 104, 51, 0.18) 55%, rgba(0, 0, 0, 0) 78%);
+        radial-gradient(9% 85% at 79% 10%, rgba(255, 98, 7, 0.55) 0%, rgba(255, 98, 7, 0.28) 30%, rgba(255, 98, 7, 0.12) 50%, rgba(0, 0, 0, 0) 75%),
+        radial-gradient(70% 70% at 0% 100%, rgba(255, 98, 7, 0.85) 0%, rgba(255, 98, 7, 0.45) 35%, rgba(255, 98, 7, 0.18) 55%, rgba(0, 0, 0, 0) 78%);
     filter: blur(100px);
     opacity: 1;
     /* LCP Optimization: Isolate blur layer */
@@ -153,7 +153,7 @@
     transform: translate(50%, -50%);
     width: 600px;
     height: 400px;
-    background: radial-gradient(ellipse, rgba(242, 104, 51, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse, rgba(255, 98, 7, 0.08) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
 }
@@ -168,7 +168,7 @@
 
 .dark-video-badge {
     display: inline-block;
-    background: rgba(242, 104, 51, 0.12);
+    background: rgba(255, 98, 7, 0.12);
     color: #f26833;
     font-size: 0.8rem;
     font-weight: 700;
@@ -202,7 +202,7 @@
     border-radius: 16px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(242, 104, 51, 0.06);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 98, 7, 0.06);
 }
 
 .dark-video-wrapper iframe {
@@ -296,9 +296,9 @@
     width: 900px;
     height: 700px;
     background: radial-gradient(circle,
-            rgba(242, 104, 51, 0.06) 0%,
-            rgba(242, 104, 51, 0.03) 30%,
-            rgba(242, 104, 51, 0.01) 55%,
+            rgba(255, 98, 7, 0.06) 0%,
+            rgba(255, 98, 7, 0.03) 30%,
+            rgba(255, 98, 7, 0.01) 55%,
             transparent 75%);
     pointer-events: none;
     z-index: 0;
@@ -800,7 +800,7 @@
 }
 
 .seo-faq-question:hover {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 .seo-faq-question h3 {
@@ -813,11 +813,11 @@
 }
 
 .seo-faq-question:hover h3 {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 .seo-faq-item.active .seo-faq-question h3 {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 .seo-faq-toggle {
@@ -835,7 +835,7 @@
 }
 
 .seo-faq-item.active .seo-faq-toggle {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
     transform: rotate(-45deg);
 }
 
@@ -918,7 +918,7 @@
 
 .programs-section .programs-intro .badge.services-badge {
     background: #f9f9f9;
-    color: #ff6b00;
+    color: #FF6207;
     min-width: 150px;
     text-align: center;
     font-weight: 500;

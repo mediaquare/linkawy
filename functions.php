@@ -115,6 +115,12 @@ require_once LINKAWY_DIR . '/inc/cloudflare-purge.php';
 require_once LINKAWY_DIR . '/inc/multilingual.php';
 
 /**
+ * Redesign: Lucide icons + design-system helpers
+ */
+require_once LINKAWY_DIR . '/inc/lucide-icons.php';
+require_once LINKAWY_DIR . '/inc/ds-helpers.php';
+
+/**
  * تفعيل Yoast Duplicate Post لأنواع المقالات المخصصة (الموارد والبرومبتات)
  * Enable Yoast Duplicate Post for custom post types: resources & prompts
  */

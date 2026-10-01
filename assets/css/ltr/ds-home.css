@@ -1,0 +1,15 @@
+/* GENERATED from assets/css/ds-home.css by tools/build-ltr-css.js. Do not edit. */
+/* ==========================================================================
+   Linkawy redesign: front page sections (design-system/ui_kits/website).
+   Loaded only on the front page, after ds.css.
+   ========================================================================== */
+
+/* The header is now sticky and solid (it takes its own 80px / 68px), so the hero no longer
+   slides under it: drop the old pull-up and subtract the header height from the top padding. */
+.hero-dark-wrapper{margin-top:0}
+.hero-dark-section section.hero-header{padding-top:70px!important}
+@media (min-width:768px){.hero-dark-section section.hero-header{padding-top:100px!important}}
+@media (min-width:1024px){.hero-dark-section section.hero-header{padding-top:120px!important}}
+@media (min-width:1280px){.hero-dark-section section.hero-header{padding-top:140px!important}}
+@media (max-width:767px){.hero-dark-wrapper{margin-top:0}.hero-dark-section section.hero-header{padding-top:82px!important}}
+@media (max-width:480px){.hero-dark-section section.hero-header{padding-top:92px!important}}

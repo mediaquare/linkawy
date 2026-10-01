@@ -247,7 +247,7 @@
 
 .prompt-content-lock-lead {
     margin: 0 0 clamp(0.75rem, 2vw, 1rem);
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(1.02rem, 2.4vw, 1.2rem);
     font-weight: 700;
     line-height: 1.4;
@@ -263,7 +263,7 @@
 
 .prompt-content-lock-desc-line {
     margin: 0;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(0.86rem, 2vw, 0.95rem);
     line-height: 1.7;
     color: #475569;
@@ -285,7 +285,7 @@
     width: 100%;
     min-height: 50px;
     padding: 0.65rem 1rem;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.95rem;
     border: 1px solid rgba(15, 23, 42, 0.12);
     border-radius: 12px;
@@ -297,23 +297,23 @@
 }
 
 .prompt-content-lock-input::placeholder {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     color: #6b7280;
     opacity: 1;
 }
 
 .prompt-content-lock-input::-webkit-input-placeholder {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .prompt-content-lock-input::-moz-placeholder {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .prompt-content-lock-input:focus {
     outline: none;
-    border-color: var(--primary-color, #ff6b00);
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.2);
+    border-color: var(--primary-color, #FF6207);
+    box-shadow: 0 0 0 3px rgba(255, 98, 7, 0.2);
 }
 
 
@@ -327,7 +327,7 @@
 }
 
 .prompt-content-lock-submit {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -381,7 +381,7 @@
 
 .prompt-content-lock-trust {
     margin: clamp(0.9rem, 2.5vw, 1.15rem) auto 0;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.76rem;
     line-height: 1.55;
     color: #64748b;
@@ -428,7 +428,7 @@
 
 .prompt-copy-locked-hint {
     margin: 0 auto;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 0.8rem;
     line-height: 1.55;
     color: #64748b;
@@ -512,7 +512,7 @@
     width: 100%;
     min-height: 52px;
     padding: 0.75rem 1.5rem;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 1rem;
     font-weight: 700;
     border: 2px solid #000;
@@ -546,21 +546,21 @@
     width: 100%;
     min-height: 52px;
     padding: 0.75rem 1.5rem;
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Sora', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 50em;
     text-decoration: none;
     background: transparent;
-    color: var(--primary-color, #ff6b00);
-    border: 2px solid var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
+    border: 2px solid var(--primary-color, #FF6207);
     transition: background 0.2s, border-color 0.2s, transform 0.2s ease;
 }
 
 .prompt-try-btn:hover {
-    background: rgba(255, 107, 0, 0.08);
-    color: var(--primary-color, #ff6b00);
-    border-color: var(--primary-color, #ff6b00);
+    background: rgba(255, 98, 7, 0.08);
+    color: var(--primary-color, #FF6207);
+    border-color: var(--primary-color, #FF6207);
     transform: translateY(-1px);
 }
 
@@ -672,14 +672,14 @@
     height: 72px;
     margin: 0 auto 1.25rem;
     background: rgba(var(--primary-color-rgb, 255, 107, 0), 0.08);
-    border: 1px solid rgba(255, 107, 0, 0.18);
+    border: 1px solid rgba(255, 98, 7, 0.18);
     border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.75rem;
     font-family: ui-monospace, monospace;
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
     position: relative;
     z-index: 1;
 }
@@ -886,7 +886,7 @@
 
 .prompt-card-tag-pill:hover {
     background: rgba(var(--primary-color-rgb, 255, 107, 0), 0.16);
-    border-color: var(--primary-color, #ff6b00);
+    border-color: var(--primary-color, #FF6207);
 }
 
 /* ===== Archive: Hero + search (داخل prompts-resource-hero نفس هيرو الصفحة الفردية) ===== */
@@ -959,7 +959,7 @@
 }
 
 .prompt-tag-capsule.active {
-    border-color: var(--primary-color, #ff6b00);
+    border-color: var(--primary-color, #FF6207);
     background: rgba(var(--primary-color-rgb, 255, 107, 0), 0.1);
     color: var(--primary-color-dark, #c45500);
     box-shadow: 0 1px 4px rgba(var(--primary-color-rgb, 255, 107, 0), 0.2);

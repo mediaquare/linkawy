@@ -4,7 +4,7 @@
  *
  * The theme CSS is authored for Arabic (RTL). For the English version (/en/, Polylang)
  * every front-end stylesheet is flipped with rtlcss into assets/css/ltr/<same name>,
- * the Arabic font is swapped for Inter, and relative asset URLs are re-pointed one
+ * the Arabic font (Alexandria) is swapped for Sora, and relative asset URLs are re-pointed one
  * directory up. linkawy_get_asset_path() serves these files whenever !is_rtl().
  *
  * Usage (rtlcss is not a theme dependency; point RTLCSS_DIR at any folder that has it):
@@ -23,9 +23,6 @@ const outDir = path.join(cssDir, 'ltr');
 // Editor-only styles are excluded (the block editor stays Arabic).
 const skip = new Set(['editor-style.css']);
 
-const interFace = "@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:optional;" +
-    "src:url('../../fonts/inter/inter-latin-var.woff2') format('woff2')}";
-
 // English-only additions appended to ltr/style.css (never shipped to Arabic pages).
 const ltrExtras = `
 /* Directional icons: in RTL "forward" arrows point left; mirror them for LTR.
@@ -34,10 +31,6 @@ const ltrExtras = `
 .fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
 /* Inline SVG "forward" arrows */
 .blog-posts-btn svg,.service-hero-btn-arrow,.sh-btn-arrow svg{scale:-1 1}
-/* English home hero title: Plus Jakarta Sans 800 (latin, self-hosted, preloaded on the English front page) */
-@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:800;font-display:swap;
-src:url('../../fonts/plus-jakarta-sans/plus-jakarta-sans-latin-800.woff2') format('woff2')}
-.hero-header h1{font-family:'Plus Jakarta Sans','Inter',sans-serif}
 /* Language switcher (header, English pages) */
 .lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
 border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
@@ -89,9 +82,11 @@ for (const name of fs.readdirSync(cssDir)) {
     css = css.replace(/html\[dir=("?)rtl\1\]/g, 'html:not([dir="rtl"])');
     // Files move one level down (assets/css/ltr/), so relative asset URLs go one level up.
     css = css.replace(/url\((['"]?)\.\.\//g, 'url($1../../');
-    // Arabic font -> Inter (Somar Sans has no Latin design we want to use).
-    css = css.replace(/@font-face\s*\{[^}]*Somar Sans[^}]*\}/g, interFace);
-    css = css.replace(/(['"])Somar Sans\1/g, "'Inter'");
+    // Arabic font -> Sora (design system: one family per language version, never Sora in Arabic).
+    // Each Alexandria @font-face (ds.css) becomes the Sora face of the same weight.
+    css = css.replace(/@font-face\s*\{[^}]*Alexandria[^}]*\}/g, face => face
+        .replace(/(['"])Alexandria\1/g, "'Sora'").replace(/alexandria-(\d+)\.woff2/g, 'sora-$1.woff2'));
+    css = css.replace(/(['"])Alexandria\1/g, "'Sora'");
     const banner = `/* GENERATED from assets/css/${name} by tools/build-ltr-css.js. Do not edit. */\n`;
     fs.writeFileSync(path.join(outDir, name), banner + css + (name === 'style.css' ? ltrExtras : ''));
     count++;

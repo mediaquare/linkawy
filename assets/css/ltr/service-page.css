@@ -17,7 +17,7 @@
     right: -100px;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -29,7 +29,7 @@
     left: -150px;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -72,7 +72,7 @@ html:not([dir="rtl"]) .service-hero .breadcrumbs {
 }
 
 .service-hero .breadcrumbs a:hover {
-    color: #ff6b00;
+    color: #FF6207;
 }
 
 .service-hero .breadcrumb-separator {
@@ -81,7 +81,7 @@ html:not([dir="rtl"]) .service-hero .breadcrumbs {
 }
 
 .service-hero .breadcrumb-current {
-    color: #ff6b00;
+    color: #FF6207;
     font-weight: 500;
 }
 
@@ -131,9 +131,9 @@ html:not([dir="rtl"]) .service-hero-buttons {
 .service-hero-btn-primary {
     min-height: 52px;
     padding: 0.75rem 1.5rem;
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
     background: transparent;
-    border: 2px dashed var(--primary-color, #ff6b00);
+    border: 2px dashed var(--primary-color, #FF6207);
     border-radius: 50em;
     cursor: pointer;
     font-weight: 300;
@@ -141,9 +141,9 @@ html:not([dir="rtl"]) .service-hero-buttons {
 }
 
 .service-hero-btn-primary:hover {
-    background: rgba(255, 107, 0, 0.08);
-    color: var(--primary-color, #ff6b00);
-    border-color: var(--primary-color, #ff6b00);
+    background: rgba(255, 98, 7, 0.08);
+    color: var(--primary-color, #FF6207);
+    border-color: var(--primary-color, #FF6207);
     transform: translateY(-1px);
 }
 
@@ -156,14 +156,14 @@ html:not([dir="rtl"]) .service-hero-buttons {
 
 .service-hero-btn-secondary {
     background: transparent;
-    color: var(--primary-color, #ff6b00);
-    border: 2px solid var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
+    border: 2px solid var(--primary-color, #FF6207);
 }
 
 .service-hero-btn-secondary:hover {
-    background: rgba(255, 107, 0, 0.08);
-    color: var(--primary-color, #ff6b00);
-    border-color: var(--primary-color, #ff6b00);
+    background: rgba(255, 98, 7, 0.08);
+    color: var(--primary-color, #FF6207);
+    border-color: var(--primary-color, #FF6207);
     transform: translateY(-1px);
 }
 
@@ -202,7 +202,7 @@ html:not([dir="rtl"]) .service-hero-buttons {
     padding: 2.5rem;
     border: none;
     background: #fff;
-    box-shadow: 0 4px 40px rgba(255, 107, 0, 0.08), 0 12px 48px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 40px rgba(255, 98, 7, 0.08), 0 12px 48px rgba(0, 0, 0, 0.06);
 }
 
 .service-hero-form-fields {
@@ -234,7 +234,7 @@ html:not([dir="rtl"]) .service-hero-buttons {
 }
 
 .sh-step.active {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 .sh-step-num {
@@ -251,7 +251,7 @@ html:not([dir="rtl"]) .service-hero-buttons {
 }
 
 .sh-step.active .sh-step-num {
-    background: var(--primary-color, #ff6b00);
+    background: var(--primary-color, #FF6207);
     color: #fff;
 }
 
@@ -284,8 +284,8 @@ html:not([dir="rtl"]) .service-hero-buttons {
 
 .service-hero-form-card .sh-field .sh-input-wrapper:focus-within,
 .service-hero-form-card .sh-phone-wrapper:focus-within .sh-phone-input-wrap {
-    border-color: var(--primary-color, #ff6b00);
-    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12);
+    border-color: var(--primary-color, #FF6207);
+    box-shadow: 0 0 0 4px rgba(255, 98, 7, 0.12);
     background: #fff;
 }
 
@@ -300,8 +300,8 @@ html:not([dir="rtl"]) .service-hero-buttons {
 }
 
 @keyframes shBorderPulse {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12); }
-    50% { box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.22); }
+    0%, 100% { box-shadow: 0 0 0 4px rgba(255, 98, 7, 0.12); }
+    50% { box-shadow: 0 0 0 4px rgba(255, 98, 7, 0.22); }
 }
 
 .service-hero-form-card .sh-field .sh-input-wrapper.sh-error,
@@ -321,7 +321,7 @@ html:not([dir="rtl"]) .service-hero-buttons {
 
 .service-hero-form-card .sh-field .sh-input-wrapper:focus-within .sh-input-icon,
 .service-hero-form-card .sh-phone-wrapper:focus-within .sh-phone-icon {
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 /* Static label above input */
@@ -376,8 +376,8 @@ html:not([dir="rtl"]) .service-hero-buttons {
 }
 
 .service-hero-form-card .sh-phone-wrapper:focus-within {
-    border-color: var(--primary-color, #ff6b00);
-    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.12);
+    border-color: var(--primary-color, #FF6207);
+    box-shadow: 0 0 0 4px rgba(255, 98, 7, 0.12);
     background: #fff;
 }
 
@@ -440,7 +440,7 @@ html:not([dir="rtl"]) .service-hero-buttons {
     gap: 0.5rem;
     min-height: 56px;
     padding: 0 1.5rem;
-    background: var(--primary-color, #ff6b00);
+    background: var(--primary-color, #FF6207);
     color: #fff;
     border: none;
     border-radius: 50em;
@@ -454,9 +454,9 @@ html:not([dir="rtl"]) .service-hero-buttons {
 }
 
 .sh-submit-btn:hover:not(:disabled) {
-    background: var(--primary-color-dark, #e05a00);
+    background: var(--primary-color-dark, #CE3000);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 107, 0, 0.35);
+    box-shadow: 0 8px 24px rgba(255, 98, 7, 0.35);
 }
 
 .sh-submit-btn:active:not(:disabled) {
@@ -504,7 +504,7 @@ html:not([dir="rtl"]) .sh-submit-btn:hover:not(:disabled) .sh-btn-arrow {
 
 .sh-trust-item svg {
     flex-shrink: 0;
-    color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
 }
 
 /* Loading state */
@@ -518,8 +518,8 @@ html:not([dir="rtl"]) .sh-submit-btn:hover:not(:disabled) .sh-btn-arrow {
 }
 
 @keyframes shCardPulse {
-    0%, 100% { box-shadow: 0 4px 40px rgba(255, 107, 0, 0.08), 0 12px 48px rgba(0, 0, 0, 0.06); }
-    50% { box-shadow: 0 6px 48px rgba(255, 107, 0, 0.12), 0 14px 52px rgba(0, 0, 0, 0.07); }
+    0%, 100% { box-shadow: 0 4px 40px rgba(255, 98, 7, 0.08), 0 12px 48px rgba(0, 0, 0, 0.06); }
+    50% { box-shadow: 0 6px 48px rgba(255, 98, 7, 0.12), 0 14px 52px rgba(0, 0, 0, 0.07); }
 }
 
 .service-hero-form-card .form-success-overlay {

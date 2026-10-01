@@ -17,7 +17,7 @@
     transform: translateX(-50%);
     width: 800px;
     height: 800px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 65%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.08) 0%, transparent 65%);
     pointer-events: none;
     z-index: 0;
 }
@@ -134,8 +134,8 @@
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-    border-color: var(--primary-color, #ff6b00);
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+    border-color: var(--primary-color, #FF6207);
+    box-shadow: 0 0 0 3px rgba(255, 98, 7, 0.1);
     background: #fff;
 }
 
@@ -210,7 +210,7 @@
     font-weight: 600;
     font-size: 0.88rem;
     direction: ltr;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Alexandria', sans-serif;
 }
 
 .phone-country-btn .dropdown-arrow {
@@ -279,7 +279,7 @@
 .phone-country-dropdown .country-option .country-dial {
     color: #999;
     font-size: 0.82rem;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Alexandria', sans-serif;
 }
 
 .phone-field-group input[type="tel"] {
@@ -292,13 +292,13 @@
 }
 
 .phone-field-group input[type="tel"]:focus {
-    border-color: var(--primary-color, #ff6b00);
-    box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+    border-color: var(--primary-color, #FF6207);
+    box-shadow: 0 0 0 3px rgba(255, 98, 7, 0.1);
     background: #fff;
 }
 
 .phone-field-group:focus-within .phone-country-btn {
-    border-color: var(--primary-color, #ff6b00);
+    border-color: var(--primary-color, #FF6207);
     background: #fff;
 }
 
@@ -306,7 +306,7 @@
     display: block;
     width: 100%;
     padding: 1rem;
-    background: var(--primary-color, #ff6b00);
+    background: var(--primary-color, #FF6207);
     color: #fff;
     border: none;
     border-radius: 12px;
@@ -319,7 +319,7 @@
 }
 
 .contact-form-submit:hover {
-    background: var(--primary-color-dark, #e05a00);
+    background: var(--primary-color-dark, #CE3000);
     transform: translateY(-1px);
 }
 

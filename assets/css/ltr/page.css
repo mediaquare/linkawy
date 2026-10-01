@@ -25,7 +25,7 @@ body.page {
     right: -100px;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -37,7 +37,7 @@ body.page {
     left: -150px;
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.05) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 98, 7, 0.05) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -73,7 +73,7 @@ body.page {
 }
 
 .page-hero .breadcrumbs a:hover {
-    color: #ff6b00;
+    color: #FF6207;
 }
 
 .page-hero .breadcrumb-separator {
@@ -82,7 +82,7 @@ body.page {
 }
 
 .page-hero .breadcrumb-current {
-    color: #ff6b00;
+    color: #FF6207;
     font-weight: 500;
 }
 
@@ -348,7 +348,7 @@ body.page {
     padding: 1.25rem 1.5rem;
     border-left: 4px solid var(--primary-color);
     border-right: none;
-    background: rgba(255, 107, 0, 0.06);
+    background: rgba(255, 98, 7, 0.06);
     border-radius: 8px 0 0 8px;
     font-size: 1.1rem;
     line-height: 1.8;
@@ -458,7 +458,7 @@ html:not([dir="rtl"]) .page-content .wp-block-image figure.alignright {
     color: #fff;
     text-align: left;
     white-space: nowrap;
-    border-bottom: 2px solid #ff6b00;
+    border-bottom: 2px solid #FF6207;
     letter-spacing: 0.01em;
 }
 
@@ -494,7 +494,7 @@ html:not([dir="rtl"]) .page-content .wp-block-image figure.alignright {
 
 .page-content .wp-block-table tbody tr:hover,
 .page-content table tbody tr:hover {
-    background-color: rgba(255, 107, 0, 0.04);
+    background-color: rgba(255, 98, 7, 0.04);
 }
 
 .page-content .wp-block-table tbody tr:last-child td,
@@ -631,13 +631,13 @@ html:not([dir="rtl"]) .page-content .wp-block-image figure.alignright {
 
 .page-content .wp-block-button:not(.is-style-outline) .wp-block-button__link,
 .page-content .wp-block-button:not(.is-style-outline) .wp-element-button {
-    background: var(--primary-color, #ff6b00);
+    background: var(--primary-color, #FF6207);
     color: #fff;
 }
 
 .page-content .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
 .page-content .wp-block-button:not(.is-style-outline) .wp-element-button:hover {
-    background: var(--primary-color-dark, #e05a00);
+    background: var(--primary-color-dark, #CE3000);
     color: #fff;
     transform: translateY(-1px);
 }
@@ -645,15 +645,15 @@ html:not([dir="rtl"]) .page-content .wp-block-image figure.alignright {
 .page-content .wp-block-button.is-style-outline .wp-block-button__link,
 .page-content .wp-block-button.is-style-outline .wp-element-button {
     background: transparent;
-    color: var(--primary-color, #ff6b00);
-    border-color: var(--primary-color, #ff6b00);
+    color: var(--primary-color, #FF6207);
+    border-color: var(--primary-color, #FF6207);
 }
 
 .page-content .wp-block-button.is-style-outline .wp-block-button__link:hover,
 .page-content .wp-block-button.is-style-outline .wp-element-button:hover {
-    background: rgba(255, 107, 0, 0.08);
-    color: var(--primary-color, #ff6b00);
-    border-color: var(--primary-color, #ff6b00);
+    background: rgba(255, 98, 7, 0.08);
+    color: var(--primary-color, #FF6207);
+    border-color: var(--primary-color, #FF6207);
     transform: translateY(-1px);
 }
 
@@ -1006,7 +1006,7 @@ html:not([dir="rtl"]) .page-content .wp-block-media-text .wp-block-media-text__c
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: thin;
-        scrollbar-color: rgba(255, 107, 0, 0.3) transparent;
+        scrollbar-color: rgba(255, 98, 7, 0.3) transparent;
         padding: 0;
         position: relative;
         max-width: 100%;
@@ -1023,7 +1023,7 @@ html:not([dir="rtl"]) .page-content .wp-block-media-text .wp-block-media-text__c
     }
 
     .page-content .wp-block-table::-webkit-scrollbar-thumb {
-        background: rgba(255, 107, 0, 0.3);
+        background: rgba(255, 98, 7, 0.3);
         border-radius: 3px;
     }
 
