@@ -177,7 +177,7 @@ body.page {
 }
 
 /* ===== Full-width alignment (fallback for .page-content without .linkawy-content) ===== */
-.page-content .alignfull {
+body:not(.page-template-service-page) .page-content .alignfull {
     width: 100vw;
     max-width: 100vw;
     margin-right: calc(-50vw + 50%);
@@ -188,7 +188,7 @@ body.page {
     clear: both;
 }
 
-.page-content .alignwide {
+body:not(.page-template-service-page) .page-content .alignwide {
     width: calc(100% + var(--content-padding, 2rem) * 2);
     max-width: var(--content-max, 1200px);
     margin-right: calc(var(--content-padding, 2rem) * -1);

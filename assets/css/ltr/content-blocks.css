@@ -99,7 +99,7 @@
     --content-max: 1200px;
 }
 
-.linkawy-content .alignfull {
+body:not(.page-template-service-page) .linkawy-content .alignfull {
     width: 100vw;
     max-width: 100vw;
     margin-inline: calc(-50vw + 50%);
@@ -109,7 +109,7 @@
     clear: both;
 }
 
-.linkawy-content .alignwide {
+body:not(.page-template-service-page) .linkawy-content .alignwide {
     width: calc(100% + var(--content-padding, 2rem) * 2);
     max-width: var(--content-max);
     margin-inline: calc(var(--content-padding, 2rem) * -1);
@@ -119,7 +119,7 @@
 
 /* جوال/تابلت: 100vw + margin السالب يتجاوز العرض ويسبب سكرولًا أفقيًا */
 @media (max-width: 768px) {
-    .linkawy-content .alignfull {
+    body:not(.page-template-service-page) .linkawy-content .alignfull {
         width: 100%;
         max-width: 100%;
         margin-inline: 0;
@@ -127,7 +127,7 @@
         padding-left: var(--content-padding, 1.25rem) !important;
     }
 
-    .linkawy-content .alignwide {
+    body:not(.page-template-service-page) .linkawy-content .alignwide {
         width: 100%;
         max-width: 100%;
         margin-inline: 0;

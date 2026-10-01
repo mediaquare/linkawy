@@ -51,15 +51,98 @@
 @media (max-width:900px){.service-hero{padding-top:48px}}
 @media (max-width:768px){.service-hero-title{font-size:var(--fs-display)}.service-hero-form-card{padding:24px 20px}}
 
-/* ---------- Page content (white) ---------- */
-.page-template-service-page .page-content-section{background:var(--white);padding-block:var(--space-section-sm)}
-.page-template-service-page .page-content h2{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--fg-on-light-1)}
-.page-template-service-page .page-content h3{font-size:var(--fs-card);line-height:var(--lh-card);font-weight:600;color:var(--fg-on-light-1)}
-.page-template-service-page .page-content p,.page-template-service-page .page-content li{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--fg-on-light-2)}
-.page-template-service-page .page-content a{color:var(--orange)}
-.page-template-service-page .page-content ul li::before{background:var(--orange)}
-.page-template-service-page .page-content img{border-radius:var(--radius-card)}
-.page-template-service-page .page-content .wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;
-  border-radius:var(--radius-pill);background:var(--gradient-primary);color:var(--white);font-size:15px;font-weight:700}
-/* Straight section edge between the hero and the content (no wave) */
+/* ==========================================================================
+   Service page content (Gutenberg) — sections migrated to semantic classes
+   (lk-svc-*; see linkawy-tools/work/svc/migrate.py). The blocks no longer carry
+   colours / borders / radius / font sizes / padding, so everything below works
+   without !important. Sections are full width; their content sits in a centred
+   1200px container made by the side padding (16px mobile, 24px from tablet).
+   ========================================================================== */
+.page-template-service-page .page-content-section{background:var(--white);padding:0;overflow:visible}
 .page-template-service-page .page-content-section::before{display:none}
+.page-template-service-page .page-content-section .container{max-width:none;padding:0}
+.page-template-service-page .page-content.linkawy-content{--svc-pad:16px;--svc-gutter:max(var(--svc-pad),calc((100% - var(--content-max)) / 2));
+  max-width:none;margin:0;padding:0}
+@media (min-width:768px){.page-template-service-page .page-content.linkawy-content{--svc-pad:24px}}
+
+/* Gaps between sections come from the sections themselves */
+.page-template-service-page .page-content > .wp-block-spacer,
+.page-template-service-page .page-content > p:empty{display:none}
+/* Anything at the top level that is not a section (e.g. the backlink packages heading) sits in the container */
+.page-template-service-page .page-content > :not(.lk-svc-section):not(.faq-block):not(.wp-block-spacer){
+  box-sizing:border-box;max-width:calc(var(--content-max) + 2 * var(--svc-pad));margin-inline:auto;padding-inline:var(--svc-pad)}
+
+/* ---------- Sections: full width, straight, container via padding ---------- */
+.page-template-service-page .lk-svc-section{box-sizing:border-box;width:100%;max-width:none;margin:0;border-radius:0;
+  padding-block:var(--space-section-sm);padding-inline:var(--svc-gutter);
+  --text-heading:var(--fg-on-light-1);--text-body:var(--fg-on-light-2);--text-muted:var(--fg-on-light-3)}
+.page-template-service-page .lk-svc-white{background:var(--white)}
+.page-template-service-page .lk-svc-cream{background:var(--cream)}
+.page-template-service-page .lk-svc-dark-surface{background:var(--dark);
+  --text-heading:var(--fg-on-dark-1);--text-body:var(--fg-on-dark-2);--text-muted:var(--fg-on-dark-3)}
+.page-template-service-page .lk-svc-section.is-layout-constrained > *{max-width:760px}
+
+/* Type inside sections */
+.page-template-service-page .lk-svc-section h2{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--text-heading)}
+.page-template-service-page .lk-svc-section h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:var(--text-heading)}
+.page-template-service-page .lk-svc-section p,.page-template-service-page .lk-svc-section li{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
+.page-template-service-page .lk-svc-section a:not(.wp-block-button__link){color:var(--orange)}
+.page-template-service-page .lk-svc-section ul li::before{background:var(--orange)}
+.page-template-service-page .lk-svc-section img{border-radius:var(--radius-card)}
+
+/* ---------- Cards ---------- */
+.page-template-service-page .lk-svc-card,.page-template-service-page .lk-svc-callout,.page-template-service-page .lk-svc-step{
+  box-sizing:border-box;padding:28px;border-radius:var(--radius-card);background:var(--white);border:1px solid var(--border-light)}
+/* The one highlight card on a light section: dark */
+.page-template-service-page .lk-svc-card--highlight{background:var(--dark);border-color:var(--dark);
+  --text-heading:var(--fg-on-dark-1);--text-body:var(--fg-on-dark-2)}
+/* Callouts ("when do you need it"): the orange start-side accent of the original */
+.page-template-service-page .lk-svc-callout{border-inline-start:2px solid var(--orange)}
+/* Icon tile (linkawy/icon) */
+.page-template-service-page .wp-block-linkawy-icon.lk-tile{--tile-size:56px;margin:0 auto 20px}
+.page-template-service-page .wp-block-linkawy-icon .lk-icon{width:24px;height:24px}
+/* Steps: "01." heading -> number badge (as the home "9 reasons") */
+.page-template-service-page h3.lk-svc-step-num{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 10px;margin:0 0 16px;
+  border-radius:var(--radius-pill);background:var(--dark);border:1px solid var(--dark-border);color:var(--orange);font-size:15px;font-weight:700;line-height:1;
+  font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+
+/* ---------- Dark sections (media + list) ---------- */
+.page-template-service-page .lk-svc-dark-surface .wp-block-media-text{gap:40px}
+.page-template-service-page .lk-svc-dark-surface .wp-block-media-text__content{padding:0}
+.page-template-service-page .lk-svc-dark-surface li{color:var(--fg-on-dark-1)}
+
+/* ---------- CTA (dark) + buttons ---------- */
+.page-template-service-page .lk-svc-cta{text-align:center}
+.page-template-service-page .wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;
+  border-radius:var(--radius-pill);border:1px solid transparent;background:var(--gradient-primary);color:var(--white);font-size:15px;font-weight:700;
+  text-decoration:none;transition:box-shadow var(--dur-base) var(--ease-out)}
+.page-template-service-page .wp-block-button__link:hover{box-shadow:var(--shadow-exceptional);color:var(--white)}
+.page-template-service-page .is-style-outline .wp-block-button__link{background:transparent;border-color:var(--dark-border);color:var(--white)}
+.page-template-service-page .lk-svc-white .is-style-outline .wp-block-button__link,
+.page-template-service-page .lk-svc-cream .is-style-outline .wp-block-button__link{border-color:var(--border-light);color:var(--fg-on-light-1)}
+.page-template-service-page .is-style-outline .wp-block-button__link:hover{box-shadow:none;border-color:var(--fg-on-dark-3)}
+
+/* ---------- Pricing (backlinks) ---------- */
+.page-template-service-page .lk-svc-pricing{background:transparent;padding-block:24px;padding-inline:var(--svc-gutter);margin:0}
+.page-template-service-page .lk-svc-pricing > .lk-svc-card:last-child{box-shadow:var(--shadow-exceptional)}
+
+/* ---------- FAQ: linkawy/faq (DS FAQ items) and the store page's core/details ---------- */
+.page-template-service-page .page-content > .faq-block{box-sizing:border-box;margin:0;padding-block:var(--space-section-sm);padding-inline:var(--svc-gutter);background:var(--white)}
+.page-template-service-page .faq-block .faq-title{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;
+  color:var(--fg-on-light-1);margin:0 0 var(--space-block);text-align:center}
+.page-template-service-page .faq-block .faq-container{border-top:0;gap:12px 20px}
+.page-template-service-page .faq-block .faq-item{border:1px solid var(--border-light);border-radius:var(--radius-card);background:var(--white);margin-bottom:12px}
+.page-template-service-page .faq-block h2.faq-question{padding:20px 24px;font-size:17px;line-height:1.5;color:var(--fg-on-light-1)}
+.page-template-service-page .faq-block h2.faq-question:hover,.page-template-service-page .faq-block .faq-item.is-open h2.faq-question{color:var(--fg-on-light-1)}
+.page-template-service-page .faq-block h2.faq-question::after,.page-template-service-page .faq-block h2.faq-question:hover::after,
+.page-template-service-page .faq-block .faq-item.is-open h2.faq-question::after{color:var(--fg-on-light-3);transition:transform var(--dur-base) var(--ease-out)}
+.page-template-service-page .faq-block .faq-answer-content{padding:0 24px 22px;font-size:15px;line-height:var(--lh-body);color:var(--fg-on-light-2)}
+.page-template-service-page .lk-svc-faq .wp-block-details{border:1px solid var(--border-light);border-radius:var(--radius-card);background:var(--white);padding:20px 24px;margin-bottom:12px}
+.page-template-service-page .lk-svc-faq .wp-block-details summary{font-size:17px;font-weight:600;color:var(--fg-on-light-1);cursor:pointer}
+.page-template-service-page .lk-svc-faq .wp-block-details p{font-size:15px;color:var(--fg-on-light-2);margin-top:12px}
+
+@media (max-width:767px){
+  .page-template-service-page .lk-svc-section{padding-block:56px}
+  .page-template-service-page .lk-svc-card,.page-template-service-page .lk-svc-callout,.page-template-service-page .lk-svc-step{padding:22px}
+  .page-template-service-page .faq-block .faq-container{grid-template-columns:1fr}
+}
