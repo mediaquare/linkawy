@@ -85,7 +85,7 @@ get_header();
                                         <!-- Card 1: Google SERP -->
                                         <div class="wall-card anim-border-pulse">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><i class="fab fa-google"></i></div>
+                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/google-color.svg" alt="" width="16" height="16"></div>
                                                 <span class="mini-badge">Result #1</span>
                                             </div>
                                             <div>
@@ -99,7 +99,7 @@ get_header();
                                         <!-- Card 2: Links (Counter) -->
                                         <div class="wall-card relative">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><i class="fas fa-link"></i></div>
+                                                <div class="icon-box"><?php echo linkawy_icon('Link', 16); ?></div>
                                                 <span class="mini-badge">Links</span>
                                             </div>
                                             <div class="text-center py-1 relative">
@@ -116,7 +116,7 @@ get_header();
                                         <!-- Card 3: Gemini -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg" alt="Gemini" width="16" height="16"></div>
+                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/gemini-color.svg" alt="Gemini" width="16" height="16"></div>
                                                 <span class="mini-badge">Gemini</span>
                                             </div>
                                             <div class="space-y-1.5 relative">
@@ -130,16 +130,16 @@ get_header();
                                     
                                     <!-- Marquee Group 2 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                         <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><i class="fab fa-google"></i></div><span class="mini-badge">Result #1</span></div><div><div class="h-2.5 w-3/4 bg-[#f26833] rounded mb-2 shadow-[0_0_10px_rgba(242,104,51,0.5)] anim-scan"></div><div class="skeleton-bar mb-1"></div><div class="skeleton-bar w-2/3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Google SERP</div></div>
-                                         <div class="wall-card relative"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-link"></i></div><span class="mini-badge">Links</span></div><div class="text-center py-1 relative"><div class="flex items-baseline justify-center gap-1"><span class="text-[10px] font-bold text-gray-300">DR</span><div class="text-xl font-bold text-white anim-score"><span class="dr-counter">80</span></div></div><div class="absolute top-0 right-10 text-[9px] text-[#f26833] font-extrabold anim-float-plus">+3</div><div class="text-[9px] text-gray-500">Authority Score</div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Backlinks</div></div>
-                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
+                                         <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/google-color.svg" alt="" width="16" height="16"></div><span class="mini-badge">Result #1</span></div><div><div class="h-2.5 w-3/4 bg-[#f26833] rounded mb-2 shadow-[0_0_10px_rgba(242,104,51,0.5)] anim-scan"></div><div class="skeleton-bar mb-1"></div><div class="skeleton-bar w-2/3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Google SERP</div></div>
+                                         <div class="wall-card relative"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('Link', 16); ?></div><span class="mini-badge">Links</span></div><div class="text-center py-1 relative"><div class="flex items-baseline justify-center gap-1"><span class="text-[10px] font-bold text-gray-300">DR</span><div class="text-xl font-bold text-white anim-score"><span class="dr-counter">80</span></div></div><div class="absolute top-0 right-10 text-[9px] text-[#f26833] font-extrabold anim-float-plus">+3</div><div class="text-[9px] text-gray-500">Authority Score</div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Backlinks</div></div>
+                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/gemini-color.svg" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
                                     </div>
 
                                     <!-- Marquee Group 3 (Duplicate for Safety) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                         <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><i class="fab fa-google"></i></div><span class="mini-badge">Result #1</span></div><div><div class="h-2.5 w-3/4 bg-[#f26833] rounded mb-2 shadow-[0_0_10px_rgba(242,104,51,0.5)] anim-scan"></div><div class="skeleton-bar mb-1"></div><div class="skeleton-bar w-2/3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Google SERP</div></div>
-                                         <div class="wall-card relative"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-link"></i></div><span class="mini-badge">Links</span></div><div class="text-center py-1 relative"><div class="flex items-baseline justify-center gap-1"><span class="text-[10px] font-bold text-gray-300">DR</span><div class="text-xl font-bold text-white anim-score"><span class="dr-counter">80</span></div></div><div class="absolute top-0 right-10 text-[9px] text-[#f26833] font-extrabold anim-float-plus">+3</div><div class="text-[9px] text-gray-500">Authority Score</div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Backlinks</div></div>
-                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/gemini-color.svg" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
+                                         <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/google-color.svg" alt="" width="16" height="16"></div><span class="mini-badge">Result #1</span></div><div><div class="h-2.5 w-3/4 bg-[#f26833] rounded mb-2 shadow-[0_0_10px_rgba(242,104,51,0.5)] anim-scan"></div><div class="skeleton-bar mb-1"></div><div class="skeleton-bar w-2/3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Google SERP</div></div>
+                                         <div class="wall-card relative"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('Link', 16); ?></div><span class="mini-badge">Links</span></div><div class="text-center py-1 relative"><div class="flex items-baseline justify-center gap-1"><span class="text-[10px] font-bold text-gray-300">DR</span><div class="text-xl font-bold text-white anim-score"><span class="dr-counter">80</span></div></div><div class="absolute top-0 right-10 text-[9px] text-[#f26833] font-extrabold anim-float-plus">+3</div><div class="text-[9px] text-gray-500">Authority Score</div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Backlinks</div></div>
+                                         <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/gemini-color.svg" alt="Gemini" width="16" height="16"></div><span class="mini-badge">Gemini</span></div><div class="space-y-1.5 relative"><div class="h-[5px] bg-[#333] rounded-full anim-seq-1"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-2"></div><div class="h-[5px] bg-[#333] rounded-full anim-seq-3"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">AI Overview</div></div>
                                     </div>
                                 </div>
 
@@ -150,7 +150,7 @@ get_header();
                                         <!-- Card 1: ChatGPT -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div>
+                                                <div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/openai-white.svg" alt="OpenAI" width="16" height="16"></div>
                                                 <span class="mini-badge">ChatGPT</span>
                                             </div>
                                             <div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative">
@@ -163,7 +163,7 @@ get_header();
                                         <!-- Card 2: Blog Post (Sequential Typing Slower) -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><i class="fas fa-pen-nib"></i></div>
+                                                <div class="icon-box"><?php echo linkawy_icon('FileText', 16); ?></div>
                                                 <span class="mini-badge">Content</span>
                                             </div>
                                             <div class="flex items-center gap-2">
@@ -179,7 +179,7 @@ get_header();
                                         <!-- Card 3: Maps (Coverage) -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                                                <div class="icon-box"><?php echo linkawy_icon('MapPin', 16); ?></div>
                                                 <span class="mini-badge">Local SEO</span>
                                             </div>
                                             <div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center">
@@ -197,16 +197,16 @@ get_header();
 
                                     <!-- Marquee Group 2 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text"><?php esc_html_e('"الظهور في اجابات الذكاء الاصطناعي..."', 'linkawy'); ?></span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-pen-nib"></i></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/openai-white.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text"><?php esc_html_e('"الظهور في اجابات الذكاء الاصطناعي..."', 'linkawy'); ?></span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('FileText', 16); ?></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('MapPin', 16); ?></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
                                     </div>
                                     
                                     <!-- Marquee Group 3 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/openai.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text"><?php esc_html_e('"الظهور في اجابات الذكاء الاصطناعي..."', 'linkawy'); ?></span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-pen-nib"></i></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-map-marker-alt"></i></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><img src="<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/openai-white.svg" alt="OpenAI" width="16" height="16"></div><span class="mini-badge">ChatGPT</span></div><div class="bg-[#111] border border-[#222] p-2 rounded text-[9px] text-gray-400 leading-relaxed opacity-90 relative"><span class="anim-typewriter-text"><?php esc_html_e('"الظهور في اجابات الذكاء الاصطناعي..."', 'linkawy'); ?></span><span class="inline-block w-0.5 h-2.5 bg-[#f26833] anim-cursor-real align-middle"></span></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">LLMO / GEO</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('FileText', 16); ?></div><span class="mini-badge">Content</span></div><div class="flex items-center gap-2"><div class="w-8 h-8 bg-[#1a1a1a] rounded-md border border-[#333]"></div><div class="flex-1 space-y-1 relative"><div class="h-[5px] bg-[#222] rounded-full anim-seq-1 anim-slow-duration"></div><div class="h-[5px] bg-[#222] rounded-full anim-seq-2-content anim-slow-duration"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Blog Post</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('MapPin', 16); ?></div><span class="mini-badge">Local SEO</span></div><div class="h-10 bg-[#1a1a1a] rounded relative overflow-hidden border border-[#222] flex items-center justify-center"><div class="relative w-16 h-8"><div class="anim-area-dot anim-area-dot--0 w-1.5 h-1.5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div><div class="anim-area-dot w-1 h-1 absolute top-2 left-4" ></div><div class="anim-area-dot anim-area-dot--1_5 w-1 h-1 absolute bottom-2 right-4"></div><div class="anim-area-dot anim-area-dot--2 w-1 h-1 absolute top-1 right-2"></div><div class="anim-area-dot anim-area-dot--2_5 w-1 h-1 absolute bottom-1 left-2"></div></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Maps Ranking</div></div>
                                     </div>
                                 </div>
 
@@ -217,7 +217,7 @@ get_header();
                                         <!-- Card 1: Digital PR -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><i class="fas fa-bullhorn"></i></div>
+                                                <div class="icon-box"><?php echo linkawy_icon('Megaphone', 16); ?></div>
                                                 <span class="mini-badge">Digital PR</span>
                                             </div>
                                             <div class="flex gap-1 mt-1">
@@ -231,7 +231,7 @@ get_header();
                                         <!-- Card 2: Niche Edits -->
                                         <div class="wall-card">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><i class="fas fa-edit"></i></div>
+                                                <div class="icon-box"><?php echo linkawy_icon('PenLine', 16); ?></div>
                                                 <span class="mini-badge">Niche Edits</span>
                                             </div>
                                             <div class="bg-[#111] p-2 rounded text-[9px] text-gray-500 border border-[#222]">
@@ -243,7 +243,7 @@ get_header();
                                         <!-- Card 3: Growth -->
                                         <div class="wall-card anim-border-pulse">
                                             <div class="flex justify-between items-start">
-                                                <div class="icon-box"><i class="fas fa-chart-line"></i></div>
+                                                <div class="icon-box"><?php echo linkawy_icon('ChartLine', 16); ?></div>
                                                 <span class="mini-badge">Organic Growth</span>
                                             </div>
                                             <div class="flex items-end gap-1 h-10">
@@ -258,16 +258,16 @@ get_header();
                                     
                                     <!-- Marquee Group 2 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-bullhorn"></i></div><span class="mini-badge">Digital PR</span></div><div class="flex gap-1 mt-1"><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Media Coverage</div></div>
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-edit"></i></div><span class="mini-badge">Niche Edits</span></div><div class="bg-[#111] p-2 rounded text-[9px] text-gray-500 border border-[#222]">Contextual <span class="text-[#f26833] font-bold animate-[pulse_3s_infinite]">Link</span> added.</div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Curated Links</div></div>
-                                        <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-chart-line"></i></div><span class="mini-badge">Organic Growth</span></div><div class="flex items-end gap-1 h-10"><div class="w-1/4 bg-[#222] rounded-t flux-bar-1"></div><div class="w-1/4 bg-[#333] rounded-t flux-bar-2"></div><div class="w-1/4 bg-[#ea6431] opacity-60 rounded-t flux-bar-3"></div><div class="w-1/4 bg-[#f26833] rounded-t shadow-[0_0_10px_rgba(242,104,51,0.5)] flux-bar-4"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Traffic</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('Megaphone', 16); ?></div><span class="mini-badge">Digital PR</span></div><div class="flex gap-1 mt-1"><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Media Coverage</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('PenLine', 16); ?></div><span class="mini-badge">Niche Edits</span></div><div class="bg-[#111] p-2 rounded text-[9px] text-gray-500 border border-[#222]">Contextual <span class="text-[#f26833] font-bold animate-[pulse_3s_infinite]">Link</span> added.</div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Curated Links</div></div>
+                                        <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('ChartLine', 16); ?></div><span class="mini-badge">Organic Growth</span></div><div class="flex items-end gap-1 h-10"><div class="w-1/4 bg-[#222] rounded-t flux-bar-1"></div><div class="w-1/4 bg-[#333] rounded-t flux-bar-2"></div><div class="w-1/4 bg-[#ea6431] opacity-60 rounded-t flux-bar-3"></div><div class="w-1/4 bg-[#f26833] rounded-t shadow-[0_0_10px_rgba(242,104,51,0.5)] flux-bar-4"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Traffic</div></div>
                                     </div>
 
                                     <!-- Marquee Group 3 (Duplicate) -->
                                     <div class="marquee-group" aria-hidden="true">
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-bullhorn"></i></div><span class="mini-badge">Digital PR</span></div><div class="flex gap-1 mt-1"><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Media Coverage</div></div>
-                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-edit"></i></div><span class="mini-badge">Niche Edits</span></div><div class="bg-[#111] p-2 rounded text-[9px] text-gray-500 border border-[#222]">Contextual <span class="text-[#f26833] font-bold animate-[pulse_3s_infinite]">Link</span> added.</div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Curated Links</div></div>
-                                        <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><i class="fas fa-chart-line"></i></div><span class="mini-badge">Organic Growth</span></div><div class="flex items-end gap-1 h-10"><div class="w-1/4 bg-[#222] rounded-t flux-bar-1"></div><div class="w-1/4 bg-[#333] rounded-t flux-bar-2"></div><div class="w-1/4 bg-[#ea6431] opacity-60 rounded-t flux-bar-3"></div><div class="w-1/4 bg-[#f26833] rounded-t shadow-[0_0_10px_rgba(242,104,51,0.5)] flux-bar-4"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Traffic</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('Megaphone', 16); ?></div><span class="mini-badge">Digital PR</span></div><div class="flex gap-1 mt-1"><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div><div class="h-5 w-7 bg-[#1a1a1a] border border-[#333] rounded-sm hover:bg-[#222] transition-colors"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Media Coverage</div></div>
+                                        <div class="wall-card"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('PenLine', 16); ?></div><span class="mini-badge">Niche Edits</span></div><div class="bg-[#111] p-2 rounded text-[9px] text-gray-500 border border-[#222]">Contextual <span class="text-[#f26833] font-bold animate-[pulse_3s_infinite]">Link</span> added.</div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Curated Links</div></div>
+                                        <div class="wall-card anim-border-pulse"><div class="flex justify-between items-start"><div class="icon-box"><?php echo linkawy_icon('ChartLine', 16); ?></div><span class="mini-badge">Organic Growth</span></div><div class="flex items-end gap-1 h-10"><div class="w-1/4 bg-[#222] rounded-t flux-bar-1"></div><div class="w-1/4 bg-[#333] rounded-t flux-bar-2"></div><div class="w-1/4 bg-[#ea6431] opacity-60 rounded-t flux-bar-3"></div><div class="w-1/4 bg-[#f26833] rounded-t shadow-[0_0_10px_rgba(242,104,51,0.5)] flux-bar-4"></div></div><div class="text-[9px] text-gray-500 font-bold uppercase tracking-wide">Traffic</div></div>
                                     </div>
                                 </div>
 
@@ -280,13 +280,47 @@ get_header();
         </section>
     </div><!-- /.hero-dark-section -->
 
-    <!-- Dark Platforms Conveyor Belt (attached below hero) -->
-    <section class="dark-platforms-bar">
-        <div class="dark-platforms-container">
-            <h2 class="dark-platforms-label"><?php esc_html_e('شركة سيو رائدة في تحويل الزيارات إلى أرباح حقيقية عبر مختلف المنصات', 'linkawy'); ?></h2>
-            <div class="platforms-conveyor" id="platformsConveyor">
-                <div class="platforms-track" id="platformsTrack">
-                    <!-- JS will populate items here -->
+    <!-- Platforms (redesign: 6 logo cards + the same title + the same platforms as tags) -->
+    <section class="dark-platforms-bar lk-platforms" data-surface="dark">
+        <div class="container">
+            <div class="lk-platforms__grid">
+                <div class="lk-card lk-platform lk-card--highlight" data-surface="orange">
+                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/google-color.svg'); ?>" alt="Google" width="22" height="22"></span></span>
+                    <span class="lk-platform__text"><span class="lk-platform__value">Result #1</span><span class="lk-platform__label">Google SERP</span></span>
+                </div>
+                <div class="lk-card lk-platform">
+                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/gemini-color.svg'); ?>" alt="Gemini" width="22" height="22"></span></span>
+                    <span class="lk-platform__text"><span class="lk-platform__value">AI Overview</span><span class="lk-platform__label">Gemini</span></span>
+                </div>
+                <div class="lk-card lk-platform">
+                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/openai-white.svg'); ?>" alt="ChatGPT" width="22" height="22" class="lk-mono"></span></span>
+                    <span class="lk-platform__text"><span class="lk-platform__value">LLMO / GEO</span><span class="lk-platform__label">ChatGPT</span></span>
+                </div>
+                <div class="lk-card lk-platform">
+                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/semrush.svg'); ?>" alt="Semrush" width="22" height="22"></span></span>
+                    <span class="lk-platform__text"><span class="lk-platform__value">DR 80 +3</span><span class="lk-platform__label">Authority Score</span></span>
+                </div>
+                <div class="lk-card lk-platform">
+                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/googlemaps.svg'); ?>" alt="Google Maps" width="22" height="22"></span></span>
+                    <span class="lk-platform__text"><span class="lk-platform__value">Maps ranking</span><span class="lk-platform__label">Local SEO</span></span>
+                </div>
+                <div class="lk-card lk-platform">
+                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/applenews.svg'); ?>" alt="Apple News" width="22" height="22"></span></span>
+                    <span class="lk-platform__text"><span class="lk-platform__value">Media coverage</span><span class="lk-platform__label">Digital PR</span></span>
+                </div>
+            </div>
+            <div class="lk-platforms__foot">
+                <h2 class="dark-platforms-label"><?php esc_html_e('شركة سيو رائدة في تحويل الزيارات إلى أرباح حقيقية عبر مختلف المنصات', 'linkawy'); ?></h2>
+                <div class="lk-platforms__tags">
+                    <span class="lk-tag">Salla</span>
+                    <span class="lk-tag">Zid</span>
+                    <span class="lk-tag">Shopify</span>
+                    <span class="lk-tag">WooCommerce</span>
+                    <span class="lk-tag">WordPress</span>
+                    <span class="lk-tag">Laravel</span>
+                    <span class="lk-tag">Google Ads</span>
+                    <span class="lk-tag">Google Business</span>
+                    <span class="lk-tag">Google Play</span>
                 </div>
             </div>
         </div>
@@ -316,7 +350,7 @@ get_header();
     */ ?>
 
     <!-- Programs/Pricing Section -->
-    <section class="programs-section fp-scroll-anchor" id="خدمات-سيو">
+    <section class="programs-section fp-scroll-anchor" id="خدمات-سيو" data-surface="white">
         <div class="container programs-container">
             <!-- Left Side: Sticky Header -->
             <div class="programs-intro">
@@ -336,7 +370,7 @@ get_header();
                 <!-- Card 1: Shopify SEO -->
                 <div class="program-card program-card--shopify">
                     <div class="icon-box">
-                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/shopify.svg' ); ?>
+                        <?php echo linkawy_icon('ShoppingBag', 24); ?>
                     </div>
                     <h3><?php esc_html_e('سيو شوبيفاي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Shopify SEO</span>
@@ -346,7 +380,7 @@ get_header();
                 <!-- Card 2: Salla SEO -->
                 <div class="program-card program-card--salla">
                     <div class="icon-box">
-                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/sall.svg' ); ?>
+                        <?php echo linkawy_icon('Store', 24); ?>
                     </div>
                     <h3><?php esc_html_e('سيو سلة', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Salla SEO</span>
@@ -356,7 +390,7 @@ get_header();
                 <!-- Card 4: On-Page SEO -->
                 <div class="program-card">
                     <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-10 -226 532 468" fill="currentColor"><path d="M0 168v-296c0-13 11-24 24-24s24 11 24 24v288c0 13 11 24 24 24s24-11 24-24v-312c0-35 29-64 64-64h288c35 0 64 29 64 64v320c0 35-29 64-64 64H64c-35 0-64-29-64-64zm160-288v64c0 18 14 32 32 32h64c18 0 32-14 32-32v-64c0-18-14-32-32-32h-64c-18 0-32 14-32 32zm24 240c-13 0-24 11-24 24s11 24 24 24h240c13 0 24-11 24-24s-11-24-24-24H184zm-24-72c0 13 11 24 24 24h240c13 0 24-11 24-24s-11-24-24-24H184c-13 0-24 11-24 24zM360-72c-13 0-24 11-24 24s11 24 24 24h64c13 0 24-11 24-24s-11-24-24-24h-64z"/></svg>
+                        <?php echo linkawy_icon('FileText', 24); ?>
                     </div>
                     <h3><?php esc_html_e('السيو الداخلي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">On-Page SEO</span>
@@ -366,7 +400,7 @@ get_header();
                 <!-- Card 5: Off-Page SEO -->
                 <div class="program-card">
                     <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 560 560" fill="currentColor"><path d="M37 337c0 7 6 13 14 13 7 0 13-6 13-13 0-42 17-83 47-113 5-5 5-13 0-19-6-5-14-5-19 0-35 35-55 83-55 132zm166 146c0 7 6 13 14 13 40 0 79-16 108-45 5-5 5-13 0-19-6-5-14-5-19 0-24 24-56 37-89 37-8 0-14 6-14 14zm2-391c-5 5-5 13 0 19 6 5 14 5 19 0 30-30 71-47 113-47 7 0 13-6 13-13 0-8-6-14-13-14-49 0-97 20-132 55zm2 223c-5 5-5 14 0 19s14 5 19 0l108-108c5 5 14 5 19 0s5-14 0-19c-10-11-27-11-38 0L207 315zm225-9c-5 5-5 13 0 19 6 5 14 5 19 0 29-29 45-68 45-108 0-8-6-14-13-14-8 0-14 6-14 14 0 33-13 65-37 89z"/><path d="M263 149c-21 21-56 21-77 0s-21-55 0-77c42-42 98-62 157-62 114 0 207 93 207 207 0 55-22 107-61 146-21 21-55 21-76 0s-21-55 0-76c18-19 29-44 29-70 0-55-44-99-99-99-30 0-59 9-81 31zm0 0zm-39-38c30-30 71-47 113-47 7 0 13-6 13-13 0-8-6-14-13-14-49 0-97 20-132 55-5 5-5 13 0 19 6 5 14 5 19 0zm272 106c0-8-6-14-13-14-8 0-14 6-14 14 0 33-13 65-37 89-5 5-5 13 0 19 6 5 14 5 19 0 29-29 45-68 45-108zm-347-31c21 21 21 56 0 77-22 22-31 50-31 80 0 55 44 99 99 99 26 0 51-10 70-29 21-21 55-21 76 0s21 55 0 77c-39 38-91 60-146 60-114 0-207-92-207-207 0-58 20-115 62-157 22-21 56-21 77 0zm-38 38c5-5 5-13 0-19-6-5-14-5-19 0-35 35-55 83-55 132 0 7 6 13 14 13 7 0 13-6 13-13 0-42 17-83 47-113zm214 227c5-5 5-13 0-19-6-5-14-5-19 0-24 24-56 37-89 37-8 0-14 6-14 14 0 7 6 13 14 13 40 0 79-16 108-45zm-29-263c21-21 55-21 76 0s21 55 0 76L264 372c-21 21-55 21-76 0s-21-55 0-76l108-108zm57 19c-10-11-27-11-38 0L207 315c-5 5-5 14 0 19s14 5 19 0l108-108c5 5 14 5 19 0s5-14 0-19z"/></svg>
+                        <?php echo linkawy_icon('Link', 24); ?>
                     </div>
                     <h3><?php esc_html_e('السيو الخارجي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Off-Page SEO</span>
@@ -376,7 +410,7 @@ get_header();
                 <!-- Card 6: SEO Audits -->
                 <div class="program-card">
                     <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="22 -258 546 545" fill="currentColor"><path d="M256-248c124 0 224 100 224 224 0 50-16 97-44 134l122 122-46 45-122-122c-37 28-83 45-134 45C133 200 32 100 32-24s101-224 224-224zm0 64c-88 0-160 72-160 160s72 160 160 160c89 0 160-72 160-160s-71-160-160-160zm28 132h68V4h-68v68h-56V4h-68v-56h68v-68h56v68z"/></svg>
+                        <?php echo linkawy_icon('ScanSearch', 24); ?>
                     </div>
                     <h3><?php esc_html_e('فحص مشاكل الموقع', 'linkawy'); ?></h3>
                     <span class="service-subtitle">SEO Audits</span>
@@ -386,7 +420,7 @@ get_header();
                 <!-- Card 7: SEO Consulting -->
                 <div class="program-card">
                     <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-10 -286 580 608" fill="currentColor"><path d="M52-227c37-33 90-49 158-49 79 0 139 22 174 67 7 8 8 20 3 30-4 9-14 15-25 15h-12c-75 0-143 17-194 60-38 33-58 74-67 118-2 10-10 19-20 22-10 2-21-1-28-9C12-5 0-48 0-94c0-52 15-100 52-133zm298 119c-67 0-120 15-157 47s-53 77-53 128c0 47 13 89 45 121 30 30 74 48 130 53l70 61c7 7 16 10 25 10 21 0 38-17 38-38 0-15-5-29-6-44 37-11 66-30 86-57 23-30 32-67 32-106 0-51-16-96-53-128-36-32-90-47-157-47z"/></svg>
+                        <?php echo linkawy_icon('Lightbulb', 24); ?>
                     </div>
                     <h3><?php esc_html_e('استشارات SEO', 'linkawy'); ?></h3>
                     <span class="service-subtitle">SEO Consulting</span>
@@ -396,7 +430,7 @@ get_header();
                 <!-- Card 8: Technical SEO -->
                 <div class="program-card">
                     <div class="icon-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-11 -258 532 532" fill="currentColor"><path d="M303-248h-96l-7 56c-17 4-33 11-47 20l-45-35-68 68 35 45c-8 15-15 30-19 47l-57 7 1 96 56 7c4 17 11 32 19 47l-35 45 68 68 45-35c14 9 30 16 47 20l7 56h96l7-55c17-5 34-11 49-20l43 34 68-68-33-43c8-15 15-32 20-49l54-7v-96l-54-7c-5-17-12-34-20-49l33-43-68-68-43 34c-16-9-32-15-49-20l-7-55zm-3 157-48 208-5 19-39-9 5-19 48-208 4-20 39 9-4 20zM182-10 165 8c12 13 23 23 32 32l-29 28-46-46-14-14 46-46 14-14 29 28-14 14zm0 0zm176-28c25 24 40 40 47 46-7 6-22 22-47 46l-14 14-28-28c9-9 20-19 32-32l-32-32 28-28 14 14z"/></svg>
+                        <?php echo linkawy_icon('Code', 24); ?>
                     </div>
                     <h3><?php esc_html_e('السيو التقني', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Technical SEO</span>
@@ -406,7 +440,7 @@ get_header();
                 <!-- Card 8: GEO / AI SEO -->
                 <div class="program-card">
                     <div class="icon-box">
-                        <i class="fas fa-brain program-card-icon-accent"></i>
+                        <?php echo linkawy_icon('Sparkles', 24); ?>
                     </div>
                     <h3><?php esc_html_e('سيو الذكاء الإصطناعي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">GEO</span>
@@ -417,7 +451,7 @@ get_header();
     </section>
 
     <!-- SEO Proof Section -->
-    <section class="seo-proof-section">
+    <section class="seo-proof-section" data-surface="cream">
         <div class="section-container">
             <h2 class="section-title"><?php esc_html_e('في المتوسط ساعدنا عملائنا في زيادة المبيعات العضوية لأكثر من', 'linkawy'); ?> <span class="highlight">270%</span> <?php esc_html_e('عن طريق الزيارات المستهدفة من Google و ChatGPT', 'linkawy'); ?></h2>
             <div class="seo-image-container glass-card">
@@ -445,79 +479,59 @@ get_header();
         </div>
     </section>
 
-    <!-- Strategy Section (كيف نحقق نتائج تنعكس على المبيعات؟) -->
-    <section class="strategy-section strategy-section--dark" id="services">
-        <div class="section-container">
-            <div class="strategy-grid">
-                <div class="strategy-intro">
-                    <h2><?php esc_html_e('تحسين محركات البحث...', 'linkawy'); ?> <br><span><?php esc_html_e('هو آخر خطوة عندنا', 'linkawy'); ?></span></h2>
+    <div class="lk-sunset lk-sunset--up" aria-hidden="true"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/sunset-cream-to-dark.webp'); ?>" alt="" width="1920" height="406" loading="lazy" decoding="async"></div>
+
+    <!-- Strategy Section (كيف نحقق نتائج تنعكس على المبيعات؟) — redesign: heading column + 5 numbered cards, 05 = orange highlight -->
+    <section class="lk-strategy" id="services" data-surface="dark">
+        <div class="container lk-strategy__grid">
+            <div class="lk-strategy__intro">
+                <h2><?php esc_html_e('تحسين محركات البحث...', 'linkawy'); ?> <br><span><?php esc_html_e('هو آخر خطوة عندنا', 'linkawy'); ?></span></h2>
                     <p class="description-text"><?php esc_html_e('لأن أولويتنا هي زيادة مبيعاتك، خطوات عملنا تبدأ من البيزنس وتنتهي بالتسويق.', 'linkawy'); ?></p>
                     <p class="description-text"><?php esc_html_e('نستخدم أحدث استراتيجيات النمو لرفع معدل التحويل، وزيادة عدد العملاء المؤهلين، وخفض تكلفة اكتساب العميل عبر المحتوى وتحسين رحلة المستخدم. والنتائج؟ تقدر تشوفها بنفسك تحت وتحكم!', 'linkawy'); ?></p>
                     <p class="highlight-text"><?php esc_html_e('باستخدام تلك الإستراتيجية نهدف إلى تحويل من', 'linkawy'); ?> <span class="highlight">100%</span> <?php esc_html_e('من زوار موقعك إلى عملاء جاهزين للشراء.', 'linkawy'); ?></p>
-                </div>
-                <div class="accordion">
-                    <div class="accordion-item active" data-link="">
-                        <div class="accordion-header">
-                            <div class="accordion-title"><span class="accordion-number">01</span>
-                                <h3><?php esc_html_e('تحليل السوق، والمنافسين، ونوايا الشراء', 'linkawy'); ?></h3>
-                            </div>
-                            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accordion-content-inner"><?php esc_html_e('نبدأ بفهم السوق، تحليل الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل اتخاذ قرار الشراء.', 'linkawy'); ?></div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" data-link="">
-                        <div class="accordion-header">
-                            <div class="accordion-title"><span class="accordion-number">02</span>
-                                <h3><?php esc_html_e('هندسة صفحات البيع ورفع معدلات التحويل', 'linkawy'); ?></h3>
-                            </div>
-                            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accordion-content-inner"><?php esc_html_e('نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما يزيد من نسبة تحويل الزوار إلى مشترين فعليين.', 'linkawy'); ?></div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" data-link="">
-                        <div class="accordion-header">
-                            <div class="accordion-title"><span class="accordion-number">03</span>
-                                <h3><?php esc_html_e('صناعة محتوى يبيع القيمة', 'linkawy'); ?></h3>
-                            </div>
-                            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accordion-content-inner"><?php esc_html_e('نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.', 'linkawy'); ?></div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" data-link="">
-                        <div class="accordion-header">
-                            <div class="accordion-title"><span class="accordion-number">04</span>
-                                <h3><?php esc_html_e('التحسين لمحركات البحث والذكاء الاصطناعي', 'linkawy'); ?></h3>
-                            </div>
-                            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accordion-content-inner"><?php esc_html_e('نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.', 'linkawy'); ?></div>
-                        </div>
-                    </div>
-                    <div class="accordion-item" data-link="">
-                        <div class="accordion-header">
-                            <div class="accordion-title"><span class="accordion-number">05</span>
-                                <h3><?php esc_html_e('قياس الربحية.. وليس الترتيب', 'linkawy'); ?></h3>
-                            </div>
-                            <div class="accordion-icon"><i class="fas fa-chevron-down"></i></div>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="accordion-content-inner"><?php esc_html_e('نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity Metrics) كالترتيب أو حجم الزيارات.', 'linkawy'); ?></div>
-                        </div>
-                    </div>
-                </div>
             </div>
+            <ol class="lk-strategy__steps">
+                    <li class="lk-card lk-strategy__step">
+                        <span class="lk-num">01</span>
+                        <div class="lk-strategy__text">
+                            <h3><?php esc_html_e('تحليل السوق، والمنافسين، ونوايا الشراء', 'linkawy'); ?></h3>
+                            <p><?php esc_html_e('نبدأ بفهم السوق، تحليل الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل اتخاذ قرار الشراء.', 'linkawy'); ?></p>
+                        </div>
+                    </li>
+                    <li class="lk-card lk-strategy__step">
+                        <span class="lk-num">02</span>
+                        <div class="lk-strategy__text">
+                            <h3><?php esc_html_e('هندسة صفحات البيع ورفع معدلات التحويل', 'linkawy'); ?></h3>
+                            <p><?php esc_html_e('نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما يزيد من نسبة تحويل الزوار إلى مشترين فعليين.', 'linkawy'); ?></p>
+                        </div>
+                    </li>
+                    <li class="lk-card lk-strategy__step">
+                        <span class="lk-num">03</span>
+                        <div class="lk-strategy__text">
+                            <h3><?php esc_html_e('صناعة محتوى يبيع القيمة', 'linkawy'); ?></h3>
+                            <p><?php esc_html_e('نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.', 'linkawy'); ?></p>
+                        </div>
+                    </li>
+                    <li class="lk-card lk-strategy__step">
+                        <span class="lk-num">04</span>
+                        <div class="lk-strategy__text">
+                            <h3><?php esc_html_e('التحسين لمحركات البحث والذكاء الاصطناعي', 'linkawy'); ?></h3>
+                            <p><?php esc_html_e('نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.', 'linkawy'); ?></p>
+                        </div>
+                    </li>
+                    <li class="lk-card lk-strategy__step lk-card--highlight" data-surface="orange">
+                        <span class="lk-num lk-num--dark">05</span>
+                        <div class="lk-strategy__text">
+                            <h3><?php esc_html_e('قياس الربحية.. وليس الترتيب', 'linkawy'); ?></h3>
+                            <p><?php esc_html_e('نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity Metrics) كالترتيب أو حجم الزيارات.', 'linkawy'); ?></p>
+                        </div>
+                    </li>
+            </ol>
         </div>
     </section>
 
     <!-- شركاء النجاح -->
-    <section class="partners-section">
+    <section class="partners-section" data-surface="dark">
         <div class="partners-container">
             <h2 class="partners-title"><?php esc_html_e('شركاء النجاح:', 'linkawy'); ?></h2>
             <div class="partners-marquee">
@@ -562,7 +576,7 @@ get_header();
     
     if ($success_stories->have_posts()) :
     ?>
-    <section class="success-stories-section">
+    <section class="success-stories-section" data-surface="dark">
         <div class="container">
             <div class="success-stories-header">
                 <h2 class="success-stories-title"><?php esc_html_e('قصص نجاح المتاجر', 'linkawy'); ?></h2>
@@ -611,7 +625,7 @@ get_header();
     <?php endif; ?>
 
     <!-- Process Section -->
-    <section class="process-section fp-scroll-anchor" id="كيف-نعمل">
+    <section class="process-section fp-scroll-anchor" id="كيف-نعمل" data-surface="white">
         <div class="process-container">
             <!-- Left Column: Sticky Info -->
             <div class="process-sticky-col">
@@ -630,7 +644,7 @@ get_header();
 
                     <!-- Step 1 -->
                     <div class="timeline-item">
-                        <div class="timeline-marker"><i class="fas fa-search-dollar"></i></div>
+                        <div class="timeline-marker"><?php echo linkawy_icon('ScanSearch', 22); ?></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge"><?php esc_html_e('الخطوة الأولى', 'linkawy'); ?></span>
                             <h3 class="timeline-title"><?php esc_html_e('نحلل موقعك لنكتشف فرص النمو', 'linkawy'); ?></h3>
@@ -640,7 +654,7 @@ get_header();
 
                     <!-- Step 2 -->
                     <div class="timeline-item">
-                        <div class="timeline-marker"><i class="fas fa-key"></i></div>
+                        <div class="timeline-marker"><?php echo linkawy_icon('Search', 22); ?></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge"><?php esc_html_e('الخطوة الثانية', 'linkawy'); ?></span>
                             <h3 class="timeline-title"><?php esc_html_e('نختار الكلمات عبر تحليل الكلمات التي تجذب عملاء حقيقيين', 'linkawy'); ?></h3>
@@ -650,7 +664,7 @@ get_header();
 
                     <!-- Step 3 -->
                     <div class="timeline-item">
-                        <div class="timeline-marker"><i class="fas fa-chess-board"></i></div>
+                        <div class="timeline-marker"><?php echo linkawy_icon('Compass', 22); ?></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge"><?php esc_html_e('الخطوة الثالثة', 'linkawy'); ?></span>
                             <h3 class="timeline-title"><?php esc_html_e('نبني استراتيجية سيو مصممة لك', 'linkawy'); ?></h3>
@@ -660,7 +674,7 @@ get_header();
 
                     <!-- Step 4 -->
                     <div class="timeline-item">
-                        <div class="timeline-marker"><i class="fas fa-rocket"></i></div>
+                        <div class="timeline-marker"><?php echo linkawy_icon('Rocket', 22); ?></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge"><?php esc_html_e('الخطوة الرابعة', 'linkawy'); ?></span>
                             <h3 class="timeline-title"><?php esc_html_e('ننفّذ التحسينات ونحرّك النتائج', 'linkawy'); ?></h3>
@@ -670,7 +684,7 @@ get_header();
 
                     <!-- Step 5 -->
                     <div class="timeline-item">
-                        <div class="timeline-marker"><i class="fas fa-chart-line"></i></div>
+                        <div class="timeline-marker"><?php echo linkawy_icon('ChartLine', 22); ?></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge"><?php esc_html_e('الخطوة الخامسة', 'linkawy'); ?></span>
                             <h3 class="timeline-title"><?php esc_html_e('نراقب الأداء ونحسّن باستمرار', 'linkawy'); ?></h3>
@@ -680,7 +694,7 @@ get_header();
 
                     <!-- Step 6 -->
                     <div class="timeline-item">
-                        <div class="timeline-marker"><i class="fas fa-leaf"></i></div>
+                        <div class="timeline-marker"><?php echo linkawy_icon('TrendingUp', 22); ?></div>
                         <div class="timeline-content">
                             <span class="timeline-step-badge"><?php esc_html_e('الخطوة السادسة', 'linkawy'); ?></span>
                             <h3 class="timeline-title"><?php esc_html_e('نتابع النتائج ونبني نموًا مستدامًا', 'linkawy'); ?></h3>
@@ -693,7 +707,7 @@ get_header();
     </section>
 
     <!-- Why Linkawy Section (9 Reasons) -->
-    <section id="why-linkawy" class="problems-section reasons-section">
+    <section id="why-linkawy" class="problems-section reasons-section" data-surface="cream">
         <div class="container">
             <div class="section-header">
                 <h2><?php esc_html_e('9 أسباب لاختيار أفضل شركة سيو لينكاوي', 'linkawy'); ?></h2>
@@ -785,7 +799,7 @@ get_header();
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits-section">
+    <section class="benefits-section" data-surface="white">
         <div class="container">
             <div class="benefits-inner-container">
                 <div class="section-header center-text">
@@ -841,7 +855,7 @@ get_header();
     </section>
 
 <?php /* English has no posts yet: hide the blog section there. */ if (!linkawy_is_en()) : ?>
-    <section class="blog-posts-section">
+    <section class="blog-posts-section" data-surface="cream">
         <div class="blog-posts-container">
             <div class="blog-posts-header">
                 <div class="blog-posts-header-text">
@@ -850,10 +864,7 @@ get_header();
                 </div>
                 <a href="<?php echo esc_url(linkawy_get_front_page_section_archive_url('linkawy_front_blog_category', 'linkawy_front_blog_tag')); ?>" class="blog-posts-btn">
                     <?php esc_html_e('تصفح كل المقالات', 'linkawy'); ?>
-
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M19 12H5M12 19l-7-7 7-7"/>
-                    </svg>
+                    <?php echo linkawy_icon('ArrowRight', 16); ?>
                 </a>
             </div>
 
@@ -928,7 +939,7 @@ get_header();
 <?php endif; ?>
 
     <!-- About / Intro Section -->
-    <section class="about-section">
+    <section class="about-section" data-surface="white">
         <div class="container about-container">
             <div class="about-image">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ali-atwa-seo-consulting.webp" alt="<?php esc_attr_e('استشارات سيو', 'linkawy'); ?>" width="500" height="600" loading="lazy">
@@ -942,48 +953,7 @@ get_header();
         </div>
     </section>
 
-    <!-- Results Section (proof) -->
-    <section class="results-section" id="results-proof">
-        <div class="section-container">
-            <div class="section-header results-header">
-                <span class="results-live-badge"><span class="results-live-dot"></span>LIVE RESULTS</span>
-                <h2 class="section-title results-title"><?php esc_html_e('نتائج SEO', 'linkawy'); ?></h2>
-                <p class="results-desc"><?php esc_html_e('شاهد النتائج من داخل الحسابات والمتاجر', 'linkawy'); ?></p>
-            </div>
-
-            <!-- Slider -->
-            <div class="swiper resultsSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="<?php esc_attr_e('لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="<?php esc_attr_e('لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
-                </div>
-            </div>
-
-            <!-- Navigation Arrows: 20px below slider -->
-            <div class="results-nav-arrows flex items-center justify-center gap-3 mt-5 md:mt-6" dir="ltr">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-
-            <!-- CTA: 40px below arrows -->
-            <div class="text-center mt-8 md:mt-10">
-                <a href="#contact" class="btn-cyber" data-link><?php esc_html_e('ابدأ قصة نجاحك الآن', 'linkawy'); ?> <i class="fas fa-arrow-left"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section class="seo-faq-section" id="seo-faq">
+    <section class="seo-faq-section" id="seo-faq" data-surface="white">
         <div class="seo-faq-container">
             <div class="seo-faq-header">
                 <h2><?php esc_html_e('الأسئلة الشائعة', 'linkawy'); ?></h2>
@@ -995,7 +965,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما هي خدمات تحسين محركات البحث (SEO) التي تقدمونها؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1008,7 +978,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('كم من الوقت يستغرق تحسين ترتيب موقعي في نتائج البحث؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1021,7 +991,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('هل تقدمون خدمات السيو للمتاجر الإلكترونية؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1034,7 +1004,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما الفرق بين السيو الداخلي والسيو الخارجي؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1047,7 +1017,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('كيف يتم تحديد سعر خدمة السيو؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1063,7 +1033,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في محركات البحث؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1076,7 +1046,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما أهمية بناء الروابط الخلفية (Backlinks) للسيو؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1089,7 +1059,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('هل تقدمون تقارير أداء دورية لمتابعة تقدم المشروع؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1102,7 +1072,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما هو السيو التقني وهل يحتاجه موقعي؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1115,7 +1085,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('كيف يتم قياس نجاح استراتيجية السيو؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle">+</span>
+                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1159,6 +1129,47 @@ get_header();
     })();
     </script>
 
+    <!-- Results Section (proof) — redesign: after the FAQ, per the UI kit order -->
+    <section class="results-section" id="results-proof" data-surface="cream-warm">
+        <div class="section-container">
+            <div class="section-header results-header">
+                <span class="results-live-badge"><span class="results-live-dot"></span>LIVE RESULTS</span>
+                <h2 class="section-title results-title"><?php esc_html_e('نتائج SEO', 'linkawy'); ?></h2>
+                <p class="results-desc"><?php esc_html_e('شاهد النتائج من داخل الحسابات والمتاجر', 'linkawy'); ?></p>
+            </div>
+
+            <!-- Slider -->
+            <div class="swiper resultsSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="<?php esc_attr_e('لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-1.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console توضح مؤشرات الأداء والزيارات العضوية بعد تطبيق سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-2.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر إلكتروني تظهر أداء الزيارات والمبيعات ضمن نتائج تحسين السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-3.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console لمراجعة تغطية الفهرسة والظهور في نتائج البحث بعد العمل على السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-4.webp" class="result-image" alt="<?php esc_attr_e('لقطة من لوحة تحليلات متجر على منصة سلة توضح مؤشرات الزيارات والأداء بعد تحسين سيو المتجر', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-5.webp" class="result-image" alt="<?php esc_attr_e('لقطة أخرى من لوحة تحليلات متجر سلة تبين تطور الأداء والزيارات في إطار استراتيجية سيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                    <div class="swiper-slide"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/results/result-6.webp" class="result-image" alt="<?php esc_attr_e('لقطة من Google Search Console تعرض تقارير الأداء ونمو الزيارات من محركات البحث بعد السيو', 'linkawy'); ?>" loading="lazy" decoding="async"></div>
+                </div>
+            </div>
+
+            <!-- Navigation Arrows: 20px below slider -->
+            <div class="results-nav-arrows flex items-center justify-center gap-3 mt-5 md:mt-6" dir="ltr">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+            <!-- CTA: 40px below arrows -->
+            <div class="text-center mt-8 md:mt-10">
+                <a href="#contact" class="btn-cyber" data-link><?php esc_html_e('ابدأ قصة نجاحك الآن', 'linkawy'); ?> <?php echo linkawy_icon('ArrowRight', 18); ?></a>
+            </div>
+        </div>
+    </section>
+
     <?php get_template_part('template-parts/contact-form-section'); ?>
 
     <!-- Hero Counter Animation Script -->
@@ -1194,138 +1205,6 @@ get_header();
     });
     </script>
 
-    <!-- Conveyor Belt Platforms -->
-    <script>
-    (function() {
-        var platforms = [
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/sall.svg', name: 'Salla', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/zid.svg', name: 'Zid', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/shopify.svg', name: 'Shopify', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/woocommerce.svg', name: 'WooCommerce', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/wordpress.svg', name: 'WordPress', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/laravel.svg', name: 'Laravel', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google ads.svg', name: 'Google Ads', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google my business.svg', name: 'Google Business', badge: 'Expert' },
-            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/google-play-store.svg', name: 'Google Play', badge: 'Expert' }
-        ];
-
-        var PAUSE = 3000; // ms between each step
-
-        var conveyor = document.getElementById('platformsConveyor');
-        var track = document.getElementById('platformsTrack');
-        if (!conveyor || !track) return;
-
-        function getVisibleCount() {
-            return window.innerWidth < 768 ? 2 : 5;
-        }
-
-        // Get actual gap from CSS
-        function getGap() {
-            var gapStr = window.getComputedStyle(track).gap;
-            return parseFloat(gapStr) || 16;
-        }
-
-        // Calculate item width based on conveyor width and actual gap
-        function getItemWidth() {
-            var visible = getVisibleCount();
-            var gap = getGap();
-            var cw = conveyor.getBoundingClientRect().width;
-            return (cw - gap * (visible - 1)) / visible;
-        }
-
-        function createBox(p) {
-            var box = document.createElement('div');
-            box.className = 'dark-platform-box';
-            box.innerHTML =
-                '<img src="' + p.img + '" alt="' + p.name + '" width="32" height="32" loading="lazy">' +
-                '<span class="dark-platform-name">' + p.name + '</span>' +
-                '<span class="dark-platform-badge">' + p.badge + '</span>';
-            return box;
-        }
-
-        // Keep a circular index
-        var nextIndex = 0;
-
-        function init() {
-            var visible = getVisibleCount();
-            var itemW = getItemWidth();
-            conveyor.style.setProperty('--item-width', itemW + 'px');
-            track.innerHTML = '';
-            track.style.transition = 'none';
-            track.style.transform = 'translateX(0)';
-
-            // Place VISIBLE items
-            nextIndex = 0;
-            for (var i = 0; i < visible; i++) {
-                track.appendChild(createBox(platforms[nextIndex % platforms.length]));
-                nextIndex++;
-            }
-        }
-
-        var stepping = false;
-
-        function step() {
-            if (stepping) return;
-            // Ensure tab is active
-            if (document.hidden) return;
-            
-            stepping = true;
-
-            var itemW = getItemWidth();
-            var gap = getGap();
-            
-            // Update width in case of slight resize
-            conveyor.style.setProperty('--item-width', itemW + 'px');
-
-            // Prepend next item to the start (off-screen left)
-            var newBox = createBox(platforms[nextIndex % platforms.length]);
-            nextIndex++;
-            track.insertBefore(newBox, track.firstChild);
-
-            // Start offset so the new item is hidden to the left
-            // The shift amount must be exactly one item width + one gap
-            var shiftAmount = itemW + gap;
-            
-            track.style.transition = 'none';
-            track.style.transform = 'translateX(-' + shiftAmount + 'px)';
-
-            // Force reflow
-            void track.offsetWidth;
-
-            // Animate to 0
-            requestAnimationFrame(() => {
-                track.style.transition = 'transform 0.9s cubic-bezier(0.4, 0, 0.2, 1)';
-                track.style.transform = 'translateX(0)';
-            });
-
-            // After transition ends
-            // Use 'once' option to ensure listener is removed automatically and correctly
-            track.addEventListener('transitionend', function handler(e) {
-                if (e.target !== track) return; // Ignore bubbling events
-                
-                // Remove the last child (slid off-screen right)
-                if (track.lastChild) track.removeChild(track.lastChild);
-
-                stepping = false;
-            }, { once: true });
-        }
-
-        // Initialize
-        init();
-
-        // Start stepping
-        setInterval(step, PAUSE);
-
-        // Recalculate on resize
-        var resizeTimer;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() {
-                init();
-            }, 200);
-        });
-    })();
-    </script>
 
     <!-- Swiper for Results Section: JS loads only when the slider nears the viewport -->
     <script>

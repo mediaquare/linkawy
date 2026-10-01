@@ -4393,7 +4393,7 @@ footer a:hover {
 }
 
 .dark-platforms-label {
-    color: #f26833;
+    color: #FF6207;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -4537,7 +4537,7 @@ footer a:hover {
 .dark-video-badge {
     display: inline-block;
     background: rgba(255, 98, 7, 0.12);
-    color: #f26833;
+    color: #FF6207;
     font-size: 0.8rem;
     font-weight: 700;
     padding: 6px 18px;

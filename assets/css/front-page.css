@@ -168,7 +168,7 @@
 .dark-video-badge {
     display: inline-block;
     background: rgba(255, 98, 7, 0.12);
-    color: #f26833;
+    color: #FF6207;
     font-size: 0.8rem;
     font-weight: 700;
     padding: 6px 18px;
@@ -279,7 +279,7 @@
 .results-section {
     --text-main: #111;
     --container-padding: clamp(24px, 8vw, 60px);
-    --results-accent: #f26833;
+    --results-accent: #FF6207;
     background: #f9f9f9;
     padding: 7rem var(--container-padding) 6rem;
     overflow: hidden;

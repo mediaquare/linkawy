@@ -4392,7 +4392,7 @@ footer a:hover {
 }
 
 .dark-platforms-label {
-    color: #f26833;
+    color: #FF6207;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -4536,7 +4536,7 @@ footer a:hover {
 .dark-video-badge {
     display: inline-block;
     background: rgba(255, 98, 7, 0.12);
-    color: #f26833;
+    color: #FF6207;
     font-size: 0.8rem;
     font-weight: 700;
     padding: 6px 18px;
@@ -5537,7 +5537,7 @@ footer a:hover {
 .fa-arrow-left,.fa-arrow-right,.fa-long-arrow-alt-left,.fa-long-arrow-alt-right,
 .fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
 /* Inline SVG "forward" arrows */
-.blog-posts-btn svg,.service-hero-btn-arrow,.sh-btn-arrow svg{scale:-1 1}
+.service-hero-btn-arrow,.sh-btn-arrow svg{scale:-1 1}
 /* Language switcher (header, English pages) */
 .lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
 border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}

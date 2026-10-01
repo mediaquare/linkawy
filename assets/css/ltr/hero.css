@@ -194,10 +194,10 @@ body.front-page .container,
 }
 
 /* Accent Colors */
-.hero-dark-section .accent-primary { color: #f26833; }
-.hero-dark-section .bg-accent { background-color: #f26833; }
-.hero-dark-section .border-accent { border-color: #f26833; }
-.hero-dark-section .hover-accent:hover { background-color: #d95320; }
+.hero-dark-section .accent-primary { color: #FF6207; }
+.hero-dark-section .bg-accent { background-color: #FF6207; }
+.hero-dark-section .border-accent { border-color: #FF6207; }
+.hero-dark-section .hover-accent:hover { background-color: #CE3000; }
 
 /* --- Stream Container --- */
 .hero-dark-section .wall-container {
@@ -348,7 +348,7 @@ body.front-page .container,
 /* 5. Coverage Expansion Animation */
 @keyframes area-flash {
     0% { opacity: 0.2; background-color: #333; transform: scale(0.8); }
-    50% { opacity: 1; background-color: #f26833; transform: scale(1.2); box-shadow: 0 0 8px rgba(255, 98, 7, 0.6); }
+    50% { opacity: 1; background-color: #FF6207; transform: scale(1.2); box-shadow: 0 0 8px rgba(255, 98, 7, 0.6); }
     100% { opacity: 0.2; background-color: #333; transform: scale(0.8); }
 }
 .hero-dark-section .anim-area-dot {
@@ -361,7 +361,7 @@ body.front-page .container,
     transition: color 0.3s ease;
 }
 .hero-dark-section .score-active {
-    color: #f26833;
+    color: #FF6207;
 }
 
 @keyframes float-plus {
@@ -413,7 +413,7 @@ body.front-page .container,
 .hero-dark-section .wall-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 0 15px rgba(255, 98, 7, 0.15);
-    border-color: #f26833;
+    border-color: #FF6207;
     background: #111;
 }
 
@@ -433,8 +433,8 @@ body.front-page .container,
 }
 .hero-dark-section .wall-card:hover .icon-box { 
     transform: scale(1.05); 
-    color: #f26833;
-    border-color: #f26833;
+    color: #FF6207;
+    border-color: #FF6207;
 }
 
 /* Visual Elements */
@@ -592,7 +592,7 @@ body.front-page .container,
 
 /* Selection color */
 .hero-dark-section ::selection {
-    background-color: #f26833;
+    background-color: #FF6207;
     color: white;
 }
 
@@ -713,8 +713,8 @@ body.front-page .container,
 .hero-dark-section .bg-\[\#222\] { background-color: #222; }
 .hero-dark-section .bg-\[\#333\] { background-color: #333; }
 .hero-dark-section .bg-\[\#ea6431\] { background-color: #ea6431; }
-.hero-dark-section .bg-\[\#f26833\] { background-color: #f26833; }
-.hero-dark-section .text-\[\#f26833\] { color: #f26833; }
+.hero-dark-section .bg-\[\#f26833\] { background-color: #FF6207; }
+.hero-dark-section .text-\[\#f26833\] { color: #FF6207; }
 .hero-dark-section .border-\[\#222\] { border-color: #222; }
 .hero-dark-section .border-\[\#333\] { border-color: #333; }
 
