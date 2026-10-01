@@ -787,7 +787,7 @@ get_header();
     </section>
 
     <!-- Benefits Section -->
-    <section class="benefits-section" data-surface="white">
+    <section class="benefits-section">
         <div class="container">
             <div class="benefits-inner-container">
                 <div class="section-header center-text">
