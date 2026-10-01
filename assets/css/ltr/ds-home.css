@@ -130,7 +130,8 @@
    5. Strategy (dark) — main's accordion markup (first item open, the rest closed),
       shown as the kit layout: heading column + numbered cards, 05 = orange highlight.
    ========================================================================== */
-.home .strategy-section--dark{background:var(--dark);color:var(--fg-on-dark-2);padding:24px 0 80px;margin-top:-1px;overflow:visible}
+/* Wide breathing room under the sunset (176px = the kit's footer-CTA space after a sunset) */
+.home .strategy-section--dark{background:var(--dark);color:var(--fg-on-dark-2);padding:calc(var(--space-section) + 64px) 0 80px;margin-top:-1px;overflow:visible}
 .home .strategy-section--dark::before{display:none}
 .home .strategy-section--dark .section-container{max-width:calc(var(--content-max) + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
 .home .strategy-section--dark .strategy-grid{display:flex;flex-wrap:wrap;gap:40px 72px;align-items:flex-start;max-width:none;padding:0}
@@ -159,7 +160,7 @@
 .home .strategy-section--dark .accordion-item:last-child .accordion-icon{background:rgba(10,10,10,.25);color:var(--white)}
 .home .strategy-section--dark .accordion-item:last-child .accordion-content-inner{color:var(--white)}
 @media (max-width:767px){
-  .home .strategy-section--dark{padding-bottom:var(--space-section-sm)}
+  .home .strategy-section--dark{padding-top:96px;padding-bottom:var(--space-section-sm)}
   .home .strategy-section--dark .strategy-intro{position:static;text-align:start}
   .home .strategy-section--dark .accordion-header{padding:20px}
   .home .strategy-section--dark .accordion-title{flex-direction:row;align-items:center;gap:14px}
