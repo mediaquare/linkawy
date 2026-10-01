@@ -233,14 +233,14 @@
 /* ==========================================================================
    9. Benefits (3 steps) — main's layout AND main's exact colours (user request):
       white section, #f4f4f4 inner box, white active tab with main's soft shadow,
-      #000 headings, #666 text. Only the font and the 16px radius come from the DS.
+      #1a1a1a headings, #666 text. Only the font and the 16px radius come from the DS.
    ========================================================================== */
 .home .benefits-section{background:#fff;padding:var(--space-section) 0}
 .home .benefits-inner-container{background-color:#f4f4f4;border-radius:var(--radius-card);box-shadow:none}
-.home .benefits-section .center-text h2,.home .benefits-section .section-header h2{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:#000}
+.home .benefits-section .center-text h2,.home .benefits-section .section-header h2{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:#1a1a1a}
 .home .benefit-item{border-radius:var(--radius-card)}
 .home .benefit-item:hover,.home .benefit-item.active{background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.05)}
-.home .benefit-item h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:#000}
+.home .benefit-item h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:#1a1a1a}
 .home .benefit-item p{font-size:15px;line-height:var(--lh-body);color:#666}
 .home .benefit-img img{border-radius:var(--radius-card)}
 .home .benefit-img-caption{color:rgba(60,60,60,.6);font-size:var(--fs-small)}
