@@ -280,47 +280,13 @@ get_header();
         </section>
     </div><!-- /.hero-dark-section -->
 
-    <!-- Platforms (redesign: 6 logo cards + the same title + the same platforms as tags) -->
-    <section class="dark-platforms-bar lk-platforms" data-surface="dark">
-        <div class="container">
-            <div class="lk-platforms__grid">
-                <div class="lk-card lk-platform lk-card--highlight" data-surface="orange">
-                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/google-color.svg'); ?>" alt="Google" width="22" height="22"></span></span>
-                    <span class="lk-platform__text"><span class="lk-platform__value">Result #1</span><span class="lk-platform__label">Google SERP</span></span>
-                </div>
-                <div class="lk-card lk-platform">
-                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/gemini-color.svg'); ?>" alt="Gemini" width="22" height="22"></span></span>
-                    <span class="lk-platform__text"><span class="lk-platform__value">AI Overview</span><span class="lk-platform__label">Gemini</span></span>
-                </div>
-                <div class="lk-card lk-platform">
-                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/openai-white.svg'); ?>" alt="ChatGPT" width="22" height="22" class="lk-mono"></span></span>
-                    <span class="lk-platform__text"><span class="lk-platform__value">LLMO / GEO</span><span class="lk-platform__label">ChatGPT</span></span>
-                </div>
-                <div class="lk-card lk-platform">
-                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/semrush.svg'); ?>" alt="Semrush" width="22" height="22"></span></span>
-                    <span class="lk-platform__text"><span class="lk-platform__value">DR 80 +3</span><span class="lk-platform__label">Authority Score</span></span>
-                </div>
-                <div class="lk-card lk-platform">
-                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/googlemaps.svg'); ?>" alt="Google Maps" width="22" height="22"></span></span>
-                    <span class="lk-platform__text"><span class="lk-platform__value">Maps ranking</span><span class="lk-platform__label">Local SEO</span></span>
-                </div>
-                <div class="lk-card lk-platform">
-                    <span class="lk-tile lk-tile--logo"><span class="lk-tile__in"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/brands/applenews.svg'); ?>" alt="Apple News" width="22" height="22"></span></span>
-                    <span class="lk-platform__text"><span class="lk-platform__value">Media coverage</span><span class="lk-platform__label">Digital PR</span></span>
-                </div>
-            </div>
-            <div class="lk-platforms__foot">
-                <h2 class="dark-platforms-label"><?php esc_html_e('شركة سيو رائدة في تحويل الزيارات إلى أرباح حقيقية عبر مختلف المنصات', 'linkawy'); ?></h2>
-                <div class="lk-platforms__tags">
-                    <span class="lk-tag">Salla</span>
-                    <span class="lk-tag">Zid</span>
-                    <span class="lk-tag">Shopify</span>
-                    <span class="lk-tag">WooCommerce</span>
-                    <span class="lk-tag">WordPress</span>
-                    <span class="lk-tag">Laravel</span>
-                    <span class="lk-tag">Google Ads</span>
-                    <span class="lk-tag">Google Business</span>
-                    <span class="lk-tag">Google Play</span>
+    <!-- Dark Platforms Conveyor Belt (attached below hero) -->
+    <section class="dark-platforms-bar">
+        <div class="dark-platforms-container">
+            <h2 class="dark-platforms-label"><?php esc_html_e('شركة سيو رائدة في تحويل الزيارات إلى أرباح حقيقية عبر مختلف المنصات', 'linkawy'); ?></h2>
+            <div class="platforms-conveyor" id="platformsConveyor">
+                <div class="platforms-track" id="platformsTrack">
+                    <!-- JS will populate items here -->
                 </div>
             </div>
         </div>
@@ -1205,6 +1171,135 @@ get_header();
     });
     </script>
 
+
+    <!-- Conveyor Belt Platforms -->
+    <script>
+    (function() {
+        var platforms = [
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/sall.svg', name: 'Salla', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/partners/zid.svg', name: 'Zid', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/shopify.svg', name: 'Shopify', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/woocommerce.svg', name: 'WooCommerce', badge: 'Expert' },
+            { img: '<?php echo LINKAWY_URI; ?>/assets/images/ds/brands/wordpress.svg', name: 'WordPress', badge: 'Expert' }
+        ];
+
+        var PAUSE = 3000; // ms between each step
+
+        var conveyor = document.getElementById('platformsConveyor');
+        var track = document.getElementById('platformsTrack');
+        if (!conveyor || !track) return;
+
+        function getVisibleCount() {
+            return window.innerWidth < 768 ? 2 : 5;
+        }
+
+        // Get actual gap from CSS
+        function getGap() {
+            var gapStr = window.getComputedStyle(track).gap;
+            return parseFloat(gapStr) || 16;
+        }
+
+        // Calculate item width based on conveyor width and actual gap
+        function getItemWidth() {
+            var visible = getVisibleCount();
+            var gap = getGap();
+            var cw = conveyor.getBoundingClientRect().width;
+            return (cw - gap * (visible - 1)) / visible;
+        }
+
+        function createBox(p) {
+            var box = document.createElement('div');
+            box.className = 'dark-platform-box';
+            box.innerHTML =
+                '<img src="' + p.img + '" alt="' + p.name + '" width="32" height="32" loading="lazy">' +
+                '<span class="dark-platform-name">' + p.name + '</span>' +
+                '<span class="dark-platform-badge">' + p.badge + '</span>';
+            return box;
+        }
+
+        // Keep a circular index
+        var nextIndex = 0;
+
+        function init() {
+            var visible = getVisibleCount();
+            var itemW = getItemWidth();
+            conveyor.style.setProperty('--item-width', itemW + 'px');
+            track.innerHTML = '';
+            track.style.transition = 'none';
+            track.style.transform = 'translateX(0)';
+
+            // Place VISIBLE items
+            nextIndex = 0;
+            for (var i = 0; i < visible; i++) {
+                track.appendChild(createBox(platforms[nextIndex % platforms.length]));
+                nextIndex++;
+            }
+        }
+
+        var stepping = false;
+
+        function step() {
+            if (stepping) return;
+            // Ensure tab is active
+            if (document.hidden) return;
+            
+            stepping = true;
+
+            var itemW = getItemWidth();
+            var gap = getGap();
+            
+            // Update width in case of slight resize
+            conveyor.style.setProperty('--item-width', itemW + 'px');
+
+            // Prepend next item to the start (off-screen left)
+            var newBox = createBox(platforms[nextIndex % platforms.length]);
+            nextIndex++;
+            track.insertBefore(newBox, track.firstChild);
+
+            // Start offset so the new item is hidden to the left
+            // The shift amount must be exactly one item width + one gap
+            var shiftAmount = itemW + gap;
+            
+            track.style.transition = 'none';
+            track.style.transform = 'translateX(-' + shiftAmount + 'px)';
+
+            // Force reflow
+            void track.offsetWidth;
+
+            // Animate to 0
+            requestAnimationFrame(() => {
+                track.style.transition = 'transform 0.9s cubic-bezier(0.4, 0, 0.2, 1)';
+                track.style.transform = 'translateX(0)';
+            });
+
+            // After transition ends
+            // Use 'once' option to ensure listener is removed automatically and correctly
+            track.addEventListener('transitionend', function handler(e) {
+                if (e.target !== track) return; // Ignore bubbling events
+                
+                // Remove the last child (slid off-screen right)
+                if (track.lastChild) track.removeChild(track.lastChild);
+
+                stepping = false;
+            }, { once: true });
+        }
+
+        // Initialize
+        init();
+
+        // Start stepping
+        setInterval(step, PAUSE);
+
+        // Recalculate on resize
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                init();
+            }, 200);
+        });
+    })();
+    </script>
 
     <!-- Swiper for Results Section: JS loads only when the slider nears the viewport -->
     <script>

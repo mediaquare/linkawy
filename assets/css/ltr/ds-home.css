@@ -63,22 +63,22 @@
 }
 
 /* ==========================================================================
-   2. Platforms (dark) — rebuilt: 6 brand cards, first = orange highlight,
-      then the existing title + the existing platforms as tags.
+   2. Platforms bar (dark) — main's markup + conveyor (Salla, Zid, Shopify, WooCommerce,
+      WordPress, "Expert"), restyled: dark cards with the gradient edge, real brand logos.
    ========================================================================== */
-.lk-platforms{background:transparent;padding:8px 0 var(--space-section);border:0}
-.lk-platforms .container{position:relative;z-index:1}
-.lk-platforms__grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
-.lk-platform.lk-card{flex-direction:row;align-items:center;gap:14px;padding:16px}
-.lk-platform .lk-tile{--tile-size:44px}
-.lk-platform .lk-tile--logo img{width:22px;height:22px}
-.lk-platform__text{display:flex;flex-direction:column;min-width:0}
-.lk-platform__value{font-size:16px;font-weight:600;line-height:1.4;color:var(--text-heading);direction:ltr;unicode-bidi:isolate;text-align:start}
-.lk-platform__label{font-size:13px;line-height:1.5;color:var(--text-body)}
-.lk-platforms__foot{margin-top:var(--space-block);display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center}
-.lk-platforms .dark-platforms-label{text-transform:none;margin:0;margin-inline-end:8px;font-size:15px;line-height:1.6;font-weight:400;color:var(--text-body);letter-spacing:0;max-width:none}
-.lk-platforms__tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-@media (max-width:767px){.lk-platforms{padding-bottom:var(--space-section-sm)}.lk-platforms__foot{flex-direction:column}}
+.home .dark-platforms-bar{background:transparent;border-top:1px solid var(--dark-border);border-bottom:0;padding:48px 0 var(--space-section-sm)}
+.home .dark-platforms-container{max-width:calc(var(--content-max) + 2 * var(--gutter));padding:0 var(--gutter)}
+.home .dark-platforms-label{font-size:var(--fs-card);line-height:var(--lh-card);font-weight:600;letter-spacing:var(--tracking-card);color:var(--white);
+  text-transform:none;margin-bottom:var(--space-element)}
+.home .platforms-track{gap:16px}
+.home .dark-platform-box{gap:10px;padding:20px 0;border-radius:var(--radius-card);border:1px solid transparent;
+  background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box}
+.home .dark-platform-box img{height:36px;width:auto;opacity:1;filter:none}
+/* Salla and Zid files from the old theme are single-colour black: render them white */
+.home .dark-platform-box img[src*="/partners/"]{filter:brightness(0) invert(1)}
+.home .dark-platform-name{color:var(--white);font-size:15px;font-weight:600;letter-spacing:0}
+.home .dark-platform-badge{color:var(--fg-on-dark-3);font-size:11px;font-weight:500;letter-spacing:.08em}
+@media (max-width:767px){.home .dark-platforms-bar{padding:40px 0 56px}.home .dark-platform-box img{height:32px}}
 
 /* ==========================================================================
    3. Services (white)
