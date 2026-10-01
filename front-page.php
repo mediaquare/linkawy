@@ -827,12 +827,12 @@ get_header();
                             <p class="benefit-img-caption"><?php esc_html_e('نبدأ بدراسة نشاطك التجاري والسوق الذي تنافس فيه، مع فهم الفئة المستهدفة واحتياجاتها وطريقة بحثها الفعلية في محركات البحث، كأساس لاستراتيجية سيو تركز على النمو.', 'linkawy'); ?></p>
                         </div>
                         <div class="benefit-img" id="img-2">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ds/growth/step-2-seo-plan.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ds/growth/step-2-seo-plan<?php echo linkawy_is_en() ? '-en' : ''; ?>.webp"
                                 alt="<?php esc_attr_e('تخطيط استراتيجية سيو لتحسين الظهور في نتائج البحث واستهداف كلمات مرتبطة بقرار الشراء', 'linkawy'); ?>" loading="lazy" width="1454" height="1334">
                             <p class="benefit-img-caption"><?php esc_html_e('بعد فهم السوق والجمهور، نضع خطة ضمن استراتيجية سيو مدروسة تستهدف تحسين ظهور موقعك في الكلمات المفتاحية الأكثر ارتباطًا بقرار الشراء.', 'linkawy'); ?></p>
                         </div>
                         <div class="benefit-img" id="img-3">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ds/growth/step-3-sales-growth.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ds/growth/step-3-sales-growth<?php echo linkawy_is_en() ? '-en' : ''; ?>.webp"
                                 alt="<?php esc_attr_e('لوحة مؤشرات لزيادة الزيارات العضوية والمبيعات بعد تطبيق استراتيجية سيو', 'linkawy'); ?>" loading="lazy" width="1454" height="1334">
                             <p class="benefit-img-caption"><?php esc_html_e('مع هذا التقدم المنتظم في استراتيجية سيو، تبدأ النتائج بالظهور بشكل أوضح على مستوى الطلبات والمبيعات والنمو التجاري.', 'linkawy'); ?></p>
                         </div>
