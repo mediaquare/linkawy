@@ -113,14 +113,17 @@
 
 /* ---------- CTA (dark) + buttons ---------- */
 .page-template-service-page .lk-svc-cta{text-align:center}
-.page-template-service-page .wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;
-  border-radius:var(--radius-pill);border:1px solid transparent;background:var(--gradient-primary);color:var(--white);font-size:15px;font-weight:700;
-  text-decoration:none;transition:box-shadow var(--dur-base) var(--ease-out)}
-.page-template-service-page .wp-block-button__link:hover{box-shadow:var(--shadow-exceptional);color:var(--white)}
-.page-template-service-page .is-style-outline .wp-block-button__link{background:transparent;border-color:var(--dark-border);color:var(--white)}
-.page-template-service-page .lk-svc-white .is-style-outline .wp-block-button__link,
-.page-template-service-page .lk-svc-cream .is-style-outline .wp-block-button__link{border-color:var(--border-light);color:var(--fg-on-light-1)}
-.page-template-service-page .is-style-outline .wp-block-button__link:hover{box-shadow:none;border-color:var(--fg-on-dark-3)}
+.page-template-service-page .page-content .wp-block-button .wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;
+  border-radius:var(--radius-pill);border:1px solid transparent;font-size:15px;font-weight:700;text-decoration:none;transform:none;
+  transition:box-shadow var(--dur-base) var(--ease-out),border-color var(--dur-fast),background var(--dur-fast)}
+/* Primary: the gradient pill (same weight as the legacy :not(.is-style-outline) rules, loaded later) */
+.page-template-service-page .page-content .wp-block-button:not(.is-style-outline) .wp-block-button__link{background:var(--gradient-primary);color:var(--white)}
+.page-template-service-page .page-content .wp-block-button:not(.is-style-outline) .wp-block-button__link:hover{background:var(--gradient-primary);color:var(--white);box-shadow:var(--shadow-exceptional);transform:none}
+/* Outline: on dark = white text + dark border; on light = dark text + light border */
+.page-template-service-page .page-content .wp-block-button.is-style-outline .wp-block-button__link{background:transparent;color:var(--white);border-color:var(--dark-border)}
+.page-template-service-page .page-content .wp-block-button.is-style-outline .wp-block-button__link:hover{background:rgba(255,255,255,.04);color:var(--white);border-color:var(--fg-on-dark-3);transform:none}
+.page-template-service-page .lk-svc-white .wp-block-button.is-style-outline .wp-block-button__link,
+.page-template-service-page .lk-svc-cream .wp-block-button.is-style-outline .wp-block-button__link{color:var(--fg-on-light-1);border-color:var(--border-light)}
 
 /* ---------- Pricing (backlinks) ---------- */
 .page-template-service-page .lk-svc-pricing{background:transparent;padding-block:24px;padding-inline:var(--svc-gutter);margin:0}
