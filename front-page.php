@@ -519,7 +519,7 @@ get_header();
     </section>
 
     <!-- شركاء النجاح -->
-    <section class="partners-section" data-surface="dark">
+    <section class="partners-section">
         <div class="partners-container">
             <h2 class="partners-title"><?php esc_html_e('شركاء النجاح:', 'linkawy'); ?></h2>
             <div class="partners-marquee">

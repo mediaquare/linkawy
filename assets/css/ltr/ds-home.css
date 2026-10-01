@@ -15,7 +15,7 @@
 /* ---------- Shared heading scale inside the home sections ---------- */
 .home .programs-intro h2,.home .process-subtitle,.home .reasons-section .section-header h2,.home .benefits-section .section-header h2,
 .home .blog-posts-header h2,.home .about-content h2,.home .seo-faq-header h2,.home .results-section .results-title,
-.home .success-stories-title,.home .partners-title,.home .seo-proof-section .section-title{
+.home .success-stories-title,.home .seo-proof-section .section-title{
   font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--text-heading)}
 
 /* ==========================================================================
@@ -166,11 +166,13 @@
 /* ==========================================================================
    6. Partners + success stories (dark, one continuous surface)
    ========================================================================== */
-.home .partners-section{background:var(--dark);border:0;padding:40px 0 0;margin-top:-1px}
-.home .partners-container{max-width:calc(var(--content-max) + 2 * var(--gutter));padding:0 var(--gutter);box-sizing:border-box;flex-direction:column;align-items:stretch;gap:var(--space-block)}
-.home .partners-title{justify-content:center;margin:0!important;white-space:normal;text-align:center}
-.home .partners-item img{opacity:.6;filter:grayscale(100%) brightness(0) invert(1)}
-.home .partners-item img:hover{opacity:1;filter:grayscale(100%) brightness(0) invert(1)}
+/* Partners: main's layout (title on the same line as the logo marquee), dark with the hero's soft orange glow */
+.home .partners-section{position:relative;background:var(--dark);border-top:1px solid var(--dark-border);border-bottom:1px solid var(--dark-border);overflow:hidden}
+.home .partners-section::before{content:'';position:absolute;inset:-60%;pointer-events:none;z-index:0;filter:blur(100px);
+  background:radial-gradient(9% 85% at 79% 10%,rgba(255,98,7,.35) 0%,rgba(255,98,7,.14) 40%,transparent 75%),
+    radial-gradient(60% 70% at 10% 100%,rgba(255,98,7,.4) 0%,rgba(255,98,7,.14) 45%,transparent 78%)}
+.home .partners-container{position:relative;z-index:1;max-width:calc(var(--content-max) + 2 * var(--gutter));padding:0 var(--gutter);box-sizing:border-box}
+.home .partners-title{font-size:24px;line-height:1.3;font-weight:700;letter-spacing:var(--tracking-section);color:var(--white)}
 .home .success-stories-section{background:var(--dark);margin-top:0;padding:var(--space-section-sm) 0 var(--space-section)}
 .home .success-stories-header{align-items:flex-end;margin-bottom:24px}
 .home .success-stories-title{font-size:24px}
