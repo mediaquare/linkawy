@@ -99,7 +99,10 @@
 .home .program-card .icon-box{position:relative;width:56px;height:56px;margin:0 0 20px;padding:0;border-radius:var(--radius-tile);overflow:hidden;color:var(--orange);
   border:1px solid transparent;background:linear-gradient(var(--tile-inner-light),var(--tile-inner-light)) padding-box,var(--tile-edge-light) border-box}
 .home .program-card .icon-box::before{content:'';position:absolute;inset:0;background:radial-gradient(56px circle at 50% 100%,var(--orange),transparent);opacity:.10;pointer-events:none}
-.home .program-card .icon-box svg{position:relative;width:24px;height:24px;fill:none}
+.home .program-card .icon-box svg{position:relative;width:24px;height:24px}
+.home .program-card .icon-box svg.lk-icon{fill:none}
+/* Shopify / Salla keep their brand logo from main (orange, like main) inside the light tile */
+.home .program-card--shopify .icon-box svg,.home .program-card--salla .icon-box svg{width:28px;height:28px}
 .home .program-card h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:var(--text-heading);margin:0 0 10px}
 .home .program-card .service-subtitle{display:inline-flex;align-items:center;align-self:flex-start;height:30px;padding:0 12px;margin:0 0 14px;border-radius:var(--radius-pill);
   background:var(--white);border:1px solid var(--border-light);color:var(--fg-on-light-2);font-size:13px;font-weight:500;line-height:1;direction:ltr;unicode-bidi:isolate}

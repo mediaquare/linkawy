@@ -336,7 +336,7 @@ get_header();
                 <!-- Card 1: Shopify SEO -->
                 <div class="program-card program-card--shopify">
                     <div class="icon-box">
-                        <?php echo linkawy_icon('ShoppingBag', 24); ?>
+                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/shopify.svg' ); ?>
                     </div>
                     <h3><?php esc_html_e('سيو شوبيفاي', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Shopify SEO</span>
@@ -346,7 +346,7 @@ get_header();
                 <!-- Card 2: Salla SEO -->
                 <div class="program-card program-card--salla">
                     <div class="icon-box">
-                        <?php echo linkawy_icon('Store', 24); ?>
+                        <?php echo file_get_contents( get_template_directory() . '/assets/images/partners/sall.svg' ); ?>
                     </div>
                     <h3><?php esc_html_e('سيو سلة', 'linkawy'); ?></h3>
                     <span class="service-subtitle">Salla SEO</span>
