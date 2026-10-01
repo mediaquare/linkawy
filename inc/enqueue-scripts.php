@@ -789,6 +789,37 @@ function linkawy_render_ai_prompt_block($attributes, $content) {
 }
 
 /**
+ * Register the Icon block (redesign): a Lucide icon inside the design-system icon tile.
+ * Dynamic (saved as <!-- wp:linkawy/icon {"name":"Search"} /-->), so it never goes "invalid".
+ */
+function linkawy_register_icon_block() {
+    wp_register_script(
+        'linkawy-icon-block',
+        LINKAWY_URI . '/assets/js/blocks/icon-block.js',
+        array('wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-server-side-render'),
+        LINKAWY_VERSION,
+        true
+    );
+    register_block_type('linkawy/icon', array(
+        'editor_script'   => 'linkawy-icon-block',
+        'attributes'      => array(
+            'name' => array('type' => 'string', 'default' => 'Sparkles'),
+        ),
+        'render_callback' => 'linkawy_render_icon_block',
+    ));
+}
+add_action('init', 'linkawy_register_icon_block');
+
+function linkawy_render_icon_block($attributes) {
+    $name = isset($attributes['name']) ? preg_replace('/[^A-Za-z0-9]/', '', $attributes['name']) : '';
+    $svg  = $name ? linkawy_icon($name, 24) : '';
+    if (!$svg) {
+        return '';
+    }
+    return '<div class="wp-block-linkawy-icon lk-tile"><span class="lk-tile__in">' . $svg . '</span></div>';
+}
+
+/**
  * Register FAQ Gutenberg Block
  */
 function linkawy_register_faq_block() {
