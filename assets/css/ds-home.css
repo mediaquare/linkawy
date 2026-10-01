@@ -240,6 +240,10 @@
 .home .benefit-item h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:var(--text-heading)}
 .home .benefit-item p{font-size:15px;line-height:var(--lh-body);color:var(--text-body)}
 .home .benefit-img img{border-radius:var(--radius-card)}
+/* The step images carry a baked-in #f4f4f4 backdrop (made for main's grey box): lift it to white
+   and multiply onto the cream box so it takes the box colour (files unchanged). */
+.home .benefit-img{mix-blend-mode:multiply}
+.home .benefit-img img{filter:brightness(1.045)}
 .home .benefit-img-caption{color:var(--text-muted);font-size:var(--fs-small)}
 
 /* ==========================================================================
