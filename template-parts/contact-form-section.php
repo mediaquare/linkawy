@@ -23,9 +23,7 @@ $cf = array(
     'cf_name'            => 'cf_name' . $linkawy_cf_sfx,
     'cf_email'           => 'cf_email' . $linkawy_cf_sfx,
     'cf_phone'           => 'cf_phone' . $linkawy_cf_sfx,
-    'cf_company'         => 'cf_company' . $linkawy_cf_sfx,
     'cf_website'         => 'cf_website' . $linkawy_cf_sfx,
-    'cf_budget'          => 'cf_budget' . $linkawy_cf_sfx,
     'cf_goals'           => 'cf_goals' . $linkawy_cf_sfx,
     'phoneCountrySelect' => 'phoneCountrySelect' . $linkawy_cf_sfx,
     'phoneCountryBtn'    => 'phoneCountryBtn' . $linkawy_cf_sfx,
@@ -100,32 +98,14 @@ if ($linkawy_cf_sfx !== '') {
                                 <div id="<?php echo esc_attr($cf['countryList']); ?>"></div>
                             </div>
                         </div>
-                        <input type="tel" id="<?php echo esc_attr($cf['cf_phone']); ?>" name="phone" placeholder="<?php esc_attr_e('رقم الهاتف', 'linkawy'); ?>">
+                        <input type="tel" id="<?php echo esc_attr($cf['cf_phone']); ?>" name="phone" placeholder="01xxxxxxxxx">
                     </div>
                     <input type="hidden" id="<?php echo esc_attr($cf['cf_country_code']); ?>" name="country_code" value="+20">
                 </div>
 
                 <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_company']); ?>"><?php esc_html_e('اسم الشركة', 'linkawy'); ?></label>
-                    <input type="text" id="<?php echo esc_attr($cf['cf_company']); ?>" name="company" placeholder="<?php esc_attr_e('اسم شركتك / متجرك', 'linkawy'); ?>" required>
-                </div>
-
-                <div class="form-field">
                     <label for="<?php echo esc_attr($cf['cf_website']); ?>"><?php esc_html_e('رابط الموقع', 'linkawy'); ?></label>
                     <input type="text" id="<?php echo esc_attr($cf['cf_website']); ?>" name="website" placeholder="example.com" dir="ltr" class="form-input-ltr">
-                </div>
-
-                <div class="form-field">
-                    <label for="<?php echo esc_attr($cf['cf_budget']); ?>"><?php esc_html_e('الميزانية الشهرية', 'linkawy'); ?></label>
-                    <select id="<?php echo esc_attr($cf['cf_budget']); ?>" name="budget" required>
-                        <option value="" disabled selected hidden><?php esc_html_e('اختر الميزانية المتوقعة', 'linkawy'); ?></option>
-                        <option value="below-750"><?php esc_html_e('أقل من 750$', 'linkawy'); ?></option>
-                        <option value="750-1500">750$ - 1,500$</option>
-                        <option value="1500-3000">1,500$ - 3,000$</option>
-                        <option value="3000-5000">3,000$ - 5,000$</option>
-                        <option value="5000-10000">5,000$ - 10,000$</option>
-                        <option value="above-10000"><?php esc_html_e('أكثر من 10,000$', 'linkawy'); ?></option>
-                    </select>
                 </div>
 
                 <div class="form-field full-width">
@@ -158,30 +138,30 @@ if ($linkawy_cf_sfx !== '') {
 <script>
 (function() {
     var countries = [
-        {name:<?php echo wp_json_encode(__('مصر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+20',flag:'🇪🇬',iso:'EG'},
-        {name:<?php echo wp_json_encode(__('السعودية', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+966',flag:'🇸🇦',iso:'SA'},
-        {name:<?php echo wp_json_encode(__('الإمارات', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+971',flag:'🇦🇪',iso:'AE'},
-        {name:<?php echo wp_json_encode(__('الكويت', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+965',flag:'🇰🇼',iso:'KW'},
-        {name:<?php echo wp_json_encode(__('قطر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+974',flag:'🇶🇦',iso:'QA'},
-        {name:<?php echo wp_json_encode(__('البحرين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+973',flag:'🇧🇭',iso:'BH'},
-        {name:<?php echo wp_json_encode(__('عُمان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+968',flag:'🇴🇲',iso:'OM'},
-        {name:<?php echo wp_json_encode(__('الأردن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+962',flag:'🇯🇴',iso:'JO'},
-        {name:<?php echo wp_json_encode(__('العراق', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+964',flag:'🇮🇶',iso:'IQ'},
-        {name:<?php echo wp_json_encode(__('لبنان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+961',flag:'🇱🇧',iso:'LB'},
-        {name:<?php echo wp_json_encode(__('فلسطين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+970',flag:'🇵🇸',iso:'PS'},
-        {name:<?php echo wp_json_encode(__('سوريا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+963',flag:'🇸🇾',iso:'SY'},
-        {name:<?php echo wp_json_encode(__('ليبيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+218',flag:'🇱🇾',iso:'LY'},
-        {name:<?php echo wp_json_encode(__('تونس', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+216',flag:'🇹🇳',iso:'TN'},
-        {name:<?php echo wp_json_encode(__('الجزائر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+213',flag:'🇩🇿',iso:'DZ'},
-        {name:<?php echo wp_json_encode(__('المغرب', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+212',flag:'🇲🇦',iso:'MA'},
-        {name:<?php echo wp_json_encode(__('السودان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+249',flag:'🇸🇩',iso:'SD'},
-        {name:<?php echo wp_json_encode(__('اليمن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+967',flag:'🇾🇪',iso:'YE'},
-        {name:<?php echo wp_json_encode(__('تركيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+90',flag:'🇹🇷',iso:'TR'},
-        {name:<?php echo wp_json_encode(__('الولايات المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇺🇸',iso:'US'},
-        {name:<?php echo wp_json_encode(__('المملكة المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+44',flag:'🇬🇧',iso:'GB'},
-        {name:<?php echo wp_json_encode(__('ألمانيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+49',flag:'🇩🇪',iso:'DE'},
-        {name:<?php echo wp_json_encode(__('فرنسا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+33',flag:'🇫🇷',iso:'FR'},
-        {name:<?php echo wp_json_encode(__('كندا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇨🇦',iso:'CA'}
+        {name:<?php echo wp_json_encode(__('مصر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+20',flag:'🇪🇬',iso:'EG',ph:'01xxxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('السعودية', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+966',flag:'🇸🇦',iso:'SA',ph:'05xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('الإمارات', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+971',flag:'🇦🇪',iso:'AE',ph:'05xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('الكويت', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+965',flag:'🇰🇼',iso:'KW',ph:'xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('قطر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+974',flag:'🇶🇦',iso:'QA',ph:'xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('البحرين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+973',flag:'🇧🇭',iso:'BH',ph:'xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('عُمان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+968',flag:'🇴🇲',iso:'OM',ph:'9xxxxxxx'},
+        {name:<?php echo wp_json_encode(__('الأردن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+962',flag:'🇯🇴',iso:'JO',ph:'07xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('العراق', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+964',flag:'🇮🇶',iso:'IQ',ph:'07xxxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('لبنان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+961',flag:'🇱🇧',iso:'LB',ph:'0xxxxxxx'},
+        {name:<?php echo wp_json_encode(__('فلسطين', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+970',flag:'🇵🇸',iso:'PS',ph:'05xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('سوريا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+963',flag:'🇸🇾',iso:'SY',ph:'09xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('ليبيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+218',flag:'🇱🇾',iso:'LY',ph:'09xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('تونس', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+216',flag:'🇹🇳',iso:'TN',ph:'xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('الجزائر', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+213',flag:'🇩🇿',iso:'DZ',ph:'0xxxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('المغرب', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+212',flag:'🇲🇦',iso:'MA',ph:'06xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('السودان', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+249',flag:'🇸🇩',iso:'SD',ph:'09xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('اليمن', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+967',flag:'🇾🇪',iso:'YE',ph:'7xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('تركيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+90',flag:'🇹🇷',iso:'TR',ph:'05xxxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('الولايات المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇺🇸',iso:'US',ph:'xxxxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('المملكة المتحدة', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+44',flag:'🇬🇧',iso:'GB',ph:'07xxxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('ألمانيا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+49',flag:'🇩🇪',iso:'DE',ph:'015xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('فرنسا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+33',flag:'🇫🇷',iso:'FR',ph:'06xxxxxxxx'},
+        {name:<?php echo wp_json_encode(__('كندا', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>,code:'+1',flag:'🇨🇦',iso:'CA',ph:'xxxxxxxxxx'}
     ];
 
     var selectedFlag = document.getElementById(<?php echo wp_json_encode($cf['selectedFlag']); ?>);
@@ -198,7 +178,7 @@ if ($linkawy_cf_sfx !== '') {
         var q = (filter || '').toLowerCase();
         countries.forEach(function(c) {
             if (q && c.name.indexOf(q) === -1 && c.code.indexOf(q) === -1 && c.iso.toLowerCase().indexOf(q) === -1) return;
-            html += '<div class="country-option" data-code="' + c.code + '" data-flag="' + c.flag + '" data-iso="' + c.iso + '">' +
+            html += '<div class="country-option" data-code="' + c.code + '" data-flag="' + c.flag + '" data-iso="' + c.iso + '" data-ph="' + c.ph + '">' +
                 '<span class="country-flag">' + c.flag + '</span>' +
                 '<span class="country-name">' + c.name + '</span>' +
                 '<span class="country-dial">' + c.code + '</span>' +
@@ -208,16 +188,20 @@ if ($linkawy_cf_sfx !== '') {
 
         countryList.querySelectorAll('.country-option').forEach(function(opt) {
             opt.addEventListener('click', function() {
-                selectCountry(this.dataset.flag, this.dataset.code);
+                selectCountry(this.dataset.flag, this.dataset.code, this.dataset.ph);
                 closeDropdown();
             });
         });
     }
 
-    function selectCountry(flag, code) {
+    var phoneInput = document.getElementById(<?php echo wp_json_encode($cf['cf_phone']); ?>);
+
+    // ph = a local-format example number for that country (shown as the phone placeholder)
+    function selectCountry(flag, code, ph) {
         if (selectedFlag) selectedFlag.textContent = flag;
         if (selectedCode) selectedCode.textContent = code;
         if (hiddenCode) hiddenCode.value = code;
+        if (phoneInput && ph) phoneInput.placeholder = ph;
     }
 
     function closeDropdown() {
@@ -266,7 +250,7 @@ if ($linkawy_cf_sfx !== '') {
                         var iso = parts[1].toUpperCase();
                         for (var i = 0; i < countries.length; i++) {
                             if (countries[i].iso === iso) {
-                                selectCountry(countries[i].flag, countries[i].code);
+                                selectCountry(countries[i].flag, countries[i].code, countries[i].ph);
                                 return;
                             }
                         }
@@ -282,13 +266,6 @@ if ($linkawy_cf_sfx !== '') {
     detectCountry();
     renderList('');
 
-    var budgetSelect = document.getElementById(<?php echo wp_json_encode($cf['cf_budget']); ?>);
-    if (budgetSelect) {
-        budgetSelect.classList.add('placeholder-active');
-        budgetSelect.addEventListener('change', function() {
-            budgetSelect.classList.remove('placeholder-active');
-        });
-    }
 })();
 </script>
 
@@ -348,9 +325,6 @@ function linkawyInitContactForm() {
 
             }
         ])
-        .addField(formSel + ' [name="company"]', [
-            { rule: 'required', errorMessage: <?php echo wp_json_encode(__('هذه الخانة مطلوبة.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?> }
-        ])
         .addField(formSel + ' [name="website"]', [
             {
                 validator: function(value) {
@@ -360,9 +334,6 @@ function linkawyInitContactForm() {
                 errorMessage: <?php echo wp_json_encode(__('يرجى إدخال رابط صحيح (مثال: example.com).', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?>
 
             }
-        ])
-        .addField(formSel + ' [name="budget"]', [
-            { rule: 'required', errorMessage: <?php echo wp_json_encode(__('هذه الخانة مطلوبة.', 'linkawy'), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); ?> }
         ])
         .onFail(function() {
             if (globalError) globalError.classList.add('visible');
@@ -389,9 +360,7 @@ function linkawyInitContactForm() {
                 formData.append('email', form.querySelector('[name="email"]').value);
                 formData.append('phone', form.querySelector('[name="phone"]').value);
                 formData.append('country_code', countryCode);
-                formData.append('company', form.querySelector('[name="company"]').value);
                 formData.append('website', form.querySelector('[name="website"]').value);
-                formData.append('budget', form.querySelector('[name="budget"]').value);
                 formData.append('goals', form.querySelector('[name="goals"]').value);
                 formData.append('source_url', window.location.href);
                 formData.append('source_title', sourceTitle);

@@ -481,12 +481,10 @@ function linkawy_submit_contact_form() {
 
     $is_short_form = ($form_source === 'service_hero');
 
-    // Validate required fields (full form: name, email, company, budget; short form: name, email only)
+    // Validate required fields (name + email). Company and budget were removed from the
+    // contact form in the redesign; they stay optional here so older cached forms still submit.
     if (empty($name) || empty($email)) {
         wp_send_json_error(['message' => __('يرجى ملء الحقول المطلوبة.', 'linkawy')]);
-    }
-    if (!$is_short_form && (empty($company) || empty($budget))) {
-        wp_send_json_error(['message' => __('يرجى ملء جميع الحقول المطلوبة.', 'linkawy')]);
     }
 
     // Validate email
