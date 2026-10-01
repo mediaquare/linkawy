@@ -179,8 +179,7 @@
 .home .timeline-marker svg{position:relative}
 .home .timeline-item:hover .timeline-marker{color:var(--orange);box-shadow:none;
   background:linear-gradient(var(--tile-inner-light),var(--tile-inner-light)) padding-box,var(--tile-edge-light) border-box}
-.home .timeline-step-badge{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:var(--radius-pill);background:var(--white);
-  border:1px solid var(--border-light);color:var(--orange);font-size:13px;font-weight:500;margin-bottom:12px}
+.home .timeline-step-badge{color:var(--orange);font-weight:500}
 .home .timeline-title{font-size:var(--fs-card);line-height:var(--lh-card);font-weight:600;color:var(--text-heading)}
 .home .timeline-desc{font-size:15px;line-height:var(--lh-body);color:var(--text-body)}
 
@@ -297,7 +296,6 @@
 @media (max-width:768px){
   .home .process-container,.home .blog-posts-container,.home .seo-faq-container,.home .partners-container{padding-inline:20px}
   .home .timeline-marker{position:relative!important}
-  .home .timeline-step-badge{width:fit-content!important;margin-inline:auto}
   .home .seo-faq-grid{gap:12px}
   .home .seo-faq-question{padding:18px 20px}
   .home .seo-faq-answer-inner{padding:0 20px 18px}
