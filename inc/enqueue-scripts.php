@@ -446,6 +446,9 @@ function linkawy_ds_styles() {
     if (is_front_page()) {
         wp_enqueue_style('linkawy-ds-home', linkawy_get_asset_path('/assets/css/ds-home', 'css'), array('linkawy-ds'), LINKAWY_VERSION);
     }
+    if (is_page_template('page-templates/service-page.php')) {
+        wp_enqueue_style('linkawy-ds-service', linkawy_get_asset_path('/assets/css/ds-service', 'css'), array('linkawy-ds'), LINKAWY_VERSION);
+    }
 }
 add_action('wp_enqueue_scripts', 'linkawy_ds_styles', 30);
 

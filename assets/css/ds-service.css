@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Linkawy redesign: service page template (page-templates/service-page.php).
+   Kit ServicePage: dark hero (title + accent + buttons | form card), then the
+   page content on white, then the contact section (dark) and Footer E.
+   Style only: markup and text are unchanged. A per-page hero background set in
+   the editor is overridden here so every service hero sits on the dark surface.
+   ========================================================================== */
+
+/* ---------- Hero (dark) ---------- */
+.service-hero{background:var(--dark)!important;color:var(--fg-on-dark-2);padding:72px 0 var(--space-section-sm)}
+.service-hero::before,.service-hero::after{display:none}
+.service-hero .container.service-hero-inner{max-width:calc(var(--content-max) + 2 * var(--gutter));padding:0 var(--gutter);gap:48px 72px}
+.service-hero .breadcrumbs a{color:var(--fg-on-dark-3)}
+.service-hero .breadcrumbs a:hover,.service-hero .breadcrumb-current{color:var(--orange)}
+.service-hero .breadcrumb-separator{color:var(--dark-border)}
+.service-hero-title{font-size:var(--fs-display);line-height:var(--lh-display);letter-spacing:var(--tracking-display);font-weight:700;color:var(--white);margin:0 0 20px}
+.service-hero-subtitle{font-size:18px;line-height:var(--lh-body);color:var(--fg-on-dark-2);margin:0 0 32px}
+.service-hero-buttons{gap:12px}
+.service-hero-btn-primary{height:56px;min-height:56px;padding:0 30px;border:1px solid transparent;border-radius:var(--radius-pill);
+  background:var(--gradient-primary);color:var(--white);font-size:16px;font-weight:700;transition:box-shadow var(--dur-base) var(--ease-out)}
+.service-hero-btn-primary:hover{background:var(--gradient-primary);color:var(--white);border-color:transparent;box-shadow:var(--shadow-exceptional);transform:none}
+.service-hero-btn-secondary{height:56px;padding:0 30px;border:1px solid var(--dark-border);background:transparent;color:var(--white);font-weight:600}
+.service-hero-btn-secondary:hover{background:rgba(255,255,255,.04);border-color:var(--fg-on-dark-3);color:var(--white)}
+.service-hero-media .service-hero-image{border-radius:var(--radius-card);box-shadow:none}
+
+/* ---------- Hero form card: dark card, DS pill fields ---------- */
+.service-hero-form-card{border-radius:var(--radius-card);padding:32px;box-shadow:none;border:1px solid transparent;
+  background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box}
+.service-hero-form-card .sh-label{font-size:var(--fs-small);font-weight:500;color:var(--fg-on-dark-1)}
+.service-hero-form-card .sh-field .sh-input-wrapper,.service-hero-form-card .sh-phone-wrapper{min-height:52px;border:1px solid var(--dark-border);
+  border-radius:var(--radius-pill);background:var(--dark-surface);overflow:hidden}
+.service-hero-form-card .sh-phone-input-wrap{border:0!important;border-radius:0;background:transparent!important;box-shadow:none!important}
+.service-hero-form-card .sh-field .sh-input-wrapper:focus-within,.service-hero-form-card .sh-phone-wrapper:focus-within{
+  border-color:var(--orange);box-shadow:0 0 0 3px var(--highlight-mark);background:var(--dark-surface)}
+.service-hero-form-card .sh-input-icon{color:var(--fg-on-dark-3)}
+.service-hero-form-card .service-hero-form-input{height:auto;padding:0 8px;border:0;border-radius:0;background:transparent;color:var(--fg-on-dark-1);font-size:15px}
+.service-hero-form-card .service-hero-form-input:focus{box-shadow:none;background:transparent}
+.service-hero-form-card .service-hero-form-input::placeholder{color:var(--fg-on-dark-3)}
+.service-hero-form-card .sh-phone-wrapper .phone-country-btn{height:auto;border:0;border-radius:0;background:transparent;color:var(--fg-on-dark-1);
+  /*rtl:ignore*/border-left:1px solid var(--dark-border)}
+.service-hero-form-card .sh-phone-wrapper:focus-within .phone-country-btn{background:transparent}
+.sh-submit-btn{min-height:56px;border-radius:var(--radius-pill);background:var(--gradient-primary);font-size:16px;font-weight:700}
+.sh-submit-btn:hover:not(:disabled){background:var(--gradient-primary);transform:none;box-shadow:var(--shadow-exceptional)}
+.sh-submit-btn:active:not(:disabled){background:var(--orange-deep);transform:scale(.98)}
+.sh-trust-bar{border-top-color:var(--dark-border)}
+.sh-trust-item{font-size:var(--fs-small);color:var(--fg-on-dark-2)}
+.sh-trust-item svg{color:var(--orange)}
+.service-hero-form-card .form-success-overlay{border-radius:var(--radius-card);background:var(--dark-surface)}
+.service-hero-form-card .form-success-title{color:var(--fg-on-dark-1)}
+.service-hero-form-card .form-success-desc{color:var(--fg-on-dark-2)}
+@media (max-width:900px){.service-hero{padding-top:48px}}
+@media (max-width:768px){.service-hero-title{font-size:var(--fs-display)}.service-hero-form-card{padding:24px 20px}}
+
+/* ---------- Page content (white) ---------- */
+.page-template-service-page .page-content-section{background:var(--white);padding-block:var(--space-section-sm)}
+.page-template-service-page .page-content h2{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--fg-on-light-1)}
+.page-template-service-page .page-content h3{font-size:var(--fs-card);line-height:var(--lh-card);font-weight:600;color:var(--fg-on-light-1)}
+.page-template-service-page .page-content p,.page-template-service-page .page-content li{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--fg-on-light-2)}
+.page-template-service-page .page-content a{color:var(--orange)}
+.page-template-service-page .page-content ul li::before{background:var(--orange)}
+.page-template-service-page .page-content img{border-radius:var(--radius-card)}
+.page-template-service-page .page-content .wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;
+  border-radius:var(--radius-pill);background:var(--gradient-primary);color:var(--white);font-size:15px;font-weight:700}

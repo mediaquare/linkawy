@@ -54,15 +54,15 @@ while (have_posts()) :
                     if ($primary_btn_text !== '' && $primary_btn_url !== '') :
                         $icon_html = '';
                         if ($primary_btn_icon === 'whatsapp') {
-                            $icon_html = '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>';
+                            $icon_html = linkawy_brand_icon('whatsapp', 20);
                         } elseif ($primary_btn_icon === 'phone') {
-                            $icon_html = '<i class="fa-solid fa-phone" aria-hidden="true"></i>';
+                            $icon_html = linkawy_icon('Phone', 20);
                         } elseif ($primary_btn_icon === 'search') {
-                            $icon_html = '<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>';
+                            $icon_html = linkawy_icon('Search', 20);
                         } elseif ($primary_btn_icon === 'send') {
-                            $icon_html = '<i class="fa-solid fa-paper-plane" aria-hidden="true"></i>';
+                            $icon_html = linkawy_icon('Send', 20);
                         } elseif ($primary_btn_icon === 'arrow-left') {
-                            $icon_html = '<svg class="service-hero-btn-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>';
+                            $icon_html = linkawy_icon('ArrowRight', 20);
                         }
                         ?>
                         <a href="<?php echo esc_url($primary_btn_url); ?>" class="service-hero-btn service-hero-btn-primary">
