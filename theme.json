@@ -63,126 +63,126 @@
 				{
 					"name": "أساسي",
 					"slug": "primary",
-					"color": "#ff6b00"
+					"color": "#FF6207"
 				},
 				{
 					"name": "أساسي داكن",
 					"slug": "primary-dark",
-					"color": "#e05a00"
+					"color": "#CE3000"
 				},
 				{
 					"name": "أساسي فاتح",
 					"slug": "primary-light",
-					"color": "#ff8533"
+					"color": "#FF852F"
 				},
 				{
 					"name": "أساسي أفتح",
 					"slug": "primary-lighter",
-					"color": "#ffad66"
+					"color": "#FF852F"
 				},
 				{
 					"name": "خلفية أساسية",
 					"slug": "primary-bg",
-					"color": "#fff5f0"
+					"color": "#F5EDE0"
 				},
 				{
 					"name": "ثانوي",
 					"slug": "secondary",
-					"color": "#1a1a2e"
+					"color": "#0A0A0A"
 				},
 				{
 					"name": "تمييز",
 					"slug": "accent",
-					"color": "#ff8533"
+					"color": "#FF852F"
 				},
 				{
 					"name": "نص رئيسي",
 					"slug": "text-main",
-					"color": "#333333"
+					"color": "#141414"
 				},
 				{
 					"name": "نص ثانوي",
 					"slug": "text-secondary",
-					"color": "#666666"
+					"color": "#5E5A55"
 				},
 				{
 					"name": "نص خافت",
 					"slug": "text-light",
-					"color": "#999999"
+					"color": "#6B6863"
 				},
 				{
 					"name": "نص داكن",
 					"slug": "text-dark",
-					"color": "#111111"
+					"color": "#141414"
 				},
 				{
 					"name": "أبيض",
 					"slug": "white",
-					"color": "#ffffff"
+					"color": "#FFFFFF"
 				},
 				{
 					"name": "خلفية",
 					"slug": "bg",
-					"color": "#ffffff"
+					"color": "#FFFFFF"
 				},
 				{
 					"name": "خلفية فاتحة",
 					"slug": "bg-light",
-					"color": "#f4f4f4"
+					"color": "#F8F6F1"
 				},
 				{
 					"name": "خلفية أفتح",
 					"slug": "bg-lighter",
-					"color": "#f9f9f9"
+					"color": "#F8F6F1"
 				},
 				{
 					"name": "خلفية داكنة",
 					"slug": "bg-dark",
-					"color": "#1a1a1a"
+					"color": "#121212"
 				},
 				{
 					"name": "حد فاتح",
 					"slug": "border-light",
-					"color": "#eeeeee"
+					"color": "#E8E2D8"
 				},
 				{
 					"name": "حد متوسط",
 					"slug": "border-medium",
-					"color": "#dddddd"
+					"color": "#DDD7CC"
 				},
 				{
 					"name": "حد داكن",
 					"slug": "border-dark",
-					"color": "#333333"
+					"color": "#262626"
 				}
 			],
 			"gradients": [
 				{
 					"name": "برتقالي Linkawy",
 					"slug": "linkawy-orange",
-					"gradient": "linear-gradient(135deg, #ff6b00 0%, #e05a00 100%)"
+					"gradient": "linear-gradient(100deg, #CE3000 0%, #FF852F 100%)"
 				},
 				{
 					"name": "داكن إلى برتقالي",
 					"slug": "linkawy-dark-orange",
-					"gradient": "linear-gradient(135deg, #1a1a2e 0%, #ff6b00 100%)"
+					"gradient": "linear-gradient(200deg, #FF852F 0%, #FF6207 45%, #CE3000 100%)"
 				},
 				{
 					"name": "خلفية دافئة",
 					"slug": "linkawy-warm-bg",
-					"gradient": "linear-gradient(180deg, #fff5f0 0%, #ffffff 100%)"
+					"gradient": "linear-gradient(180deg, #F8F6F1 0%, #FFFFFF 100%)"
 				}
 			],
 			"duotone": [
 				{
 					"name": "Linkawy داكن",
 					"slug": "linkawy-dark",
-					"colors": [ "#1a1a2e", "#ff6b00" ]
+					"colors": [ "#0A0A0A", "#FF6207" ]
 				},
 				{
 					"name": "Linkawy فاتح",
 					"slug": "linkawy-light",
-					"colors": [ "#333333", "#ff8533" ]
+					"colors": [ "#141414", "#FF852F" ]
 				}
 			]
 		},
@@ -216,12 +216,12 @@
 				{
 					"name": "بطاقة برتقالية",
 					"slug": "linkawy-card-brand",
-					"shadow": "0 4px 20px rgba(255, 107, 0, 0.12)"
+					"shadow": "0 4px 20px rgba(255, 98, 7, 0.12)"
 				},
 				{
 					"name": "زر مرتفع",
 					"slug": "linkawy-button-lift",
-					"shadow": "0 4px 15px rgba(255, 107, 0, 0.35)"
+					"shadow": "0 18px 40px -12px rgba(255, 98, 7, 0.35)"
 				}
 			]
 		},
@@ -283,9 +283,14 @@
 			"writingMode": true,
 			"fontFamilies": [
 				{
-					"fontFamily": "Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
-					"name": "Inter",
-					"slug": "inter"
+					"fontFamily": "Alexandria, system-ui, -apple-system, \"Segoe UI\", Tahoma, sans-serif",
+					"name": "Alexandria",
+					"slug": "alexandria"
+				},
+				{
+					"fontFamily": "Sora, system-ui, -apple-system, \"Segoe UI\", sans-serif",
+					"name": "Sora",
+					"slug": "sora"
 				},
 				{
 					"fontFamily": "Georgia, \"Times New Roman\", serif",
