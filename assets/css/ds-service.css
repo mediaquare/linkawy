@@ -61,3 +61,5 @@
 .page-template-service-page .page-content img{border-radius:var(--radius-card)}
 .page-template-service-page .page-content .wp-block-button__link{display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 24px;
   border-radius:var(--radius-pill);background:var(--gradient-primary);color:var(--white);font-size:15px;font-weight:700}
+/* Straight section edge between the hero and the content (no wave) */
+.page-template-service-page .page-content-section::before{display:none}

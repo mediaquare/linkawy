@@ -348,3 +348,9 @@ footer.lk-footer{background:var(--cream);background-image:none;color:var(--fg-on
 .contact-form-section--embed .form-success-overlay{background:var(--white)}
 .contact-form-section--embed .form-success-title{color:var(--fg-on-light-1)}
 .contact-form-section--embed .form-success-desc{color:var(--fg-on-light-2)}
+
+/* ---------- Content blocks (editor groups): legacy section colours mapped onto the palette.
+   The post content is untouched; only how its saved colours render changes. ---------- */
+.linkawy-content .wp-block-group.alignfull{border-radius:0!important}
+.linkawy-content .has-background[style*="#fff5f0"],.linkawy-content .has-background[style*="#FFF5F0"]{background-color:var(--cream)!important}
+.linkawy-content .has-background[style*="#1a1a2e"],.linkawy-content .has-background[style*="#1A1A2E"]{background-color:var(--dark)!important}
