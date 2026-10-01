@@ -1234,8 +1234,7 @@ get_header();
             box.className = 'dark-platform-box';
             box.innerHTML =
                 '<img src="' + p.img + '" alt="' + p.name + '" width="32" height="32" loading="lazy">' +
-                '<span class="dark-platform-name">' + p.name + '</span>' +
-                '<span class="dark-platform-badge">' + p.badge + '</span>';
+                '<span class="dark-platform-name">' + p.name + '</span>';
             return box;
         }
 
