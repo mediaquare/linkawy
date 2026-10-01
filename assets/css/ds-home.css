@@ -14,8 +14,7 @@
 /* ---------- Shared heading scale inside the home sections ---------- */
 .home .programs-intro h2,.home .process-subtitle,.home .reasons-section .section-header h2,.home .benefits-section .section-header h2,
 .home .blog-posts-header h2,.home .about-content h2,.home .seo-faq-header h2,.home .results-section .results-title,
-.home .success-stories-title,.home .partners-title,.home .lk-strategy__intro h2,.home .seo-proof-section .section-title,
-.home .contact-form-header .contact-form-header-title{
+.home .success-stories-title,.home .partners-title,.home .lk-strategy__intro h2,.home .seo-proof-section .section-title{
   font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--text-heading)}
 
 /* ==========================================================================
@@ -76,7 +75,7 @@
 .lk-platform__value{font-size:16px;font-weight:600;line-height:1.4;color:var(--text-heading);direction:ltr;unicode-bidi:isolate;text-align:start}
 .lk-platform__label{font-size:13px;line-height:1.5;color:var(--text-body)}
 .lk-platforms__foot{margin-top:var(--space-block);display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center}
-.lk-platforms .dark-platforms-label{margin:0;margin-inline-end:8px;font-size:15px;line-height:1.6;font-weight:400;color:var(--text-body);letter-spacing:0;max-width:none}
+.lk-platforms .dark-platforms-label{text-transform:none;margin:0;margin-inline-end:8px;font-size:15px;line-height:1.6;font-weight:400;color:var(--text-body);letter-spacing:0;max-width:none}
 .lk-platforms__tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
 @media (max-width:767px){.lk-platforms{padding-bottom:var(--space-section-sm)}.lk-platforms__foot{flex-direction:column}}
 
@@ -172,7 +171,7 @@
 .home .process-container{max-width:var(--content-max);padding-inline:var(--gutter);box-sizing:content-box}
 .home .process-sticky-col{top:112px}
 .home .process-description{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
-.home .timeline-item::before{border-style:solid;border-color:var(--border-light);border-width:2px;opacity:1}
+.home .timeline-item::before{border-color:var(--border-light);opacity:1}
 .home .timeline-marker{width:56px;height:56px;border-radius:var(--radius-tile);border:1px solid transparent;box-shadow:none;overflow:hidden;color:var(--orange);
   background:linear-gradient(var(--tile-inner-light),var(--tile-inner-light)) padding-box,var(--tile-edge-light) border-box}
 .home .timeline-marker::before{content:'';position:absolute;inset:0;background:radial-gradient(56px circle at 50% 100%,var(--orange),transparent);opacity:.10;pointer-events:none}
@@ -192,8 +191,9 @@
 .home .reasons-grid{gap:20px}
 .home .reasons-section .problem-card{padding:28px;gap:0;border-radius:var(--radius-card);background:var(--white);border:1px solid var(--border-light);box-shadow:none}
 .home .reasons-section .problem-card:hover{transform:none;box-shadow:none}
-.home .reasons-section .problem-icon{width:auto;height:auto;margin:0 0 18px;background:none;border:0;box-shadow:none;padding:0}
-.home .reasons-section .reason-number{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 10px;border-radius:var(--radius-pill);
+.home .reasons-section .problem-icon{display:flex;width:auto;height:auto;margin:0 0 18px;background:none;border:0;box-shadow:none;padding:0}
+.home .reasons-section .problem-icon::before{display:none}
+.home .reasons-section .reason-number{position:static;width:auto;direction:ltr;unicode-bidi:isolate;display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 10px;border-radius:var(--radius-pill);
   background:var(--dark);border:1px solid var(--dark-border);color:var(--orange);font-size:15px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
 .home .reasons-section .problem-card h3{font-size:var(--fs-card);line-height:var(--lh-card);font-weight:600;color:var(--text-heading);margin:0 0 10px}
 .home .reasons-section .problem-card p{font-size:15px;line-height:var(--lh-body);color:var(--text-body);margin:0}
