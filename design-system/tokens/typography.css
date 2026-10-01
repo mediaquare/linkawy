@@ -1,0 +1,43 @@
+/* One family per language version. Never mix Sora into Arabic. */
+:root{
+--font-en:"Sora",system-ui,sans-serif;
+--font-ar:"Alexandria",system-ui,sans-serif;
+--font-sans:var(--font-en);
+--fw-regular:400; /* @kind font */
+--fw-medium:500; /* @kind font */
+--fw-semibold:600; /* @kind font */
+--fw-bold:700; /* @kind font */
+--fs-display:48px; /* @kind font */
+--fs-section:32px; /* @kind font */
+--fs-card:20px; /* @kind font */
+--fs-body:16px; /* @kind font */
+--fs-small:13px; /* @kind font */
+--fs-number-sm:28px; /* @kind font */
+--fs-number-md:36px; /* @kind font */
+--fs-number-lg:48px; /* @kind font */
+--lh-display:1.15; /* @kind font */
+--lh-section:1.2; /* @kind font */
+--lh-card:1.4; /* @kind font */
+--lh-body:1.7; /* @kind font */
+--lh-small:1.5; /* @kind font */
+--lh-number:1.1; /* @kind font */
+--tracking-display:-0.02em; /* @kind font */
+--tracking-section:-0.015em; /* @kind font */
+--tracking-card:-0.01em; /* @kind font */
+/* Semantic */
+--type-display:var(--fw-bold) var(--fs-display)/var(--lh-display) var(--font-sans); /* @kind font */
+--type-section:var(--fw-bold) var(--fs-section)/var(--lh-section) var(--font-sans); /* @kind font */
+--type-card:var(--fw-semibold) var(--fs-card)/var(--lh-card) var(--font-sans); /* @kind font */
+--type-body:var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-sans); /* @kind font */
+--type-small:var(--fw-regular) var(--fs-small)/var(--lh-small) var(--font-sans); /* @kind font */
+--type-label:var(--fw-medium) var(--fs-small)/var(--lh-small) var(--font-sans); /* @kind font */
+}
+/* Arabic version: Alexandria, taller heading line-height, no tracking */
+[dir="rtl"]{
+--font-sans:var(--font-ar);
+--lh-display:1.35; /* @kind font */
+--lh-section:1.35; /* @kind font */
+--tracking-display:0; /* @kind font */
+--tracking-section:0; /* @kind font */
+--tracking-card:0; /* @kind font */
+}

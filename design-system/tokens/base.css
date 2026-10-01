@@ -1,0 +1,18 @@
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:var(--font-sans);font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body);background:var(--surface-page);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,p{margin:0}
+h1,h2,h3{color:var(--text-heading);text-wrap:balance}
+p{text-wrap:pretty}
+a{color:var(--orange);text-decoration:none}
+a:hover{color:var(--orange-deep)}
+[data-surface="dark"] a:hover{color:var(--orange-light)}
+img{max-width:100%}
+.lk-input::placeholder{color:var(--input-placeholder);opacity:1}
+.lk-input option{color:#141414;background:#fff}
+.lk-tnum{font-variant-numeric:tabular-nums}
+/* Directional icons mirror in RTL */
+[dir="rtl"] .lk-icon-dir{transform:scaleX(-1)}
+@keyframes lk-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes lk-marquee-rtl{from{transform:translateX(0)}to{transform:translateX(50%)}}
+@media (prefers-reduced-motion:reduce){.lk-marquee-track{animation:none!important}}

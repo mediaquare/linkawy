@@ -1,0 +1,78 @@
+/* Linkawy color tokens — values from the Oct 2026 website brief. No other colors. */
+:root{
+/* Brand orange (exactly from accretion.fig) */
+--orange:#FF6207;
+--orange-deep:#CE3000;
+--orange-light:#FF852F;
+--gradient-primary:linear-gradient(100deg,#CE3000,#FF852F); /* @kind color */
+--gradient-highlight-card:linear-gradient(200deg,#FF852F 0%,#FF6207 45%,#CE3000 100%); /* @kind color */
+/* Light surfaces */
+--white:#FFFFFF;
+--cream:#F8F6F1;
+--cream-warm:#F5EDE0;
+--border-light:#E8E2D8;
+--divider-footer:#DDD7CC;
+/* Dark surfaces */
+--dark:#0A0A0A;
+--dark-surface:#121212;
+--dark-tile-inner:#171717;
+--dark-card-edge:linear-gradient(180deg,#262626,#0F0F0F); /* @kind color */
+--dark-border:#262626;
+/* Icon tiles — dark build (dark sections) and light build (white / cream sections) */
+--tile-edge-dark:linear-gradient(180deg,#262626,#0F0F0F); /* @kind color */
+--tile-inner-dark:#171717;
+--tile-edge-light:linear-gradient(180deg,#E8E2D8,#F3EEE6); /* @kind color */
+--tile-inner-light:#FBF9F5;
+/* Text on dark */
+--fg-on-dark-1:#FFFFFF;
+--fg-on-dark-2:#A1A1A1;
+--fg-on-dark-3:#737373;
+/* Text on light */
+--fg-on-light-1:#141414;
+--fg-on-light-2:#5E5A55;
+--fg-on-light-3:#6B6863;
+/* Marks */
+--highlight-mark:rgba(255,98,7,.28);
+/* Special gradients — ONLY on explicit request; always show both */
+--gradient-spectrum:linear-gradient(90deg,#A10012,#FAAF01 35%,#DF5B00 62%,#6308E2); /* @kind color */
+--gradient-coral:linear-gradient(90deg,#F94F62,#FA6D50 48%,#FC8B3D); /* @kind color */
+
+/* Semantic aliases (default = white surface) */
+--surface-page:var(--white);
+--surface-section:var(--white);
+--surface-card:var(--white);
+--text-heading:var(--fg-on-light-1);
+--text-body:var(--fg-on-light-2);
+--text-muted:var(--fg-on-light-3);
+--text-accent:var(--orange);
+--border-card:var(--border-light);
+--card-bg:var(--white);
+--card-edge:var(--border-light);
+--tag-bg:var(--white);
+--tag-border:var(--border-light);
+--tag-fg:var(--fg-on-light-2);
+--input-bg:var(--white);
+--input-border:var(--border-light);
+--input-fg:var(--fg-on-light-1);
+--input-placeholder:var(--fg-on-light-3);
+--faq-icon:var(--fg-on-light-3);
+--tile-edge:var(--tile-edge-light); /* @kind color */
+--tile-inner:var(--tile-inner-light);
+--tile-glow-opacity:var(--tile-glow-opacity-light); /* @kind other */
+/* Single-color (white) logos like OpenAI turn black on light tiles */
+--logo-mono-filter:invert(1); /* @kind other */
+}
+/* Surface scopes — set data-surface on a section or card and every nested component flips */
+[data-surface="white"]{--surface-section:var(--white);--card-bg:var(--white);--surface-card:var(--white);--text-heading:var(--fg-on-light-1);--text-body:var(--fg-on-light-2);--text-muted:var(--fg-on-light-3);--text-accent:var(--orange);--border-card:var(--border-light);--card-edge:var(--border-light);--tag-bg:var(--white);--tag-border:var(--border-light);--tag-fg:var(--fg-on-light-2);--input-bg:var(--white);--input-border:var(--border-light);--input-fg:var(--fg-on-light-1);--input-placeholder:var(--fg-on-light-3);--faq-icon:var(--fg-on-light-3);--tile-edge:var(--tile-edge-light);--tile-inner:var(--tile-inner-light);--tile-glow-opacity:var(--tile-glow-opacity-light);--logo-mono-filter:invert(1); /* @kind other */}
+[data-surface="cream"]{--surface-section:var(--cream);--card-bg:var(--white);--surface-card:var(--white);--text-heading:var(--fg-on-light-1);--text-body:var(--fg-on-light-2);--text-muted:var(--fg-on-light-3);--text-accent:var(--orange);--border-card:var(--border-light);--card-edge:var(--border-light);--tag-bg:var(--white);--tag-border:var(--border-light);--tag-fg:var(--fg-on-light-2);--input-bg:var(--white);--input-border:var(--border-light);--input-fg:var(--fg-on-light-1);--input-placeholder:var(--fg-on-light-3);--faq-icon:var(--fg-on-light-3);--tile-edge:var(--tile-edge-light);--tile-inner:var(--tile-inner-light);--tile-glow-opacity:var(--tile-glow-opacity-light);--logo-mono-filter:invert(1); /* @kind other */}
+[data-surface="cream-warm"]{--surface-section:var(--cream-warm);--card-bg:var(--white);--surface-card:var(--white);--text-heading:var(--fg-on-light-1);--text-body:var(--fg-on-light-2);--text-muted:var(--fg-on-light-3);--text-accent:var(--orange);--border-card:var(--border-light);--card-edge:var(--border-light);--tag-bg:var(--white);--tag-border:var(--border-light);--tag-fg:var(--fg-on-light-2);--input-bg:var(--white);--input-border:var(--border-light);--input-fg:var(--fg-on-light-1);--input-placeholder:var(--fg-on-light-3);--faq-icon:var(--fg-on-light-3);--tile-edge:var(--tile-edge-light);--tile-inner:var(--tile-inner-light);--tile-glow-opacity:var(--tile-glow-opacity-light);--logo-mono-filter:invert(1); /* @kind other */}
+[data-surface="dark"]{
+--surface-section:var(--dark);--surface-card:var(--dark-surface);
+--text-heading:var(--fg-on-dark-1);--text-body:var(--fg-on-dark-2);--text-muted:var(--fg-on-dark-3);--text-accent:var(--orange);
+--border-card:var(--dark-border);--card-bg:var(--dark-surface);--card-edge:var(--dark-card-edge);
+--tag-bg:var(--dark-surface);--tag-border:var(--dark-border);--tag-fg:var(--fg-on-dark-2);
+--input-bg:var(--dark-surface);--input-border:var(--dark-border);--input-fg:var(--fg-on-dark-1);--input-placeholder:var(--fg-on-dark-3);
+--faq-icon:var(--fg-on-dark-3);--tile-edge:var(--tile-edge-dark);--tile-inner:var(--tile-inner-dark);--tile-glow-opacity:var(--tile-glow-opacity-dark);--logo-mono-filter:none; /* @kind other */}
+[data-surface="orange"]{
+--text-heading:var(--white);--text-body:var(--white);--text-muted:var(--white);--text-accent:var(--white);
+--tag-bg:var(--dark);--tag-border:var(--dark);--tag-fg:var(--white);--tile-edge:var(--tile-edge-dark);--tile-inner:var(--tile-inner-dark);--tile-glow-opacity:var(--tile-glow-opacity-dark);--logo-mono-filter:none; /* @kind other */}

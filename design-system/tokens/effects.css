@@ -1,0 +1,22 @@
+:root{
+/* Cards carry no shadow. The one exception: the exceptional (pricing / main offer) card. */
+--shadow-exceptional:0 18px 40px -12px rgba(255,98,7,.35);
+--shadow-new-label:0 6px 14px -8px rgba(255,98,7,.55);
+/* Icon tile inner glow: orange radial from bottom-middle, radius = tile size, layer opacity 15% */
+--tile-glow:radial-gradient(56px circle at 50% 100%,#FF6207,transparent); /* @kind other */
+--tile-glow-opacity-dark:.15; /* @kind other */
+--tile-glow-opacity-light:.10; /* @kind other */
+--tile-glow-opacity-logo:.08; /* @kind other */
+/* Glass — only on glowing / busy art, never on flat backgrounds */
+--glass-dark:rgba(255,255,255,.04); /* @kind color */
+--glass-dark-border:rgba(255,255,255,.08); /* @kind color */
+--glass-light:rgba(255,255,255,.55); /* @kind color */
+--glass-light-strong:rgba(255,255,255,.72); /* @kind color */
+--glass-blur:20px; /* @kind other */
+/* Motion */
+--ease-out:cubic-bezier(.22,1,.36,1); /* @kind other */
+--dur-fast:150ms; /* @kind other */
+--dur-base:250ms; /* @kind other */
+--dur-slow:400ms; /* @kind other */
+--marquee-duration:40s; /* @kind other */
+}

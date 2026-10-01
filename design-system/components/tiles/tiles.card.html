@@ -1,0 +1,22 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Tiles" subtitle="Icon + logo tiles, one build: dark on dark, light on white/cream; glow 15 / 10 / 8%" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>.row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { IconTile, BrandTile } = window.LinkawyDesignSystem_430d5e;
+const B='../../assets/brands/';
+function App(){return(<div>
+<div data-surface="dark" style={{background:'var(--dark)',padding:24,display:'flex',flexDirection:'column',gap:18}}>
+<div className="row">{['Search','ChartLine','Link','Code','ShoppingCart','Sparkles','Gauge','FileText'].map(n=><IconTile key={n} icon={n}/>)}</div>
+<div className="row"><BrandTile brand="chatgpt" basePath={B} label="ChatGPT"/><BrandTile brand="gemini" basePath={B} label="Gemini"/><BrandTile brand="google" basePath={B} label="Google"/>{['claude','perplexity','semrush','googlemaps','applenews'].map(b=><BrandTile key={b} brand={b} basePath={B} alt={b}/>)}</div>
+</div>
+<div data-surface="white" style={{background:'var(--white)',padding:'18px 24px'}} className="row">{['Search','ChartLine','Link','Code','ShoppingCart','Sparkles'].map(n=><IconTile key={n} icon={n}/>)}<span style={{fontSize:13,color:'var(--fg-on-light-3)'}}>Light tile · white</span></div>
+<div data-surface="white" style={{background:'var(--white)',padding:'0 24px 18px'}} className="row"><BrandTile brand="google" basePath={B} label="Google"/><BrandTile brand="chatgpt" basePath={B} label="ChatGPT"/>{['gemini','claude','semrush','googlemaps','applenews'].map(b=><BrandTile key={b} brand={b} basePath={B} alt={b}/>)}<span style={{fontSize:13,color:'var(--fg-on-light-3)'}}>Logos · light tile, glow 8%</span></div>
+<div data-surface="cream" style={{background:'var(--cream)',padding:'18px 24px'}} className="row"><IconTile icon="Target"/><IconTile icon="Rocket"/><IconTile icon="ShieldCheck" size={48}/><span style={{fontSize:13,color:'var(--fg-on-light-3)'}}>Light tile · cream</span></div>
+</div>)}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

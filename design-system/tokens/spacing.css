@@ -1,0 +1,22 @@
+:root{
+--space-section:112px;
+--space-section-sm:80px;
+--space-block:40px;
+--space-element:24px;
+--space-tight:16px;
+--space-xs:12px;
+--space-2xs:8px;
+--space-3xs:4px;
+--space-sunset-pad:120px;
+--space-footer-cta:176px;
+--content-max:1200px;
+--gutter:24px;
+/* Radii: pill for anything you click or tag, 16 for anything that holds content, 0 for sections */
+--radius-pill:999px;
+--radius-card:16px;
+--radius-tile:16px;
+--radius-tile-inner:15px;
+--radius-section:0;
+--tile-size:56px;
+--tile-icon:24px;
+}
