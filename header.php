@@ -35,7 +35,7 @@
     <?php if (is_front_page()) : ?>
     <!-- Skip layout/paint of below-the-fold front-page sections until they near the viewport (A/B: bad-PSI runs 13/20 -> 4/20) -->
     <style>
-    .programs-section, .seo-proof-section, .lk-strategy, .partners-section, .success-stories-section,
+    .programs-section, .seo-proof-section, .strategy-section, .partners-section, .success-stories-section,
     .process-section, .problems-section, .benefits-section, .blog-posts-section, .about-section,
     .results-section, .seo-faq-section, .contact-form-section, footer {
         content-visibility: auto;

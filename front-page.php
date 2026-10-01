@@ -447,52 +447,74 @@ get_header();
 
     <div class="lk-sunset lk-sunset--up" aria-hidden="true"><img src="<?php echo esc_url(LINKAWY_URI . '/assets/images/ds/sunset-cream-to-dark.webp'); ?>" alt="" width="1920" height="406" loading="lazy" decoding="async"></div>
 
-    <!-- Strategy Section (كيف نحقق نتائج تنعكس على المبيعات؟) — redesign: heading column + 5 numbered cards, 05 = orange highlight -->
-    <section class="lk-strategy" id="services" data-surface="dark">
-        <div class="container lk-strategy__grid">
-            <div class="lk-strategy__intro">
-                <h2><?php esc_html_e('تحسين محركات البحث...', 'linkawy'); ?> <br><span><?php esc_html_e('هو آخر خطوة عندنا', 'linkawy'); ?></span></h2>
+    <!-- Strategy Section (كيف نحقق نتائج تنعكس على المبيعات؟) -->
+    <section class="strategy-section strategy-section--dark" id="services">
+        <div class="section-container">
+            <div class="strategy-grid">
+                <div class="strategy-intro">
+                    <h2><?php esc_html_e('تحسين محركات البحث...', 'linkawy'); ?> <br><span><?php esc_html_e('هو آخر خطوة عندنا', 'linkawy'); ?></span></h2>
                     <p class="description-text"><?php esc_html_e('لأن أولويتنا هي زيادة مبيعاتك، خطوات عملنا تبدأ من البيزنس وتنتهي بالتسويق.', 'linkawy'); ?></p>
                     <p class="description-text"><?php esc_html_e('نستخدم أحدث استراتيجيات النمو لرفع معدل التحويل، وزيادة عدد العملاء المؤهلين، وخفض تكلفة اكتساب العميل عبر المحتوى وتحسين رحلة المستخدم. والنتائج؟ تقدر تشوفها بنفسك تحت وتحكم!', 'linkawy'); ?></p>
                     <p class="highlight-text"><?php esc_html_e('باستخدام تلك الإستراتيجية نهدف إلى تحويل من', 'linkawy'); ?> <span class="highlight">100%</span> <?php esc_html_e('من زوار موقعك إلى عملاء جاهزين للشراء.', 'linkawy'); ?></p>
+                </div>
+                <div class="accordion">
+                    <div class="accordion-item active" data-link="">
+                        <div class="accordion-header">
+                            <div class="accordion-title"><span class="accordion-number">01</span>
+                                <h3><?php esc_html_e('تحليل السوق، والمنافسين، ونوايا الشراء', 'linkawy'); ?></h3>
+                            </div>
+                            <div class="accordion-icon"><?php echo linkawy_icon('ChevronDown', 18); ?></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner"><?php esc_html_e('نبدأ بفهم السوق، تحليل الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل اتخاذ قرار الشراء.', 'linkawy'); ?></div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" data-link="">
+                        <div class="accordion-header">
+                            <div class="accordion-title"><span class="accordion-number">02</span>
+                                <h3><?php esc_html_e('هندسة صفحات البيع ورفع معدلات التحويل', 'linkawy'); ?></h3>
+                            </div>
+                            <div class="accordion-icon"><?php echo linkawy_icon('ChevronDown', 18); ?></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner"><?php esc_html_e('نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما يزيد من نسبة تحويل الزوار إلى مشترين فعليين.', 'linkawy'); ?></div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" data-link="">
+                        <div class="accordion-header">
+                            <div class="accordion-title"><span class="accordion-number">03</span>
+                                <h3><?php esc_html_e('صناعة محتوى يبيع القيمة', 'linkawy'); ?></h3>
+                            </div>
+                            <div class="accordion-icon"><?php echo linkawy_icon('ChevronDown', 18); ?></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner"><?php esc_html_e('نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.', 'linkawy'); ?></div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" data-link="">
+                        <div class="accordion-header">
+                            <div class="accordion-title"><span class="accordion-number">04</span>
+                                <h3><?php esc_html_e('التحسين لمحركات البحث والذكاء الاصطناعي', 'linkawy'); ?></h3>
+                            </div>
+                            <div class="accordion-icon"><?php echo linkawy_icon('ChevronDown', 18); ?></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner"><?php esc_html_e('نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.', 'linkawy'); ?></div>
+                        </div>
+                    </div>
+                    <div class="accordion-item" data-link="">
+                        <div class="accordion-header">
+                            <div class="accordion-title"><span class="accordion-number">05</span>
+                                <h3><?php esc_html_e('قياس الربحية.. وليس الترتيب', 'linkawy'); ?></h3>
+                            </div>
+                            <div class="accordion-icon"><?php echo linkawy_icon('ChevronDown', 18); ?></div>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-content-inner"><?php esc_html_e('نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity Metrics) كالترتيب أو حجم الزيارات.', 'linkawy'); ?></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ol class="lk-strategy__steps">
-                    <li class="lk-card lk-strategy__step">
-                        <span class="lk-num">01</span>
-                        <div class="lk-strategy__text">
-                            <h3><?php esc_html_e('تحليل السوق، والمنافسين، ونوايا الشراء', 'linkawy'); ?></h3>
-                            <p><?php esc_html_e('نبدأ بفهم السوق، تحليل الكلمات التي تعكس نية شراء حقيقية، والأسئلة التي يبحث عنها العميل قبل اتخاذ قرار الشراء.', 'linkawy'); ?></p>
-                        </div>
-                    </li>
-                    <li class="lk-card lk-strategy__step">
-                        <span class="lk-num">02</span>
-                        <div class="lk-strategy__text">
-                            <h3><?php esc_html_e('هندسة صفحات البيع ورفع معدلات التحويل', 'linkawy'); ?></h3>
-                            <p><?php esc_html_e('نقوم بتحسين صفحات الهبوط لتكون مقنعة بصرياً ونصياً، مما يزيد من نسبة تحويل الزوار إلى مشترين فعليين.', 'linkawy'); ?></p>
-                        </div>
-                    </li>
-                    <li class="lk-card lk-strategy__step">
-                        <span class="lk-num">03</span>
-                        <div class="lk-strategy__text">
-                            <h3><?php esc_html_e('صناعة محتوى يبيع القيمة', 'linkawy'); ?></h3>
-                            <p><?php esc_html_e('نركز على إنشاء محتوى يجيب على أسئلة العملاء ويعالج اعتراضاتهم، مما يدفعهم لاتخاذ قرار الشراء بدلاً من مجرد جذب الزيارات غير المفيدة.', 'linkawy'); ?></p>
-                        </div>
-                    </li>
-                    <li class="lk-card lk-strategy__step">
-                        <span class="lk-num">04</span>
-                        <div class="lk-strategy__text">
-                            <h3><?php esc_html_e('التحسين لمحركات البحث والذكاء الاصطناعي', 'linkawy'); ?></h3>
-                            <p><?php esc_html_e('نعمل على تحسين البنية التقنية للموقع وملاءمته لمعايير محركات البحث (SEO) وأنظمة الذكاء الاصطناعي الحديثة لضمان أقصى وصول عضوي.', 'linkawy'); ?></p>
-                        </div>
-                    </li>
-                    <li class="lk-card lk-strategy__step lk-card--highlight" data-surface="orange">
-                        <span class="lk-num lk-num--dark">05</span>
-                        <div class="lk-strategy__text">
-                            <h3><?php esc_html_e('قياس الربحية.. وليس الترتيب', 'linkawy'); ?></h3>
-                            <p><?php esc_html_e('نركز في تقاريرنا على المقاييس التي تترجم مباشرة إلى أرباح (مثل العائد على الإنفاق الإعلاني ROAS)، بدلاً من التركيز على مؤشرات الغرور (Vanity Metrics) كالترتيب أو حجم الزيارات.', 'linkawy'); ?></p>
-                        </div>
-                    </li>
-            </ol>
         </div>
     </section>
 

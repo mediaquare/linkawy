@@ -2,7 +2,7 @@
 /* ==========================================================================
    Linkawy redesign: front page sections (design-system/ui_kits/website).
    Loaded only on the front page, after ds.css. Re-skins the existing markup;
-   the only rebuilt blocks are .lk-platforms and .lk-strategy (+ the sunsets).
+   platforms bar and strategy keep main's markup; the sunsets are the only new blocks.
    Surfaces follow the kit: hero+platforms dark, services white, proof cream,
    strategy dark, partners+stories dark, process white, reasons cream,
    benefits white, blog cream, founder white, FAQ white, results cream-warm,
@@ -15,7 +15,7 @@
 /* ---------- Shared heading scale inside the home sections ---------- */
 .home .programs-intro h2,.home .process-subtitle,.home .reasons-section .section-header h2,.home .benefits-section .section-header h2,
 .home .blog-posts-header h2,.home .about-content h2,.home .seo-faq-header h2,.home .results-section .results-title,
-.home .success-stories-title,.home .partners-title,.home .lk-strategy__intro h2,.home .seo-proof-section .section-title{
+.home .success-stories-title,.home .partners-title,.home .seo-proof-section .section-title{
   font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--text-heading)}
 
 /* ==========================================================================
@@ -124,22 +124,44 @@
 .home .lk-sunset--up{background:var(--cream)}
 
 /* ==========================================================================
-   5. Strategy (dark) — rebuilt: heading column + 5 numbered cards (05 orange)
+   5. Strategy (dark) — main's accordion markup (first item open, the rest closed),
+      shown as the kit layout: heading column + numbered cards, 05 = orange highlight.
    ========================================================================== */
-.lk-strategy{background:var(--dark);padding:24px 0 80px;margin-top:-1px}
-.lk-strategy__grid{display:flex;flex-wrap:wrap;gap:40px 72px;align-items:flex-start}
-.lk-strategy__intro{flex:1 1 320px;position:sticky;top:112px;display:flex;flex-direction:column;gap:16px}
-.lk-strategy__intro h2{margin:0}
-.lk-strategy__intro h2 span{color:var(--orange)}
-.lk-strategy__intro p{margin:0;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
-.lk-strategy__intro .highlight-text{color:var(--text-heading);font-weight:500}
-.lk-strategy__intro .highlight{color:var(--orange);font-weight:700}
-.lk-strategy__steps{flex:1.5 1 460px;display:flex;flex-direction:column;gap:14px;list-style:none;margin:0;padding:0}
-.lk-strategy__step.lk-card{flex-direction:row;align-items:flex-start;gap:20px;padding:24px}
-.lk-strategy__text{display:flex;flex-direction:column;gap:10px}
-.lk-strategy__text h3{margin:0;font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:var(--text-heading)}
-.lk-strategy__text p{margin:0;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
-@media (max-width:767px){.lk-strategy{padding-bottom:var(--space-section-sm)}.lk-strategy__intro{position:static}.lk-strategy__step.lk-card{padding:20px;gap:14px}}
+.home .strategy-section--dark{background:var(--dark);color:var(--fg-on-dark-2);padding:24px 0 80px;margin-top:-1px;overflow:visible}
+.home .strategy-section--dark::before{display:none}
+.home .strategy-section--dark .section-container{max-width:calc(var(--content-max) + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+.home .strategy-section--dark .strategy-grid{display:flex;flex-wrap:wrap;gap:40px 72px;align-items:flex-start;max-width:none;padding:0}
+.home .strategy-section--dark .strategy-intro{flex:1 1 320px;position:sticky;top:112px;display:flex;flex-direction:column;gap:16px}
+.home .strategy-section--dark .strategy-intro h2{margin:0;font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--white)}
+.home .strategy-section--dark .strategy-intro h2 span{color:var(--orange);font-size:1em;font-weight:700}
+.home .strategy-section--dark .description-text{margin:0;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--fg-on-dark-2)}
+.home .strategy-section--dark .highlight-text{margin:0;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--white);font-weight:500}
+.home .strategy-section--dark .highlight-text .highlight{color:var(--orange);font-weight:700}
+/* Accordion items = DS dark cards */
+.home .strategy-section--dark .accordion{flex:1.5 1 460px;gap:14px}
+.home .strategy-section--dark .accordion-item,.home .strategy-section--dark .accordion-item.active{margin:0;border-radius:var(--radius-card);border:1px solid transparent;box-shadow:none;
+  background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box}
+.home .strategy-section--dark .accordion-header,.home .strategy-section--dark .accordion-item:not(.active) .accordion-header:hover{padding:24px;gap:16px;background:transparent}
+.home .strategy-section--dark .accordion-title{align-items:center;gap:20px;font-size:var(--fs-card)}
+.home .strategy-section--dark .accordion-number{min-width:40px;height:40px;padding:0 10px;border:0;border-radius:var(--radius-pill);background:var(--gradient-primary);
+  color:var(--white);font-size:15px;font-weight:700;font-variant-numeric:tabular-nums}
+.home .strategy-section--dark .accordion-title h3,.home .strategy-section--dark .accordion-item.active .accordion-title h3{font-size:var(--fs-card);line-height:var(--lh-card);
+  letter-spacing:var(--tracking-card);font-weight:600;color:var(--white)}
+.home .strategy-section--dark .accordion-icon{flex-shrink:0;width:32px;height:32px;border-radius:999px;background:var(--dark-tile-inner);color:var(--fg-on-dark-2)}
+.home .strategy-section--dark .accordion-item.active .accordion-icon{background:var(--dark-tile-inner);color:var(--white)}
+.home .strategy-section--dark .accordion-content-inner{padding:0 24px 24px;padding-inline-start:84px;font-size:var(--fs-body);line-height:var(--lh-body);color:var(--fg-on-dark-2)}
+/* 05 = the one orange highlight card on dark */
+.home .strategy-section--dark .accordion-item:last-child,.home .strategy-section--dark .accordion-item:last-child.active{background:var(--gradient-highlight-card);border-color:transparent}
+.home .strategy-section--dark .accordion-item:last-child .accordion-number{background:var(--dark);border:1px solid var(--dark-border);color:var(--orange)}
+.home .strategy-section--dark .accordion-item:last-child .accordion-icon{background:rgba(10,10,10,.25);color:var(--white)}
+.home .strategy-section--dark .accordion-item:last-child .accordion-content-inner{color:var(--white)}
+@media (max-width:767px){
+  .home .strategy-section--dark{padding-bottom:var(--space-section-sm)}
+  .home .strategy-section--dark .strategy-intro{position:static;text-align:start}
+  .home .strategy-section--dark .accordion-header{padding:20px}
+  .home .strategy-section--dark .accordion-title{flex-direction:row;align-items:center;gap:14px}
+  .home .strategy-section--dark .accordion-content-inner{padding:0 20px 20px}
+}
 
 /* ==========================================================================
    6. Partners + success stories (dark, one continuous surface)
