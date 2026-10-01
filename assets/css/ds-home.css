@@ -231,22 +231,19 @@
 .home .reasons-section .problem-card:nth-child(8) .reason-number{background:var(--gradient-primary);border-color:transparent;color:var(--white)}
 
 /* ==========================================================================
-   9. Benefits (white) — main's layout kept: the inner box stays (cream #F8F6F1,
-      a deliberate exception to "no big rounded boxes"), tabs as white cards.
+   9. Benefits (3 steps) — main's layout AND main's exact colours (user request):
+      white section, #f4f4f4 inner box, white active tab with main's soft shadow,
+      #000 headings, #666 text. Only the font and the 16px radius come from the DS.
    ========================================================================== */
-.home .benefits-section{background:var(--white);padding:var(--space-section) 0}
-.home .benefits-inner-container{background-color:var(--cream);border-radius:var(--radius-card);box-shadow:none}
-.home .benefits-section .center-text h2{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--text-heading)}
-.home .benefit-item{border-radius:var(--radius-card);border:1px solid transparent;box-shadow:none}
-.home .benefit-item:hover,.home .benefit-item.active{background:var(--white);border-color:var(--border-light);box-shadow:none}
-.home .benefit-item h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:var(--text-heading)}
-.home .benefit-item p{font-size:15px;line-height:var(--lh-body);color:var(--text-body)}
+.home .benefits-section{background:#fff;padding:var(--space-section) 0}
+.home .benefits-inner-container{background-color:#f4f4f4;border-radius:var(--radius-card);box-shadow:none}
+.home .benefits-section .center-text h2,.home .benefits-section .section-header h2{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:#000}
+.home .benefit-item{border-radius:var(--radius-card)}
+.home .benefit-item:hover,.home .benefit-item.active{background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.home .benefit-item h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:#000}
+.home .benefit-item p{font-size:15px;line-height:var(--lh-body);color:#666}
 .home .benefit-img img{border-radius:var(--radius-card)}
-/* The step images carry a baked-in #f4f4f4 backdrop (made for main's grey box): lift it to white
-   and multiply onto the cream box so it takes the box colour (files unchanged). */
-.home .benefit-img{mix-blend-mode:multiply}
-.home .benefit-img img{filter:brightness(1.045)}
-.home .benefit-img-caption{color:var(--text-muted);font-size:var(--fs-small)}
+.home .benefit-img-caption{color:rgba(60,60,60,.6);font-size:var(--fs-small)}
 
 /* ==========================================================================
    10. Blog (cream)
