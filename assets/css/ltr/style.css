@@ -5538,11 +5538,7 @@ footer a:hover {
 .fa-angle-left,.fa-angle-right,.fa-chevron-left,.fa-chevron-right{scale:-1 1}
 /* Inline SVG "forward" arrows */
 /* (service hero arrows are Lucide .lk-icon-dir now: they follow the direction on their own) */
-/* Language switcher (header, English pages) */
-.lang-switch{display:inline-flex;align-items:center;justify-content:center;padding:.45rem 1rem;margin-inline-end:.75rem;
-border:1px solid currentColor;border-radius:999px;font-size:.9rem;font-weight:600;line-height:1;color:inherit;text-decoration:none;opacity:.9}
-.lang-switch:hover{opacity:1}
-.home .lang-switch,.front-page .lang-switch{color:rgba(255,255,255,.9)}
+/* Language switcher: styled in assets/css/ds.css (redesign) for both languages. */
 /* Home: the dark strategy section ends on a sub-pixel boundary in English, and while scrolling Chrome
    can show a white hairline (body background) between it and the partners strip. Overlap them by 1px
    and paint the partners strip on top so its own border stays visible. */
@@ -5560,6 +5556,4 @@ html:not([dir="rtl"]) nav.main-nav .has-dropdown:hover .mega-menu{transform:tran
    position: its auto margins and the switcher's leading auto margin share the free space. */
 @media (min-width:769px){
 header .container>nav.main-nav{margin-inline:auto}
-.lang-switch{margin-inline-start:auto;margin-inline-end:12px;min-height:44px;padding:0 1.35rem;font-size:.95rem}
 }
-@media (max-width:991px){.lang-switch{padding:.35rem .75rem;font-size:.8rem;margin-inline-end:.5rem}}

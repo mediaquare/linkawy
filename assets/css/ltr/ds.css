@@ -205,9 +205,18 @@ nav.main-nav ul.sub-menu{padding:12px;gap:2px 8px}
 .mega-menu-btn:hover,.home .mega-menu-btn:hover,.front-page .mega-menu-btn:hover{background:var(--dark-border);color:var(--white)!important;gap:8px}
 
 /* Language switch + CTA (Button sm) */
-.lang-switch,.home .lang-switch,.front-page .lang-switch{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border:0;
-  border-radius:var(--radius-pill);color:var(--fg-on-dark-2);font-size:14px;font-weight:500;opacity:1}
-.lang-switch:hover{color:var(--fg-on-dark-1)}
+/* Kit Header langSwitch: Lucide Languages + the other language's name, #A1A1A1 -> white,
+   no background, no border. The label keeps its own script's font on both versions:
+   "English" in Sora, "العربية" in Alexandria (family names chosen so the LTR build leaves them alone). */
+@font-face{font-family:'LkLabelEn';font-style:normal;font-weight:500;font-display:swap;src:url('../../fonts/ds/sora-500.woff2') format('woff2')}
+@font-face{font-family:'LkLabelAr';font-style:normal;font-weight:500;font-display:swap;src:url('../../fonts/ds/alexandria-500.woff2') format('woff2')}
+.lang-switch,.home .lang-switch,.front-page .lang-switch{display:inline-flex;align-items:center;gap:6px;min-height:40px;margin:0;padding:0 4px;border:0;border-radius:0;
+  background:none;color:var(--fg-on-dark-2);font-size:14px;font-weight:500;line-height:1;text-decoration:none;opacity:1;white-space:nowrap;transition:color var(--dur-fast)}
+.lang-switch:hover,.home .lang-switch:hover,.front-page .lang-switch:hover{color:var(--fg-on-dark-1);opacity:1}
+.lang-switch .lk-icon{color:inherit}
+.lang-switch--en .lang-switch__label{font-family:'LkLabelEn','Segoe UI',system-ui,sans-serif}
+.lang-switch--ar .lang-switch__label{font-family:'LkLabelAr',Tahoma,system-ui,sans-serif}
+.lang-switch--mobile{display:none}
 .header-actions{gap:12px}
 .header-actions .cta-button{height:40px;min-height:40px;padding:0 18px;font-size:14px}
 
@@ -216,6 +225,8 @@ nav.main-nav ul.sub-menu{padding:12px;gap:2px 8px}
 @media (max-width:768px){
   header,.home header,.front-page header{min-height:68px}
   .logo img{height:30px}
+  .lang-switch--mobile,.home .lang-switch--mobile,.front-page .lang-switch--mobile{display:flex;width:100%;box-sizing:border-box;padding:.75rem 2rem;min-height:0;font-size:1.05rem;font-weight:600;color:var(--fg-on-dark-2)}
+  .lang-switch--mobile:hover{color:var(--fg-on-dark-1)}
   nav.main-nav,.home nav.main-nav,.front-page nav.main-nav{background:var(--dark)}
   nav.main-nav::before,.home nav.main-nav::before,.front-page nav.main-nav::before{display:none}
   nav.main-nav>ul>li>a{display:block;height:auto;padding:.75rem .25rem;border-radius:0;font-size:1.05rem;font-weight:600;color:var(--fg-on-dark-1)}

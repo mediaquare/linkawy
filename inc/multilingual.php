@@ -212,17 +212,24 @@ function linkawy_sidebar_id($id) {
 }
 
 /**
- * Language switcher (English pages only until the English launch): links to the
- * Arabic version of the current page, or the Arabic home page.
+ * Language switcher (both languages): a plain <a href> to the same page in the other
+ * language, taken from Polylang (pll_the_languages raw). Polylang already falls back to
+ * the other language's home page when the current page has no translation.
+ *
+ * @param string $context 'header' (desktop, next to the CTA) or 'mobile' (end of the mobile menu).
  */
-function linkawy_language_switcher() {
-    if (!linkawy_is_en() || !function_exists('pll_the_languages')) {
+function linkawy_language_switcher($context = 'header') {
+    if (!function_exists('pll_the_languages')) {
         return;
     }
-    $langs = pll_the_languages(array('raw' => 1, 'hide_if_empty' => 0, 'force_home' => 0));
-    if (empty($langs['ar'])) {
+    $target = linkawy_is_en() ? 'ar' : 'en';
+    $langs  = pll_the_languages(array('raw' => 1, 'hide_if_empty' => 0, 'force_home' => 0));
+    if (empty($langs[$target]['url'])) {
         return;
     }
-    // Polylang returns the Arabic home page when this page has no Arabic translation.
-    echo '<a class="lang-switch" href="' . esc_url($langs['ar']['url']) . '" hreflang="ar" lang="ar">العربية</a>';
+    $label = ($target === 'en') ? 'English' : 'العربية';
+    $class = 'lang-switch lang-switch--' . $target . ($context === 'mobile' ? ' lang-switch--mobile' : '');
+    echo '<a class="' . esc_attr($class) . '" href="' . esc_url($langs[$target]['url']) . '" hreflang="' . esc_attr($target) . '" lang="' . esc_attr($target) . '">'
+        . linkawy_icon('Languages', 18)
+        . '<span class="lang-switch__label">' . esc_html($label) . '</span></a>';
 }

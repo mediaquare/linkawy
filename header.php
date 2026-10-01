@@ -124,6 +124,7 @@ if (!$is_elementor_preview) {
                     'fallback_cb'    => 'linkawy_fallback_menu',
                 ));
                 ?>
+                <?php linkawy_language_switcher('mobile'); ?>
                 <div class="mobile-nav-contact">
                     <?php 
                     $mobile_cta = linkawy_get_mobile_cta();
@@ -138,15 +139,15 @@ if (!$is_elementor_preview) {
                 </div>
             </nav>
             <?php
-            linkawy_language_switcher();
             $header_cta = linkawy_get_header_cta();
-            if ($header_cta['show']) : 
-                $cta_url = strpos($header_cta['url'], 'http') === 0 ? $header_cta['url'] : home_url($header_cta['url']);
+            $cta_url = ($header_cta['show'] && strpos($header_cta['url'], 'http') !== 0) ? home_url($header_cta['url']) : $header_cta['url'];
             ?>
             <div class="header-actions">
+                <?php linkawy_language_switcher('header'); ?>
+                <?php if ($header_cta['show']) : ?>
                 <a href="<?php echo esc_url($cta_url); ?>" class="cta-button"><?php echo esc_html($header_cta['text']); ?></a>
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
         </div>
     </header>
 
