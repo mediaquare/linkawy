@@ -75,6 +75,8 @@
 .home .dark-platform-box img{height:36px;width:auto;opacity:1;filter:none}
 /* Salla and Zid files from the old theme are single-colour black: render them white */
 .home .dark-platform-box img[src*="/partners/"]{filter:brightness(0) invert(1)}
+/* The WooCommerce glyph is a wide wordmark inside a square viewBox: scale it up to read at the same size */
+.home .dark-platform-box img[src*="woocommerce"]{transform:scale(1.7)}
 .home .dark-platform-name{color:var(--white);font-size:15px;font-weight:600;letter-spacing:0}
 .home .dark-platform-badge{color:var(--fg-on-dark-3);font-size:11px;font-weight:500;letter-spacing:.08em}
 @media (max-width:767px){.home .dark-platforms-bar{padding:40px 0 56px}.home .dark-platform-box img{height:32px}}

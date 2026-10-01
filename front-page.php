@@ -1264,6 +1264,8 @@ get_header();
             if (stepping) return;
             // Ensure tab is active
             if (document.hidden) return;
+            // All platforms already fit on screen: stepping would only show duplicates
+            if (platforms.length <= getVisibleCount()) return;
             
             stepping = true;
 
