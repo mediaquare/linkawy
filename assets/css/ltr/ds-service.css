@@ -87,7 +87,8 @@
 .page-template-service-page .lk-svc-section h3{font-size:var(--fs-card);line-height:var(--lh-card);letter-spacing:var(--tracking-card);font-weight:600;color:var(--text-heading)}
 .page-template-service-page .lk-svc-section p,.page-template-service-page .lk-svc-section li{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
 .page-template-service-page .lk-svc-section a:not(.wp-block-button__link){color:var(--orange)}
-.page-template-service-page .lk-svc-section ul li::before{background:var(--orange)}
+/* List bullets: Lucide check-check (stroke 2.25, brand orange) */
+.page-template-service-page .lk-svc-section ul li::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6207' stroke-width='2.25' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6 7 17l-5-5'/%3E%3Cpath d='m22 10-7.5 7.5L13 16'/%3E%3C/svg%3E") no-repeat center/contain;width:1.15em;height:1.15em;top:.3em}
 .page-template-service-page .lk-svc-section img{border-radius:var(--radius-card)}
 
 /* ---------- Cards ---------- */
