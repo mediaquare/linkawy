@@ -151,24 +151,30 @@ textarea.lk-input{height:auto;padding:16px 22px;border-radius:var(--radius-card)
 .lk-sunset--up img{margin-bottom:-1px}
 
 /* ==========================================================================
-   Header (kit Header): sticky, 80px, GLASS — a deliberate exception to the DS rule
-   "glass only over glowing / busy art" (see CLAUDE.md). The glass lives on header::before so
+   Header (kit Header): sticky, 80px — a deliberate exception to the DS rule
+   "glass only over glowing / busy art" (see CLAUDE.md). The background lives on header::before so
    the header itself never becomes a containing block for the fixed mobile menu.
-     dark  (home + service pages): rgba(10,10,10,.72), border rgba(255,255,255,.06)
-     light (every other page):     rgba(255,255,255,.72), border #EDE7DD
-   Without backdrop-filter support it falls back to solid #0A0A0A / #FFFFFF.
+     DARK header (home, service pages, single post): always dark, logo / links / buttons never change.
+       default + no-JS fallback: solid #0A0A0A
+       over a dark section (header.lk-glass, set by the small script in header.php): rgba(10,10,10,.72) + blur(20px)
+       only background-color animates (200ms; none with prefers-reduced-motion)
+     LIGHT header (every other page): glass rgba(255,255,255,.72) + blur(20px) saturate(140%), no script.
+   Without backdrop-filter support both fall back to solid #0A0A0A / #FFFFFF.
    Dropdowns and the mobile menu stay solid so their text is always clear.
    ========================================================================== */
 header,.home header,.front-page header{position:sticky;top:0;left:auto;right:auto;z-index:1000;min-height:80px;
   background:transparent!important;border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important}
 header::before,.home header::before,.front-page header::before,
-.home header.scrolled::before,.front-page header.scrolled::before{background:rgba(10,10,10,.72)!important;
-  -webkit-backdrop-filter:blur(20px) saturate(140%)!important;backdrop-filter:blur(20px) saturate(140%)!important;
-  border-bottom:0!important;box-shadow:none!important;transition:none}
+.home header.scrolled::before,.front-page header.scrolled::before{background-color:#0A0A0A!important;background-image:none!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+  border-bottom:0!important;box-shadow:none!important;transition:background-color .2s ease}
+header.lk-glass::before,.home header.lk-glass::before,.front-page header.lk-glass::before,
+.home header.lk-glass.scrolled::before,.front-page header.lk-glass.scrolled::before{background-color:rgba(10,10,10,.72)!important;
+  -webkit-backdrop-filter:blur(20px)!important;backdrop-filter:blur(20px)!important}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-  header::before,.home header::before,.front-page header::before,
-  .home header.scrolled::before,.front-page header.scrolled::before{background:#0A0A0A!important}
+  header.lk-glass::before,.home header.lk-glass::before,.front-page header.lk-glass::before{background-color:#0A0A0A!important}
 }
+@media (prefers-reduced-motion:reduce){header::before,.home header::before,.front-page header::before{transition:none}}
 .admin-bar header{top:32px}
 @media (max-width:782px){.admin-bar header{top:46px}}
 @media (max-width:600px){.admin-bar header{top:0}}
@@ -257,35 +263,36 @@ nav.main-nav .lang-switch--mobile{display:none}
   .mobile-nav-social a:hover,.home .mobile-nav-social a:hover,.front-page .mobile-nav-social a:hover{background:transparent;border-color:var(--fg-on-dark-3);color:var(--orange)}
 }
 
-/* Glass readability: the 72% glass lets light sections show through, so inactive header text is
-   brighter than the kit's #A1A1A1 (5.5:1 or more over cream/white; dropdown links keep #A1A1A1 on solid #121212). */
+/* Dark header text: a bit brighter than the kit's #A1A1A1 (readable on the solid and the glass state alike;
+   dropdown links keep #A1A1A1 on solid #121212). */
 @media (min-width:769px){
   nav.main-nav>ul>li>a,.home nav.main-nav>ul>li>a,.front-page nav.main-nav>ul>li>a{color:#D4D4D4}
   .lang-switch,.home .lang-switch,.front-page .lang-switch{color:#D4D4D4}
 }
 
-/* ---------- Light header: every page except the home page and the service pages ---------- */
-body:not(.home):not(.page-template-service-page) header{border-bottom-color:#EDE7DD}
-body:not(.home):not(.page-template-service-page) header::before{background:rgba(255,255,255,.72)!important}
+/* ---------- Light header: every page except the home page, the service pages and single posts ---------- */
+body:not(.home):not(.page-template-service-page):not(.single-post) header{border-bottom-color:#EDE7DD}
+body:not(.home):not(.page-template-service-page):not(.single-post) header::before{background-color:rgba(255,255,255,.72)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(140%)!important;backdrop-filter:blur(20px) saturate(140%)!important;transition:none}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
-  body:not(.home):not(.page-template-service-page) header::before{background:#FFFFFF!important}
+  body:not(.home):not(.page-template-service-page):not(.single-post) header::before{background-color:#FFFFFF!important}
 }
-body:not(.home):not(.page-template-service-page) .mobile-menu-toggle:not(.active) span{background:var(--fg-on-light-1)}
+body:not(.home):not(.page-template-service-page):not(.single-post) .mobile-menu-toggle:not(.active) span{background:var(--fg-on-light-1)}
 @media (min-width:769px){
-  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li>a{color:var(--fg-on-light-1)}
-  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li>a:hover,
-  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li:hover>a,
-  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li.current-menu-item>a{color:var(--fg-on-light-1)}
-  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li.current-menu-item>a{background:var(--cream)}
-  body:not(.home):not(.page-template-service-page) .lang-switch{color:var(--fg-on-light-1)}
-  body:not(.home):not(.page-template-service-page) .lang-switch:hover{color:var(--fg-on-light-1)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav>ul>li>a{color:var(--fg-on-light-1)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav>ul>li>a:hover,
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav>ul>li:hover>a,
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav>ul>li.current-menu-item>a{color:var(--fg-on-light-1)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav>ul>li.current-menu-item>a{background:var(--cream)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .lang-switch{color:var(--fg-on-light-1)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .lang-switch:hover{color:var(--fg-on-light-1)}
   /* Solid light dropdowns under a light header (no glass) */
-  body:not(.home):not(.page-template-service-page) .mega-menu,
-  body:not(.home):not(.page-template-service-page) nav.main-nav ul.sub-menu{background:var(--white);border:1px solid var(--border-light)}
-  body:not(.home):not(.page-template-service-page) .mega-menu-services ul li a,
-  body:not(.home):not(.page-template-service-page) nav.main-nav ul.sub-menu a{color:var(--fg-on-light-2)}
-  body:not(.home):not(.page-template-service-page) .mega-menu-services ul li a:hover,
-  body:not(.home):not(.page-template-service-page) nav.main-nav ul.sub-menu a:hover{color:var(--fg-on-light-1);background:var(--cream)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu,
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav ul.sub-menu{background:var(--white);border:1px solid var(--border-light)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a,
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav ul.sub-menu a{color:var(--fg-on-light-2)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a:hover,
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav ul.sub-menu a:hover{color:var(--fg-on-light-1);background:var(--cream)}
 }
 
 /* ==========================================================================
@@ -407,3 +414,7 @@ footer.lk-footer{background:var(--cream);background-image:none;color:var(--fg-on
 .linkawy-content .wp-block-group.alignfull{border-radius:0!important}
 .linkawy-content .has-background[style*="#fff5f0"],.linkawy-content .has-background[style*="#FFF5F0"]{background-color:var(--cream)!important}
 .linkawy-content .has-background[style*="#1a1a2e"],.linkawy-content .has-background[style*="#1A1A2E"]{background-color:var(--dark)!important}
+
+/* Single post: dark header; the black article hero runs under it (same content position) */
+.single-post .article-hero{margin-top:-80px;border-top:80px solid #000}
+@media (max-width:768px){.single-post .article-hero{margin-top:-68px;border-top-width:68px}}
