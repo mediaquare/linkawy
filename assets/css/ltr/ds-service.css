@@ -150,3 +150,8 @@
   .page-template-service-page .lk-svc-card,.page-template-service-page .lk-svc-callout,.page-template-service-page .lk-svc-step{padding:22px}
   .page-template-service-page .faq-block .faq-container{grid-template-columns:1fr}
 }
+
+/* Glass header: the dark service hero runs under the sticky header (content position unchanged) */
+.page-template-service-page .service-hero{margin-top:-80px;padding-top:calc(72px + 80px)}
+@media (max-width:900px){.page-template-service-page .service-hero{padding-top:calc(48px + 80px)}}
+@media (max-width:768px){.page-template-service-page .service-hero{margin-top:-68px;padding-top:calc(48px + 68px)}}

@@ -152,13 +152,24 @@ textarea.lk-input{height:auto;padding:16px 22px;border-radius:var(--radius-card)
 .lk-sunset--up img{margin-bottom:-1px}
 
 /* ==========================================================================
-   Header (kit Header): dark #0A0A0A, sticky, 80px, no glass
+   Header (kit Header): sticky, 80px, GLASS — a deliberate exception to the DS rule
+   "glass only over glowing / busy art" (see CLAUDE.md). The glass lives on header::before so
+   the header itself never becomes a containing block for the fixed mobile menu.
+     dark  (home + service pages): rgba(10,10,10,.72), border rgba(255,255,255,.06)
+     light (every other page):     rgba(255,255,255,.72), border #EDE7DD
+   Without backdrop-filter support it falls back to solid #0A0A0A / #FFFFFF.
+   Dropdowns and the mobile menu stay solid so their text is always clear.
    ========================================================================== */
 header,.home header,.front-page header{position:sticky;top:0;right:auto;left:auto;z-index:1000;min-height:80px;
-  background:var(--dark)!important;border-bottom:1px solid var(--dark-border);backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important}
+  background:transparent!important;border-bottom:1px solid rgba(255,255,255,.06);backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important}
 header::before,.home header::before,.front-page header::before,
-.home header.scrolled::before,.front-page header.scrolled::before{background:var(--dark)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+.home header.scrolled::before,.front-page header.scrolled::before{background:rgba(10,10,10,.72)!important;
+  -webkit-backdrop-filter:blur(20px) saturate(140%)!important;backdrop-filter:blur(20px) saturate(140%)!important;
   border-bottom:0!important;box-shadow:none!important;transition:none}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  header::before,.home header::before,.front-page header::before,
+  .home header.scrolled::before,.front-page header.scrolled::before{background:#0A0A0A!important}
+}
 .admin-bar header{top:32px}
 @media (max-width:782px){.admin-bar header{top:46px}}
 @media (max-width:600px){.admin-bar header{top:0}}
@@ -245,6 +256,30 @@ nav.main-nav .lang-switch--mobile{display:none}
   .mobile-nav-social a,.home .mobile-nav-social a,.front-page .mobile-nav-social a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
     border-radius:999px;border:1px solid var(--dark-border);background:transparent;color:var(--fg-on-dark-2)}
   .mobile-nav-social a:hover,.home .mobile-nav-social a:hover,.front-page .mobile-nav-social a:hover{background:transparent;border-color:var(--fg-on-dark-3);color:var(--orange)}
+}
+
+/* ---------- Light header: every page except the home page and the service pages ---------- */
+body:not(.home):not(.page-template-service-page) header{border-bottom-color:#EDE7DD}
+body:not(.home):not(.page-template-service-page) header::before{background:rgba(255,255,255,.72)!important}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  body:not(.home):not(.page-template-service-page) header::before{background:#FFFFFF!important}
+}
+body:not(.home):not(.page-template-service-page) .mobile-menu-toggle:not(.active) span{background:var(--fg-on-light-1)}
+@media (min-width:769px){
+  body:not(.home):not(.page-template-service-page) nav.main-nav a{color:var(--fg-on-light-2)}
+  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li>a:hover,
+  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li:hover>a,
+  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li.current-menu-item>a{color:var(--fg-on-light-1)}
+  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li.current-menu-item>a{background:var(--cream)}
+  body:not(.home):not(.page-template-service-page) .lang-switch{color:var(--fg-on-light-2)}
+  body:not(.home):not(.page-template-service-page) .lang-switch:hover{color:var(--fg-on-light-1)}
+  /* Solid light dropdowns under a light header (no glass) */
+  body:not(.home):not(.page-template-service-page) .mega-menu,
+  body:not(.home):not(.page-template-service-page) nav.main-nav ul.sub-menu{background:var(--white);border:1px solid var(--border-light)}
+  body:not(.home):not(.page-template-service-page) .mega-menu-services ul li a,
+  body:not(.home):not(.page-template-service-page) nav.main-nav ul.sub-menu a{color:var(--fg-on-light-2)}
+  body:not(.home):not(.page-template-service-page) .mega-menu-services ul li a:hover,
+  body:not(.home):not(.page-template-service-page) nav.main-nav ul.sub-menu a:hover{color:var(--fg-on-light-1);background:var(--cream)}
 }
 
 /* ==========================================================================

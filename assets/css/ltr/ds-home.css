@@ -330,3 +330,7 @@
   .home .seo-faq-answer-inner{padding:0 20px 18px}
   .home .program-card{padding:24px}
 }
+
+/* Glass header: the dark hero runs under the sticky header (same content position, the glass sits on dark) */
+.home .hero-dark-wrapper{margin-top:-80px;padding-top:80px}
+@media (max-width:768px){.home .hero-dark-wrapper{margin-top:-68px;padding-top:68px}}
