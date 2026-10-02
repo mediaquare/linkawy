@@ -257,6 +257,13 @@ nav.main-nav .lang-switch--mobile{display:none}
   .mobile-nav-social a:hover,.home .mobile-nav-social a:hover,.front-page .mobile-nav-social a:hover{background:transparent;border-color:var(--fg-on-dark-3);color:var(--orange)}
 }
 
+/* Glass readability: the 72% glass lets light sections show through, so inactive header text is
+   brighter than the kit's #A1A1A1 (5.5:1 or more over cream/white; dropdown links keep #A1A1A1 on solid #121212). */
+@media (min-width:769px){
+  nav.main-nav>ul>li>a,.home nav.main-nav>ul>li>a,.front-page nav.main-nav>ul>li>a{color:#D4D4D4}
+  .lang-switch,.home .lang-switch,.front-page .lang-switch{color:#D4D4D4}
+}
+
 /* ---------- Light header: every page except the home page and the service pages ---------- */
 body:not(.home):not(.page-template-service-page) header{border-bottom-color:#EDE7DD}
 body:not(.home):not(.page-template-service-page) header::before{background:rgba(255,255,255,.72)!important}
@@ -265,12 +272,12 @@ body:not(.home):not(.page-template-service-page) header::before{background:rgba(
 }
 body:not(.home):not(.page-template-service-page) .mobile-menu-toggle:not(.active) span{background:var(--fg-on-light-1)}
 @media (min-width:769px){
-  body:not(.home):not(.page-template-service-page) nav.main-nav a{color:var(--fg-on-light-2)}
+  body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li>a{color:var(--fg-on-light-1)}
   body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li>a:hover,
   body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li:hover>a,
   body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li.current-menu-item>a{color:var(--fg-on-light-1)}
   body:not(.home):not(.page-template-service-page) nav.main-nav>ul>li.current-menu-item>a{background:var(--cream)}
-  body:not(.home):not(.page-template-service-page) .lang-switch{color:var(--fg-on-light-2)}
+  body:not(.home):not(.page-template-service-page) .lang-switch{color:var(--fg-on-light-1)}
   body:not(.home):not(.page-template-service-page) .lang-switch:hover{color:var(--fg-on-light-1)}
   /* Solid light dropdowns under a light header (no glass) */
   body:not(.home):not(.page-template-service-page) .mega-menu,
