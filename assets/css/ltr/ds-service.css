@@ -99,12 +99,12 @@
 /* Callouts ("when do you need it"): the orange start-side accent of the original */
 .page-template-service-page .lk-svc-callout{border-inline-start:2px solid var(--orange)}
 /* Icon tile (linkawy/icon) */
-.page-template-service-page .wp-block-linkawy-icon.lk-tile{--tile-size:56px;margin:0 auto 20px}
+/* Centred above the card title, as the original icons were */
+.page-template-service-page .wp-block-linkawy-icon.lk-tile{--tile-size:56px;display:flex;margin:0 auto 20px}
 .page-template-service-page .wp-block-linkawy-icon .lk-icon{width:24px;height:24px}
-/* Steps: "01." heading -> number badge (as the home "9 reasons") */
-.page-template-service-page h3.lk-svc-step-num{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;padding:0 10px;margin:0 0 16px;
-  border-radius:var(--radius-pill);background:var(--dark);border:1px solid var(--dark-border);color:var(--orange);font-size:15px;font-weight:700;line-height:1;
-  font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+/* Steps: the "01." heading keeps its original look — orange number, centred, no background */
+.page-template-service-page h3.lk-svc-step-num{display:block;margin:0 0 10px;padding:0;background:none;border:0;
+  color:var(--orange);font-size:36px;line-height:1.2;font-weight:600;text-align:center;font-variant-numeric:tabular-nums}
 
 /* ---------- Dark sections (media + list) ---------- */
 .page-template-service-page .lk-svc-dark-surface .wp-block-media-text{gap:40px}
