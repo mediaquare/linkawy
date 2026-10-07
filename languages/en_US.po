@@ -865,10 +865,6 @@ msgstr ""
 "goals and the scope of work. We provide a tailored quote after carefully "
 "analyzing your website and requirements."
 
-#: front-page.php:1063
-msgid "هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في محركات البحث؟"
-msgstr "Can you guarantee the number one position on Google?"
-
 #: front-page.php:1068
 msgid ""
 "لا يمكن لأي شركة سيو محترفة ضمان المرتبة الأولى بشكل مطلق، لأن خوارزميات "
@@ -2024,3 +2020,7 @@ msgstr "Riyadh, Saudi Arabia"
 #: inc/customizer.php:695 inc/customizer.php:786
 msgid "جميع الحقوق محفوظة."
 msgstr "All rights reserved."
+
+#: front-page.php:1063
+msgid "هل يمكنكم ضمان تصدر موقعي أول نتيجة في البحث؟"
+msgstr "Can you guarantee the number one position on Google?"

@@ -1020,7 +1020,7 @@ get_header();
                 <div class="seo-faq-column">
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
-                            <h3><?php esc_html_e('هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في محركات البحث؟', 'linkawy'); ?></h3>
+                            <h3><?php esc_html_e('هل يمكنكم ضمان تصدر موقعي أول نتيجة في البحث؟', 'linkawy'); ?></h3>
                             <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
