@@ -182,6 +182,14 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         
         $item_output = $args->before;
         $item_output .= '<a' . $attributes . '>';
+        // Redesign: mega menu services get a small Lucide icon tile
+        if ($depth === 1 && $this->in_mega_menu) {
+            $service_icon = $this->get_service_icon($item);
+            if ($service_icon) {
+                $item_output .= '<span class="mega-menu-icon">' . linkawy_icon($service_icon, 18) . '</span>';
+            }
+            $title = '<span class="mega-menu-label">' . $title . '</span>';
+        }
         $item_output .= $args->link_before . $title . $args->link_after;
         
         // Chevron for dropdowns: mega menu or standard submenu (same UX as الخدمات)
@@ -196,6 +204,32 @@ class Linkawy_Mega_Menu_Walker extends Walker_Nav_Menu {
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
     
+    /**
+     * Lucide icon for a mega menu service, matched on its title (Arabic and English menus).
+     *
+     * @param WP_Post $item Menu item data object.
+     * @return string Icon name, or '' when nothing matches.
+     */
+    private function get_service_icon($item) {
+        $title = mb_strtolower(wp_strip_all_tags($item->title));
+        $map = array(
+            'Sparkle'     => array('الذكاء', 'ai seo', 'geo'),
+            'Megaphone'   => array('التسويق', 'marketing'),
+            'ShoppingBag' => array('متجر', 'e-commerce', 'ecommerce', 'store'),
+            'Link'        => array('باك لينك', 'backlink'),
+            'PenLine'     => array('المحتوى', 'content'),
+            'Search'      => array('محركات البحث', 'سيو', 'seo'),
+        );
+        foreach ($map as $icon => $needles) {
+            foreach ($needles as $needle) {
+                if (false !== mb_strpos($title, $needle)) {
+                    return $icon;
+                }
+            }
+        }
+        return '';
+    }
+
     /**
      * Count direct children of a menu item in the same menu.
      *

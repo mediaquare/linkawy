@@ -187,7 +187,7 @@ nav.main-nav li:hover>a .submenu-chevron{transform:rotate(-180deg)}
 /* Dropdowns (mega + standard): #121212 with the dark gradient edge, no glass, no shadow */
 .mega-menu,.home .mega-menu,.front-page .mega-menu,
 nav.main-nav ul.sub-menu,.home nav.main-nav ul.sub-menu,.front-page nav.main-nav ul.sub-menu{
-  top:calc(100% + 20px);background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box;
+  top:calc(100% + 40px);background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box;
   border:1px solid transparent;border-radius:var(--radius-card);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
 .mega-menu-services{padding:12px}
 .mega-menu-services ul{gap:2px 8px}
@@ -210,6 +210,19 @@ nav.main-nav ul.sub-menu{padding:12px;gap:2px 8px}
 .mega-menu-btn,.home .mega-menu-btn,.front-page .mega-menu-btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;
   border-radius:var(--radius-pill);background:var(--dark);color:var(--white)!important;font-size:14px;font-weight:600}
 .mega-menu-btn:hover,.home .mega-menu-btn:hover,.front-page .mega-menu-btn:hover{background:var(--dark-border);color:var(--white)!important;gap:8px}
+/* Mega services: 2 columns x 3 rows stretched to the CTA height, thin dividers between rows, a 32px Lucide tile per service */
+@media (min-width:769px){
+  .mega-menu-services{display:flex;flex-direction:column}
+  .mega-menu-services ul{flex:1;grid-auto-rows:1fr;gap:0 8px}
+  .mega-menu-services ul li,.home .mega-menu-services ul li,.front-page .mega-menu-services ul li{display:flex;border-bottom:1px solid var(--dark-border)}
+  .mega-menu-services ul li:nth-last-child(-n+2):nth-child(odd),.mega-menu-services ul li:last-child{border-bottom:0}
+  .mega-menu-services ul li a,.home .mega-menu-services ul li a,.front-page .mega-menu-services ul li a{display:flex;align-items:center;gap:12px;width:100%;margin:6px 0;padding:10px 12px;white-space:nowrap}
+  .mega-menu-services ul li a:hover,.home .mega-menu-services ul li a:hover,.front-page .mega-menu-services ul li a:hover{padding-inline:12px}
+}
+.mega-menu-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:32px;height:32px;border-radius:8px;
+  background:var(--dark-tile-inner);border:1px solid var(--dark-border);color:var(--orange);transition:border-color var(--dur-fast),background var(--dur-fast)}
+.mega-menu-services ul li a:hover .mega-menu-icon{background:var(--dark);border-color:rgba(255,98,7,.45)}
+@media (max-width:768px){.mega-menu-icon{display:none}}
 
 /* Language switch + CTA (Button sm) */
 /* Kit Header langSwitch: Lucide Languages + the other language's name, #A1A1A1 -> white,
@@ -276,9 +289,19 @@ body:not(.home):not(.page-template-service-page):not(.single-post) .mobile-menu-
   body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav>ul>li.current-menu-item>a{background:var(--cream)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .lang-switch{color:var(--fg-on-light-1)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .lang-switch:hover{color:var(--fg-on-light-1)}
-  /* Solid light dropdowns under a light header (no glass) */
+  /* Light dropdowns = the same glass as the light header (solid white without backdrop-filter support) */
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu,
-  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav ul.sub-menu{background:var(--white);border:1px solid var(--border-light)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav ul.sub-menu{background:rgba(255,255,255,.72);border:1px solid #EDE7DD;
+    -webkit-backdrop-filter:blur(20px) saturate(140%);backdrop-filter:blur(20px) saturate(140%);box-shadow:0 12px 32px rgba(10,10,10,.08)}
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu,
+    body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav ul.sub-menu{background:var(--white)}
+  }
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li{border-bottom-color:var(--border-light)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li:nth-last-child(-n+2):nth-child(odd),
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li:last-child{border-bottom:0}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-icon{background:var(--white);border-color:var(--border-light)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a:hover .mega-menu-icon{background:var(--white);border-color:rgba(255,98,7,.45)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a,
   body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav ul.sub-menu a{color:var(--fg-on-light-2)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a:hover,
