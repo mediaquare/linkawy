@@ -92,10 +92,10 @@ button,input,select,textarea{font-family:inherit}
 /* ---------- Components ---------- */
 /* Buttons: pill, gradient primary (the only place the gradient lives) */
 .lk-btn,.cta-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:48px;min-height:48px;padding:0 24px;
-  border-radius:var(--radius-pill);border:1px solid transparent;background:var(--gradient-primary);color:var(--white);
+  border-radius:var(--radius-pill);border:1px solid transparent;background:var(--gradient-primary) border-box;color:var(--white);
   font-family:var(--font-sans);font-size:15px;font-weight:700;line-height:1;letter-spacing:0;white-space:nowrap;text-decoration:none;cursor:pointer;
   transition:background var(--dur-fast) var(--ease-out),box-shadow var(--dur-base) var(--ease-out),transform var(--dur-fast) var(--ease-out),border-color var(--dur-fast)}
-.lk-btn:hover,.cta-button:hover{background:var(--gradient-primary);color:var(--white);box-shadow:var(--shadow-exceptional);transform:none}
+.lk-btn:hover,.cta-button:hover{background:var(--gradient-primary) border-box;color:var(--white);box-shadow:var(--shadow-exceptional);transform:none}
 .lk-btn:active,.cta-button:active{background:var(--orange-deep);box-shadow:none;transform:scale(.98)}
 .lk-btn--sm{height:40px;min-height:40px;padding:0 18px;font-size:14px}
 .lk-btn--lg{height:56px;min-height:56px;padding:0 30px;font-size:16px}

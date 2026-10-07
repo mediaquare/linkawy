@@ -274,9 +274,8 @@
 .home .about-content p{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--text-body)}
 
 /* ==========================================================================
-   12. FAQ (white) — DS FAQ items: 16-radius cards, Plus icon turns 45°
+   12. FAQ (white) — old design, styled by front-page.css (no overrides here)
    ========================================================================== */
-  border:1px solid var(--border-light);border-radius:var(--radius-card);background:var(--white)}
 
 /* ==========================================================================
    13. SEO results (cream-warm)
