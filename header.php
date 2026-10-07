@@ -86,54 +86,6 @@
             initHeaderScroll();
         }
     })();
-
-    /* Dark header (home, service pages, single post): glass while a dark section is behind it,
-       solid #0A0A0A over light sections (and without JS). Reads data-surface first ("dark" = dark,
-       any other value = light), otherwise the luminance of the first opaque background behind the header. */
-    (function() {
-        function initHeaderSurface() {
-            var body = document.body, header = document.querySelector('header');
-            if (!header || !body) return;
-            var cl = body.classList;
-            if (!(cl.contains('home') || cl.contains('page-template-service-page') || cl.contains('single-post'))) return;
-            var ticking = false;
-            function surfaceOf(el) {
-                for (; el && el !== document.documentElement; el = el.parentElement) {
-                    var s = el.getAttribute && el.getAttribute('data-surface');
-                    if (s) return s === 'dark' ? 'dark' : 'light';
-                    if (/^(IMG|VIDEO|PICTURE|SVG|CANVAS)$/i.test(el.tagName)) continue;
-                    var m = (getComputedStyle(el).backgroundColor || '').match(/[\d.]+/g);
-                    if (m && (m.length < 4 || +m[3] > 0.5)) {
-                        var lum = (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255;
-                        return lum < 0.25 ? 'dark' : 'light';
-                    }
-                }
-                return 'light';
-            }
-            function update() {
-                ticking = false;
-                var r = header.getBoundingClientRect();
-                var stack = document.elementsFromPoint(window.innerWidth / 2, r.top + r.height / 2);
-                var behind = null;
-                for (var i = 0; i < stack.length; i++) {
-                    if (!header.contains(stack[i])) { behind = stack[i]; break; }
-                }
-                header.classList.toggle('lk-glass', surfaceOf(behind) === 'dark');
-            }
-            function onChange() {
-                if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
-            }
-            update();
-            window.addEventListener('scroll', onChange, { passive: true });
-            window.addEventListener('resize', onChange);
-            window.addEventListener('load', onChange);
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initHeaderSurface);
-        } else {
-            initHeaderSurface();
-        }
-    })();
     </script>
 </head>
 
