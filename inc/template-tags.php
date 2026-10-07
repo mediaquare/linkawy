@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
  * Display breadcrumbs
  */
 function linkawy_breadcrumbs() {
-    $separator = '<span class="breadcrumb-separator"><i class="fas fa-chevron-left"></i></span>';
+    $separator = '<span class="breadcrumb-separator">' . linkawy_icon('ChevronRight', 14) . '</span>';
     
     echo '<nav class="breadcrumbs">';
     echo '<a href="' . esc_url(home_url('/')) . '">' . __('الرئيسية', 'linkawy') . '</a>';

@@ -428,3 +428,7 @@ footer.lk-footer{background:var(--cream);background-image:none;color:var(--fg-on
 .linkawy-content .has-background[style*="#fff5f0"],.linkawy-content .has-background[style*="#FFF5F0"]{background-color:var(--cream)!important}
 .linkawy-content .has-background[style*="#1a1a2e"],.linkawy-content .has-background[style*="#1A1A2E"]{background-color:var(--dark)!important}
 
+
+/* Breadcrumb separator: Lucide chevron (flips with the direction), readable on the dark heroes */
+.breadcrumb-separator{display:inline-flex;align-items:center}
+.article-hero .breadcrumb-separator{color:var(--fg-on-dark-3)}

@@ -13,7 +13,7 @@
 .service-hero .container.service-hero-inner{max-width:calc(var(--content-max) + 2 * var(--gutter));padding:0 var(--gutter);gap:48px 72px}
 .service-hero .breadcrumbs a{color:var(--fg-on-dark-3)}
 .service-hero .breadcrumbs a:hover,.service-hero .breadcrumb-current{color:var(--orange)}
-.service-hero .breadcrumb-separator{color:var(--dark-border)}
+.service-hero .breadcrumb-separator{color:var(--fg-on-dark-3)}
 .service-hero-title{font-size:var(--fs-display);line-height:var(--lh-display);letter-spacing:var(--tracking-display);font-weight:700;color:var(--white);margin:0 0 20px}
 .service-hero-subtitle{font-size:18px;line-height:var(--lh-body);color:var(--fg-on-dark-2);margin:0 0 32px}
 .service-hero-buttons{gap:12px}
