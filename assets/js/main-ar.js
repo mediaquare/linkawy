@@ -131,6 +131,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Service pages: split the FAQ items into two independent columns (same layout as the home page FAQ)
+    document.querySelectorAll('.page-template-service-page .faq-block .faq-container, .page-template-service-page .lk-svc-faq').forEach((box) => {
+        const isDetails = box.classList.contains('lk-svc-faq');
+        const items = Array.from(box.querySelectorAll(isDetails ? ':scope > details' : ':scope > .faq-item'));
+        if (items.length < 2) {
+            return;
+        }
+        const cols = isDetails ? document.createElement('div') : box;
+        if (isDetails) {
+            cols.className = 'lk-faq-cols';
+            items[0].before(cols);
+        }
+        const half = Math.ceil(items.length / 2);
+        [items.slice(0, half), items.slice(half)].forEach((group) => {
+            const col = document.createElement('div');
+            col.className = 'lk-faq-col';
+            group.forEach((item) => col.appendChild(item));
+            cols.appendChild(col);
+        });
+    });
+
     // مكوّن Gutenberg FAQ (linkawy/faq): أكورديون + Schema — صفحات عادية، صفحة الخدمة، المقالات، إلخ.
     document.querySelectorAll('.faq-block').forEach((block) => {
         const items = block.querySelectorAll('.faq-item');

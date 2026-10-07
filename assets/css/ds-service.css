@@ -130,25 +130,43 @@
 .page-template-service-page .lk-svc-pricing{background:transparent;padding-block:24px;padding-inline:var(--svc-gutter);margin:0}
 .page-template-service-page .lk-svc-pricing > .lk-svc-card:last-child{box-shadow:var(--shadow-exceptional)}
 
-/* ---------- FAQ: linkawy/faq (DS FAQ items) and the store page's core/details ---------- */
-.page-template-service-page .page-content > .faq-block{box-sizing:border-box;margin:0;padding-block:var(--space-section-sm);padding-inline:var(--svc-gutter);background:var(--white)}
-.page-template-service-page .faq-block .faq-title{font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;
-  color:var(--fg-on-light-1);margin:0 0 var(--space-block);text-align:center}
-.page-template-service-page .faq-block .faq-container{border-top:0;gap:12px 20px}
-.page-template-service-page .faq-block .faq-item{border:1px solid var(--border-light);border-radius:var(--radius-card);background:var(--white);margin-bottom:12px}
-.page-template-service-page .faq-block h2.faq-question{padding:20px 24px;font-size:17px;line-height:1.5;color:var(--fg-on-light-1)}
-.page-template-service-page .faq-block h2.faq-question:hover,.page-template-service-page .faq-block .faq-item.is-open h2.faq-question{color:var(--fg-on-light-1)}
-.page-template-service-page .faq-block h2.faq-question::after,.page-template-service-page .faq-block h2.faq-question:hover::after,
-.page-template-service-page .faq-block .faq-item.is-open h2.faq-question::after{color:var(--fg-on-light-3);transition:transform var(--dur-base) var(--ease-out)}
-.page-template-service-page .faq-block .faq-answer-content{padding:0 24px 22px;font-size:15px;line-height:var(--lh-body);color:var(--fg-on-light-2)}
-.page-template-service-page .lk-svc-faq .wp-block-details{border:1px solid var(--border-light);border-radius:var(--radius-card);background:var(--white);padding:20px 24px;margin-bottom:12px}
-.page-template-service-page .lk-svc-faq .wp-block-details summary{font-size:17px;font-weight:600;color:var(--fg-on-light-1);cursor:pointer}
-.page-template-service-page .lk-svc-faq .wp-block-details p{font-size:15px;color:var(--fg-on-light-2);margin-top:12px}
+/* ---------- FAQ = the home page FAQ (old design): two independent columns of rows split by #e8e8e8 lines,
+   "+" turns into an orange "x". linkawy/faq blocks and the store page's core/details; main-ar.js splits the
+   items into two .lk-faq-col columns so opening one never stretches its neighbour. ---------- */
+.page-template-service-page .page-content.linkawy-content > .faq-block,.page-template-service-page .linkawy-content .lk-svc-faq{box-sizing:border-box;margin:0;padding:7.5rem var(--svc-gutter) 8.5rem;background:#fff}
+.page-template-service-page .linkawy-content .faq-block .faq-title,.page-template-service-page .linkawy-content .lk-svc-faq > h2{text-align:center;font-size:2.6rem;font-weight:800;color:#111;line-height:1.3;letter-spacing:0;margin:0 0 5rem!important;padding:0;border:0}
+.page-template-service-page .linkawy-content .faq-block .faq-container,.page-template-service-page .linkawy-content .lk-svc-faq .lk-faq-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 3.5rem;max-width:var(--content-max);margin:0 auto;border-top:0}
+.page-template-service-page .linkawy-content .lk-faq-col{display:flex;flex-direction:column;min-width:0}
+.page-template-service-page .linkawy-content .faq-block .faq-item,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details{border:0;border-bottom:1px solid #e8e8e8;border-radius:0;background:transparent;margin:0!important;padding:0}
+.page-template-service-page .linkawy-content .lk-faq-col > :first-child{border-top:1px solid #e8e8e8}
+.page-template-service-page .linkawy-content .faq-block h2.faq-question,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:2.2rem 0;margin:0;font-size:1.05rem;font-weight:600;line-height:1.5;color:#222;cursor:pointer;list-style:none;transition:color .2s ease;-webkit-user-select:none;user-select:none}
+.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details summary::-webkit-details-marker{display:none}
+.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details summary strong{font-weight:inherit}
+.page-template-service-page .linkawy-content .faq-block h2.faq-question:hover,.page-template-service-page .linkawy-content .faq-block .faq-item.is-open h2.faq-question,
+.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details summary:hover,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details[open] summary{color:var(--orange)}
+.page-template-service-page .linkawy-content .faq-block h2.faq-question::after,.page-template-service-page .linkawy-content .faq-block h2.faq-question:hover::after,
+.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details summary::after{content:'+';flex-shrink:0;width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;font-weight:300;line-height:1;color:#999;transition:transform .3s ease,color .3s ease}
+.page-template-service-page .linkawy-content .faq-block .faq-item.is-open h2.faq-question::after,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details[open] summary::after{color:var(--orange);transform:rotate(45deg)}
+.page-template-service-page .linkawy-content .faq-block .faq-answer-content,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details > :not(summary){padding:.2rem 0 1.85rem;margin:0!important;font-size:.95rem;line-height:1.8;color:#666}
+@media (max-width:768px){
+  .page-template-service-page .page-content.linkawy-content > .faq-block,.page-template-service-page .linkawy-content .lk-svc-faq{padding-block:5rem 5.5rem}
+  .page-template-service-page .linkawy-content .faq-block .faq-title,.page-template-service-page .linkawy-content .lk-svc-faq > h2{font-size:1.8rem;margin-bottom:3rem!important}
+  .page-template-service-page .linkawy-content .faq-block .faq-container,.page-template-service-page .linkawy-content .lk-svc-faq .lk-faq-cols{grid-template-columns:1fr;gap:0}
+  .page-template-service-page .linkawy-content .lk-faq-col + .lk-faq-col > :first-child{border-top:0}
+  .page-template-service-page .linkawy-content .faq-block h2.faq-question,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details summary{padding:1.85rem 0}
+}
+@media (max-width:480px){
+  .page-template-service-page .page-content.linkawy-content > .faq-block,.page-template-service-page .linkawy-content .lk-svc-faq{padding-block:3.5rem 4rem}
+  .page-template-service-page .linkawy-content .faq-block .faq-title,.page-template-service-page .linkawy-content .lk-svc-faq > h2{font-size:1.5rem;margin-bottom:2.5rem!important}
+  .page-template-service-page .linkawy-content .faq-block h2.faq-question,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details summary{padding:1.25rem 0;font-size:.95rem}
+  .page-template-service-page .linkawy-content .faq-block .faq-answer-content,.page-template-service-page .linkawy-content .lk-svc-faq .wp-block-details > :not(summary){font-size:.9rem;padding-bottom:1.5rem}
+}
 
 @media (max-width:767px){
   .page-template-service-page .lk-svc-section{padding-block:56px}
   .page-template-service-page .lk-svc-card,.page-template-service-page .lk-svc-callout,.page-template-service-page .lk-svc-step{padding:22px}
-  .page-template-service-page .faq-block .faq-container{grid-template-columns:1fr}
 }
 
 /* Glass header: the dark service hero runs under the sticky header (content position unchanged) */

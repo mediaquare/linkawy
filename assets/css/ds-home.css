@@ -13,7 +13,7 @@
 
 /* ---------- Shared heading scale inside the home sections ---------- */
 .home .programs-intro h2,.home .process-subtitle,.home .reasons-section .section-header h2,.home .benefits-section .section-header h2,
-.home .blog-posts-header h2,.home .about-content h2,.home .seo-faq-header h2,.home .results-section .results-title,
+.home .blog-posts-header h2,.home .about-content h2,.home .results-section .results-title,
 .home .success-stories-title,.home .seo-proof-section .section-title{
   font-size:var(--fs-section);line-height:var(--lh-section);letter-spacing:var(--tracking-section);font-weight:700;color:var(--text-heading)}
 
@@ -276,18 +276,7 @@
 /* ==========================================================================
    12. FAQ (white) — DS FAQ items: 16-radius cards, Plus icon turns 45°
    ========================================================================== */
-.home .seo-faq-section{background:var(--white);padding:0 0 var(--space-section)}
-.home .seo-faq-container{max-width:calc(var(--content-max) + 2 * var(--gutter));padding-inline:var(--gutter);box-sizing:border-box}
-.home .seo-faq-header{margin-bottom:var(--space-block)}
-.home .seo-faq-grid{gap:12px 20px}
-.home .seo-faq-column{gap:12px}
-.home .seo-faq-item,.home .seo-faq-column:first-child .seo-faq-item:first-child,.home .seo-faq-column:last-child .seo-faq-item:first-child{
   border:1px solid var(--border-light);border-radius:var(--radius-card);background:var(--white)}
-.home .seo-faq-question{padding:20px 24px}
-.home .seo-faq-question h3,.home .seo-faq-question:hover h3,.home .seo-faq-item.active .seo-faq-question h3{font-size:17px;line-height:1.5;font-weight:600;color:var(--text-heading)}
-.home .seo-faq-toggle,.home .seo-faq-item.active .seo-faq-toggle{color:var(--faq-icon);transition:transform var(--dur-base) var(--ease-out)}
-.home .seo-faq-item.active .seo-faq-toggle{transform:rotate(45deg)}
-.home .seo-faq-answer-inner{padding:0 24px 22px;font-size:15px;line-height:var(--lh-body);color:var(--text-body)}
 
 /* ==========================================================================
    13. SEO results (cream-warm)
@@ -322,11 +311,8 @@
   .home .program-card h3,.home .program-card .service-subtitle{text-align:start}
 }
 @media (max-width:768px){
-  .home .process-container,.home .blog-posts-container,.home .seo-faq-container,.home .partners-container{padding-inline:20px}
+  .home .process-container,.home .blog-posts-container,.home .partners-container{padding-inline:20px}
   .home .timeline-marker{position:relative!important}
-  .home .seo-faq-grid{gap:12px}
-  .home .seo-faq-question{padding:18px 20px}
-  .home .seo-faq-answer-inner{padding:0 20px 18px}
   .home .program-card{padding:24px}
 }
 

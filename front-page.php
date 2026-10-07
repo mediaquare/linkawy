@@ -953,7 +953,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما هي خدمات تحسين محركات البحث (SEO) التي تقدمونها؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -966,7 +966,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('كم من الوقت يستغرق تحسين ترتيب موقعي في نتائج البحث؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -979,7 +979,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('هل تقدمون خدمات السيو للمتاجر الإلكترونية؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -992,7 +992,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما الفرق بين السيو الداخلي والسيو الخارجي؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1005,7 +1005,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('كيف يتم تحديد سعر خدمة السيو؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1021,7 +1021,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('هل يمكنكم ضمان تصدر موقعي للنتيجة الأولى في محركات البحث؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1034,7 +1034,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما أهمية بناء الروابط الخلفية (Backlinks) للسيو؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1047,7 +1047,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('هل تقدمون تقارير أداء دورية لمتابعة تقدم المشروع؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1060,7 +1060,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('ما هو السيو التقني وهل يحتاجه موقعي؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
@@ -1073,7 +1073,7 @@ get_header();
                     <div class="seo-faq-item">
                         <div class="seo-faq-question">
                             <h3><?php esc_html_e('كيف يتم قياس نجاح استراتيجية السيو؟', 'linkawy'); ?></h3>
-                            <span class="seo-faq-toggle"><?php echo linkawy_icon('Plus', 20); ?></span>
+                            <span class="seo-faq-toggle">+</span>
                         </div>
                         <div class="seo-faq-answer">
                             <div class="seo-faq-answer-inner">
