@@ -171,6 +171,8 @@ header::before,.home header::before,.front-page header::before,
 header .container{gap:32px}
 .logo a{display:flex}
 .logo img{height:34px;width:auto}
+/* The Arabic wordmark is narrower, so it runs a little taller to match the English one visually */
+.logo img.logo-ar{height:40px}
 
 /* Nav: pills, #A1A1A1 -> white */
 nav.main-nav ul{gap:2px}
@@ -244,6 +246,7 @@ nav.main-nav .lang-switch--mobile{display:none}
 @media (max-width:768px){
   header,.home header,.front-page header{min-height:68px}
   .logo img{height:30px}
+  .logo img.logo-ar{height:35px}
   nav.main-nav .lang-switch--mobile{display:flex;width:100%;box-sizing:border-box;padding:.75rem 2rem;min-height:0;font-size:1.05rem;font-weight:600;color:var(--fg-on-dark-2)}
   nav.main-nav .lang-switch--mobile:hover{color:var(--fg-on-dark-1)}
   nav.main-nav,.home nav.main-nav,.front-page nav.main-nav{background:var(--dark)}

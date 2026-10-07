@@ -105,7 +105,7 @@ if (!$is_elementor_preview) {
         <div class="container">
             <div class="logo">
                 <a href="<?php echo esc_url(linkawy_home_url()); ?>">
-                    <img src="<?php echo esc_url(linkawy_ds_logo_url()); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo linkawy_is_en() ? 115 : 88; ?>" height="34">
+                    <img src="<?php echo esc_url(linkawy_ds_logo_url()); ?>" alt="<?php bloginfo('name'); ?>" width="<?php echo linkawy_is_en() ? 115 : 104; ?>" height="<?php echo linkawy_is_en() ? 34 : 40; ?>"<?php echo linkawy_is_en() ? '' : ' class="logo-ar"'; ?>>
                 </a>
             </div>
             <button class="mobile-menu-toggle" aria-label="<?php esc_attr_e('قائمة التنقل', 'linkawy'); ?>">
