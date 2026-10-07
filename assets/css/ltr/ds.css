@@ -300,7 +300,7 @@ body:not(.home):not(.page-template-service-page):not(.single-post) .mobile-menu-
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li{border-bottom-color:var(--border-light)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li:nth-last-child(-n+2):nth-child(odd),
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li:last-child{border-bottom:0}
-  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a:hover{background:transparent;color:var(--fg-on-light-1)}
+  body:not(.home):not(.page-template-service-page):not(.single-post) nav.main-nav .mega-menu-services ul li a:hover{background:transparent;color:var(--fg-on-light-1)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-icon{background:var(--white);border-color:var(--border-light)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a:hover .mega-menu-icon{background:var(--white);border-color:rgba(255,98,7,.45)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a,
