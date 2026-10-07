@@ -187,7 +187,7 @@ nav.main-nav li:hover>a .submenu-chevron{transform:rotate(-180deg)}
 /* Dropdowns (mega + standard): #121212 with the dark gradient edge, no glass, no shadow */
 .mega-menu,.home .mega-menu,.front-page .mega-menu,
 nav.main-nav ul.sub-menu,.home nav.main-nav ul.sub-menu,.front-page nav.main-nav ul.sub-menu{
-  top:calc(100% + 30px);background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box;
+  top:calc(100% + 25px);background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box;
   border:1px solid transparent;border-radius:var(--radius-card);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
 .mega-menu-services{padding:12px}
 .mega-menu-services ul{gap:2px 8px}
