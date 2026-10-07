@@ -217,7 +217,7 @@ nav.main-nav ul.sub-menu{padding:12px;gap:2px 8px}
   .mega-menu-services ul li,.home .mega-menu-services ul li,.front-page .mega-menu-services ul li{display:flex;border-bottom:1px solid var(--dark-border)}
   .mega-menu-services ul li:nth-last-child(-n+2):nth-child(odd),.mega-menu-services ul li:last-child{border-bottom:0}
   .mega-menu-services ul li a,.home .mega-menu-services ul li a,.front-page .mega-menu-services ul li a{display:flex;align-items:center;gap:12px;width:100%;margin:6px 0;padding:10px 12px;white-space:nowrap}
-  .mega-menu-services ul li a:hover,.home .mega-menu-services ul li a:hover,.front-page .mega-menu-services ul li a:hover{padding-inline:12px}
+  .mega-menu-services ul li a:hover,.home .mega-menu-services ul li a:hover,.front-page .mega-menu-services ul li a:hover{padding-inline:12px;background:transparent;color:var(--fg-on-dark-1)}
 }
 .mega-menu-icon{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:32px;height:32px;border-radius:8px;
   background:var(--dark-tile-inner);border:1px solid var(--dark-border);color:var(--orange);transition:border-color var(--dur-fast),background var(--dur-fast)}
@@ -300,6 +300,7 @@ body:not(.home):not(.page-template-service-page):not(.single-post) .mobile-menu-
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li{border-bottom-color:var(--border-light)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li:nth-last-child(-n+2):nth-child(odd),
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li:last-child{border-bottom:0}
+  body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a:hover{background:transparent;color:var(--fg-on-light-1)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-icon{background:var(--white);border-color:var(--border-light)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a:hover .mega-menu-icon{background:var(--white);border-color:rgba(255,98,7,.45)}
   body:not(.home):not(.page-template-service-page):not(.single-post) .mega-menu-services ul li a,
