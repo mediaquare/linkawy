@@ -254,6 +254,7 @@ nav.main-nav .lang-switch--mobile{display:none}
   nav.main-nav::before,.home nav.main-nav::before,.front-page nav.main-nav::before{display:none}
   nav.main-nav>ul>li>a{display:block;height:auto;padding:.75rem .25rem;border-radius:0;font-size:1.05rem;font-weight:600;color:var(--fg-on-dark-1)}
   nav.main-nav>ul>li>a:hover,.home nav.main-nav ul li a:hover,.front-page nav.main-nav ul li a:hover{color:var(--orange)}
+  nav.main-nav>ul>li.current-menu-item:not(.menu-item-has-children)>a{background:transparent}
   nav.main-nav>ul>li.menu-item-has-children>a{background:var(--dark-surface)!important;border:1px solid var(--dark-border)!important;border-radius:var(--radius-card)!important;color:var(--fg-on-dark-1)!important}
   nav.main-nav>ul>li.menu-item-has-children.submenu-open>a{border-radius:var(--radius-card) var(--radius-card) 0 0!important}
   nav.main-nav>ul>li.menu-item-has-children>a .submenu-chevron{display:flex!important;align-items:center;justify-content:center;width:28px;height:28px;padding:5px;
