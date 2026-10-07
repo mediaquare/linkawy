@@ -8,5 +8,5 @@
   - The background is on `header::before` (never on `header` itself, which would trap the fixed mobile menu).
   - Dropdowns under the **dark** header and the mobile menu stay **solid**, never glass, so their text stays clear.
   - Dropdowns under the **light** header (mega menu + sub-menus) use the **same glass** as the light header: `rgba(255,255,255,.72)` + `blur(20px) saturate(140%)`, border `#EDE7DD`, soft shadow; solid `#FFFFFF` without `backdrop-filter` support.
-  - Dropdowns open `25px` below the nav link; the hover delay in `assets/js/main-ar.js` bridges the gap.
+  - Dropdowns open `22px` below the nav link; the hover delay in `assets/js/main-ar.js` bridges the gap.
   - Code: `assets/css/ds.css` (Header section + "Light header").

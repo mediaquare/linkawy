@@ -187,7 +187,7 @@ nav.main-nav li:hover>a .submenu-chevron{transform:rotate(-180deg)}
 /* Dropdowns (mega + standard): #121212 with the dark gradient edge, no glass, no shadow */
 .mega-menu,.home .mega-menu,.front-page .mega-menu,
 nav.main-nav ul.sub-menu,.home nav.main-nav ul.sub-menu,.front-page nav.main-nav ul.sub-menu{
-  top:calc(100% + 25px);background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box;
+  top:calc(100% + 22px);background:linear-gradient(var(--dark-surface),var(--dark-surface)) padding-box,var(--dark-card-edge) border-box;
   border:1px solid transparent;border-radius:var(--radius-card);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
 .mega-menu-services{padding:12px}
 .mega-menu-services ul{gap:2px 8px}
@@ -203,7 +203,7 @@ nav.main-nav ul.sub-menu,.home nav.main-nav ul.sub-menu,.front-page nav.main-nav
 .home nav.main-nav ul.sub-menu a:hover,.front-page nav.main-nav ul.sub-menu a:hover{color:var(--fg-on-dark-1);background:var(--dark-tile-inner);padding-inline:14px}
 nav.main-nav ul.sub-menu{padding:12px;gap:2px 8px}
 /* Mega CTA = the one highlight card on dark: orange gradient */
-.mega-menu-cta{margin:8px;border-radius:12px;background:var(--gradient-highlight-card);color:var(--white)}
+.mega-menu-cta{margin:0;border-radius:0;padding:28px 24px;background:var(--gradient-highlight-card);color:var(--white)}
 .mega-menu-cta::before{display:none}
 .mega-menu-cta .mega-menu-cta-title{font-size:20px;line-height:1.4;font-weight:600}
 .mega-menu-cta p{opacity:1;color:rgba(255,255,255,.9);font-size:14px}
