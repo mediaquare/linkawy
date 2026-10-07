@@ -264,6 +264,11 @@ nav.main-nav .lang-switch--mobile{display:none}
   nav.main-nav li.has-dropdown>.mega-menu,nav.main-nav>ul>li.menu-item-has-children:not(.has-dropdown)>ul.sub-menu{
     background:var(--dark-surface)!important;border:1px solid var(--dark-border)!important;border-top:0!important;border-radius:0 0 var(--radius-card) var(--radius-card)!important}
   .mega-menu-services ul li a,nav.main-nav ul.sub-menu a,.home nav.main-nav ul li .mega-menu a,.front-page nav.main-nav ul li .mega-menu a{color:var(--fg-on-dark-2)}
+  /* Closed panels draw no border (it showed as a stray line under the item); open panels match their header card */
+  nav.main-nav>ul>li.menu-item-has-children:not(.submenu-open)>.mega-menu,nav.main-nav>ul>li.menu-item-has-children:not(.submenu-open)>ul.sub-menu{border-width:0!important}
+  nav.main-nav li.has-dropdown>.mega-menu,nav.main-nav>ul>li.menu-item-has-children:not(.has-dropdown)>ul.sub-menu{width:auto!important;max-width:none!important;left:auto!important;right:auto!important;transform:none!important}
+  nav.main-nav>ul>li.menu-item-has-children.submenu-open>a{background:var(--dark-surface)!important}
+  nav.main-nav>ul>li.menu-item-has-children.submenu-open>a .submenu-chevron{background:var(--dark-tile-inner)!important;color:var(--fg-on-dark-1)}
   nav.main-nav .mobile-nav-cta,.home nav.main-nav .mobile-nav-cta,.front-page nav.main-nav .mobile-nav-cta{display:flex;align-items:center;justify-content:center;height:48px;
     border-radius:var(--radius-pill);background:var(--gradient-primary);color:var(--white);font-weight:700}
   nav.main-nav .mobile-nav-cta:hover,.home nav.main-nav .mobile-nav-cta:hover,.front-page nav.main-nav .mobile-nav-cta:hover{background:var(--gradient-primary);color:var(--white)}
