@@ -10,6 +10,9 @@
 /* One look in light and dark system modes: opt out of browser auto-darkening (Chrome/Samsung). */
 :root{color-scheme:only light}
 html,body{forced-color-adjust:none}
+/* Samsung Internet only skips its forced darkening when the page declares its own dark styles
+   (meta color-scheme "light dark" + a prefers-color-scheme:dark rule). Our "dark" styles are the light design. */
+@media (prefers-color-scheme:dark){:root{color-scheme:only light}html{background-color:#fff}}
 
 
 /* ---------- Fonts: Alexandria (Arabic + Latin kept), subset woff2 ---------- */
